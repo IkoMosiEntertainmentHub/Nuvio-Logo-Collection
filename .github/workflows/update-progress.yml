@@ -28,6 +28,24 @@ jobs:
           CONFIG_FILE = "progress.json"
           README_FILE = "README.md"
 
+          # These are the actual collection folders in the repository.
+          COLLECTION_ROOT = "."
+
+          # Files considered valid visual assets.
+          ASSET_EXTENSIONS = {
+              ".png",
+              ".jpg",
+              ".jpeg",
+              ".webp",
+              ".gif",
+              ".svg",
+              ".avif",
+              ".bmp",
+              ".ico",
+              ".tif",
+              ".tiff"
+          }
+
           def normalize(name):
               name = name.lower().strip()
               name = name.replace("&", "and")
@@ -35,50 +53,90 @@ jobs:
               name = re.sub(r"[^a-z0-9]+", "", name)
               return name
 
-          def get_directories(path):
-              if not os.path.isdir(path):
-                  return set()
+          def contains_asset(folder):
+              """
+              Returns True if the folder contains at least one
+              supported visual asset, including assets inside
+              nested folders.
+              """
 
-              return {
-                  normalize(name)
-                  for name in os.listdir(path)
-                  if os.path.isdir(os.path.join(path, name))
-              }
+              if not os.path.isdir(folder):
+                  return False
 
-          with open(CONFIG_FILE, "r", encoding="utf-8") as f:
+              for root, dirs, files in os.walk(folder):
+
+                  # Ignore Git metadata if encountered.
+                  dirs[:] = [
+                      d for d in dirs
+                      if d != ".git"
+                  ]
+
+                  for filename in files:
+
+                      extension = os.path.splitext(
+                          filename
+                      )[1].lower()
+
+                      if extension in ASSET_EXTENSIONS:
+                          return True
+
+              return False
+
+          with open(
+              CONFIG_FILE,
+              "r",
+              encoding="utf-8"
+          ) as f:
               categories = json.load(f)
 
           rows = []
 
           for category, expected_items in categories.items():
 
-              category_path = category
-
-              actual_directories = get_directories(category_path)
-
-              total = len(expected_items)
+              category_path = os.path.join(
+                  COLLECTION_ROOT,
+                  category
+              )
 
               completed = 0
+              total = len(expected_items)
 
               for item in expected_items:
-                  if normalize(item) in actual_directories:
+
+                  item_path = os.path.join(
+                      category_path,
+                      item
+                  )
+
+                  # The item is complete ONLY when:
+                  #
+                  # 1. Its folder exists
+                  # 2. The folder contains at least one asset
+                  #
+                  if contains_asset(item_path):
                       completed += 1
 
               if total == 0:
+
                   percentage = 0
                   progress_bar = "░" * 10
                   status = "Not configured"
 
               else:
+
                   percentage = round(
                       (completed / total) * 100,
                       1
                   )
 
-                  filled = round(percentage / 10)
+                  filled = round(
+                      percentage / 10
+                  )
 
-                  if filled > 10:
-                      filled = 10
+                  filled = min(
+                      filled,
+                      10
+                  )
 
                   empty = 10 - filled
 
@@ -89,12 +147,16 @@ jobs:
 
                   if percentage == 100:
                       status = "Complete"
+
                   elif percentage >= 75:
                       status = "Nearly complete"
+
                   elif percentage >= 50:
                       status = "In progress"
+
                   elif percentage > 0:
-                      status = "Getting started"
+                      status = "In development"
+
                   else:
                       status = "Not started"
 
@@ -107,6 +169,7 @@ jobs:
                   "status": status
               })
 
+          # Read README
           with open(
               README_FILE,
               "r",
@@ -114,8 +177,13 @@ jobs:
           ) as f:
               readme = f.read()
 
-          start_marker = "<!-- COLLECTION_PROGRESS_START -->"
-          end_marker = "<!-- COLLECTION_PROGRESS_END -->"
+          start_marker = (
+              "<!-- COLLECTION_PROGRESS_START -->"
+          )
+
+          end_marker = (
+              "<!-- COLLECTION_PROGRESS_END -->"
+          )
 
           table = []
 
@@ -129,13 +197,17 @@ jobs:
           )
 
           for row in rows:
-              percentage = f"{row['percentage']:g}%"
+
+              percentage = (
+                  f"{row['percentage']:g}%"
+              )
 
               table.append(
                   f"| **{row['category']}** "
                   f"| {row['completed']} "
                   f"| {row['total']} "
-                  f"| `{row['progress_bar']}` **{percentage}** "
+                  f"| `{row['progress_bar']}` "
+                  f"**{percentage}** "
                   f"| {row['status']} |"
               )
 
@@ -164,13 +236,15 @@ jobs:
                   "\n\n"
                   "## 📊 Collection Progress\n\n"
                   "Progress is automatically calculated "
-                  "from the collection folders in this repository.\n\n"
+                  "by checking whether each collection folder "
+                  "contains at least one visual asset.\n\n"
                   + generated
                   + "\n"
               )
 
               readme += section
 
+          # Write README
           with open(
               README_FILE,
               "w",
@@ -178,7 +252,9 @@ jobs:
           ) as f:
               f.write(readme)
 
-          print("Collection progress updated.")
+          print(
+              "Collection progress calculated successfully."
+          )
 
       - name: Commit updated README
         run: |
