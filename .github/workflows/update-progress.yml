@@ -27,13 +27,11 @@ jobs:
           import os
           import re
 
-          CONFIG_FILE = "progress.json"
+          CONFIG_FILE = "collections.json"
+          PROGRESS_FILE = "progress.json"
           README_FILE = "README.md"
 
-          # Only these file types count as completed visual assets.
-          #
-          # Files such as .gitkeep, .gitignore, .md, .txt and .json
-          # DO NOT count as assets.
+          # Only these file types count as completed assets.
           ASSET_EXTENSIONS = {
               ".gif",
               ".png",
@@ -48,19 +46,11 @@ jobs:
           END_MARKER = "<!-- COLLECTION_PROGRESS_END -->"
 
           def contains_asset(folder):
-              """
-              Returns True only when the collection folder contains
-              at least one supported visual asset.
-
-              Assets inside nested folders also count.
-              """
-
               if not os.path.isdir(folder):
                   return False
 
               for root, dirs, files in os.walk(folder):
 
-                  # Ignore Git metadata directories.
                   dirs[:] = [
                       directory
                       for directory in dirs
@@ -79,7 +69,7 @@ jobs:
               return False
 
           # ---------------------------------------------------------
-          # Load configuration
+          # Load the manually maintained collection list
           # ---------------------------------------------------------
 
           if not os.path.exists(CONFIG_FILE):
@@ -102,29 +92,25 @@ jobs:
 
           for category, expected_items in config.items():
 
-              category_path = category
-
               total = len(expected_items)
               completed = 0
-
               item_results = {}
 
               for item in expected_items:
 
                   item_path = os.path.join(
-                      category_path,
+                      category,
                       item
                   )
 
-                  exists = os.path.isdir(item_path)
-
+                  folder_exists = os.path.isdir(item_path)
                   has_asset = contains_asset(item_path)
 
                   if has_asset:
                       completed += 1
 
                   item_results[item] = {
-                      "folder_exists": exists,
+                      "folder_exists": folder_exists,
                       "has_asset": has_asset,
                       "complete": has_asset
                   }
@@ -139,16 +125,12 @@ jobs:
 
               if percentage == 100:
                   status = "Complete"
-
               elif percentage >= 75:
                   status = "Nearly complete"
-
               elif percentage >= 50:
                   status = "In progress"
-
               elif percentage > 0:
                   status = "In development"
-
               else:
                   status = "Not started"
 
@@ -182,29 +164,17 @@ jobs:
               }
 
           # ---------------------------------------------------------
-          # Update progress.json
+          # Write automatically generated progress.json
           # ---------------------------------------------------------
 
-          progress_output = {}
-
-          for category, data in results.items():
-
-              progress_output[category] = {
-                  "completed": data["completed"],
-                  "total": data["total"],
-                  "percentage": data["percentage"],
-                  "status": data["status"],
-                  "items": data["items"]
-              }
-
           with open(
-              CONFIG_FILE,
+              PROGRESS_FILE,
               "w",
               encoding="utf-8"
           ) as file:
 
               json.dump(
-                  progress_output,
+                  results,
                   file,
                   indent=2,
                   ensure_ascii=False
@@ -297,7 +267,7 @@ jobs:
               file.write(readme)
 
           # ---------------------------------------------------------
-          # Print results to GitHub Actions log
+          # Show results in GitHub Actions
           # ---------------------------------------------------------
 
           print("")
