@@ -28,23 +28,30 @@ The purpose of this repository is to **collect, organize, and make these assets 
 I am acting as a collector and organizer of these materials, not as their creator or owner.
 
 ---
-## 📊 Collection Progress
+## 📊 Collection Status
 
-Progress is automatically calculated from the collection folders currently present in this repository.
+> **Live collection overview**
+>
+> This section is automatically updated by GitHub Actions whenever changes are pushed to `main`.
 
-The target list is maintained in [`progress.json`](./progress.json).
+**Last automated update:** `Automatically maintained`  
+**Tracking:** `118 collections across 5 categories`
 
 <!-- COLLECTION_PROGRESS_START -->
 
-| Category | Completed | Total | Progress | Status |
-| --- | ---: | ---: | --- | --- |
-| **Streaming Platforms** | 12 | 12 | `██████████` **100%** | Complete |
-| **TV Collections** | 0 | 16 | `░░░░░░░░░░` **0%** | Not started |
-| **Studios** | 0 | 20 | `░░░░░░░░░░` **0%** | Not started |
-| **Franchises** | 5 | 38 | `█░░░░░░░░░` **13.2%** | In development |
-| **Networks** | 1 | 33 | `░░░░░░░░░░` **3%** | In development |
+| Collection | Complete | Total | Progress | Status |
+| --- | ---: | ---: | ---: | --- |
+| **Streaming Platforms** | 12 | 12 | `██████████` **100%** | 🟢 **Complete** |
+| **TV Collections** | 0 | 16 | `░░░░░░░░░░` **0%** | ⚪ **Not Started** |
+| **Studios** | 0 | 20 | `░░░░░░░░░░` **0%** | ⚪ **Not Started** |
+| **Franchises** | 5 | 38 | `█░░░░░░░░░` **13.2%** | 🟡 **In Development** |
+| **Networks** | 1 | 33 | `░░░░░░░░░░` **3%** | 🟡 **In Development** |
 
 <!-- COLLECTION_PROGRESS_END -->
+
+> **Automated tracking:** Progress is calculated from the contents of each collection folder. A collection is considered complete when at least one supported visual asset is present.
+>
+> **Supported assets:** `.png` · `.gif` · `.jpg` · `.jpeg` · `.webp` · `.svg` · `.avif`
 ---
 
 ## © Copyright & Ownership
