@@ -67,6 +67,16 @@ It is an independent collection maintained for personal organization, reference,
 > **Supported formats:** `.png` · `.gif` · `.jpg` · `.jpeg` · `.webp` · `.svg` · `.avif`
 
 ---
+## 🔎 Collection Search
+
+Searchable collection index generated automatically.
+
+| Collection | Category | Status | Assets |
+|---|---|---|---|
+| Netflix | Streaming Platform | ✅ Complete | Link |
+| HBO | Network | ⚪ Not Started | No assets available |
+| Marvel | Franchise | 🟠 Collecting | Link |
+---
 
 ## 🎨 Intended Use
 
