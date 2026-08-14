@@ -30,7 +30,7 @@ I am acting as a collector and organizer of these materials, not as their creato
 ---
 ## 📊 Collection Progress
 
-Progress is automatically calculated from the folders currently present in `Nuvio Collections`.
+Progress is automatically calculated from the collection folders currently present in this repository.
 
 The target list is maintained in [`progress.json`](./progress.json).
 
