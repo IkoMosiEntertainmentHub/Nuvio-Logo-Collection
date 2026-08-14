@@ -28,6 +28,24 @@ The purpose of this repository is to **collect, organize, and make these assets 
 I am acting as a collector and organizer of these materials, not as their creator or owner.
 
 ---
+## 📊 Collection Progress
+
+Progress is automatically calculated from the folders currently present in `Nuvio Collections`.
+
+The target list is maintained in [`progress.json`](./progress.json).
+
+<!-- COLLECTION_PROGRESS_START -->
+
+| Category | Completed | Total | Progress | Status |
+| --- | ---: | ---: | --- | --- |
+| **Streaming Platforms** | 0 | 14 | `░░░░░░░░░░` **0%** | Not started |
+| **TV Collections** | 0 | 16 | `░░░░░░░░░░` **0%** | Not started |
+| **Studios** | 0 | 20 | `░░░░░░░░░░` **0%** | Not started |
+| **Franchises** | 0 | 37 | `░░░░░░░░░░` **0%** | Not started |
+| **Networks** | 0 | 32 | `░░░░░░░░░░` **0%** | Not started |
+
+<!-- COLLECTION_PROGRESS_END -->
+---
 
 ## © Copyright & Ownership
 
