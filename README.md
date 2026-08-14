@@ -34,18 +34,17 @@ I am acting as a collector and organizer of these materials, not as their creato
 >
 > This section is automatically updated by GitHub Actions whenever changes are pushed to `main`.
 
-**Last automated update:** `Automatically maintained`  
 **Tracking:** `118 collections across 5 categories`
 
 <!-- COLLECTION_PROGRESS_START -->
 
-| Category | Completed | Total | Progress | Status |
-| --- | ---: | ---: | --- | --- |
-| **Streaming Platforms** | 12 | 12 | `██████████` **100%** | Complete |
-| **TV Collections** | 0 | 16 | `░░░░░░░░░░` **0%** | Not started |
-| **Studios** | 0 | 20 | `░░░░░░░░░░` **0%** | Not started |
-| **Franchises** | 5 | 38 | `█░░░░░░░░░` **13.2%** | In development |
-| **Networks** | 1 | 33 | `░░░░░░░░░░` **3%** | In development |
+| Collection | Complete | Total | Progress | Status |
+| --- | ---: | ---: | ---: | --- |
+| **Streaming Platforms** | 12 | 12 | `██████████` **100%** | 🟢 **Complete** |
+| **TV Collections** | 0 | 16 | `░░░░░░░░░░` **0%** | ⚪ **Not Started** |
+| **Studios** | 0 | 20 | `░░░░░░░░░░` **0%** | ⚪ **Not Started** |
+| **Franchises** | 5 | 38 | `█░░░░░░░░░` **13.2%** | 🟡 **In Progress** |
+| **Networks** | 1 | 33 | `░░░░░░░░░░` **3%** | 🟡 **In Progress** |
 
 <!-- COLLECTION_PROGRESS_END -->
 
