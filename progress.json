@@ -270,7 +270,7 @@
     "completed": 5,
     "total": 38,
     "percentage": 13.2,
-    "status": "In development",
+    "status": "Started",
     "progress_bar": "█░░░░░░░░░",
     "items": {
       "Ailens": {
@@ -469,7 +469,7 @@
     "completed": 1,
     "total": 33,
     "percentage": 3.0,
-    "status": "In development",
+    "status": "Started",
     "progress_bar": "░░░░░░░░░░",
     "items": {
       "ABC": {

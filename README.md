@@ -57,8 +57,8 @@ It is an independent collection maintained for personal organization, reference,
 | **Streaming Platforms** | 12 | 12 | `██████████` **100%** | Complete |
 | **TV Collections** | 0 | 16 | `░░░░░░░░░░` **0%** | Not started |
 | **Studios** | 0 | 20 | `░░░░░░░░░░` **0%** | Not started |
-| **Franchises** | 5 | 38 | `█░░░░░░░░░` **13.2%** | In development |
-| **Networks** | 1 | 33 | `░░░░░░░░░░` **3%** | In development |
+| **Franchises** | 5 | 38 | `█░░░░░░░░░` **13.2%** | Started |
+| **Networks** | 1 | 33 | `░░░░░░░░░░` **3%** | Started |
 
 <!-- COLLECTION_PROGRESS_END -->
 
