@@ -67,11 +67,11 @@ It is an independent collection maintained for personal organization, reference,
 > **Supported formats:** `.png` · `.gif` · `.jpg` · `.jpeg` · `.webp` · `.svg` · `.avif`
 
 ---
-## 🔎 Search Collection
+## 🔎 Collection Search
 
-Use GitHub's repository search to find assets:
+Browse and search the complete visual asset collection:
 
-[Search this repository](https://github.com/IkoMosiEntertainmentHub/Visual-Assets-Library/search)
+[Open Visual Assets Library Search Portal](https://ikomosientertainmenthub.github.io/Visual-Assets-Library/)
 ---
 
 ## 🎨 Intended Use
