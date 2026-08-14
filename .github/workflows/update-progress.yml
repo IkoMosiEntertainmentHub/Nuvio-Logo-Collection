@@ -17,6 +17,8 @@ jobs:
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
 
       - name: Calculate collection progress
         shell: python
@@ -28,36 +30,29 @@ jobs:
           CONFIG_FILE = "progress.json"
           README_FILE = "README.md"
 
-          # These are the actual collection folders in the repository.
-          COLLECTION_ROOT = "."
-
-          # Files considered valid visual assets.
+          # Only these file types count as completed visual assets.
+          #
+          # Files such as .gitkeep, .gitignore, .md, .txt and .json
+          # DO NOT count as assets.
           ASSET_EXTENSIONS = {
+              ".gif",
               ".png",
               ".jpg",
               ".jpeg",
               ".webp",
-              ".gif",
               ".svg",
-              ".avif",
-              ".bmp",
-              ".ico",
-              ".tif",
-              ".tiff"
+              ".avif"
           }
 
-          def normalize(name):
-              name = name.lower().strip()
-              name = name.replace("&", "and")
-              name = name.replace("+", "plus")
-              name = re.sub(r"[^a-z0-9]+", "", name)
-              return name
+          START_MARKER = "<!-- COLLECTION_PROGRESS_START -->"
+          END_MARKER = "<!-- COLLECTION_PROGRESS_END -->"
 
           def contains_asset(folder):
               """
-              Returns True if the folder contains at least one
-              supported visual asset, including assets inside
-              nested folders.
+              Returns True only when the collection folder contains
+              at least one supported visual asset.
+
+              Assets inside nested folders also count.
               """
 
               if not os.path.isdir(folder):
@@ -65,10 +60,11 @@ jobs:
 
               for root, dirs, files in os.walk(folder):
 
-                  # Ignore Git metadata if encountered.
+                  # Ignore Git metadata directories.
                   dirs[:] = [
-                      d for d in dirs
-                      if d != ".git"
+                      directory
+                      for directory in dirs
+                      if directory != ".git"
                   ]
 
                   for filename in files:
@@ -82,24 +78,36 @@ jobs:
 
               return False
 
+          # ---------------------------------------------------------
+          # Load configuration
+          # ---------------------------------------------------------
+
+          if not os.path.exists(CONFIG_FILE):
+              raise FileNotFoundError(
+                  f"Could not find {CONFIG_FILE}"
+              )
+
           with open(
               CONFIG_FILE,
               "r",
               encoding="utf-8"
-          ) as f:
-              categories = json.load(f)
+          ) as file:
+              config = json.load(file)
 
-          rows = []
+          # ---------------------------------------------------------
+          # Calculate progress
+          # ---------------------------------------------------------
 
-          for category, expected_items in categories.items():
+          results = {}
 
-              category_path = os.path.join(
-                  COLLECTION_ROOT,
-                  category
-              )
+          for category, expected_items in config.items():
 
-              completed = 0
+              category_path = category
+
               total = len(expected_items)
+              completed = 0
+
+              item_results = {}
 
               for item in expected_items:
 
@@ -108,86 +116,121 @@ jobs:
                       item
                   )
 
-                  # The item is complete ONLY when:
-                  #
-                  # 1. Its folder exists
-                  # 2. The folder contains at least one asset
-                  #
-                  if contains_asset(item_path):
+                  exists = os.path.isdir(item_path)
+
+                  has_asset = contains_asset(item_path)
+
+                  if has_asset:
                       completed += 1
 
-              if total == 0:
+                  item_results[item] = {
+                      "folder_exists": exists,
+                      "has_asset": has_asset,
+                      "complete": has_asset
+                  }
 
-                  percentage = 0
-                  progress_bar = "░" * 10
-                  status = "Not configured"
-
-              else:
-
+              if total > 0:
                   percentage = round(
                       (completed / total) * 100,
                       1
                   )
+              else:
+                  percentage = 0
 
-                  filled = round(
-                      percentage / 10
+              if percentage == 100:
+                  status = "Complete"
+
+              elif percentage >= 75:
+                  status = "Nearly complete"
+
+              elif percentage >= 50:
+                  status = "In progress"
+
+              elif percentage > 0:
+                  status = "In development"
+
+              else:
+                  status = "Not started"
+
+              filled_blocks = round(
+                  percentage / 10
+              )
+
+              filled_blocks = max(
+                  0,
+                  min(
+                      10,
+                      filled_blocks
                   )
+              )
 
-                  filled = min(
-                      filled,
-                      10
-                  )
+              empty_blocks = 10 - filled_blocks
 
-                  empty = 10 - filled
+              progress_bar = (
+                  "█" * filled_blocks
+                  +
+                  "░" * empty_blocks
+              )
 
-                  progress_bar = (
-                      "█" * filled +
-                      "░" * empty
-                  )
-
-                  if percentage == 100:
-                      status = "Complete"
-
-                  elif percentage >= 75:
-                      status = "Nearly complete"
-
-                  elif percentage >= 50:
-                      status = "In progress"
-
-                  elif percentage > 0:
-                      status = "In development"
-
-                  else:
-                      status = "Not started"
-
-              rows.append({
-                  "category": category,
+              results[category] = {
                   "completed": completed,
                   "total": total,
                   "percentage": percentage,
+                  "status": status,
                   "progress_bar": progress_bar,
-                  "status": status
-              })
+                  "items": item_results
+              }
 
-          # Read README
+          # ---------------------------------------------------------
+          # Update progress.json
+          # ---------------------------------------------------------
+
+          progress_output = {}
+
+          for category, data in results.items():
+
+              progress_output[category] = {
+                  "completed": data["completed"],
+                  "total": data["total"],
+                  "percentage": data["percentage"],
+                  "status": data["status"],
+                  "items": data["items"]
+              }
+
+          with open(
+              CONFIG_FILE,
+              "w",
+              encoding="utf-8"
+          ) as file:
+
+              json.dump(
+                  progress_output,
+                  file,
+                  indent=2,
+                  ensure_ascii=False
+              )
+
+              file.write("\n")
+
+          # ---------------------------------------------------------
+          # Update README
+          # ---------------------------------------------------------
+
+          if not os.path.exists(README_FILE):
+              raise FileNotFoundError(
+                  f"Could not find {README_FILE}"
+              )
+
           with open(
               README_FILE,
               "r",
               encoding="utf-8"
-          ) as f:
-              readme = f.read()
-
-          start_marker = (
-              "<!-- COLLECTION_PROGRESS_START -->"
-          )
-
-          end_marker = (
-              "<!-- COLLECTION_PROGRESS_END -->"
-          )
+          ) as file:
+              readme = file.read()
 
           table = []
 
-          table.append(start_marker)
+          table.append(START_MARKER)
           table.append("")
           table.append(
               "| Category | Completed | Total | Progress | Status |"
@@ -196,75 +239,96 @@ jobs:
               "| --- | ---: | ---: | --- | --- |"
           )
 
-          for row in rows:
+          for category, data in results.items():
 
-              percentage = (
-                  f"{row['percentage']:g}%"
-              )
+              percentage = f"{data['percentage']:g}%"
 
               table.append(
-                  f"| **{row['category']}** "
-                  f"| {row['completed']} "
-                  f"| {row['total']} "
-                  f"| `{row['progress_bar']}` "
-                  f"**{percentage}** "
-                  f"| {row['status']} |"
+                  f"| **{category}** "
+                  f"| {data['completed']} "
+                  f"| {data['total']} "
+                  f"| `{data['progress_bar']}` **{percentage}** "
+                  f"| {data['status']} |"
               )
 
           table.append("")
-          table.append(end_marker)
+          table.append(END_MARKER)
 
-          generated = "\n".join(table)
+          generated_progress = "\n".join(table)
 
           pattern = re.compile(
-              re.escape(start_marker)
+              re.escape(START_MARKER)
               + r".*?"
-              + re.escape(end_marker),
+              + re.escape(END_MARKER),
               re.DOTALL
           )
 
           if pattern.search(readme):
 
               readme = pattern.sub(
-                  generated,
+                  generated_progress,
                   readme
               )
 
           else:
 
-              section = (
+              progress_section = (
                   "\n\n"
                   "## 📊 Collection Progress\n\n"
-                  "Progress is automatically calculated "
-                  "by checking whether each collection folder "
-                  "contains at least one visual asset.\n\n"
-                  + generated
-                  + "\n"
+                  "Progress is automatically calculated by "
+                  "checking each collection folder for visual "
+                  "assets. A folder is considered complete only "
+                  "when it contains at least one supported "
+                  "visual asset such as `.png`, `.gif`, `.jpg`, "
+                  "`.jpeg`, `.webp`, `.svg`, or `.avif`.\n\n"
+                  +
+                  generated_progress
+                  +
+                  "\n"
               )
 
-              readme += section
+              readme += progress_section
 
-          # Write README
           with open(
               README_FILE,
               "w",
               encoding="utf-8"
-          ) as f:
-              f.write(readme)
+          ) as file:
+              file.write(readme)
 
-          print(
-              "Collection progress calculated successfully."
-          )
+          # ---------------------------------------------------------
+          # Print results to GitHub Actions log
+          # ---------------------------------------------------------
 
-      - name: Commit updated README
+          print("")
+          print("========================================")
+          print("       COLLECTION PROGRESS")
+          print("========================================")
+          print("")
+
+          for category, data in results.items():
+
+              print(
+                  f"{category}: "
+                  f"{data['completed']}/"
+                  f"{data['total']} "
+                  f"({data['percentage']}%) "
+                  f"{data['status']}"
+              )
+
+          print("")
+          print("========================================")
+
+      - name: Commit updated progress
+        shell: bash
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
 
-          git add README.md
+          git add README.md progress.json
 
           if git diff --cached --quiet; then
-            echo "No README changes needed."
+            echo "No progress changes detected."
             exit 0
           fi
 
