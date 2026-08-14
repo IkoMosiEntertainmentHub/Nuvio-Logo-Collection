@@ -52,13 +52,13 @@ It is an independent collection maintained for personal organization, reference,
 
 <!-- COLLECTION_PROGRESS_START -->
 
-| Category | Complete | Total | Progress | Status |
+| Category | Completed | Total | Progress | Status |
 | --- | ---: | ---: | --- | --- |
-| **Streaming Platforms** | 12 | 12 | `██████████` **100%** | 🟢 **Complete** |
-| **TV Collections** | 0 | 16 | `░░░░░░░░░░` **0%** | ⚪ **Not Started** |
-| **Studios** | 0 | 20 | `░░░░░░░░░░` **0%** | ⚪ **Not Started** |
-| **Franchises** | 5 | 38 | `█░░░░░░░░░` **13.2%** | 🟡 **In Development** |
-| **Networks** | 1 | 33 | `░░░░░░░░░░` **3%** | 🟡 **In Development** |
+| **Streaming Platforms** | 12 | 12 | `██████████` **100%** | Complete |
+| **TV Collections** | 0 | 16 | `░░░░░░░░░░` **0%** | Not started |
+| **Studios** | 0 | 20 | `░░░░░░░░░░` **0%** | Not started |
+| **Franchises** | 5 | 38 | `█░░░░░░░░░` **13.2%** | In development |
+| **Networks** | 1 | 33 | `░░░░░░░░░░` **3%** | In development |
 
 <!-- COLLECTION_PROGRESS_END -->
 
