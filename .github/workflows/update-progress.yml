@@ -126,11 +126,11 @@ jobs:
               if percentage == 100:
                   status = "Complete"
               elif percentage >= 75:
-                  status = "Nearly complete"
-              elif percentage >= 50:
-                  status = "In progress"
+                  status = "Almost Complete"
+              elif percentage >= 25:
+                  status = "Collecting"
               elif percentage > 0:
-                  status = "In development"
+                  status = "Started"
               else:
                   status = "Not started"
 
