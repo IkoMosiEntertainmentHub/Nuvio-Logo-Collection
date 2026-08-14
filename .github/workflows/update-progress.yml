@@ -303,4 +303,4 @@ jobs:
           fi
 
           git commit -m "Update collection progress"
-          git push
+          git push 
