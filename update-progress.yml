@@ -1,0 +1,219 @@
+name: Update Collection Progress
+
+on:
+  push:
+    branches:
+      - main
+
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  update-progress:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Calculate collection progress
+        shell: python
+        run: |
+          import json
+          import os
+          import re
+
+          CONFIG_FILE = "progress.json"
+          README_FILE = "README.md"
+
+          COLLECTION_ROOT = "Nuvio Collections"
+
+          with open(CONFIG_FILE, "r", encoding="utf-8") as f:
+              categories = json.load(f)
+
+          def normalize(name):
+              """
+              Normalize folder names so small formatting differences
+              do not prevent a match.
+              """
+              name = name.lower().strip()
+
+              name = name.replace("&", "and")
+              name = name.replace("+", "plus")
+
+              name = re.sub(r"[^a-z0-9]+", "", name)
+
+              return name
+
+          def get_directories(path):
+              """
+              Return normalized names of actual directories
+              that exist at the specified path.
+              """
+              if not os.path.isdir(path):
+                  return set()
+
+              return {
+                  normalize(name)
+                  for name in os.listdir(path)
+                  if os.path.isdir(os.path.join(path, name))
+              }
+
+          rows = []
+
+          for category, expected_items in categories.items():
+
+              category_path = os.path.join(
+                  COLLECTION_ROOT,
+                  category
+              )
+
+              actual_directories = get_directories(category_path)
+
+              total = len(expected_items)
+
+              completed_items = []
+
+              for item in expected_items:
+                  if normalize(item) in actual_directories:
+                      completed_items.append(item)
+
+              completed = len(completed_items)
+
+              if total == 0:
+                  percentage = 0
+                  progress_bar = "░" * 10
+                  status = "Not configured"
+
+              else:
+                  percentage = round(
+                      (completed / total) * 100,
+                      1
+                  )
+
+                  filled = round(percentage / 10)
+
+                  if filled > 10:
+                      filled = 10
+
+                  empty = 10 - filled
+
+                  progress_bar = (
+                      "█" * filled +
+                      "░" * empty
+                  )
+
+                  if percentage == 100:
+                      status = "Complete"
+
+                  elif percentage >= 75:
+                      status = "Nearly complete"
+
+                  elif percentage >= 50:
+                      status = "In progress"
+
+                  elif percentage > 0:
+                      status = "Getting started"
+
+                  else:
+                      status = "Not started"
+
+              rows.append({
+                  "category": category,
+                  "completed": completed,
+                  "total": total,
+                  "percentage": percentage,
+                  "progress_bar": progress_bar,
+                  "status": status
+              })
+
+          with open(
+              README_FILE,
+              "r",
+              encoding="utf-8"
+          ) as f:
+              readme = f.read()
+
+          start_marker = "<!-- COLLECTION_PROGRESS_START -->"
+          end_marker = "<!-- COLLECTION_PROGRESS_END -->"
+
+          table = []
+
+          table.append(start_marker)
+          table.append("")
+          table.append(
+              "| Category | Completed | Total | Progress | Status |"
+          )
+          table.append(
+              "| --- | ---: | ---: | --- | --- |"
+          )
+
+          for row in rows:
+
+              percentage = f"{row['percentage']:g}%"
+table.append(
+                  f"| {row['category']} "
+                  f"| {row['completed']} "
+                  f"| {row['total']} "
+                  f"| {row['progress_bar']} {percentage} "
+                  f"| {row['status']} |"
+              )
+
+          table.append("")
+          table.append(end_marker)
+
+          generated = "\n".join(table)
+
+          pattern = re.compile(
+              re.escape(start_marker)
+              + r".*?"
+              + re.escape(end_marker),
+              re.DOTALL
+          )
+
+          if pattern.search(readme):
+
+              readme = pattern.sub(
+                  generated,
+                  readme
+              )
+
+          else:
+
+              section = (
+                  "\n\n"
+                  "## 📊 Collection Progress\n\n"
+                  "Progress is automatically calculated "
+                  "from the folders currently present in "
+                  "Nuvio Collections.\n\n"
+                  + generated
+                  + "\n"
+              )
+
+              readme += section
+
+          with open(
+              README_FILE,
+              "w",
+              encoding="utf-8"
+          ) as f:
+              f.write(readme)
+
+          print("Collection progress updated.")
+
+      - name: Commit updated README
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+
+          git add README.md
+
+          if git diff --cached --quiet; then
+            echo "No README changes needed."
+            exit 0
+          fi
+
+          git commit -m "Update collection progress"
+          git push
