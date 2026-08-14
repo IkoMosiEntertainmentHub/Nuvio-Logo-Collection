@@ -38,11 +38,11 @@ The target list is maintained in [`progress.json`](./progress.json).
 
 | Category | Completed | Total | Progress | Status |
 | --- | ---: | ---: | --- | --- |
-| **Streaming Platforms** | 0 | 14 | `░░░░░░░░░░` **0%** | Not started |
-| **TV Collections** | 0 | 16 | `░░░░░░░░░░` **0%** | Not started |
-| **Studios** | 0 | 20 | `░░░░░░░░░░` **0%** | Not started |
-| **Franchises** | 0 | 37 | `░░░░░░░░░░` **0%** | Not started |
-| **Networks** | 0 | 32 | `░░░░░░░░░░` **0%** | Not started |
+| **Streaming Platforms** | 9 | 13 | `███████░░░` **69.2%** | In progress |
+| **TV Collections** | 16 | 16 | `██████████` **100%** | Complete |
+| **Studios** | 20 | 20 | `██████████` **100%** | Complete |
+| **Franchises** | 36 | 36 | `██████████` **100%** | Complete |
+| **Networks** | 33 | 33 | `██████████` **100%** | Complete |
 
 <!-- COLLECTION_PROGRESS_END -->
 ---
