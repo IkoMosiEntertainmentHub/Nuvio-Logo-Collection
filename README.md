@@ -28,6 +28,8 @@ The purpose of this repository is to **collect, organize, and make these assets 
 I am acting as a collector and organizer of these materials, not as their creator or owner.
 
 ---
+[![Update Collection Progress](https://github.com/IkoMosiEntertainmentHub/Nuvio-Visual-Assets/actions/workflows/update-progress.yml/badge.svg)](https://github.com/IkoMosiEntertainmentHub/Nuvio-Visual-Assets/actions/workflows/update-progress.yml)
+---
 ## 📊 Collection Status
 
 > **Live collection overview**
