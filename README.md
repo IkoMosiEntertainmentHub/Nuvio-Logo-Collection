@@ -291,6 +291,12 @@ If you are a rights holder and have a concern regarding material included in thi
 
 **[IkoMosiEntertainmentHub](https://github.com/IkoMosiEntertainmentHub)**
 
-Personal, independent visual asset collection.
+**Solo-maintained personal project.**
+
+Visual Assets Library is independently maintained by a single individual as a personal collection and organizational resource.
+
+This is **not a company, organization, team, or official project** representing any of the platforms, brands, studios, networks, franchises, or rights holders referenced in this repository.
+
+All collection management, organization, maintenance, updates, and attribution work is handled independently by the maintainer.
 
 **No ownership of third-party materials is claimed.**
