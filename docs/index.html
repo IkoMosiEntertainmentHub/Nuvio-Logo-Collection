@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Visual Assets Library Search</title>
+
+<style>
+body {
+    font-family: Arial, sans-serif;
+    max-width: 900px;
+    margin: auto;
+    padding: 20px;
+}
+
+input {
+    width: 100%;
+    padding: 12px;
+    font-size: 16px;
+}
+
+.card {
+    border: 1px solid #ddd;
+    padding: 15px;
+    margin-top: 15px;
+    border-radius: 8px;
+}
+
+a {
+    text-decoration: none;
+}
+</style>
+
+</head>
+
+<body>
+
+<h1>Visual Assets Library</h1>
+
+<p>
+Search collections, platforms, studios, franchises, and networks.
+</p>
+
+<input id="search" placeholder="Search collections...">
+
+<div id="results"></div>
+
+
+<script>
+
+let data = [];
+
+fetch("search.json")
+.then(response => response.json())
+.then(json => {
+
+data = json;
+display(data);
+
+});
+
+
+function display(items){
+
+let output = "";
+
+items.forEach(item => {
+
+output += 
+
+<div class="card">
+
+<h2>${item.name}</h2>
+
+<p>
+<b>Category:</b> ${item.category}
+</p>
+
+<p>
+<b>Status:</b> ${item.status}
+</p>
+
+<p>
+<b>Assets:</b> ${item.assets}
+</p>
+
+${item.url ?
+<a href="${item.url}" target="_blank">
+Open Folder
+</a>
+:
+"No assets available yet"
+}
+
+</div>
+
+;
+
+});
+
+document.getElementById("results").innerHTML = output;
+
+}
+
+
+document.getElementById("search").onkeyup = function(){
+
+let value = this.value.toLowerCase();
+
+let filtered = data.filter(item =>
+item.name.toLowerCase().includes(value)
+);
+
+display(filtered);
+
+}
+
+</script>
+
+
+</body>
+</html>

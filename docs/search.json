@@ -1,0 +1,23 @@
+[
+ {
+  "name":"Netflix",
+  "category":"Streaming Platform",
+  "status":"Complete",
+  "assets":12,
+  "url":"https://github.com/IkoMosiEntertainmentHub/Visual-Assets-Library/tree/main/Streaming%20Platforms/NETFLIX"
+ },
+ {
+  "name":"Marvel",
+  "category":"Franchise",
+  "status":"Collecting",
+  "assets":5,
+  "url":"https://github.com/IkoMosiEntertainmentHub/Visual-Assets-Library/tree/main/Franchises/Marvel"
+ },
+ {
+  "name":"HBO",
+  "category":"Network",
+  "status":"Not Started",
+  "assets":0,
+  "url":""
+ }
+]
