@@ -1,120 +1,62 @@
-<!DOCTYPE html>
-<html>
-<head>
-<title>Visual Assets Library Search</title>
-
-<style>
-body {
-    font-family: Arial, sans-serif;
-    max-width: 900px;
-    margin: auto;
-    padding: 20px;
-}
-
-input {
-    width: 100%;
-    padding: 12px;
-    font-size: 16px;
-}
-
-.card {
-    border: 1px solid #ddd;
-    padding: 15px;
-    margin-top: 15px;
-    border-radius: 8px;
-}
-
-a {
-    text-decoration: none;
-}
-</style>
-
-</head>
-
-<body>
-
-<h1>Visual Assets Library</h1>
-
-<p>
-Search collections, platforms, studios, franchises, and networks.
-</p>
-
-<input id="search" placeholder="Search collections...">
-
-<div id="results"></div>
-
-
-<script>
-
-let data = [];
+let assets = [];
 
 fetch("search.json")
 .then(response => response.json())
-.then(json => {
-
-data = json;
-display(data);
-
+.then(data => {
+    assets = data;
 });
 
 
-function display(items){
+function searchAssets() {
 
-let output = "";
+    const query = document
+        .getElementById("search")
+        .value
+        .toLowerCase();
 
-items.forEach(item => {
+    const results = assets.filter(item =>
+        item.name.toLowerCase().includes(query)
+    );
 
-output += 
-
-<div class="card">
-
-<h2>${item.name}</h2>
-
-<p>
-<b>Category:</b> ${item.category}
-</p>
-
-<p>
-<b>Status:</b> ${item.status}
-</p>
-
-<p>
-<b>Assets:</b> ${item.assets}
-</p>
-
-${item.url ?
-<a href="${item.url}" target="_blank">
-Open Folder
-</a>
-:
-"No assets available yet"
-}
-
-</div>
-
-;
-
-});
-
-document.getElementById("results").innerHTML = output;
-
+    displayResults(results);
 }
 
 
-document.getElementById("search").onkeyup = function(){
+function displayResults(results){
 
-let value = this.value.toLowerCase();
+    const container =
+        document.getElementById("results");
 
-let filtered = data.filter(item =>
-item.name.toLowerCase().includes(value)
-);
+    container.innerHTML = "";
 
-display(filtered);
+    results.forEach(item => {
+
+        container.innerHTML += 
+        <div class="result">
+
+            <h3>${item.name}</h3>
+
+            <p>
+            Category: ${item.category}
+            </p>
+
+            <p>
+            Status: ${item.status}
+            </p>
+
+            ${
+              item.status === "Complete"
+              ?
+              <a href="https://github.com/IkoMosiEntertainmentHub/Visual-Assets-Library/tree/main/${item.path}">
+              Open Folder
+              </a>
+              :
+              <span>No assets available yet</span>
+            }
+
+        </div>
+        ;
+
+    });
 
 }
-
-</script>
-
-
-</body>
-</html>
