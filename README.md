@@ -67,15 +67,11 @@ It is an independent collection maintained for personal organization, reference,
 > **Supported formats:** `.png` · `.gif` · `.jpg` · `.jpeg` · `.webp` · `.svg` · `.avif`
 
 ---
-## 🔎 Collection Search
+## 🔎 Search Collection
 
-Searchable collection index generated automatically.
+Use GitHub's repository search to find assets:
 
-| Collection | Category | Status | Assets |
-|---|---|---|---|
-| Netflix | Streaming Platform | ✅ Complete | Link |
-| HBO | Network | ⚪ Not Started | No assets available |
-| Marvel | Franchise | 🟠 Collecting | Link |
+[Search this repository](https://github.com/IkoMosiEntertainmentHub/Visual-Assets-Library/search)
 ---
 
 ## 🎨 Intended Use
