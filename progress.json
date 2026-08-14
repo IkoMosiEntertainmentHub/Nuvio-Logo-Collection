@@ -1,71 +1,67 @@
 {
   "Streaming Platforms": {
-    "completed": 3,
-    "total": 13,
-    "percentage": 23.1,
-    "status": "In development",
+    "completed": 12,
+    "total": 12,
+    "percentage": 100.0,
+    "status": "Complete",
+    "progress_bar": "██████████",
     "items": {
-      "Netflix": {
-        "folder_exists": false,
-        "has_asset": false,
-        "complete": false
+      "AMC+": {
+        "folder_exists": true,
+        "has_asset": true,
+        "complete": true
       },
-      "Disney+": {
-        "folder_exists": false,
-        "has_asset": false,
-        "complete": false
+      "APPLE TV": {
+        "folder_exists": true,
+        "has_asset": true,
+        "complete": true
       },
-      "Prime Video": {
-        "folder_exists": false,
-        "has_asset": false,
-        "complete": false
+      "CRUNCHYROLL": {
+        "folder_exists": true,
+        "has_asset": true,
+        "complete": true
       },
-      "Apple TV+": {
-        "folder_exists": false,
-        "has_asset": false,
-        "complete": false
+      "DISNEY PLUS": {
+        "folder_exists": true,
+        "has_asset": true,
+        "complete": true
       },
-      "Max": {
-        "folder_exists": false,
-        "has_asset": false,
-        "complete": false
+      "HBO MAX": {
+        "folder_exists": true,
+        "has_asset": true,
+        "complete": true
       },
-      "Hulu": {
-        "folder_exists": false,
-        "has_asset": false,
-        "complete": false
-      },
-      "Paramount+": {
-        "folder_exists": false,
-        "has_asset": false,
-        "complete": false
-      },
-      "Peacock": {
-        "folder_exists": false,
-        "has_asset": false,
-        "complete": false
-      },
-      "Crunchyroll": {
-        "folder_exists": false,
-        "has_asset": false,
-        "complete": false
-      },
-      "Discovery+": {
-        "folder_exists": false,
-        "has_asset": false,
-        "complete": false
+      "HULU": {
+        "folder_exists": true,
+        "has_asset": true,
+        "complete": true
       },
       "MGM+": {
         "folder_exists": true,
         "has_asset": true,
         "complete": true
       },
-      "STARZ": {
+      "NETFLIX": {
         "folder_exists": true,
         "has_asset": true,
         "complete": true
       },
-      "AMC+": {
+      "PARAMOUNT": {
+        "folder_exists": true,
+        "has_asset": true,
+        "complete": true
+      },
+      "PEACOCK": {
+        "folder_exists": true,
+        "has_asset": true,
+        "complete": true
+      },
+      "PRIME VIDEO": {
+        "folder_exists": true,
+        "has_asset": true,
+        "complete": true
+      },
+      "STARZ": {
         "folder_exists": true,
         "has_asset": true,
         "complete": true
@@ -77,63 +73,9 @@
     "total": 16,
     "percentage": 0.0,
     "status": "Not started",
+    "progress_bar": "░░░░░░░░░░",
     "items": {
-      "Disney": {
-        "folder_exists": true,
-        "has_asset": false,
-        "complete": false
-      },
-      "Marvel": {
-        "folder_exists": true,
-        "has_asset": false,
-        "complete": false
-      },
-      "Star Wars": {
-        "folder_exists": true,
-        "has_asset": false,
-        "complete": false
-      },
-      "DC": {
-        "folder_exists": true,
-        "has_asset": false,
-        "complete": false
-      },
-      "HBO": {
-        "folder_exists": true,
-        "has_asset": false,
-        "complete": false
-      },
-      "Nickelodeon": {
-        "folder_exists": true,
-        "has_asset": false,
-        "complete": false
-      },
-      "Cartoon Network": {
-        "folder_exists": true,
-        "has_asset": false,
-        "complete": false
-      },
       "Adult Swim": {
-        "folder_exists": true,
-        "has_asset": false,
-        "complete": false
-      },
-      "National Geographic": {
-        "folder_exists": true,
-        "has_asset": false,
-        "complete": false
-      },
-      "Discovery": {
-        "folder_exists": true,
-        "has_asset": false,
-        "complete": false
-      },
-      "MTV": {
-        "folder_exists": true,
-        "has_asset": false,
-        "complete": false
-      },
-      "Comedy Central": {
         "folder_exists": true,
         "has_asset": false,
         "complete": false
@@ -143,7 +85,62 @@
         "has_asset": false,
         "complete": false
       },
+      "Cartoon Network": {
+        "folder_exists": true,
+        "has_asset": false,
+        "complete": false
+      },
+      "Comedy Central": {
+        "folder_exists": true,
+        "has_asset": false,
+        "complete": false
+      },
+      "DC": {
+        "folder_exists": true,
+        "has_asset": false,
+        "complete": false
+      },
+      "Discovery": {
+        "folder_exists": true,
+        "has_asset": false,
+        "complete": false
+      },
+      "Disney": {
+        "folder_exists": true,
+        "has_asset": false,
+        "complete": false
+      },
+      "Hallmark": {
+        "folder_exists": true,
+        "has_asset": false,
+        "complete": false
+      },
+      "HBO": {
+        "folder_exists": true,
+        "has_asset": false,
+        "complete": false
+      },
       "ITV": {
+        "folder_exists": true,
+        "has_asset": false,
+        "complete": false
+      },
+      "Marvel": {
+        "folder_exists": true,
+        "has_asset": false,
+        "complete": false
+      },
+      "MTV": {
+        "folder_exists": true,
+        "has_asset": false,
+        "complete": false
+      },
+      "National Geographic": {
+        "folder_exists": true,
+        "has_asset": false,
+        "complete": false
+      },
+      "Nickelodeon": {
         "folder_exists": true,
         "has_asset": false,
         "complete": false
@@ -153,7 +150,7 @@
         "has_asset": false,
         "complete": false
       },
-      "Hallmark": {
+      "Star Wars": {
         "folder_exists": true,
         "has_asset": false,
         "complete": false
@@ -165,63 +162,9 @@
     "total": 20,
     "percentage": 0.0,
     "status": "Not started",
+    "progress_bar": "░░░░░░░░░░",
     "items": {
-      "Disney": {
-        "folder_exists": true,
-        "has_asset": false,
-        "complete": false
-      },
-      "Warner Bros.": {
-        "folder_exists": false,
-        "has_asset": false,
-        "complete": false
-      },
-      "Universal Pictures": {
-        "folder_exists": true,
-        "has_asset": false,
-        "complete": false
-      },
-      "Paramount Pictures": {
-        "folder_exists": true,
-        "has_asset": false,
-        "complete": false
-      },
-      "Sony Pictures": {
-        "folder_exists": true,
-        "has_asset": false,
-        "complete": false
-      },
       "20th Century Studios": {
-        "folder_exists": true,
-        "has_asset": false,
-        "complete": false
-      },
-      "Columbia Pictures": {
-        "folder_exists": true,
-        "has_asset": false,
-        "complete": false
-      },
-      "MGM": {
-        "folder_exists": true,
-        "has_asset": false,
-        "complete": false
-      },
-      "Lionsgate": {
-        "folder_exists": true,
-        "has_asset": false,
-        "complete": false
-      },
-      "DreamWorks": {
-        "folder_exists": true,
-        "has_asset": false,
-        "complete": false
-      },
-      "Pixar": {
-        "folder_exists": true,
-        "has_asset": false,
-        "complete": false
-      },
-      "Illumination": {
         "folder_exists": true,
         "has_asset": false,
         "complete": false
@@ -231,12 +174,17 @@
         "has_asset": false,
         "complete": false
       },
-      "Legendary": {
+      "Columbia Pictures": {
         "folder_exists": true,
         "has_asset": false,
         "complete": false
       },
-      "Searchlight Pictures": {
+      "Disney": {
+        "folder_exists": true,
+        "has_asset": false,
+        "complete": false
+      },
+      "DreamWorks": {
         "folder_exists": true,
         "has_asset": false,
         "complete": false
@@ -246,7 +194,37 @@
         "has_asset": false,
         "complete": false
       },
+      "Illumination": {
+        "folder_exists": true,
+        "has_asset": false,
+        "complete": false
+      },
+      "Legendary": {
+        "folder_exists": true,
+        "has_asset": false,
+        "complete": false
+      },
+      "Lionsgate": {
+        "folder_exists": true,
+        "has_asset": false,
+        "complete": false
+      },
+      "MGM": {
+        "folder_exists": true,
+        "has_asset": false,
+        "complete": false
+      },
       "New Line Cinema": {
+        "folder_exists": true,
+        "has_asset": false,
+        "complete": false
+      },
+      "Paramount Pictures": {
+        "folder_exists": true,
+        "has_asset": false,
+        "complete": false
+      },
+      "Pixar": {
         "folder_exists": true,
         "has_asset": false,
         "complete": false
@@ -256,7 +234,12 @@
         "has_asset": false,
         "complete": false
       },
-      "TriStar Pictures": {
+      "Searchlight Pictures": {
+        "folder_exists": true,
+        "has_asset": false,
+        "complete": false
+      },
+      "Sony Pictures": {
         "folder_exists": true,
         "has_asset": false,
         "complete": false
@@ -265,101 +248,37 @@
         "folder_exists": true,
         "has_asset": false,
         "complete": false
+      },
+      "TriStar Pictures": {
+        "folder_exists": true,
+        "has_asset": false,
+        "complete": false
+      },
+      "Universal Pictures": {
+        "folder_exists": true,
+        "has_asset": false,
+        "complete": false
+      },
+      "Warner Bros": {
+        "folder_exists": true,
+        "has_asset": false,
+        "complete": false
       }
     }
   },
   "Franchises": {
-    "completed": 3,
-    "total": 36,
-    "percentage": 8.3,
+    "completed": 5,
+    "total": 38,
+    "percentage": 13.2,
     "status": "In development",
+    "progress_bar": "█░░░░░░░░░",
     "items": {
-      "Marvel": {
-        "folder_exists": true,
-        "has_asset": false,
-        "complete": false
-      },
-      "Star Wars": {
+      "Ailens": {
         "folder_exists": true,
         "has_asset": true,
         "complete": true
-      },
-      "Harry Potter": {
-        "folder_exists": true,
-        "has_asset": true,
-        "complete": true
-      },
-      "Jurassic Park - Jurassic World": {
-        "folder_exists": true,
-        "has_asset": false,
-        "complete": false
-      },
-      "James Bond": {
-        "folder_exists": true,
-        "has_asset": false,
-        "complete": false
-      },
-      "John Wick": {
-        "folder_exists": true,
-        "has_asset": true,
-        "complete": true
-      },
-      "DC": {
-        "folder_exists": true,
-        "has_asset": false,
-        "complete": false
-      },
-      "Fast & Furious": {
-        "folder_exists": true,
-        "has_asset": false,
-        "complete": false
-      },
-      "Mission Impossible": {
-        "folder_exists": true,
-        "has_asset": false,
-        "complete": false
-      },
-      "Transformers": {
-        "folder_exists": true,
-        "has_asset": false,
-        "complete": false
-      },
-      "Star Trek": {
-        "folder_exists": true,
-        "has_asset": false,
-        "complete": false
-      },
-      "Lord of the Rings": {
-        "folder_exists": true,
-        "has_asset": false,
-        "complete": false
-      },
-      "The Hobbit": {
-        "folder_exists": true,
-        "has_asset": false,
-        "complete": false
-      },
-      "The Hunger Games": {
-        "folder_exists": true,
-        "has_asset": false,
-        "complete": false
-      },
-      "The Matrix": {
-        "folder_exists": true,
-        "has_asset": false,
-        "complete": false
-      },
-      "Planet of the Apes": {
-        "folder_exists": true,
-        "has_asset": false,
-        "complete": false
       },
       "Alien": {
-        "folder_exists": true,
-        "has_asset": false,
-        "complete": false
-      },
-      "Predator": {
         "folder_exists": true,
         "has_asset": false,
         "complete": false
@@ -369,7 +288,12 @@
         "has_asset": false,
         "complete": false
       },
-      "Shrek": {
+      "Cars": {
+        "folder_exists": true,
+        "has_asset": false,
+        "complete": false
+      },
+      "DC": {
         "folder_exists": true,
         "has_asset": false,
         "complete": false
@@ -379,57 +303,12 @@
         "has_asset": false,
         "complete": false
       },
-      "Toy Story": {
-        "folder_exists": true,
-        "has_asset": false,
-        "complete": false
-      },
-      "Cars": {
+      "Fast & Furious": {
         "folder_exists": true,
         "has_asset": false,
         "complete": false
       },
       "Frozen": {
-        "folder_exists": true,
-        "has_asset": false,
-        "complete": false
-      },
-      "The Lion King": {
-        "folder_exists": true,
-        "has_asset": false,
-        "complete": false
-      },
-      "Pirates of the Caribbean": {
-        "folder_exists": true,
-        "has_asset": false,
-        "complete": false
-      },
-      "Indiana Jones": {
-        "folder_exists": true,
-        "has_asset": false,
-        "complete": false
-      },
-      "Terminator": {
-        "folder_exists": true,
-        "has_asset": false,
-        "complete": false
-      },
-      "Rocky - Creed": {
-        "folder_exists": true,
-        "has_asset": false,
-        "complete": false
-      },
-      "The Conjuring": {
-        "folder_exists": true,
-        "has_asset": false,
-        "complete": false
-      },
-      "Scream": {
-        "folder_exists": true,
-        "has_asset": false,
-        "complete": false
-      },
-      "Saw": {
         "folder_exists": true,
         "has_asset": false,
         "complete": false
@@ -444,12 +323,142 @@
         "has_asset": false,
         "complete": false
       },
+      "Harry Potter": {
+        "folder_exists": true,
+        "has_asset": true,
+        "complete": true
+      },
+      "Indiana Jones": {
+        "folder_exists": true,
+        "has_asset": false,
+        "complete": false
+      },
+      "James Bond": {
+        "folder_exists": true,
+        "has_asset": false,
+        "complete": false
+      },
+      "James Bond 007": {
+        "folder_exists": true,
+        "has_asset": true,
+        "complete": true
+      },
+      "John Wick": {
+        "folder_exists": true,
+        "has_asset": true,
+        "complete": true
+      },
+      "Jurassic Park - Jurassic World": {
+        "folder_exists": true,
+        "has_asset": false,
+        "complete": false
+      },
+      "Lord of the Rings": {
+        "folder_exists": true,
+        "has_asset": false,
+        "complete": false
+      },
+      "Marvel": {
+        "folder_exists": true,
+        "has_asset": false,
+        "complete": false
+      },
+      "Mission Impossible": {
+        "folder_exists": true,
+        "has_asset": false,
+        "complete": false
+      },
+      "Pirates of the Caribbean": {
+        "folder_exists": true,
+        "has_asset": false,
+        "complete": false
+      },
+      "Planet of the Apes": {
+        "folder_exists": true,
+        "has_asset": false,
+        "complete": false
+      },
+      "Predator": {
+        "folder_exists": true,
+        "has_asset": false,
+        "complete": false
+      },
+      "Rocky - Creed": {
+        "folder_exists": true,
+        "has_asset": false,
+        "complete": false
+      },
+      "Saw": {
+        "folder_exists": true,
+        "has_asset": false,
+        "complete": false
+      },
+      "Scream": {
+        "folder_exists": true,
+        "has_asset": false,
+        "complete": false
+      },
+      "Shrek": {
+        "folder_exists": true,
+        "has_asset": false,
+        "complete": false
+      },
       "Sonic the Hedgehog": {
         "folder_exists": true,
         "has_asset": false,
         "complete": false
       },
+      "Star Trek": {
+        "folder_exists": true,
+        "has_asset": false,
+        "complete": false
+      },
+      "Star Wars": {
+        "folder_exists": true,
+        "has_asset": true,
+        "complete": true
+      },
       "Teenage Mutant Ninja Turtles": {
+        "folder_exists": true,
+        "has_asset": false,
+        "complete": false
+      },
+      "Terminator": {
+        "folder_exists": true,
+        "has_asset": false,
+        "complete": false
+      },
+      "The Conjuring": {
+        "folder_exists": true,
+        "has_asset": false,
+        "complete": false
+      },
+      "The Hobbit": {
+        "folder_exists": true,
+        "has_asset": false,
+        "complete": false
+      },
+      "The Hunger Games": {
+        "folder_exists": true,
+        "has_asset": false,
+        "complete": false
+      },
+      "The Lion King": {
+        "folder_exists": true,
+        "has_asset": false,
+        "complete": false
+      },
+      "The Matrix": {
+        "folder_exists": true,
+        "has_asset": false,
+        "complete": false
+      },
+      "Toy Story": {
+        "folder_exists": true,
+        "has_asset": false,
+        "complete": false
+      },
+      "Transformers": {
         "folder_exists": true,
         "has_asset": false,
         "complete": false
@@ -457,52 +466,13 @@
     }
   },
   "Networks": {
-    "completed": 0,
+    "completed": 1,
     "total": 33,
-    "percentage": 0.0,
-    "status": "Not started",
+    "percentage": 3.0,
+    "status": "In development",
+    "progress_bar": "░░░░░░░░░░",
     "items": {
       "ABC": {
-        "folder_exists": true,
-        "has_asset": false,
-        "complete": false
-      },
-      "CBS": {
-        "folder_exists": true,
-        "has_asset": false,
-        "complete": false
-      },
-      "NBC": {
-        "folder_exists": true,
-        "has_asset": false,
-        "complete": false
-      },
-      "FOX": {
-        "folder_exists": true,
-        "has_asset": false,
-        "complete": false
-      },
-      "The CW": {
-        "folder_exists": true,
-        "has_asset": false,
-        "complete": false
-      },
-      "HBO": {
-        "folder_exists": true,
-        "has_asset": false,
-        "complete": false
-      },
-      "Disney Channel": {
-        "folder_exists": true,
-        "has_asset": false,
-        "complete": false
-      },
-      "Nickelodeon": {
-        "folder_exists": true,
-        "has_asset": false,
-        "complete": false
-      },
-      "Cartoon Network": {
         "folder_exists": true,
         "has_asset": false,
         "complete": false
@@ -512,37 +482,12 @@
         "has_asset": false,
         "complete": false
       },
-      "MTV": {
-        "folder_exists": true,
-        "has_asset": false,
-        "complete": false
-      },
-      "Comedy Central": {
-        "folder_exists": true,
-        "has_asset": false,
-        "complete": false
-      },
-      "Paramount Network": {
-        "folder_exists": true,
-        "has_asset": false,
-        "complete": false
-      },
-      "USA Network": {
-        "folder_exists": true,
-        "has_asset": false,
-        "complete": false
-      },
-      "Syfy": {
-        "folder_exists": true,
-        "has_asset": false,
-        "complete": false
-      },
-      "FX": {
-        "folder_exists": true,
-        "has_asset": false,
-        "complete": false
-      },
       "AMC": {
+        "folder_exists": true,
+        "has_asset": false,
+        "complete": false
+      },
+      "Animal Planet": {
         "folder_exists": true,
         "has_asset": false,
         "complete": false
@@ -552,47 +497,12 @@
         "has_asset": false,
         "complete": false
       },
-      "ITV": {
+      "Cartoon Network": {
         "folder_exists": true,
         "has_asset": false,
         "complete": false
       },
-      "Sky": {
-        "folder_exists": true,
-        "has_asset": false,
-        "complete": false
-      },
-      "Showtime": {
-        "folder_exists": false,
-        "has_asset": false,
-        "complete": false
-      },
-      "Discovery Channel": {
-        "folder_exists": true,
-        "has_asset": false,
-        "complete": false
-      },
-      "TLC": {
-        "folder_exists": true,
-        "has_asset": false,
-        "complete": false
-      },
-      "National Geographic": {
-        "folder_exists": true,
-        "has_asset": false,
-        "complete": false
-      },
-      "ESPN": {
-        "folder_exists": true,
-        "has_asset": false,
-        "complete": false
-      },
-      "TNT": {
-        "folder_exists": true,
-        "has_asset": false,
-        "complete": false
-      },
-      "TBS": {
+      "CBS": {
         "folder_exists": true,
         "has_asset": false,
         "complete": false
@@ -602,12 +512,22 @@
         "has_asset": false,
         "complete": false
       },
-      "Hallmark Channel": {
+      "Comedy Central": {
         "folder_exists": true,
         "has_asset": false,
         "complete": false
       },
-      "History Channel": {
+      "Discovery Channel": {
+        "folder_exists": true,
+        "has_asset": false,
+        "complete": false
+      },
+      "Disney Channel": {
+        "folder_exists": true,
+        "has_asset": false,
+        "complete": false
+      },
+      "ESPN": {
         "folder_exists": true,
         "has_asset": false,
         "complete": false
@@ -617,12 +537,102 @@
         "has_asset": false,
         "complete": false
       },
+      "FOX": {
+        "folder_exists": true,
+        "has_asset": false,
+        "complete": false
+      },
+      "FX": {
+        "folder_exists": true,
+        "has_asset": false,
+        "complete": false
+      },
+      "Hallmark Channel": {
+        "folder_exists": true,
+        "has_asset": false,
+        "complete": false
+      },
+      "HBO": {
+        "folder_exists": true,
+        "has_asset": false,
+        "complete": false
+      },
       "HGTV": {
         "folder_exists": true,
         "has_asset": false,
         "complete": false
       },
-      "Animal Planet": {
+      "History Channel": {
+        "folder_exists": true,
+        "has_asset": false,
+        "complete": false
+      },
+      "ITV": {
+        "folder_exists": true,
+        "has_asset": false,
+        "complete": false
+      },
+      "MTV": {
+        "folder_exists": true,
+        "has_asset": false,
+        "complete": false
+      },
+      "National Geographic": {
+        "folder_exists": true,
+        "has_asset": false,
+        "complete": false
+      },
+      "NBC": {
+        "folder_exists": true,
+        "has_asset": false,
+        "complete": false
+      },
+      "Nickelodeon": {
+        "folder_exists": true,
+        "has_asset": false,
+        "complete": false
+      },
+      "Paramount Network": {
+        "folder_exists": true,
+        "has_asset": false,
+        "complete": false
+      },
+      "ShowTime": {
+        "folder_exists": true,
+        "has_asset": true,
+        "complete": true
+      },
+      "Sky": {
+        "folder_exists": true,
+        "has_asset": false,
+        "complete": false
+      },
+      "Syfy": {
+        "folder_exists": true,
+        "has_asset": false,
+        "complete": false
+      },
+      "TBS": {
+        "folder_exists": true,
+        "has_asset": false,
+        "complete": false
+      },
+      "The CW": {
+        "folder_exists": true,
+        "has_asset": false,
+        "complete": false
+      },
+      "TLC": {
+        "folder_exists": true,
+        "has_asset": false,
+        "complete": false
+      },
+      "TNT": {
+        "folder_exists": true,
+        "has_asset": false,
+        "complete": false
+      },
+      "USA Network": {
         "folder_exists": true,
         "has_asset": false,
         "complete": false
