@@ -1,19 +1,21 @@
-# Nuvio Visual Assets
+# Visual Assets Library
 
-A personal, unofficial collection of logos, artwork, GIFs, animations, icons, and other visual assets organized for use with Nuvio catalog collections.
+A personal, unofficial collection of logos, artwork, GIFs, animations, icons, and other visual assets gathered and organized for use across media catalogues, collection interfaces, and other projects that support visual assets.
 
 > [!IMPORTANT]
-> **I do not claim ownership of the third-party materials in this repository.**
+> **This is an independent project and is not affiliated with, endorsed by, sponsored by, or officially connected to Nuvio, Xperience, or any other platform, application, company, studio, network, franchise, creator, or rights holder referenced in this repository.**
 >
-> The assets have been collected from different sources and places for personal organization and reference. Credit and ownership remain with the respective creators, copyright holders, trademark owners, companies, studios, organizations, licensors, and other rightful owners.
+> **I do not claim ownership of the third-party materials contained in this repository.**
+>
+> The materials have been gathered from different sources and places. Credit and ownership remain with their respective creators, copyright holders, trademark owners, companies, studios, organizations, licensors, and other rightful owners.
 
 ---
 
 ## 📁 About
 
-This repository is my personal collection of visual assets organized for use with Nuvio catalog collections.
+**Visual Assets Library** is a personal collection and organized resource for visual assets used with media catalogues, collection interfaces, and related projects.
 
-The collection includes categories such as:
+The library includes:
 
 - **Streaming Platforms**
 - **TV Collections**
@@ -23,34 +25,69 @@ The collection includes categories such as:
 - **Genres**
 - **Other Collections**
 
-The purpose of this repository is to **collect, organize, and make these assets easier to find and use as a reference**.
+The assets may be useful for projects and platforms that support custom visual artwork, including:
 
-I am acting as a collector and organizer of these materials, not as their creator or owner.
+- **Nuvio**
+- **Xperience**
+- Other media catalogue applications
+- Streaming interfaces
+- Collection-based projects
+- Personal media libraries
+- Custom catalogue systems
+- Other projects that support `.gif`, `.png`, `.jpg`, `.jpeg`, `.webp`, `.svg`, `.avif`, and similar visual formats
+
+This repository is **not made by, provided by, or maintained by any of these platforms**.
+
+It is an independent collection maintained for personal organization, reference, and use across compatible projects.
 
 ---
+
 ## 📊 Collection Status
 
 > **Live collection overview**
 >
-> This section is automatically updated by GitHub Actions whenever changes are pushed to `main`.
+> Collection progress is automatically maintained by GitHub Actions whenever changes are pushed to `main`.
 
 **Tracking:** `118 collections across 5 categories`
 
 <!-- COLLECTION_PROGRESS_START -->
 
-| Category | Completed | Total | Progress | Status |
+| Category | Complete | Total | Progress | Status |
 | --- | ---: | ---: | --- | --- |
-| **Streaming Platforms** | 12 | 12 | `██████████` **100%** | Complete |
-| **TV Collections** | 0 | 16 | `░░░░░░░░░░` **0%** | Not started |
-| **Studios** | 0 | 20 | `░░░░░░░░░░` **0%** | Not started |
-| **Franchises** | 5 | 38 | `█░░░░░░░░░` **13.2%** | In development |
-| **Networks** | 1 | 33 | `░░░░░░░░░░` **3%** | In development |
+| **Streaming Platforms** | 12 | 12 | `██████████` **100%** | 🟢 **Complete** |
+| **TV Collections** | 0 | 16 | `░░░░░░░░░░` **0%** | ⚪ **Not Started** |
+| **Studios** | 0 | 20 | `░░░░░░░░░░` **0%** | ⚪ **Not Started** |
+| **Franchises** | 5 | 38 | `█░░░░░░░░░` **13.2%** | 🟡 **In Development** |
+| **Networks** | 1 | 33 | `░░░░░░░░░░` **3%** | 🟡 **In Development** |
 
 <!-- COLLECTION_PROGRESS_END -->
 
-> **Automated tracking:** Progress is calculated from the contents of each collection folder. A collection is considered complete when at least one supported visual asset is present.
+> **Automated tracking:** Progress is calculated by checking the collection folders for supported visual assets. A collection is counted as complete when its folder contains at least one supported visual asset.
 >
-> **Supported assets:** `.png` · `.gif` · `.jpg` · `.jpeg` · `.webp` · `.svg` · `.avif`
+> **Supported formats:** `.png` · `.gif` · `.jpg` · `.jpeg` · `.webp` · `.svg` · `.avif`
+
+---
+
+## 🎨 Intended Use
+
+The library is intended to make visual assets easier to find, organize, and reference when building or customizing media catalogue collections.
+
+Examples include:
+
+- Collection logos
+- Streaming service artwork
+- Studio branding
+- Franchise artwork
+- Network logos
+- TV collection artwork
+- Animated collection artwork
+- GIF-based artwork
+- Icons and other visual elements
+
+The assets may be used in **Nuvio collections, Xperience collections, or other compatible projects**, depending on the requirements and permissions applicable to each individual asset.
+
+This repository itself is **not an official asset library for any of those projects**.
+
 ---
 
 ## © Copyright & Ownership
@@ -70,13 +107,11 @@ I do not claim to have created or own the third-party:
 - Trademarks
 - Other visual materials
 
-All rights remain with the respective creators, copyright holders, trademark owners, companies, studios, organizations, licensors, and other rightful owners.
+All applicable rights remain with their respective creators, copyright holders, trademark owners, companies, studios, organizations, licensors, and other rightful owners.
 
-**Nothing in this repository transfers ownership of any third-party material to me.**
+**Nothing in this repository transfers ownership of third-party material to me.**
 
-Where I know the source or creator of an asset, I make an effort to preserve or provide the available credit.
-
-If an asset does not have clear source information available to me, I do not claim authorship or ownership of it.
+I am collecting and organizing these materials as a personal resource. Inclusion in this repository should not be interpreted as a claim of authorship, ownership, licensing authority, or official representation.
 
 ---
 
@@ -84,31 +119,38 @@ If an asset does not have clear source information available to me, I do not cla
 
 The assets in this collection have been gathered from **different sources and places**.
 
-Credit goes to the **respective creators, artists, designers, companies, studios, organizations, copyright holders, trademark owners, and other rightful owners** of the materials included here.
+Credit and ownership belong to the **respective creators, artists, designers, companies, studios, organizations, copyright holders, trademark owners, licensors, and other rightful owners**.
 
-I make an effort to preserve available attribution and source information where possible.
+Where reliable source or creator information is available, I make an effort to preserve the available credit and attribution.
 
-If you know that an asset has incorrect, incomplete, or missing attribution, please let me know so I can review and update the information.
-
-I would rather correct the information than knowingly leave an incorrect attribution.
+If you know that an asset has incorrect or incomplete attribution, please contact me with the relevant information so I can review and update it.
 
 ---
 
 ## 🏷️ Trademarks
 
-All trademarks, brand names, logos, service marks, franchise names, company names, and other protected branding remain the property of their respective owners.
+All company names, brand names, logos, service marks, franchise names, studio names, network names, and other trademarks remain the property of their respective owners.
 
-Their appearance in this repository does **not** mean that I own them or have permission to represent the respective companies, brands, studios, networks, franchises, or organizations.
+Their inclusion in this repository does **not** mean that I own them, control them, or represent the organizations associated with them.
 
 ---
 
-## 🚫 No Official Affiliation
+## 🚫 Independent Project
 
-This repository is **unofficial**.
+**Visual Assets Library is an independent project.**
 
-I am not affiliated with, endorsed by, sponsored by, employed by, or officially connected to **Nuvio** or any company, streaming service, studio, network, franchise, creator, artist, or rights holder represented in this collection.
+It is not:
 
-Nothing in this repository should be interpreted as an official partnership, sponsorship, endorsement, or relationship.
+- An official Nuvio project
+- An official Xperience project
+- A Nuvio-owned repository
+- An Xperience-owned repository
+- An official collection supplied by any referenced platform
+- A project endorsed by the companies or rights holders represented here
+
+I am not affiliated with, employed by, sponsored by, endorsed by, or officially connected to Nuvio, Xperience, or the other platforms, companies, studios, networks, franchises, creators, and rights holders referenced in this repository.
+
+Any reference to a platform or project is solely to describe a potential use case or compatibility context.
 
 ---
 
@@ -126,12 +168,11 @@ The presence of an asset in this repository does not mean that it is:
 - Free for modification
 - Licensed under an open-source license
 
-If you want to use an asset outside of this repository, **you are responsible for determining whether you have the necessary rights or permission to do so**.
+If you want to use an individual asset, you are responsible for determining the applicable copyright, trademark, license, attribution, and permission requirements.
 
-Where an asset has its own license, attribution requirement, or usage restriction, those terms apply to that asset.
+**Do not assume that an asset is free to use simply because it is available in this repository.**
 
-> [!CAUTION]
-> **Please do not assume that an asset is free to use simply because it is available here.**
+Where an asset has its own license or usage requirements, those terms apply to that asset.
 
 ---
 
@@ -139,43 +180,43 @@ Where an asset has its own license, attribution requirement, or usage restrictio
 
 This repository is provided as a **personal, unofficial collection and organizational resource**.
 
-I make reasonable efforts to preserve available credits and avoid presenting third-party work as my own. However, I cannot guarantee that all ownership, attribution, licensing, or source information is complete or accurate.
-
-To the extent permitted by applicable law, I am not responsible for how other people use, modify, redistribute, publish, or otherwise handle third-party materials obtained from this repository.
+I make reasonable efforts to preserve available attribution and avoid presenting third-party work as my own. However, I cannot guarantee that all source, ownership, attribution, or licensing information is complete or accurate.
 
 I do not authorize or encourage copyright, trademark, or other intellectual property infringement.
 
-**Nothing in this repository should be considered legal advice.**
+To the extent permitted by applicable law, I am not responsible for how other people use, modify, redistribute, publish, or otherwise handle third-party materials obtained from this repository.
+
+**Nothing in this repository constitutes legal advice.**
 
 ---
 
 ## 📩 Copyright, Trademark & Attribution Concerns
 
-If you are a creator, copyright holder, trademark owner, rights holder, or authorized representative and believe that material in this repository requires correction or removal, **please contact me through my [GitHub profile](https://github.com/IkoMosiEntertainmentHub) or the repository issue system**.
+If you are a creator, copyright holder, trademark owner, rights holder, or authorized representative and believe material in this repository requires correction or removal, please contact me through my **[GitHub profile](https://github.com/IkoMosiEntertainmentHub)** or the repository issue system.
 
-Please provide enough information for me to identify the relevant material and understand your concern.
+Please provide enough information to identify the relevant material and explain the concern.
 
 Where appropriate, I can:
 
 - Correct attribution
 - Add source information
-- Update the relevant information
+- Update information
 - Replace an asset
 - Remove an asset
 
-I am happy to review legitimate copyright, trademark, ownership, or attribution concerns.
+I am happy to review legitimate copyright, trademark, ownership, licensing, and attribution concerns.
 
 ---
 
 ## 🔒 Repository Access & Control
 
-This repository is public so that people can view and reference the collection.
+This repository is public so that people can view, reference, clone, and fork the collection.
 
-**Public does not mean that everyone has permission to edit my repository.**
+**Public does not mean that everyone has permission to modify the original repository.**
 
 The original repository is maintained by **[IkoMosiEntertainmentHub](https://github.com/IkoMosiEntertainmentHub)**.
 
-Other GitHub users can use GitHub's normal functionality to:
+GitHub users may use GitHub's normal functionality to:
 
 - View the repository
 - Download files
@@ -184,26 +225,24 @@ Other GitHub users can use GitHub's normal functionality to:
 - Create their own version
 - Submit a pull request
 
-A fork or cloned copy is **separate from my original repository**.
+A fork or cloned copy is **separate from the original repository**.
 
-Changes made to someone else's fork or copy do not change my repository.
-
-**I control and approve changes made to the original repository.**
+Changes made to another person's fork or copy do not modify the original repository.
 
 ---
 
 ## 📌 Forks & Modified Versions
 
-Anyone is free to create their own fork where GitHub allows it.
+You are free to create your own fork where GitHub allows it.
 
-However, a fork is a **separate project from my original repository**.
+A fork or modified copy is a separate project.
 
-Please do not present a modified fork or copy as:
+Please do not present a modified copy as:
 
-- My original repository
+- The original repository
 - An official version
-- A version maintained by me
-- A version endorsed by me
+- A version maintained by IkoMosiEntertainmentHub
+- A version endorsed by IkoMosiEntertainmentHub
 - An affiliated project
 
 I am not responsible for modifications, additions, removals, or other content added to third-party copies or forks.
@@ -212,27 +251,39 @@ I am not responsible for modifications, additions, removals, or other content ad
 
 ## 🧑‍💻 Maintenance
 
-I maintain this collection personally and may update its contents and organization over time.
+I maintain this collection personally and update its contents and organization over time.
 
-Assets may be added, removed, replaced, reorganized, or updated as better sources or information become available.
+Assets and collections may be:
 
-The collection is intended to remain a **personal, unofficial, organized resource**.
+- Added
+- Removed
+- Reorganized
+- Renamed
+- Replaced
+- Updated
+- Re-attributed
+
+The collection is intended to remain an **independent, personal, and unofficial visual asset resource**.
 
 ---
 
 ## 📚 Summary
 
-> **This is a personal and unofficial collection of third-party visual assets gathered from different sources and places.**
+> **Visual Assets Library is an independent collection of third-party visual assets gathered from different sources and organized for use across compatible media catalogue and collection projects.**
 
 I do not claim ownership of the third-party materials.
 
-**Credit and ownership belong to the respective creators and rightful owners.**
+**Credit and ownership remain with the respective creators and rightful owners.**
 
-I am simply collecting and organizing the materials for reference and use within my own project.
+The library is not affiliated with Nuvio, Xperience, or any other platform referenced in the repository.
 
-I do not grant rights to third-party materials that I do not own, and anyone wishing to reuse an asset is responsible for obtaining any permissions required by its respective owner.
+The assets are organized to make them easier to find and reference for projects that support visual collection artwork and related formats.
 
-If you are a rights holder and have a concern regarding material included in this repository, **please contact me and I will review it.**
+I do not grant rights to third-party materials that I do not own.
+
+Anyone wishing to reuse an individual asset is responsible for determining the applicable rights and obtaining any permissions required by its respective owner.
+
+If you are a rights holder and have a concern regarding material included in this repository, please contact me and I will review it.
 
 ---
 
@@ -240,6 +291,6 @@ If you are a rights holder and have a concern regarding material included in thi
 
 **[IkoMosiEntertainmentHub](https://github.com/IkoMosiEntertainmentHub)**
 
-Personal, unofficial collection and resource.
+Personal, independent visual asset collection.
 
-**Third-party ownership is not claimed.**
+**No ownership of third-party materials is claimed.**
