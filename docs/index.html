@@ -10,102 +10,109 @@
 
 <style>
 
-* {
-    box-sizing:border-box;
-}
-
-body {
-
-    margin:0;
-
-    min-height:100vh;
-
-    font-family:Arial,sans-serif;
-
-    color:white;
-
-    padding:40px;
-
-    background:#050b18;
-
+*{
+box-sizing:border-box;
 }
 
 
-body::before {
+body{
 
-    content:"";
+margin:0;
 
-    position:fixed;
+min-height:100vh;
 
-    width:700px;
+font-family:Arial,sans-serif;
 
-    height:700px;
+color:white;
 
-    background:#0066ff;
+padding:20px;
 
-    filter:blur(160px);
+background:#050b18;
 
-    opacity:.35;
-
-    top:-200px;
-
-    left:-200px;
-
-    animation:move 12s infinite alternate;
-
-    z-index:-1;
+overflow-x:hidden;
 
 }
 
 
-body::after {
 
-    content:"";
+body::before{
 
-    position:fixed;
+content:"";
 
-    width:600px;
+position:fixed;
 
-    height:600px;
+width:500px;
 
-    background:#00bfff;
+height:500px;
 
-    filter:blur(170px);
+background:#0066ff;
 
-    opacity:.25;
+filter:blur(140px);
 
-    bottom:-200px;
+opacity:.35;
 
-    right:-200px;
+top:-150px;
 
-    animation:move2 15s infinite alternate;
+left:-150px;
 
-    z-index:-1;
+animation:move 12s infinite alternate;
+
+z-index:-1;
 
 }
 
 
-@keyframes move {
+
+body::after{
+
+content:"";
+
+position:fixed;
+
+width:500px;
+
+height:500px;
+
+background:#00bfff;
+
+filter:blur(150px);
+
+opacity:.25;
+
+bottom:-150px;
+
+right:-150px;
+
+animation:move2 15s infinite alternate;
+
+z-index:-1;
+
+}
+
+
+
+@keyframes move{
 
 from{
 transform:translate(0,0);
 }
 
 to{
-transform:translate(300px,200px);
+transform:translate(250px,150px);
 }
 
 }
 
 
-@keyframes move2 {
+
+@keyframes move2{
 
 from{
 transform:translate(0,0);
 }
 
 to{
-transform:translate(-250px,-200px);
+transform:translate(-200px,-150px);
 }
 
 }
@@ -113,6 +120,8 @@ transform:translate(-250px,-200px);
 
 
 .container{
+
+width:100%;
 
 max-width:1100px;
 
@@ -122,7 +131,15 @@ margin:auto;
 
 
 
-input{
+h1{
+
+font-size:38px;
+
+}
+
+
+
+input[type=text]{
 
 width:100%;
 
@@ -136,21 +153,31 @@ background:#111c33;
 
 color:white;
 
-font-size:18px;
+font-size:17px;
 
 }
 
 
 
-.options{
-
-margin:20px 0;
+.settings{
 
 background:rgba(255,255,255,.08);
 
 padding:15px;
 
-border-radius:12px;
+border-radius:15px;
+
+margin-top:20px;
+
+}
+
+
+
+.settings label{
+
+display:block;
+
+margin:10px 0;
 
 }
 
@@ -158,7 +185,7 @@ border-radius:12px;
 
 .card{
 
-background:rgba(20,30,55,.8);
+background:rgba(20,30,55,.85);
 
 backdrop-filter:blur(15px);
 
@@ -200,7 +227,7 @@ background:#081226;
 
 padding:15px;
 
-border-radius:10px;
+border-radius:12px;
 
 margin-top:15px;
 
@@ -210,11 +237,13 @@ margin-top:15px;
 
 .preview{
 
-max-width:100%;
+width:100%;
 
-max-height:300px;
+max-height:350px;
 
-border-radius:10px;
+object-fit:contain;
+
+border-radius:12px;
 
 margin-top:10px;
 
@@ -224,19 +253,21 @@ margin-top:10px;
 
 button{
 
+width:100%;
+
 background:#0066ff;
 
 color:white;
 
 border:none;
 
-padding:10px 15px;
+padding:12px;
 
-border-radius:8px;
+border-radius:10px;
 
 cursor:pointer;
 
-margin-top:10px;
+font-size:15px;
 
 }
 
@@ -250,10 +281,49 @@ background:#008cff;
 
 
 
+
+@media(max-width:600px){
+
+
+body{
+
+padding:12px;
+
+}
+
+
+
+h1{
+
+font-size:28px;
+
+}
+
+
+
+.card{
+
+padding:15px;
+
+}
+
+
+
+.asset{
+
+padding:12px;
+
+}
+
+
+
+}
+
+
+
 </style>
 
 </head>
-
 
 
 <body>
@@ -267,23 +337,51 @@ Visual Assets Library
 </h1>
 
 
-<input id="search" placeholder="Search collections...">
-
-
-
-<div class="options">
-
-<label>
-
 <input 
-type="checkbox"
-id="previewToggle"
-checked
+id="search"
+type="text"
+placeholder="Search collections..."
 >
 
-Enable Preview
 
+
+<div class="settings">
+
+
+<h3>
+Preview Settings
+</h3>
+
+
+<label>
+<input id="gifToggle" type="checkbox" checked>
+Enable GIF Preview
 </label>
+
+
+<label>
+<input id="pngToggle" type="checkbox" checked>
+Enable PNG Preview
+</label>
+
+
+<label>
+<input id="jpgToggle" type="checkbox" checked>
+Enable JPG/JPEG Preview
+</label>
+
+
+<label>
+<input id="webpToggle" type="checkbox" checked>
+Enable WEBP Preview
+</label>
+
+
+<label>
+<input id="mp4Toggle" type="checkbox" checked>
+Enable MP4 Preview
+</label>
+
 
 </div>
 
@@ -300,41 +398,53 @@ Loading...
 
 
 
-
 <script>
 
 
 let assets=[];
 
 
-let showPreview=true;
+let settings={
+
+gif:true,
+
+png:true,
+
+jpg:true,
+
+webp:true,
+
+mp4:true
+
+};
 
 
 
-const DATABASE="search.json";
 
 
+fetch("search.json")
 
 
+.then(r=>r.json())
 
-fetch(DATABASE)
-
-.then(response=>response.json())
 
 .then(data=>{
 
+
 assets=data;
+
 
 displayResults(data);
 
+
 })
 
-.catch(error=>{
+.catch(()=>{
 
-console.error(error);
 
 document.getElementById("results").innerHTML=
 "Failed loading database";
+
 
 });
 
@@ -342,15 +452,36 @@ document.getElementById("results").innerHTML=
 
 
 
-document
-.getElementById("previewToggle")
-.addEventListener(
-"change",
-function(){
+function updateSettings(){
 
-showPreview=this.checked;
+
+settings.gif=document.getElementById("gifToggle").checked;
+
+settings.png=document.getElementById("pngToggle").checked;
+
+settings.jpg=document.getElementById("jpgToggle").checked;
+
+settings.webp=document.getElementById("webpToggle").checked;
+
+settings.mp4=document.getElementById("mp4Toggle").checked;
+
 
 displayResults(assets);
+
+
+}
+
+
+
+document.querySelectorAll(".settings input")
+.forEach(x=>{
+
+
+x.addEventListener(
+"change",
+updateSettings
+);
+
 
 });
 
@@ -365,7 +496,7 @@ document
 function(){
 
 
-let q=this.value.toLowerCase().trim();
+let q=this.value.toLowerCase();
 
 
 
@@ -386,13 +517,11 @@ item.status.toLowerCase().includes(q)
 );
 
 
-
 displayResults(filtered);
 
 
 
 });
-
 
 
 
@@ -421,6 +550,35 @@ button.innerText="Copy Raw Asset Link";
 
 
 
+function allowedPreview(ext){
+
+
+if(ext==="gif")
+return settings.gif;
+
+
+if(ext==="png")
+return settings.png;
+
+
+if(ext==="jpg" || ext==="jpeg")
+return settings.jpg;
+
+
+if(ext==="webp")
+return settings.webp;
+
+
+if(ext==="mp4")
+return settings.mp4;
+
+
+return false;
+
+
+}
+
+
 
 
 
@@ -437,12 +595,6 @@ box.innerHTML="";
 data.forEach(item=>{
 
 
-let status=item.status==="Complete"
-?"complete"
-:"dev";
-
-
-
 let html=`
 
 
@@ -457,8 +609,10 @@ Category: ${item.category}
 </p>
 
 
-<p class="${status}">
+<p class="${item.status==="Complete"?"complete":"dev"}">
+
 Status: ${item.status}
+
 </p>
 
 
@@ -467,75 +621,61 @@ Status: ${item.status}
 
 
 
-
-if(item.status==="Complete" && item.assets){
+if(item.status==="Complete"){
 
 
 
 item.assets.forEach(url=>{
 
 
-
-let extension=url.split(".").pop().toLowerCase();
-
-
-
-let type=extension.toUpperCase();
-
-
+let ext=url.split(".").pop().toLowerCase();
 
 
 html+=`
 
 <div class="asset">
 
-
-<h3>${type}</h3>
+<h3>
+${ext.toUpperCase()}
+</h3>
 
 `;
 
 
 
-
-
-if(showPreview){
+if(allowedPreview(ext)){
 
 
 
 if(
-extension==="png" ||
-extension==="jpg" ||
-extension==="jpeg" ||
-extension==="webp" ||
-extension==="gif"
+ext==="png" ||
+ext==="jpg" ||
+ext==="jpeg" ||
+ext==="webp" ||
+ext==="gif"
 ){
 
 
 html+=`
 
 <img 
-class="preview"
 src="${url}"
+class="preview"
 loading="lazy"
 >
-
 
 `;
 
 }
 
 
-else if(
-extension==="mp4"
-){
+
+if(ext==="mp4"){
 
 
 html+=`
 
-<video 
-class="preview"
-controls
->
+<video class="preview" controls>
 
 <source src="${url}">
 
@@ -546,15 +686,12 @@ controls
 }
 
 
+
 }
 
 
 
-
 html+=`
-
-<br>
-
 
 <button onclick='copyText(${JSON.stringify(url)},this)'>
 
@@ -574,7 +711,6 @@ Copy Raw Asset Link
 
 
 }
-
 
 else{
 
@@ -604,7 +740,6 @@ box.innerHTML+=html;
 
 
 });
-
 
 
 }
