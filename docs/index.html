@@ -1,65 +1,49 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 
 <head>
 
-<title>Visual Assets Library</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Visual Assets Library</title>
 
 <style>
 
 body {
-
-font-family: Arial;
-max-width:900px;
-margin:auto;
-padding:30px;
-
+    font-family: Arial, sans-serif;
+    max-width: 1000px;
+    margin: auto;
+    padding: 30px;
 }
-
 
 input {
-
-width:100%;
-padding:15px;
-font-size:18px;
-
+    width: 100%;
+    padding: 15px;
+    font-size: 18px;
+    margin-bottom: 20px;
 }
-
 
 .card {
-
-border:1px solid #ccc;
-padding:15px;
-margin-top:15px;
-border-radius:10px;
-
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    padding: 15px;
+    margin-bottom: 15px;
 }
-
 
 .complete {
-
-color:green;
-
+    color: green;
 }
 
-
-.dev {
-
-color:orange;
-
+.development {
+    color: orange;
 }
 
-
-.none {
-
-color:gray;
-
+.notstarted {
+    color: gray;
 }
 
 </style>
-
 
 </head>
 
@@ -67,37 +51,41 @@ color:gray;
 <body>
 
 
-<h1>
-Visual Assets Library
-</h1>
+<h1>Visual Assets Library</h1>
 
 
-<input
+<input 
 id="search"
 placeholder="Search collections..."
 >
 
 
-<div id="results"></div>
+<div id="results">
+Loading...
+</div>
 
 
 
 <script>
 
 
-let data = [];
+let collections = [];
 
 
 
 fetch("./search.json")
+.then(response => response.json())
+.then(data => {
 
-.then(r => r.json())
+    collections = data;
 
-.then(json => {
+    displayResults(collections);
 
-data = json;
+})
+.catch(error => {
 
-display(data);
+    document.getElementById("results").innerHTML =
+    "Unable to load search database.";
 
 });
 
@@ -112,108 +100,141 @@ document
 function(){
 
 
-let q =
-this.value
-.toLowerCase();
+    let query =
+    this.value
+    .toLowerCase()
+    .trim();
 
 
 
-let results =
-data.filter(x =>
-
-x.name
-.toLowerCase()
-.includes(q)
-
-||
-
-x.category
-.toLowerCase()
-.includes(q)
-
-);
+    let filtered =
+    collections.filter(item => {
 
 
+        return (
 
-display(results);
+            item.name
+            .toLowerCase()
+            .includes(query)
+
+            ||
+
+            item.category
+            .toLowerCase()
+            .includes(query)
+
+            ||
+
+            item.status
+            .toLowerCase()
+            .includes(query)
+
+        );
 
 
-});
-
-
-
-
-
-function display(items){
-
-
-let box =
-document.getElementById("results");
-
-
-box.innerHTML="";
+    });
 
 
 
-items.forEach(x=>{
-
-
-let cls =
-x.status=="Complete"
-?
-"complete"
-:
-x.status=="In Development"
-?
-"dev"
-:
-"none";
-
-
-
-box.innerHTML += 
-
-
-<div class="card">
-
-
-<h2>${x.name}</h2>
-
-
-<p>
-Category: ${x.category}
-</p>
-
-
-<p class="${cls}">
-Status: ${x.status}
-</p>
-
-
-${
-x.status=="Complete"
-?
-<a href="https://github.com/IkoMosiEntertainmentHub/Visual-Assets-Library/tree/main/${x.path}">
-Open Folder
-</a>
-:
-"No assets available yet"
-}
-
-
-
-</div>
-
-
-;
-
+    displayResults(filtered);
 
 
 });
 
 
-}
 
+
+
+function displayResults(items){
+
+
+    let output =
+    document.getElementById("results");
+
+
+    output.innerHTML = "";
+
+
+
+    if(items.length === 0){
+
+        output.innerHTML =
+        "<p>No collections found.</p>";
+
+        return;
+
+    }
+
+
+
+
+    items.forEach(item => {
+
+
+        let statusClass = "";
+
+
+        if(item.status === "Complete"){
+
+            statusClass = "complete";
+
+        }
+
+        else if(item.status === "In Development"){
+
+            statusClass = "development";
+
+        }
+
+        else {
+
+            statusClass = "notstarted";
+
+        }
+
+
+
+
+        output.innerHTML += 
+
+        <div class="card">
+
+        <h2>${item.name}</h2>
+
+        <p>
+        Category: ${item.category}
+        </p>
+
+        <p class="${statusClass}">
+        Status: ${item.status}
+        </p>
+
+
+        ${
+        item.status === "Complete"
+
+        ?
+
+        <a href="https://github.com/IkoMosiEntertainmentHub/Visual-Assets-Library/tree/main/${item.path}">
+        Open Collection
+        </a>
+
+        :
+
+        "No assets available yet"
+
+        }
+
+
+        </div>
+
+        ;
+
+
+    });
+
+
+}
 
 
 </script>
