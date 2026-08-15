@@ -776,44 +776,63 @@ loadSettings();
 
 // GUIDE PANEL
 
-const guideButton = document.getElementById("guideButton");
-const guidePanel = document.getElementById("guidePanel");
-const closeGuide = document.getElementById("closeGuide");
+const guideButton =
+document.getElementById("guideButton");
+
+const guidePanel =
+document.getElementById("guidePanel");
+
+const closeGuide =
+document.getElementById("closeGuide");
+
+
+function closeGuidePanel(){
+
+    guidePanel.classList.remove("active");
+
+    document.body.style.overflow="";
+
+}
 
 
 if(guideButton && guidePanel){
 
-    guideButton.addEventListener("click", (e)=>{
-
-        e.preventDefault();
+    guideButton.addEventListener(
+    "click",
+    ()=>{
 
         guidePanel.classList.add("active");
+
+        document.body.style.overflow="hidden";
 
     });
 
 }
+
 
 
 if(closeGuide && guidePanel){
 
-    closeGuide.addEventListener("click", ()=>{
-
-        guidePanel.classList.remove("active");
-
-    });
+    closeGuide.addEventListener(
+    "click",
+    closeGuidePanel
+    );
 
 }
 
 
-// Click outside to close
+
+// click outside panel
 
 if(guidePanel){
 
-    guidePanel.addEventListener("click",(e)=>{
+    guidePanel.addEventListener(
+    "click",
+    (e)=>{
 
         if(e.target === guidePanel){
 
-            guidePanel.classList.remove("active");
+            closeGuidePanel();
 
         }
 

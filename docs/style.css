@@ -654,69 +654,88 @@ padding:20px;
 
 position:fixed;
 
-bottom:-100%;
+inset:0;
 
-left:0;
+background:rgba(0,0,0,.45);
 
-width:100%;
-
-height:90%;
-
-background:#050b18;
+backdrop-filter:blur(5px);
 
 z-index:9999;
 
-transition:.5s ease;
+display:flex;
 
-overflow-y:auto;
+align-items:flex-end;
 
-padding:30px;
+opacity:0;
 
-border-radius:25px 25px 0 0;
+pointer-events:none;
 
-box-shadow:0 -10px 40px rgba(0,0,0,.6);
+transition:.35s ease;
 
 }
 
 
 #guidePanel.active{
 
-bottom:0;
+opacity:1;
+
+pointer-events:auto;
 
 }
 
 
 .guide-box{
 
-max-width:900px;
+width:100%;
 
-margin:auto;
+height:85vh;
+
+max-height:85vh;
 
 background:#111c33;
 
 padding:30px;
 
-border-radius:20px;
+border-radius:25px 25px 0 0;
 
-line-height:1.7;
+overflow-y:auto;
+
+box-shadow:0 -10px 40px rgba(0,0,0,.6);
+
+transform:translateY(100%);
+
+transition:.35s ease;
 
 }
 
 
-#closeGuide{
+#guidePanel.active .guide-box{
 
-float:right;
+transform:translateY(0);
 
-background:#0066ff;
+}
+
+#guideButton{
+
+background:transparent;
 
 border:none;
 
-color:white;
-
-padding:10px 15px;
-
-border-radius:10px;
+color:#00bfff;
 
 cursor:pointer;
+
+font-size:inherit;
+
+padding:0;
+
+font-family:Arial,Helvetica,sans-serif;
+
+}
+
+
+#guideButton:hover{
+
+text-decoration:underline;
 
 }
