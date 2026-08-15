@@ -4,7 +4,7 @@ A personal, unofficial collection of logos, artwork, GIFs, animations, icons, an
 
 ---
 
-## ?? [Visual Assets Library Website](https://ikomosientertainmenthub.github.io/Visual-Assets-Library/)
+## üåê [Visual Assets Library Website](https://ikomosientertainmenthub.github.io/Visual-Assets-Library/)
 
 Explore the collection through the online Visual Assets Library.
 
@@ -39,7 +39,7 @@ This forces the browser to request fresh website files and assets instead of rel
 
 ---
 
-## ?? About
+## üìÅ About
 
 **Visual Assets Library** is a personal collection and organizational resource for visual assets used across media catalogue systems, collection interfaces, and other compatible projects.
 
@@ -74,7 +74,7 @@ The purpose of this repository is to make visual assets easier to:
 
 ---
 
-## ?? Collection Overview
+## üìä Collection Overview
 
 > **Live collection tracking**
 >
@@ -86,11 +86,11 @@ The progress below reflects the current availability of supported visual assets 
 
 | Category                | Completed | Total | Progress                | Status      |
 | ----------------------- | --------: | ----: | ----------------------- | ----------- |
-| **Streaming Platforms** |        12 |    12 | `®Ä®Ä®Ä®Ä®Ä®Ä®Ä®Ä®Ä®Ä` **100.0%** | Complete    |
-| **Studios**             |         1 |    20 | `®á?????????` **5.0%**   | Collecting  |
-| **Franchises**          |         5 |    38 | `®É?????????` **13.2%**  | Collecting  |
-| **TV Collections**      |         0 |    16 | `??????????` **0.0%**   | Not Started |
-| **Networks**            |         1 |    33 | `®á?????????` **3.0%**   | Collecting  |
+| **Streaming Platforms** |        12 |    12 | `‚ñà‚ñà‚ñà‚ñà‚ñà‚ñà‚ñà‚ñà‚ñà‚ñà` **100.0%** | Complete    |
+| **Studios**             |         1 |    20 | `‚ñè‚ñë‚ñë‚ñë‚ñë‚ñë‚ñë‚ñë‚ñë‚ñë` **5.0%**   | Collecting  |
+| **Franchises**          |         5 |    38 | `‚ñã‚ñë‚ñë‚ñë‚ñë‚ñë‚ñë‚ñë‚ñë‚ñë` **13.2%**  | Collecting  |
+| **TV Collections**      |         0 |    16 | `‚ñë‚ñë‚ñë‚ñë‚ñë‚ñë‚ñë‚ñë‚ñë‚ñë` **0.0%**   | Not Started |
+| **Networks**            |         1 |    33 | `‚ñè‚ñë‚ñë‚ñë‚ñë‚ñë‚ñë‚ñë‚ñë‚ñë` **3.0%**   | Collecting  |
 
 <!-- COLLECTION_PROGRESS_END -->
 
@@ -102,11 +102,11 @@ The progress below reflects the current availability of supported visual assets 
 > * **Collecting:** The collection is currently being gathered and expanded.
 > * **Not Started:** No supported assets have been added yet.
 >
-> **Supported formats:** `.png` °§ `.gif` °§ `.jpg` °§ `.jpeg` °§ `.webp` °§ `.svg` °§ `.avif` °§ `.mp4`
+> **Supported formats:** `.png` ¬∑ `.gif` ¬∑ `.jpg` ¬∑ `.jpeg` ¬∑ `.webp` ¬∑ `.svg` ¬∑ `.avif` ¬∑ `.mp4`
 
 ---
 
-## ?? Asset Usage
+## üìå Asset Usage
 
 The website allows users to search for collections, preview available assets, and copy raw asset links.
 
@@ -139,7 +139,7 @@ If an asset does not work with your particular application or setup, please chec
 
 ---
 
-## ?? Important Notice
+## ‚ö†Ô∏è Important Notice
 
 **Visual Assets Library is an independent personal project.**
 
@@ -164,7 +164,7 @@ Assets have been collected from various sources. Ownership, copyright, trademark
 
 ---
 
-## ?? Credits & Attribution
+## üßæ Credits & Attribution
 
 The assets in this collection originate from different sources.
 
@@ -180,7 +180,7 @@ Where appropriate, information can be corrected, updated, or an asset can be rem
 
 ---
 
-## ??? Trademarks & Ownership
+## üè∑Ô∏è Trademarks & Ownership
 
 All company names, brand names, logos, artwork, branding, service marks, trademarks, franchise names, studio names, network names, and other intellectual property remain the property of their respective owners.
 
@@ -190,7 +190,7 @@ Nothing in this repository transfers ownership of third-party intellectual prope
 
 ---
 
-## ?? Licensing & Usage Rights
+## üìú Licensing & Usage Rights
 
 I do **not** grant licenses or permissions for third-party materials that I do not own.
 
@@ -212,7 +212,7 @@ Where an individual asset has specific licensing or usage requirements, those re
 
 ---
 
-## ??? Disclaimer
+## üõ°Ô∏è Disclaimer
 
 This repository is provided as a **personal, unofficial visual asset collection and organizational resource**.
 
@@ -226,7 +226,7 @@ To the extent permitted by applicable law, I am not responsible for how third pa
 
 ---
 
-## ?? Copyright, Trademark & Attribution Concerns
+## üì© Copyright, Trademark & Attribution Concerns
 
 If you are a creator, copyright holder, trademark owner, rights holder, or authorized representative and believe material in this repository requires correction, attribution, review, or removal, please contact me through my [GitHub profile](https://github.com/IkoMosiEntertainmentHub) or the repository issue system.
 
@@ -244,7 +244,7 @@ Legitimate copyright, trademark, ownership, licensing, and attribution concerns 
 
 ---
 
-## ?? Repository Control
+## üîí Repository Control
 
 This repository is public so that people can view, reference, clone, and fork the collection.
 
@@ -267,7 +267,7 @@ Changes made to another user's fork or copy do not modify the original repositor
 
 ---
 
-## ?? Forks & Modified Versions
+## üìå Forks & Modified Versions
 
 A fork or modified copy is a separate project from the original repository.
 
@@ -283,7 +283,7 @@ Changes, additions, removals, or modifications made to other copies do not affec
 
 ---
 
-## ????? Maintenance
+## üßë‚Äçüíª Maintenance
 
 Visual Assets Library is maintained as a personal project.
 
@@ -303,7 +303,7 @@ The goal is to maintain an organized and accessible visual asset reference libra
 
 ---
 
-## ?? Maintainer
+## üë§ Maintainer
 
 **[IkoMosiEntertainmentHub](https://github.com/IkoMosiEntertainmentHub)**
 
