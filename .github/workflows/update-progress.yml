@@ -298,7 +298,7 @@ jobs:
                   elif os.path.isdir(path):
 
 
-                      status="In Development"
+                      status="Collecting"
 
 
 
@@ -407,7 +407,7 @@ jobs:
               elif percentage>0:
 
 
-                  category_status="In Development"
+                  category_status="Collecting"
 
 
 
