@@ -11,220 +11,249 @@
 <style>
 
 * {
-    box-sizing: border-box;
+    box-sizing:border-box;
 }
 
 body {
 
-    margin: 0;
-    min-height: 100vh;
-    font-family: Arial, sans-serif;
-    color: white;
-    padding: 40px;
-    overflow-x: hidden;
-    background: #050b18;
+    margin:0;
+
+    min-height:100vh;
+
+    font-family:Arial,sans-serif;
+
+    color:white;
+
+    padding:40px;
+
+    background:#050b18;
 
 }
 
 
 body::before {
 
-    content: "";
+    content:"";
 
-    position: fixed;
+    position:fixed;
 
-    width: 700px;
-    height: 700px;
+    width:700px;
 
-    background: #0066ff;
+    height:700px;
 
-    filter: blur(160px);
+    background:#0066ff;
 
-    opacity: 0.35;
+    filter:blur(160px);
 
-    top: -200px;
-    left: -200px;
+    opacity:.35;
 
-    animation: move 12s infinite alternate;
+    top:-200px;
 
-    z-index: -1;
+    left:-200px;
+
+    animation:move 12s infinite alternate;
+
+    z-index:-1;
 
 }
 
 
 body::after {
 
-    content: "";
+    content:"";
 
-    position: fixed;
+    position:fixed;
 
-    width: 600px;
-    height: 600px;
+    width:600px;
 
-    background: #00bfff;
+    height:600px;
 
-    filter: blur(170px);
+    background:#00bfff;
 
-    opacity: 0.25;
+    filter:blur(170px);
 
-    bottom: -200px;
-    right: -200px;
+    opacity:.25;
 
-    animation: move2 15s infinite alternate;
+    bottom:-200px;
 
-    z-index: -1;
+    right:-200px;
+
+    animation:move2 15s infinite alternate;
+
+    z-index:-1;
 
 }
 
 
 @keyframes move {
 
-    from {
-        transform: translate(0,0);
-    }
+from{
+transform:translate(0,0);
+}
 
-    to {
-        transform: translate(300px,200px);
-    }
+to{
+transform:translate(300px,200px);
+}
 
 }
 
 
 @keyframes move2 {
 
-    from {
-        transform: translate(0,0);
-    }
+from{
+transform:translate(0,0);
+}
 
-    to {
-        transform: translate(-250px,-200px);
-    }
+to{
+transform:translate(-250px,-200px);
+}
 
 }
 
 
-.container {
 
-    max-width: 1100px;
-    margin: auto;
+.container{
 
-}
+max-width:1100px;
 
-
-h1 {
-
-    font-size: 40px;
+margin:auto;
 
 }
 
 
-input {
 
-    width: 100%;
+input{
 
-    padding: 16px;
+width:100%;
 
-    border-radius: 12px;
+padding:15px;
 
-    border: none;
+border-radius:12px;
 
-    background: #111c33;
+border:none;
 
-    color: white;
+background:#111c33;
 
-    font-size: 18px;
+color:white;
 
-    margin-bottom: 25px;
-
-}
-
-
-.card {
-
-    background: rgba(20,30,55,0.8);
-
-    backdrop-filter: blur(15px);
-
-    border: 1px solid rgba(255,255,255,0.1);
-
-    border-radius: 16px;
-
-    padding: 20px;
-
-    margin-bottom: 20px;
+font-size:18px;
 
 }
 
 
-.complete {
 
-    color: #00ff88;
+.options{
 
-    font-weight: bold;
+margin:20px 0;
 
-}
+background:rgba(255,255,255,.08);
 
+padding:15px;
 
-.dev {
-
-    color: #ffaa00;
-
-    font-weight: bold;
+border-radius:12px;
 
 }
 
 
-.notstarted {
 
-    color: gray;
+.card{
 
-    font-weight: bold;
+background:rgba(20,30,55,.8);
 
-}
+backdrop-filter:blur(15px);
 
+border-radius:16px;
 
-button {
+padding:20px;
 
-    background: #0066ff;
+margin-top:20px;
 
-    border: none;
-
-    color: white;
-
-    padding: 10px 15px;
-
-    border-radius: 8px;
-
-    cursor: pointer;
+border:1px solid rgba(255,255,255,.1);
 
 }
 
 
-button:hover {
 
-    background: #008cff;
+.complete{
+
+color:#00ff88;
+
+font-weight:bold;
+
+}
+
+
+
+.dev{
+
+color:#ffaa00;
+
+font-weight:bold;
 
 }
 
 
-.asset {
 
-    background: #081226;
+.asset{
 
-    padding: 10px;
+background:#081226;
 
-    border-radius: 8px;
+padding:15px;
 
-    margin-top: 10px;
+border-radius:10px;
 
-    word-break: break-all;
+margin-top:15px;
 
 }
+
+
+
+.preview{
+
+max-width:100%;
+
+max-height:300px;
+
+border-radius:10px;
+
+margin-top:10px;
+
+}
+
+
+
+button{
+
+background:#0066ff;
+
+color:white;
+
+border:none;
+
+padding:10px 15px;
+
+border-radius:8px;
+
+cursor:pointer;
+
+margin-top:10px;
+
+}
+
+
+
+button:hover{
+
+background:#008cff;
+
+}
+
 
 
 </style>
 
 </head>
+
 
 
 <body>
@@ -238,75 +267,90 @@ Visual Assets Library
 </h1>
 
 
+<input id="search" placeholder="Search collections...">
+
+
+
+<div class="options">
+
+<label>
+
 <input 
-id="search"
-placeholder="Search collections..."
+type="checkbox"
+id="previewToggle"
+checked
 >
+
+Enable Preview
+
+</label>
+
+</div>
+
 
 
 <div id="results">
-
 Loading...
+</div>
+
+
 
 </div>
 
 
-</div>
 
 
 
 <script>
 
 
-let assets = [];
+let assets=[];
+
+
+let showPreview=true;
 
 
 
-const DATABASE = "search.json";
+const DATABASE="search.json";
+
+
 
 
 
 fetch(DATABASE)
 
-.then(response => {
+.then(response=>response.json())
 
+.then(data=>{
 
-    if(!response.ok){
+assets=data;
 
-        throw new Error(
-            "Database loading failed: "
-            + response.status
-        );
-
-    }
-
-
-    return response.json();
-
+displayResults(data);
 
 })
 
+.catch(error=>{
 
-.then(data => {
+console.error(error);
 
+document.getElementById("results").innerHTML=
+"Failed loading database";
 
-    assets = data;
-
-    displayResults(data);
-
-
-})
+});
 
 
-.catch(error => {
 
 
-    console.error(error);
 
+document
+.getElementById("previewToggle")
+.addEventListener(
+"change",
+function(){
 
-    document.getElementById("results").innerHTML =
-    "Failed loading database";
+showPreview=this.checked;
 
+displayResults(assets);
 
 });
 
@@ -321,39 +365,30 @@ document
 function(){
 
 
-    let query = this.value
-    .toLowerCase()
-    .trim();
+let q=this.value.toLowerCase().trim();
 
 
 
-    let filtered = assets.filter(item =>
+let filtered=assets.filter(item=>
 
 
-        item.name
-        .toLowerCase()
-        .includes(query)
+item.name.toLowerCase().includes(q)
+
+||
+
+item.category.toLowerCase().includes(q)
+
+||
+
+item.status.toLowerCase().includes(q)
 
 
-        ||
-
-        item.category
-        .toLowerCase()
-        .includes(query)
-
-
-        ||
-
-        item.status
-        .toLowerCase()
-        .includes(query)
-
-
-    );
+);
 
 
 
-    displayResults(filtered);
+displayResults(filtered);
+
 
 
 });
@@ -362,20 +397,22 @@ function(){
 
 
 
-function copyText(text, button){
 
 
-    navigator.clipboard.writeText(text);
+function copyText(text,button){
 
 
-    button.innerText = "Copied";
+navigator.clipboard.writeText(text);
 
 
-    setTimeout(() => {
+button.innerText="Copied";
 
-        button.innerText = "Copy Link";
 
-    },1500);
+setTimeout(()=>{
+
+button.innerText="Copy Raw Asset Link";
+
+},1500);
 
 
 }
@@ -384,168 +421,189 @@ function copyText(text, button){
 
 
 
+
+
+
 function displayResults(data){
 
 
-    let box = document
-    .getElementById("results");
+let box=document.getElementById("results");
 
 
+box.innerHTML="";
 
-    box.innerHTML = "";
 
 
+data.forEach(item=>{
 
-    if(data.length === 0){
 
+let status=item.status==="Complete"
+?"complete"
+:"dev";
 
-        box.innerHTML =
-        "<p>No collections found.</p>";
 
 
-        return;
+let html=`
 
 
-    }
+<div class="card">
 
 
+<h2>${item.name}</h2>
 
 
+<p>
+Category: ${item.category}
+</p>
 
-    data.forEach(item => {
 
+<p class="${status}">
+Status: ${item.status}
+</p>
 
 
-        let statusClass = "dev";
+`;
 
 
 
-        if(item.status === "Complete"){
 
-            statusClass = "complete";
 
-        }
+if(item.status==="Complete" && item.assets){
 
 
-        else if(item.status === "Not Started"){
 
-            statusClass = "notstarted";
+item.assets.forEach(url=>{
 
-        }
 
 
+let extension=url.split(".").pop().toLowerCase();
 
 
 
-        let html = `
+let type=extension.toUpperCase();
 
 
-        <div class="card">
 
 
-        <h2>
-        ${item.name}
-        </h2>
+html+=`
 
+<div class="asset">
 
-        <p>
-        Category: ${item.category}
-        </p>
 
+<h3>${type}</h3>
 
-        <p class="${statusClass}">
-        Status: ${item.status}
-        </p>
+`;
 
 
-        `;
 
 
 
+if(showPreview){
 
 
-        if(item.status === "Complete" && item.assets){
 
+if(
+extension==="png" ||
+extension==="jpg" ||
+extension==="jpeg" ||
+extension==="webp" ||
+extension==="gif"
+){
 
 
-            html += `
+html+=`
 
-            <h3>
-            Raw Assets
-            </h3>
+<img 
+class="preview"
+src="${url}"
+loading="lazy"
+>
 
-            `;
 
+`;
 
+}
 
-            item.assets.forEach(url => {
 
+else if(
+extension==="mp4"
+){
 
-                html += `
 
+html+=`
 
-                <div class="asset">
+<video 
+class="preview"
+controls
+>
 
+<source src="${url}">
 
-                ${url}
+</video>
 
+`;
 
-                <br><br>
+}
 
 
-                <button onclick='copyText(${JSON.stringify(url)}, this)'>
+}
 
-                Copy Link
 
-                </button>
 
 
-                </div>
+html+=`
 
+<br>
 
-                `;
 
+<button onclick='copyText(${JSON.stringify(url)},this)'>
 
-            });
+Copy Raw Asset Link
 
+</button>
 
 
-        }
+</div>
 
+`;
 
-        else {
 
 
-            html += `
+});
 
 
-            <p>
-            No assets available yet.
-            </p>
 
+}
 
-            `;
 
+else{
 
-        }
 
+html+=`
 
+<p>
+No assets available yet.
+</p>
 
+`;
 
+}
 
-        html += `
 
-        </div>
 
-        `;
+html+=`
 
+</div>
 
+`;
 
-        box.innerHTML += html;
 
 
+box.innerHTML+=html;
 
-    });
+
+
+});
 
 
 
