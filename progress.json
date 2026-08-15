@@ -128,10 +128,10 @@
     }
   },
   "Studios": {
-    "completed": 0,
+    "completed": 1,
     "total": 20,
-    "percentage": 0.0,
-    "status": "Not Started",
+    "percentage": 5.0,
+    "status": "In Development",
     "items": {
       "20th Century Studios": {
         "complete": false,
@@ -206,8 +206,8 @@
         "status": "In Development"
       },
       "Universal Pictures": {
-        "complete": false,
-        "status": "In Development"
+        "complete": true,
+        "status": "Complete"
       },
       "Warner Bros": {
         "complete": false,

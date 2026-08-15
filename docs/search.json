@@ -361,9 +361,11 @@
   {
     "name": "Universal Pictures",
     "category": "Studios",
-    "status": "In Development",
+    "status": "Complete",
     "path": "Studios/Universal Pictures",
-    "assets": []
+    "assets": [
+      "https://raw.githubusercontent.com/IkoMosiEntertainmentHub/Visual-Assets-Library/refs/heads/main/Studios/Universal%20Pictures/Universal%20Pictures%20Intro.gif"
+    ]
   },
   {
     "name": "Warner Bros",

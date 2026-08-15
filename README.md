@@ -56,7 +56,7 @@ It is an independent collection maintained for personal organization, reference,
 | --- | ---: | ---: | --- | --- |
 | **Streaming Platforms** | 12 | 12 | `██████████` **100.0%** | Complete |
 | **TV Collections** | 0 | 16 | `░░░░░░░░░░` **0.0%** | Not Started |
-| **Studios** | 0 | 20 | `░░░░░░░░░░` **0.0%** | Not Started |
+| **Studios** | 1 | 20 | `░░░░░░░░░░` **5.0%** | In Development |
 | **Franchises** | 5 | 38 | `█░░░░░░░░░` **13.2%** | In Development |
 | **Networks** | 1 | 33 | `░░░░░░░░░░` **3.0%** | In Development |
 
