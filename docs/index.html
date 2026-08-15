@@ -73,19 +73,31 @@ let collections = [];
 
 
 
-fetch("/Visual-Assets-Library/search.json")
-.then(response => response.json())
+fetch("./search.json")
+.then(response => {
+
+    if (!response.ok) {
+        throw new Error("search.json failed: " + response.status);
+    }
+
+    return response.json();
+
+})
 .then(data => {
 
     collections = data;
+
+    console.log("Loaded:", collections);
 
     displayResults(collections);
 
 })
 .catch(error => {
 
+    console.error(error);
+
     document.getElementById("results").innerHTML =
-    "Unable to load search database.";
+    "Search database failed to load.";
 
 });
 
