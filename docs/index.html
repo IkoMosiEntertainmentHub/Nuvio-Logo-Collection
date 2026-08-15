@@ -8,233 +8,216 @@
 
 <title>Visual Assets Library</title>
 
-
 <style>
 
 * {
-    box-sizing:border-box;
+    box-sizing: border-box;
 }
-
 
 body {
 
-    margin:0;
-
-    min-height:100vh;
-
-    font-family:Arial, sans-serif;
-
-    color:white;
-
-    padding:40px;
-
-    overflow-x:hidden;
-
-    background:#050b18;
+    margin: 0;
+    min-height: 100vh;
+    font-family: Arial, sans-serif;
+    color: white;
+    padding: 40px;
+    overflow-x: hidden;
+    background: #050b18;
 
 }
 
 
 body::before {
 
-    content:"";
+    content: "";
 
-    position:fixed;
+    position: fixed;
 
-    width:700px;
+    width: 700px;
+    height: 700px;
 
-    height:700px;
+    background: #0066ff;
 
-    background:#0066ff;
+    filter: blur(160px);
 
-    filter:blur(160px);
+    opacity: 0.35;
 
-    opacity:0.35;
+    top: -200px;
+    left: -200px;
 
-    top:-200px;
+    animation: move 12s infinite alternate;
 
-    left:-200px;
-
-    animation:move 12s infinite alternate;
-
-    z-index:-1;
+    z-index: -1;
 
 }
 
 
 body::after {
 
-    content:"";
+    content: "";
 
-    position:fixed;
+    position: fixed;
 
-    width:600px;
+    width: 600px;
+    height: 600px;
 
-    height:600px;
+    background: #00bfff;
 
-    background:#00bfff;
+    filter: blur(170px);
 
-    filter:blur(170px);
+    opacity: 0.25;
 
-    opacity:0.25;
+    bottom: -200px;
+    right: -200px;
 
-    bottom:-200px;
+    animation: move2 15s infinite alternate;
 
-    right:-200px;
-
-    animation:move2 15s infinite alternate;
-
-    z-index:-1;
+    z-index: -1;
 
 }
 
 
 @keyframes move {
 
-from {
-transform:translate(0,0);
-}
+    from {
+        transform: translate(0,0);
+    }
 
-to {
-transform:translate(300px,200px);
-}
+    to {
+        transform: translate(300px,200px);
+    }
 
 }
 
 
 @keyframes move2 {
 
-from {
-transform:translate(0,0);
-}
+    from {
+        transform: translate(0,0);
+    }
 
-to {
-transform:translate(-250px,-200px);
-}
+    to {
+        transform: translate(-250px,-200px);
+    }
 
 }
 
 
 .container {
 
-max-width:1100px;
-
-margin:auto;
+    max-width: 1100px;
+    margin: auto;
 
 }
 
 
 h1 {
 
-font-size:40px;
+    font-size: 40px;
 
 }
 
 
 input {
 
-width:100%;
+    width: 100%;
 
-padding:16px;
+    padding: 16px;
 
-border-radius:12px;
+    border-radius: 12px;
 
-border:none;
+    border: none;
 
-background:#111c33;
+    background: #111c33;
 
-color:white;
+    color: white;
 
-font-size:18px;
+    font-size: 18px;
 
-margin-bottom:25px;
+    margin-bottom: 25px;
 
 }
-
 
 
 .card {
 
-background:rgba(20,30,55,0.8);
+    background: rgba(20,30,55,0.8);
 
-backdrop-filter:blur(15px);
+    backdrop-filter: blur(15px);
 
-border:1px solid rgba(255,255,255,0.1);
+    border: 1px solid rgba(255,255,255,0.1);
 
-border-radius:16px;
+    border-radius: 16px;
 
-padding:20px;
+    padding: 20px;
 
-margin-bottom:20px;
+    margin-bottom: 20px;
 
 }
 
 
-
 .complete {
 
-color:#00ff88;
+    color: #00ff88;
 
-font-weight:bold;
+    font-weight: bold;
 
 }
 
 
 .dev {
 
-color:#ffaa00;
+    color: #ffaa00;
 
-font-weight:bold;
+    font-weight: bold;
 
 }
 
 
+.notstarted {
+
+    color: gray;
+
+    font-weight: bold;
+
+}
+
 
 button {
 
-background:#0066ff;
+    background: #0066ff;
 
-border:none;
+    border: none;
 
-color:white;
+    color: white;
 
-padding:10px 15px;
+    padding: 10px 15px;
 
-border-radius:8px;
+    border-radius: 8px;
 
-cursor:pointer;
-
-margin-top:8px;
+    cursor: pointer;
 
 }
 
 
 button:hover {
 
-background:#008cff;
+    background: #008cff;
 
 }
-
 
 
 .asset {
 
-background:#081226;
+    background: #081226;
 
-padding:10px;
+    padding: 10px;
 
-border-radius:8px;
+    border-radius: 8px;
 
-margin-top:10px;
+    margin-top: 10px;
 
-word-break:break-all;
-
-}
-
-
-.hidden {
-
-display:none;
+    word-break: break-all;
 
 }
 
@@ -255,11 +238,16 @@ Visual Assets Library
 </h1>
 
 
-<input id="search" placeholder="Search collections...">
+<input 
+id="search"
+placeholder="Search collections..."
+>
 
 
 <div id="results">
+
 Loading...
+
 </div>
 
 
@@ -270,31 +258,59 @@ Loading...
 <script>
 
 
-let assets=[];
+let assets = [];
 
 
-const DATABASE="search.json";
+
+const DATABASE = "search.json";
 
 
 
 fetch(DATABASE)
 
-.then(r=>r.json())
+.then(response => {
 
-.then(data=>{
 
-assets=data;
+    if(!response.ok){
 
-displayResults(data);
+        throw new Error(
+            "Database loading failed: "
+            + response.status
+        );
+
+    }
+
+
+    return response.json();
+
 
 })
 
-.catch(e=>{
 
-document.getElementById("results").innerHTML=
-"Failed loading database";
+.then(data => {
+
+
+    assets = data;
+
+    displayResults(data);
+
+
+})
+
+
+.catch(error => {
+
+
+    console.error(error);
+
+
+    document.getElementById("results").innerHTML =
+    "Failed loading database";
+
 
 });
+
+
 
 
 
@@ -304,23 +320,40 @@ document
 "input",
 function(){
 
-let q=this.value.toLowerCase();
+
+    let query = this.value
+    .toLowerCase()
+    .trim();
 
 
-let filtered=assets.filter(item=>
 
-item.name.toLowerCase().includes(q)
-
-||
-item.category.toLowerCase().includes(q)
-
-||
-item.status.toLowerCase().includes(q)
-
-);
+    let filtered = assets.filter(item =>
 
 
-displayResults(filtered);
+        item.name
+        .toLowerCase()
+        .includes(query)
+
+
+        ||
+
+        item.category
+        .toLowerCase()
+        .includes(query)
+
+
+        ||
+
+        item.status
+        .toLowerCase()
+        .includes(query)
+
+
+    );
+
+
+
+    displayResults(filtered);
 
 
 });
@@ -328,129 +361,196 @@ displayResults(filtered);
 
 
 
-function copyText(text,button){
+
+function copyText(text, button){
 
 
-navigator.clipboard.writeText(text);
+    navigator.clipboard.writeText(text);
 
 
-button.innerHTML="Copied";
+    button.innerText = "Copied";
 
 
-setTimeout(()=>{
+    setTimeout(() => {
 
-button.innerHTML="Copy";
+        button.innerText = "Copy Link";
 
-},1500);
+    },1500);
 
 
 }
+
+
 
 
 
 function displayResults(data){
 
 
-let box=document.getElementById("results");
-
-
-box.innerHTML="";
-
-
-
-data.forEach(item=>{
-
-
-let status=item.status==="Complete"
-?"complete"
-:"dev";
+    let box = document
+    .getElementById("results");
 
 
 
-let html=`
-
-
-<div class="card">
-
-
-<h2>${item.name}</h2>
-
-
-<p>
-Category: ${item.category}
-</p>
-
-
-<p class="${status}">
-Status: ${item.status}
-</p>
-
-
-`;
+    box.innerHTML = "";
 
 
 
-if(item.status==="Complete"){
+    if(data.length === 0){
 
 
-html+=`
-
-<h3>Raw Assets</h3>
-
-`;
+        box.innerHTML =
+        "<p>No collections found.</p>";
 
 
-item.assets.forEach(url=>{
+        return;
 
 
-html+=`
-
-<div class="asset">
-
-${url}
-
-<br>
-
-<button onclick="copyText('${url}',this)">
-Copy Link
-</button>
+    }
 
 
-</div>
-
-`;
 
 
-});
+
+    data.forEach(item => {
+
+
+
+        let statusClass = "dev";
+
+
+
+        if(item.status === "Complete"){
+
+            statusClass = "complete";
+
+        }
+
+
+        else if(item.status === "Not Started"){
+
+            statusClass = "notstarted";
+
+        }
+
+
+
+
+
+        let html = `
+
+
+        <div class="card">
+
+
+        <h2>
+        ${item.name}
+        </h2>
+
+
+        <p>
+        Category: ${item.category}
+        </p>
+
+
+        <p class="${statusClass}">
+        Status: ${item.status}
+        </p>
+
+
+        `;
+
+
+
+
+
+        if(item.status === "Complete" && item.assets){
+
+
+
+            html += `
+
+            <h3>
+            Raw Assets
+            </h3>
+
+            `;
+
+
+
+            item.assets.forEach(url => {
+
+
+                html += `
+
+
+                <div class="asset">
+
+
+                ${url}
+
+
+                <br><br>
+
+
+                <button onclick='copyText(${JSON.stringify(url)}, this)'>
+
+                Copy Link
+
+                </button>
+
+
+                </div>
+
+
+                `;
+
+
+            });
+
+
+
+        }
+
+
+        else {
+
+
+            html += `
+
+
+            <p>
+            No assets available yet.
+            </p>
+
+
+            `;
+
+
+        }
+
+
+
+
+
+        html += `
+
+        </div>
+
+        `;
+
+
+
+        box.innerHTML += html;
+
+
+
+    });
+
 
 
 }
 
-else {
-
-
-html+=`
-
-<p>
-No assets available yet.
-</p>
-
-`;
-
-}
-
-
-
-html+=`</div>`;
-
-
-box.innerHTML+=html;
-
-
-});
-
-
-}
 
 
 </script>
