@@ -1,97 +1,375 @@
-filled = round(
-                data["percentage"] / 10
-            )
+name: Update Collection Progress
+
+on:
+  push:
+    branches:
+      - main
+
+  workflow_dispatch:
 
 
-            bar = (
-                "█" * filled
-                +
-                "░" * (10-filled)
-            )
+permissions:
+  contents: write
 
 
-            table.append(
+jobs:
 
-                f"| {category} | "
-                f"{data['completed']} | "
-                f"{data['total']} | "
-                f"{bar} {data['percentage']}% | "
-                f"{data['status']} |"
+  update-progress:
 
-            )
+    runs-on: ubuntu-latest
 
 
+    steps:
 
-        table.append("")
-
-        table.append(END)
-
-
-
-        new_section = "\n".join(table)
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
 
 
+      - name: Generate progress and search database
+        shell: python
+        run: |
 
-        pattern = re.compile(
-
-            re.escape(START)
-            +
-            r".*?"
-            +
-            re.escape(END),
-
-            re.DOTALL
-
-        )
+          import json
+          import os
+          import re
 
 
-
-        readme = pattern.sub(
-            new_section,
-            readme
-        )
-
+          CONFIG_FILE = "collections.json"
+          PROGRESS_FILE = "progress.json"
+          README_FILE = "README.md"
+          SEARCH_FILE = "docs/search.json"
 
 
-        with open(
-            README,
-            "w",
-            encoding="utf-8"
-        ) as f:
+          ASSET_EXTENSIONS = {
+              ".png",
+              ".gif",
+              ".jpg",
+              ".jpeg",
+              ".webp",
+              ".svg",
+              ".avif"
+          }
 
-            f.write(readme)
+
+          START_MARKER = "<!-- COLLECTION_PROGRESS_START -->"
+          END_MARKER = "<!-- COLLECTION_PROGRESS_END -->"
 
 
 
+          def folder_has_asset(folder):
+
+              if not os.path.isdir(folder):
+                  return False
 
 
-    - name: Commit updates
+              for root, dirs, files in os.walk(folder):
 
-      shell: bash
-
-      run: |
-
-
-        git config user.name "github-actions[bot]"
-
-        git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+                  dirs[:] = [
+                      d for d in dirs
+                      if d != ".git"
+                  ]
 
 
+                  for filename in files:
 
-        git add README.md progress.json docs/search.json
+                      extension = os.path.splitext(filename)[1].lower()
+
+                      if extension in ASSET_EXTENSIONS:
+                          return True
 
 
-
-        if git diff --cached --quiet; then
-
-          echo "No changes"
-
-          exit 0
-
-        fi
+              return False
 
 
 
-        git commit -m "Update collection progress and search index"
 
-        git push
+          with open(CONFIG_FILE, "r", encoding="utf-8") as file:
+              collections = json.load(file)
+
+
+
+
+          progress = {}
+          search_database = []
+
+
+
+          for category, items in collections.items():
+
+              completed = 0
+              item_results = {}
+
+
+              for item in items:
+
+
+                  path = os.path.join(
+                      category,
+                      item
+                  )
+
+
+                  has_asset = folder_has_asset(path)
+
+
+
+                  if has_asset:
+
+                      completed += 1
+                      status = "Complete"
+
+                  elif os.path.isdir(path):
+
+                      status = "In Development"
+
+                  else:
+
+                      status = "Not Started"
+
+
+
+
+                  item_results[item] = {
+
+                      "complete": has_asset,
+
+                      "status": status
+
+                  }
+
+
+
+
+                  search_database.append({
+
+                      "name": item,
+
+                      "category": category,
+
+                      "status": status,
+
+                      "path": path
+
+                  })
+
+
+
+
+
+              total = len(items)
+
+
+
+              percentage = round(
+                  (completed / total) * 100,
+                  1
+              ) if total else 0
+
+
+
+
+              if percentage == 100:
+
+                  category_status = "Complete"
+
+              elif percentage > 0:
+
+                  category_status = "In Development"
+
+              else:
+
+                  category_status = "Not Started"
+
+
+
+
+
+              progress[category] = {
+
+                  "completed": completed,
+
+                  "total": total,
+
+                  "percentage": percentage,
+
+                  "status": category_status,
+
+                  "items": item_results
+
+              }
+
+
+
+
+
+          os.makedirs(
+              "docs",
+              exist_ok=True
+          )
+
+
+
+
+          with open(PROGRESS_FILE, "w", encoding="utf-8") as file:
+
+              json.dump(
+                  progress,
+                  file,
+                  indent=2,
+                  ensure_ascii=False
+              )
+
+              file.write("\n")
+
+
+
+
+
+          with open(SEARCH_FILE, "w", encoding="utf-8") as file:
+
+              json.dump(
+                  search_database,
+                  file,
+                  indent=2,
+                  ensure_ascii=False
+              )
+
+              file.write("\n")
+
+
+
+
+
+          with open(README_FILE, "r", encoding="utf-8") as file:
+
+              readme = file.read()
+
+
+
+
+
+          table = [
+              START_MARKER,
+
+              "",
+
+              "| Category | Completed | Total | Progress | Status |",
+
+              "| --- | ---: | ---: | --- | --- |"
+
+          ]
+
+
+
+
+
+          for category, data in progress.items():
+
+
+              filled = round(
+                  data["percentage"] / 10
+              )
+
+
+              progress_bar = (
+
+                  "█" * filled
+
+                  +
+
+                  "░" * (10 - filled)
+
+              )
+
+
+
+              table.append(
+
+                  f"| {category} | "
+                  f"{data['completed']} | "
+                  f"{data['total']} | "
+                  f"{progress_bar} {data['percentage']}% | "
+                  f"{data['status']} |"
+
+              )
+
+
+
+
+
+          table.append("")
+          table.append(END_MARKER)
+
+
+
+          new_table = "\n".join(table)
+
+
+
+
+          pattern = re.compile(
+
+              re.escape(START_MARKER)
+
+              +
+
+              r".*?"
+
+              +
+
+              re.escape(END_MARKER),
+
+              re.DOTALL
+
+          )
+
+
+
+
+          readme = pattern.sub(
+              new_table,
+              readme
+          )
+
+
+
+
+
+          with open(README_FILE, "w", encoding="utf-8") as file:
+
+              file.write(readme)
+
+
+
+      - name: Commit generated files
+
+        shell: bash
+
+        run: |
+
+
+          git config user.name "github-actions[bot]"
+
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+
+
+
+          git add README.md progress.json docs/search.json
+
+
+
+          if git diff --cached --quiet; then
+
+            echo "No changes"
+
+            exit 0
+
+          fi
+
+
+
+          git commit -m "Update collection progress and search database"
+
+          git push
