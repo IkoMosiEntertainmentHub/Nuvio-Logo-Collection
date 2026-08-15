@@ -1,118 +1,38 @@
 # Visual Assets Library
 
-A personal, unofficial collection of logos, artwork, GIFs, animations, icons, and other visual assets gathered and organized for use across media catalogues, collection interfaces, and other projects that support visual assets.
+A personal, unofficial collection of logos, artwork, GIFs, animations, icons, and other visual assets organized for use with media catalogues, collection interfaces, and projects that support custom visual assets.
 
 > [!IMPORTANT]
 > **This is an independent project and is not affiliated with, endorsed by, sponsored by, or officially connected to Nuvio, Xperience, or any other platform, application, company, studio, network, franchise, creator, or rights holder referenced in this repository.**
 >
-> **I do not claim ownership of the third-party materials contained in this repository.**
+> **I do not claim ownership of third-party materials contained within this repository.**
 >
-> The materials have been gathered from different sources and places. Credit and ownership remain with their respective creators, copyright holders, trademark owners, companies, studios, organizations, licensors, and other rightful owners.
+> Assets have been collected from various sources. Ownership, credit, and rights remain with their respective creators, copyright holders, trademark owners, companies, studios, organizations, licensors, and other rightful owners.
+
+---
+
+## 🌐 Visual Assets Library Website
+
+Explore, search, preview, and copy asset links directly from the online Visual Assets Library.
+
+Features include:
+
+- Collection search
+- Asset previews
+- Format filtering
+- Raw asset link copying
+- Collection progress tracking
+- Direct asset references
+
+Visit:
+
+[Open Visual Assets Library Website](https://ikomosientertainmenthub.github.io/Visual-Assets-Library/)
 
 ---
 
 ## 📁 About
 
 **Visual Assets Library** is a personal collection and organized resource for visual assets used with media catalogues, collection interfaces, and related projects.
-
-The library includes:
-
-- **Streaming Platforms**
-- **TV Collections**
-- **Studios**
-- **Franchises**
-- **Networks**
-- **Genres**
-- **Other Collections**
-
-The assets may be useful for projects and platforms that support custom visual artwork, including:
-
-- **Nuvio**
-- **Xperience**
-- Other media catalogue applications
-- Streaming interfaces
-- Collection-based projects
-- Personal media libraries
-- Custom catalogue systems
-- Other projects that support `.gif`, `.png`, `.jpg`, `.jpeg`, `.webp`, `.svg`, `.avif`, and similar visual formats
-
-This repository is **not made by, provided by, or maintained by any of these platforms**.
-
-It is an independent collection maintained for personal organization, reference, and use across compatible projects.
-
----
-
-## 📊 Collection Status
-
-> **Live collection overview**
->
-> Collection progress is automatically maintained by GitHub Actions whenever changes are pushed to `main`.
-
-**Tracking:** `118 collections across 5 categories`
-
-<!-- COLLECTION_PROGRESS_START -->
-
-| Category | Completed | Total | Progress | Status |
-| --- | ---: | ---: | --- | --- |
-| **Streaming Platforms** | 12 | 12 | `██████████` **100.0%** | Complete |
-| **TV Collections** | 0 | 16 | `░░░░░░░░░░` **0.0%** | Not Started |
-| **Studios** | 1 | 20 | `░░░░░░░░░░` **5.0%** | In Development |
-| **Franchises** | 5 | 38 | `█░░░░░░░░░` **13.2%** | In Development |
-| **Networks** | 1 | 33 | `░░░░░░░░░░` **3.0%** | In Development |
-
-<!-- COLLECTION_PROGRESS_END -->
-
-> **Automated tracking:** Progress is calculated by checking the collection folders for supported visual assets. A collection is counted as complete when its folder contains at least one supported visual asset.
->
-> **Supported formats:** `.png` · `.gif` · `.jpg` · `.jpeg` · `.webp` · `.svg` · `.avif`
-
----
-## 🔎 Collection Search
-
-Browse and search the complete visual asset collection:
-
-[Open Visual Assets Library Search Portal](https://ikomosientertainmenthub.github.io/Visual-Assets-Library/)
----
-
-## 🎨 Intended Use
-
-The library is intended to make visual assets easier to find, organize, and reference when building or customizing media catalogue collections.
-
-Examples include:
-
-- Collection logos
-- Streaming service artwork
-- Studio branding
-- Franchise artwork
-- Network logos
-- TV collection artwork
-- Animated collection artwork
-- GIF-based artwork
-- Icons and other visual elements
-
-The assets may be used in **Nuvio collections, Xperience collections, or other compatible projects**, depending on the requirements and permissions applicable to each individual asset.
-
-This repository itself is **not an official asset library for any of those projects**.
-
----
-
-## © Copyright & Ownership
-
-The materials in this repository come from **different sources and creators**.
-
-I do not claim to have created or own the third-party:
-
-- Logos
-- Artwork
-- GIFs
-- Animations
-- Icons
-- Images
-- Graphics
-- Branding
-- Trademarks
-- Other visual materials
-
 All applicable rights remain with their respective creators, copyright holders, trademark owners, companies, studios, organizations, licensors, and other rightful owners.
 
 **Nothing in this repository transfers ownership of third-party material to me.**
