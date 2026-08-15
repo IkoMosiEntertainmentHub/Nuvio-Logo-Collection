@@ -1,306 +1,97 @@
-name: Update Collection Progress
-
-on:
-  push:
-    branches:
-      - main
-
-  workflow_dispatch:
+filled = round(
+                data["percentage"] / 10
+            )
 
-permissions:
-  contents: write
 
-jobs:
-  update-progress:
-    runs-on: ubuntu-latest
-
-    steps:
-      - name: Checkout repository
-        uses: actions/checkout@v4
-        with:
-          fetch-depth: 0
-
-      - name: Calculate collection progress
-        shell: python
-        run: |
-          import json
-          import os
-          import re
-
-          CONFIG_FILE = "collections.json"
-          PROGRESS_FILE = "progress.json"
-          README_FILE = "README.md"
-
-          # Only these file types count as completed assets.
-          ASSET_EXTENSIONS = {
-              ".gif",
-              ".png",
-              ".jpg",
-              ".jpeg",
-              ".webp",
-              ".svg",
-              ".avif"
-          }
-
-          START_MARKER = "<!-- COLLECTION_PROGRESS_START -->"
-          END_MARKER = "<!-- COLLECTION_PROGRESS_END -->"
-
-          def contains_asset(folder):
-              if not os.path.isdir(folder):
-                  return False
-
-              for root, dirs, files in os.walk(folder):
-
-                  dirs[:] = [
-                      directory
-                      for directory in dirs
-                      if directory != ".git"
-                  ]
-
-                  for filename in files:
-
-                      extension = os.path.splitext(
-                          filename
-                      )[1].lower()
-
-                      if extension in ASSET_EXTENSIONS:
-                          return True
-
-              return False
-
-          # ---------------------------------------------------------
-          # Load the manually maintained collection list
-          # ---------------------------------------------------------
-
-          if not os.path.exists(CONFIG_FILE):
-              raise FileNotFoundError(
-                  f"Could not find {CONFIG_FILE}"
-              )
-
-          with open(
-              CONFIG_FILE,
-              "r",
-              encoding="utf-8"
-          ) as file:
-              config = json.load(file)
-
-          # ---------------------------------------------------------
-          # Calculate progress
-          # ---------------------------------------------------------
-
-          results = {}
-
-          for category, expected_items in config.items():
-
-              total = len(expected_items)
-              completed = 0
-              item_results = {}
-
-              for item in expected_items:
-
-                  item_path = os.path.join(
-                      category,
-                      item
-                  )
-
-                  folder_exists = os.path.isdir(item_path)
-                  has_asset = contains_asset(item_path)
-
-                  if has_asset:
-                      completed += 1
-
-                  item_results[item] = {
-                      "folder_exists": folder_exists,
-                      "has_asset": has_asset,
-                      "complete": has_asset
-                  }
-
-              if total > 0:
-                  percentage = round(
-                      (completed / total) * 100,
-                      1
-                  )
-              else:
-                  percentage = 0
-
-              if percentage == 100:
-                  status = "Complete"
-              elif percentage >= 75:
-                  status = "Almost Complete"
-              elif percentage >= 25:
-                  status = "Collecting"
-              elif percentage > 0:
-                  status = "Started"
-              else:
-                  status = "Not started"
-
-              filled_blocks = round(
-                  percentage / 10
-              )
-
-              filled_blocks = max(
-                  0,
-                  min(
-                      10,
-                      filled_blocks
-                  )
-              )
-
-              empty_blocks = 10 - filled_blocks
-
-              progress_bar = (
-                  "█" * filled_blocks
-                  +
-                  "░" * empty_blocks
-              )
-
-              results[category] = {
-                  "completed": completed,
-                  "total": total,
-                  "percentage": percentage,
-                  "status": status,
-                  "progress_bar": progress_bar,
-                  "items": item_results
-              }
-
-          # ---------------------------------------------------------
-          # Write automatically generated progress.json
-          # ---------------------------------------------------------
-
-          with open(
-              PROGRESS_FILE,
-              "w",
-              encoding="utf-8"
-          ) as file:
-
-              json.dump(
-                  results,
-                  file,
-                  indent=2,
-                  ensure_ascii=False
-              )
-
-              file.write("\n")
-
-          # ---------------------------------------------------------
-          # Update README
-          # ---------------------------------------------------------
-
-          if not os.path.exists(README_FILE):
-              raise FileNotFoundError(
-                  f"Could not find {README_FILE}"
-              )
-
-          with open(
-              README_FILE,
-              "r",
-              encoding="utf-8"
-          ) as file:
-              readme = file.read()
-
-          table = []
-
-          table.append(START_MARKER)
-          table.append("")
-          table.append(
-              "| Category | Completed | Total | Progress | Status |"
-          )
-          table.append(
-              "| --- | ---: | ---: | --- | --- |"
-          )
-
-          for category, data in results.items():
-
-              percentage = f"{data['percentage']:g}%"
-
-              table.append(
-                  f"| **{category}** "
-                  f"| {data['completed']} "
-                  f"| {data['total']} "
-                  f"| `{data['progress_bar']}` **{percentage}** "
-                  f"| {data['status']} |"
-              )
-
-          table.append("")
-          table.append(END_MARKER)
-
-          generated_progress = "\n".join(table)
-
-          pattern = re.compile(
-              re.escape(START_MARKER)
-              + r".*?"
-              + re.escape(END_MARKER),
-              re.DOTALL
-          )
-
-          if pattern.search(readme):
-
-              readme = pattern.sub(
-                  generated_progress,
-                  readme
-              )
-
-          else:
-
-              progress_section = (
-                  "\n\n"
-                  "## 📊 Collection Progress\n\n"
-                  "Progress is automatically calculated by "
-                  "checking each collection folder for visual "
-                  "assets. A folder is considered complete only "
-                  "when it contains at least one supported "
-                  "visual asset such as `.png`, `.gif`, `.jpg`, "
-                  "`.jpeg`, `.webp`, `.svg`, or `.avif`.\n\n"
-                  +
-                  generated_progress
-                  +
-                  "\n"
-              )
-
-              readme += progress_section
-
-          with open(
-              README_FILE,
-              "w",
-              encoding="utf-8"
-          ) as file:
-              file.write(readme)
-
-          # ---------------------------------------------------------
-          # Show results in GitHub Actions
-          # ---------------------------------------------------------
-
-          print("")
-          print("========================================")
-          print("       COLLECTION PROGRESS")
-          print("========================================")
-          print("")
-
-          for category, data in results.items():
-
-              print(
-                  f"{category}: "
-                  f"{data['completed']}/"
-                  f"{data['total']} "
-                  f"({data['percentage']}%) "
-                  f"{data['status']}"
-              )
-
-          print("")
-          print("========================================")
-
-      - name: Commit updated progress
-        shell: bash
-        run: |
-          git config user.name "github-actions[bot]"
-          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-
-          git add README.md progress.json
-
-          if git diff --cached --quiet; then
-            echo "No progress changes detected."
-            exit 0
-          fi
-
-          git commit -m "Update collection progress"
-          git push 
+            bar = (
+                "█" * filled
+                +
+                "░" * (10-filled)
+            )
+
+
+            table.append(
+
+                f"| {category} | "
+                f"{data['completed']} | "
+                f"{data['total']} | "
+                f"{bar} {data['percentage']}% | "
+                f"{data['status']} |"
+
+            )
+
+
+
+        table.append("")
+
+        table.append(END)
+
+
+
+        new_section = "\n".join(table)
+
+
+
+        pattern = re.compile(
+
+            re.escape(START)
+            +
+            r".*?"
+            +
+            re.escape(END),
+
+            re.DOTALL
+
+        )
+
+
+
+        readme = pattern.sub(
+            new_section,
+            readme
+        )
+
+
+
+        with open(
+            README,
+            "w",
+            encoding="utf-8"
+        ) as f:
+
+            f.write(readme)
+
+
+
+
+
+    - name: Commit updates
+
+      shell: bash
+
+      run: |
+
+
+        git config user.name "github-actions[bot]"
+
+        git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+
+
+
+        git add README.md progress.json docs/search.json
+
+
+
+        if git diff --cached --quiet; then
+
+          echo "No changes"
+
+          exit 0
+
+        fi
+
+
+
+        git commit -m "Update collection progress and search index"
+
+        git push

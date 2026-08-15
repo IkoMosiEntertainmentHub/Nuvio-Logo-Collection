@@ -1,36 +1,65 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 
 <head>
 
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-
 <title>Visual Assets Library</title>
+
+<meta name="viewport" content="width=device-width, initial-scale=1">
 
 <style>
 
 body {
-    font-family: Arial, sans-serif;
-    max-width: 1000px;
-    margin: auto;
-    padding: 30px;
+
+font-family: Arial;
+max-width:900px;
+margin:auto;
+padding:30px;
+
 }
+
 
 input {
-    width: 100%;
-    padding: 15px;
-    font-size: 18px;
+
+width:100%;
+padding:15px;
+font-size:18px;
+
 }
 
+
 .card {
-    border: 1px solid #ccc;
-    padding: 15px;
-    margin-top: 15px;
-    border-radius: 10px;
+
+border:1px solid #ccc;
+padding:15px;
+margin-top:15px;
+border-radius:10px;
+
+}
+
+
+.complete {
+
+color:green;
+
+}
+
+
+.dev {
+
+color:orange;
+
+}
+
+
+.none {
+
+color:gray;
+
 }
 
 </style>
+
 
 </head>
 
@@ -38,105 +67,40 @@ input {
 <body>
 
 
-<h1>Visual Assets Library</h1>
+<h1>
+Visual Assets Library
+</h1>
 
 
-<input 
+<input
 id="search"
 placeholder="Search collections..."
 >
 
 
-<div id="results">
-Loading collections...
-</div>
+<div id="results"></div>
 
 
 
 <script>
 
 
-let assets = [];
+let data = [];
 
 
 
-async function loadSearch() {
+fetch("./search.json")
 
+.then(r => r.json())
 
-    const response = await fetch(
-        "https://ikomosientertainmenthub.github.io/Visual-Assets-Library/search.json"
-    );
+.then(json => {
 
+data = json;
 
-    assets = await response.json();
+display(data);
 
+});
 
-    showResults(assets);
-
-
-}
-
-
-
-function showResults(list) {
-
-
-    const box =
-    document.getElementById("results");
-
-
-    box.innerHTML = "";
-
-
-    if(list.length === 0){
-
-        box.innerHTML =
-        "<p>No results found.</p>";
-
-        return;
-
-    }
-
-
-
-    list.forEach(item => {
-
-
-        box.innerHTML += 
-
-        <div class="card">
-
-        <h2>${item.name}</h2>
-
-        <p>
-        Category: ${item.category}
-        </p>
-
-        <p>
-        Status: ${item.status}
-        </p>
-
-        ${
-            item.status === "Complete"
-            ?
-            
-            <a href="https://github.com/IkoMosiEntertainmentHub/Visual-Assets-Library/tree/main/${item.path}">
-            Open Folder
-            </a>
-            
-            :
-            "No assets available yet"
-        }
-
-        </div>
-
-        ;
-
-
-    });
-
-
-}
 
 
 
@@ -148,31 +112,30 @@ document
 function(){
 
 
-    let text =
-    this.value
-    .toLowerCase();
+let q =
+this.value
+.toLowerCase();
 
 
 
-    let filtered =
-    assets.filter(item =>
+let results =
+data.filter(x =>
+
+x.name
+.toLowerCase()
+.includes(q)
+
+||
+
+x.category
+.toLowerCase()
+.includes(q)
+
+);
 
 
-        item.name
-        .toLowerCase()
-        .includes(text)
 
-        ||
-
-        item.category
-        .toLowerCase()
-        .includes(text)
-
-
-    );
-
-
-    showResults(filtered);
+display(results);
 
 
 });
@@ -180,7 +143,77 @@ function(){
 
 
 
-loadSearch();
+
+function display(items){
+
+
+let box =
+document.getElementById("results");
+
+
+box.innerHTML="";
+
+
+
+items.forEach(x=>{
+
+
+let cls =
+x.status=="Complete"
+?
+"complete"
+:
+x.status=="In Development"
+?
+"dev"
+:
+"none";
+
+
+
+box.innerHTML += 
+
+
+<div class="card">
+
+
+<h2>${x.name}</h2>
+
+
+<p>
+Category: ${x.category}
+</p>
+
+
+<p class="${cls}">
+Status: ${x.status}
+</p>
+
+
+${
+x.status=="Complete"
+?
+<a href="https://github.com/IkoMosiEntertainmentHub/Visual-Assets-Library/tree/main/${x.path}">
+Open Folder
+</a>
+:
+"No assets available yet"
+}
+
+
+
+</div>
+
+
+;
+
+
+
+});
+
+
+}
+
 
 
 </script>
