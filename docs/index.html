@@ -2,6 +2,7 @@
 <html lang="en">
 
 <head>
+
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
@@ -16,18 +17,47 @@ body {
     padding: 30px;
 }
 
+h1 {
+    margin-bottom: 20px;
+}
+
 input {
     width: 100%;
-    padding: 12px;
-    font-size: 18px;
+    padding: 14px;
+    font-size: 16px;
+    border-radius: 8px;
+    border: 1px solid #ccc;
     margin-bottom: 20px;
 }
 
 .card {
     border: 1px solid #ddd;
-    border-radius: 8px;
+    border-radius: 10px;
     padding: 15px;
-    margin-bottom: 10px;
+    margin-bottom: 15px;
+}
+
+.card h2 {
+    margin-top: 0;
+}
+
+.status-complete {
+    color: green;
+    font-weight: bold;
+}
+
+.status-development {
+    color: orange;
+    font-weight: bold;
+}
+
+.status-notstarted {
+    color: gray;
+    font-weight: bold;
+}
+
+a {
+    text-decoration: none;
 }
 
 </style>
@@ -37,48 +67,59 @@ input {
 
 <body>
 
+
 <h1>Visual Assets Library</h1>
 
-<input id="search" placeholder="Search collections...">
+
+<input 
+id="search"
+type="text"
+placeholder="Search collections..."
+>
+
 
 <div id="results">
 Loading...
 </div>
 
 
+
 <script>
+
 
 let assets = [];
 
 
-const database =
+
+const SEARCH_DATABASE =
 "https://ikomosientertainmenthub.github.io/Visual-Assets-Library/search.json";
 
 
 
-fetch(database)
 
-.then(response => {
+fetch(SEARCH_DATABASE)
 
-    console.log("Response:", response);
 
-    if (!response.ok) {
+.then(function(response){
+
+
+    if(!response.ok){
 
         throw new Error(
-            "Failed loading database: " + response.status
+            "Unable to load search database: "
+            + response.status
         );
 
     }
 
+
     return response.json();
+
 
 })
 
 
-.then(data => {
-
-
-    console.log("Database loaded:", data);
+.then(function(data){
 
 
     assets = data;
@@ -90,14 +131,19 @@ fetch(database)
 })
 
 
-.catch(error => {
+.catch(function(error){
 
 
     console.error(error);
 
 
     document.getElementById("results").innerHTML =
-    "Failed to load search database.";
+
+    
+    <p>
+    Failed to load search database.
+    </p>
+    ;
 
 
 });
@@ -114,20 +160,44 @@ function(){
 
 
     let query =
-    this.value.toLowerCase();
+    this.value
+    .toLowerCase()
+    .trim();
 
 
-    let results =
-    assets.filter(item =>
 
-        item.name.toLowerCase().includes(query)
-        ||
-        item.category.toLowerCase().includes(query)
-
-    );
+    let filtered =
+    assets.filter(function(item){
 
 
-    displayResults(results);
+        return (
+
+            item.name
+            .toLowerCase()
+            .includes(query)
+
+
+            ||
+
+            item.category
+            .toLowerCase()
+            .includes(query)
+
+
+            ||
+
+            item.status
+            .toLowerCase()
+            .includes(query)
+
+        );
+
+
+    });
+
+
+
+    displayResults(filtered);
 
 
 });
@@ -143,47 +213,147 @@ function displayResults(results){
     document.getElementById("results");
 
 
+
     container.innerHTML = "";
 
 
 
     if(results.length === 0){
 
+
         container.innerHTML =
-        "No collections found.";
+
+        
+        <p>
+        No collections found.
+        </p>
+        ;
+
 
         return;
+
 
     }
 
 
 
-    results.forEach(item => {
 
 
-        container.innerHTML += 
+    results.forEach(function(item){
+
+
+
+        let statusClass = "";
+
+
+
+        if(item.status === "Complete"){
+
+            statusClass =
+            "status-complete";
+
+
+        }
+
+        else if(item.status === "In Development"){
+
+
+            statusClass =
+            "status-development";
+
+
+        }
+
+        else {
+
+
+            statusClass =
+            "status-notstarted";
+
+
+        }
+
+
+
+
+
+        let link = "";
+
+
+
+        if(item.status === "Complete"){
+
+
+            link =
+
+            
+            <p>
+            <a href="https://github.com/IkoMosiEntertainmentHub/Visual-Assets-Library/tree/main/${item.path}">
+            Open Collection
+            </a>
+            </p>
+            ;
+
+
+        }
+
+        else {
+
+
+            link =
+
+            
+            <p>
+            No assets available yet
+            </p>
+            ;
+
+
+        }
+
+
+
+
+
+        container.innerHTML +=
+
+
+        
 
         <div class="card">
 
-        <h2>${item.name}</h2>
+
+        <h2>
+        ${item.name}
+        </h2>
+
 
         <p>
         Category: ${item.category}
         </p>
 
-        <p>
+
+        <p class="${statusClass}">
         Status: ${item.status}
         </p>
 
+
+        ${link}
+
+
         </div>
 
+
         ;
+
 
 
     });
 
 
+
 }
+
 
 
 </script>
