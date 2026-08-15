@@ -772,3 +772,44 @@ function displayResults(data){
 
 
 loadSettings();
+
+
+// GUIDE PANEL
+
+const guideButton =
+document.getElementById("guideButton");
+
+const guidePanel =
+document.getElementById("guidePanel");
+
+const closeGuide =
+document.getElementById("closeGuide");
+
+
+if(guideButton && guidePanel){
+
+    guideButton.addEventListener(
+    "click",
+    (e)=>{
+
+        e.preventDefault();
+
+        guidePanel.classList.add("active");
+
+    });
+
+}
+
+
+
+if(closeGuide && guidePanel){
+
+    closeGuide.addEventListener(
+    "click",
+    ()=>{
+
+        guidePanel.classList.remove("active");
+
+    });
+
+}
