@@ -650,7 +650,8 @@ padding:20px;
 
 }
 
-#guidePanel{
+#guidePanel,
+#troubleshootPanel{
 
 position:fixed;
 
@@ -675,7 +676,8 @@ transition:.35s ease;
 }
 
 
-#guidePanel.active{
+#guidePanel.active,
+#troubleshootPanel.active{
 
 opacity:1;
 
@@ -714,19 +716,26 @@ position:relative;
 
 }
 
+
 .guide-box.expanded{
 
 height:95vh;
 
 }
 
-#guidePanel.active .guide-box{
+
+#guidePanel.active .guide-box,
+#troubleshootPanel.active .guide-box{
 
 transform:translateY(0);
 
 }
 
-#guideButton{
+
+/* GUIDE & TROUBLESHOOTING BUTTONS */
+
+#guideButton,
+#troubleshootButton{
 
 background:transparent;
 
@@ -745,13 +754,18 @@ font-family:Arial,Helvetica,sans-serif;
 }
 
 
-#guideButton:hover{
+#guideButton:hover,
+#troubleshootButton:hover{
 
 text-decoration:underline;
 
 }
 
-#closeGuide{
+
+/* CLOSE BUTTONS */
+
+#closeGuide,
+#closeTroubleshoot{
 
 position:absolute;
 
@@ -786,9 +800,9 @@ justify-content:center;
 }
 
 
-#closeGuide:hover{
+#closeGuide:hover,
+#closeTroubleshoot:hover{
 
 background:#0050cc;
 
 }
-

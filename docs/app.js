@@ -755,7 +755,7 @@ function displayResults(data){
 loadSettings();
 
 
-// GUIDE PANEL
+// GUIDE & TROUBLESHOOTING PANELS
 
 const guideButton =
 document.getElementById("guideButton");
@@ -767,26 +767,68 @@ const closeGuide =
 document.getElementById("closeGuide");
 
 
-function closeGuidePanel(){
+const troubleshootButton =
+document.getElementById("troubleshootButton");
 
-    guidePanel.classList.remove("active");
+const troubleshootPanel =
+document.getElementById("troubleshootPanel");
+
+const closeTroubleshoot =
+document.getElementById("closeTroubleshoot");
+
+
+
+function openPanel(panel){
+
+    if(!panel) return;
+
+
+    if(guidePanel && guidePanel !== panel){
+
+        guidePanel.classList.remove("active");
+
+    }
+
+
+    if(troubleshootPanel && troubleshootPanel !== panel){
+
+        troubleshootPanel.classList.remove("active");
+
+    }
+
+
+    panel.classList.add("active");
+
+    document.body.style.overflow="hidden";
+
+}
+
+
+
+function closePanel(panel){
+
+    if(!panel) return;
+
+    panel.classList.remove("active");
 
     document.body.style.overflow="";
 
 }
 
 
+
 if(guideButton && guidePanel){
 
     guideButton.addEventListener(
-    "click",
-    ()=>{
+        "click",
+        (e)=>{
 
-        guidePanel.classList.add("active");
+            e.preventDefault();
 
-        document.body.style.overflow="hidden";
+            openPanel(guidePanel);
 
-    });
+        }
+    );
 
 }
 
@@ -795,28 +837,82 @@ if(guideButton && guidePanel){
 if(closeGuide && guidePanel){
 
     closeGuide.addEventListener(
-    "click",
-    closeGuidePanel
+        "click",
+        ()=>{
+
+            closePanel(guidePanel);
+
+        }
     );
 
 }
 
 
 
-// click outside panel
+if(troubleshootButton && troubleshootPanel){
+
+    troubleshootButton.addEventListener(
+        "click",
+        (e)=>{
+
+            e.preventDefault();
+
+            openPanel(troubleshootPanel);
+
+        }
+    );
+
+}
+
+
+
+if(closeTroubleshoot && troubleshootPanel){
+
+    closeTroubleshoot.addEventListener(
+        "click",
+        ()=>{
+
+            closePanel(troubleshootPanel);
+
+        }
+    );
+
+}
+
+
 
 if(guidePanel){
 
     guidePanel.addEventListener(
-    "click",
-    (e)=>{
+        "click",
+        (e)=>{
 
-        if(e.target === guidePanel){
+            if(e.target === guidePanel){
 
-            closeGuidePanel();
+                closePanel(guidePanel);
+
+            }
 
         }
+    );
 
-    });
+}
+
+
+
+if(troubleshootPanel){
+
+    troubleshootPanel.addEventListener(
+        "click",
+        (e)=>{
+
+            if(e.target === troubleshootPanel){
+
+                closePanel(troubleshootPanel);
+
+            }
+
+        }
+    );
 
 }
