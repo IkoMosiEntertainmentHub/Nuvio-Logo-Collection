@@ -41,21 +41,21 @@ content:"";
 
 position:fixed;
 
-width:500px;
+width:600px;
 
-height:500px;
+height:600px;
 
 background:#0066ff;
 
-filter:blur(140px);
+filter:blur(150px);
 
 opacity:.35;
 
-top:-150px;
+top:-200px;
 
-left:-150px;
+left:-200px;
 
-animation:move 12s infinite alternate;
+animation:move1 12s infinite alternate;
 
 z-index:-1;
 
@@ -69,9 +69,9 @@ content:"";
 
 position:fixed;
 
-width:500px;
+width:600px;
 
-height:500px;
+height:600px;
 
 background:#00bfff;
 
@@ -79,9 +79,9 @@ filter:blur(150px);
 
 opacity:.25;
 
-bottom:-150px;
+bottom:-200px;
 
-right:-150px;
+right:-200px;
 
 animation:move2 15s infinite alternate;
 
@@ -91,14 +91,14 @@ z-index:-1;
 
 
 
-@keyframes move{
+@keyframes move1{
 
 from{
 transform:translate(0,0);
 }
 
 to{
-transform:translate(250px,150px);
+transform:translate(300px,200px);
 }
 
 }
@@ -112,7 +112,7 @@ transform:translate(0,0);
 }
 
 to{
-transform:translate(-200px,-150px);
+transform:translate(-250px,-200px);
 }
 
 }
@@ -120,8 +120,6 @@ transform:translate(-200px,-150px);
 
 
 .container{
-
-width:100%;
 
 max-width:1100px;
 
@@ -139,9 +137,19 @@ font-size:38px;
 
 
 
-input[type=text]{
+.search-area{
 
-width:100%;
+display:flex;
+
+gap:10px;
+
+}
+
+
+
+#search{
+
+flex:1;
 
 padding:15px;
 
@@ -159,25 +167,57 @@ font-size:17px;
 
 
 
-.settings{
+#settingsButton{
 
-background:rgba(255,255,255,.08);
+width:55px;
 
-padding:15px;
+border-radius:12px;
 
-border-radius:15px;
+border:none;
 
-margin-top:20px;
+background:#0066ff;
+
+color:white;
+
+font-size:25px;
+
+cursor:pointer;
 
 }
 
 
 
-.settings label{
+#settingsPanel{
+
+display:none;
+
+position:absolute;
+
+right:20px;
+
+top:100px;
+
+background:#111c33;
+
+padding:20px;
+
+border-radius:15px;
+
+border:1px solid rgba(255,255,255,.2);
+
+z-index:100;
+
+min-width:250px;
+
+}
+
+
+
+#settingsPanel label{
 
 display:block;
 
-margin:10px 0;
+margin:12px 0;
 
 }
 
@@ -194,8 +234,6 @@ border-radius:16px;
 padding:20px;
 
 margin-top:20px;
-
-border:1px solid rgba(255,255,255,.1);
 
 }
 
@@ -251,34 +289,25 @@ margin-top:10px;
 
 
 
-button{
+button.copy{
 
 width:100%;
+
+padding:12px;
+
+margin-top:10px;
+
+border:none;
+
+border-radius:10px;
 
 background:#0066ff;
 
 color:white;
 
-border:none;
-
-padding:12px;
-
-border-radius:10px;
-
 cursor:pointer;
 
-font-size:15px;
-
 }
-
-
-
-button:hover{
-
-background:#008cff;
-
-}
-
 
 
 
@@ -308,15 +337,6 @@ padding:15px;
 }
 
 
-
-.asset{
-
-padding:12px;
-
-}
-
-
-
 }
 
 
@@ -324,6 +344,7 @@ padding:12px;
 </style>
 
 </head>
+
 
 
 <body>
@@ -337,63 +358,103 @@ Visual Assets Library
 </h1>
 
 
+
+<div class="search-area">
+
+
 <input 
 id="search"
-type="text"
 placeholder="Search collections..."
 >
 
 
 
-<div class="settings">
+<button id="settingsButton">
+
+⚙️
+
+</button>
+
+
+</div>
+
+
+
+
+<div id="settingsPanel">
 
 
 <h3>
-Preview Settings
+Settings
 </h3>
 
 
 <label>
-<input id="gifToggle" type="checkbox" checked>
-Enable GIF Preview
+
+<input id="gifToggle" type="checkbox">
+
+GIF Preview
+
 </label>
+
 
 
 <label>
-<input id="pngToggle" type="checkbox" checked>
-Enable PNG Preview
+
+<input id="pngToggle" type="checkbox">
+
+PNG Preview
+
 </label>
+
 
 
 <label>
-<input id="jpgToggle" type="checkbox" checked>
-Enable JPG/JPEG Preview
+
+<input id="jpgToggle" type="checkbox">
+
+JPG/JPEG Preview
+
 </label>
+
 
 
 <label>
-<input id="webpToggle" type="checkbox" checked>
-Enable WEBP Preview
+
+<input id="webpToggle" type="checkbox">
+
+WEBP Preview
+
 </label>
+
 
 
 <label>
-<input id="mp4Toggle" type="checkbox" checked>
-Enable MP4 Preview
+
+<input id="mp4Toggle" type="checkbox">
+
+MP4 Preview
+
 </label>
+
 
 
 </div>
+
 
 
 
 <div id="results">
+
 Loading...
+
+</div>
+
+
+
 </div>
 
 
-
-</div>
 
 
 
@@ -404,7 +465,16 @@ Loading...
 let assets=[];
 
 
-let settings={
+
+let settings = JSON.parse(
+
+localStorage.getItem("VAL_settings")
+
+)
+
+||
+
+{
 
 gif:true,
 
@@ -422,10 +492,120 @@ mp4:true
 
 
 
+
+function loadSettings(){
+
+
+gifToggle.checked=settings.gif;
+
+pngToggle.checked=settings.png;
+
+jpgToggle.checked=settings.jpg;
+
+webpToggle.checked=settings.webp;
+
+mp4Toggle.checked=settings.mp4;
+
+
+}
+
+
+
+
+
+function saveSettings(){
+
+
+settings={
+
+
+gif:gifToggle.checked,
+
+png:pngToggle.checked,
+
+jpg:jpgToggle.checked,
+
+webp:webpToggle.checked,
+
+mp4:mp4Toggle.checked
+
+
+};
+
+
+
+localStorage.setItem(
+
+"VAL_settings",
+
+JSON.stringify(settings)
+
+);
+
+
+
+displayResults(assets);
+
+
+}
+
+
+
+
+
+document
+.querySelectorAll("#settingsPanel input")
+.forEach(x=>{
+
+
+x.addEventListener(
+
+"change",
+
+saveSettings
+
+);
+
+
+});
+
+
+
+
+
+
+settingsButton.onclick=function(){
+
+
+let panel=document.getElementById(
+"settingsPanel"
+);
+
+
+
+panel.style.display =
+
+panel.style.display==="block"
+
+?
+
+"none"
+
+:
+
+"block";
+
+
+};
+
+
+
+
+
 fetch("search.json")
 
 
-.then(r=>r.json())
+.then(response=>response.json())
 
 
 .then(data=>{
@@ -439,48 +619,13 @@ displayResults(data);
 
 })
 
-.catch(()=>{
+.catch(error=>{
 
 
-document.getElementById("results").innerHTML=
-"Failed loading database";
+console.error(error);
 
 
-});
-
-
-
-
-
-function updateSettings(){
-
-
-settings.gif=document.getElementById("gifToggle").checked;
-
-settings.png=document.getElementById("pngToggle").checked;
-
-settings.jpg=document.getElementById("jpgToggle").checked;
-
-settings.webp=document.getElementById("webpToggle").checked;
-
-settings.mp4=document.getElementById("mp4Toggle").checked;
-
-
-displayResults(assets);
-
-
-}
-
-
-
-document.querySelectorAll(".settings input")
-.forEach(x=>{
-
-
-x.addEventListener(
-"change",
-updateSettings
-);
+results.innerHTML="Failed loading database";
 
 
 });
@@ -489,10 +634,11 @@ updateSettings
 
 
 
-document
-.getElementById("search")
-.addEventListener(
+
+search.addEventListener(
+
 "input",
+
 function(){
 
 
@@ -517,11 +663,13 @@ item.status.toLowerCase().includes(q)
 );
 
 
+
 displayResults(filtered);
 
 
-
 });
+
+
 
 
 
@@ -534,17 +682,23 @@ function copyText(text,button){
 navigator.clipboard.writeText(text);
 
 
+
 button.innerText="Copied";
+
 
 
 setTimeout(()=>{
 
+
 button.innerText="Copy Raw Asset Link";
+
 
 },1500);
 
 
 }
+
+
 
 
 
@@ -577,6 +731,8 @@ return false;
 
 
 }
+
+
 
 
 
@@ -621,6 +777,7 @@ Status: ${item.status}
 
 
 
+
 if(item.status==="Complete"){
 
 
@@ -631,15 +788,16 @@ item.assets.forEach(url=>{
 let ext=url.split(".").pop().toLowerCase();
 
 
+
 html+=`
 
 <div class="asset">
 
-<h3>
-${ext.toUpperCase()}
-</h3>
+
+<h3>${ext.toUpperCase()}</h3>
 
 `;
+
 
 
 
@@ -648,11 +806,11 @@ if(allowedPreview(ext)){
 
 
 if(
+ext==="gif" ||
 ext==="png" ||
 ext==="jpg" ||
 ext==="jpeg" ||
-ext==="webp" ||
-ext==="gif"
+ext==="webp"
 ){
 
 
@@ -693,7 +851,7 @@ html+=`
 
 html+=`
 
-<button onclick='copyText(${JSON.stringify(url)},this)'>
+<button class="copy" onclick='copyText(${JSON.stringify(url)},this)'>
 
 Copy Raw Asset Link
 
@@ -744,6 +902,11 @@ box.innerHTML+=html;
 
 }
 
+
+
+
+
+loadSettings();
 
 
 </script>
