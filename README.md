@@ -1,4 +1,4 @@
-# Visual Assets Library
+# [Visual Assets Library](https://ikomosientertainmenthub.github.io/Visual-Assets-Library/)
 
 A personal, unofficial collection of logos, artwork, GIFs, animations, icons, and other visual assets organized for use with media catalogues, collection interfaces, and projects that support custom visual assets.
 
@@ -8,6 +8,50 @@ A personal, unofficial collection of logos, artwork, GIFs, animations, icons, an
 > **I do not claim ownership of third-party materials contained within this repository.**
 >
 > Assets have been collected from various sources. Ownership, credit, and rights remain with their respective creators, copyright holders, trademark owners, companies, studios, organizations, licensors, and other rightful owners.
+
+---
+
+## 📁 About
+
+**Visual Assets Library** is a personal collection and organized resource for visual assets used with media catalogues, collection interfaces, and related projects.
+All applicable rights remain with their respective creators, copyright holders, trademark owners, companies, studios, organizations, licensors, and other rightful owners.
+
+**Nothing in this repository transfers ownership of third-party material to me.**
+
+I am collecting and organizing these materials as a personal resource. Inclusion in this repository should not be interpreted as a claim of authorship, ownership, licensing authority, or official representation.
+---
+
+## 📊 Collection Overview
+
+> **Live collection tracking**
+>
+> Collection statistics are automatically generated and updated through GitHub Actions whenever changes are pushed to `main`.
+
+The status below reflects the current collection progress for each category.
+
+**Tracking:** `118 collections organized across 5 categories`
+
+<!-- COLLECTION_PROGRESS_START -->
+
+| Category | Completed | Total | Progress | Status |
+| --- | ---: | ---: | --- | --- |
+| **Streaming Platforms** | 12 | 12 | `██████████` **100.0%** | Complete |
+| **TV Collections** | 0 | 16 | `░░░░░░░░░░` **0.0%** | Not Started |
+| **Studios** | 1 | 20 | `░░░░░░░░░░` **5.0%** | Collecting |
+| **Franchises** | 5 | 38 | `█░░░░░░░░░` **13.2%** | Collecting |
+| **Networks** | 1 | 33 | `░░░░░░░░░░` **3.0%** | Collecting |
+
+<!-- COLLECTION_PROGRESS_END -->
+
+> **Automated tracking:** Progress is calculated by scanning collection folders for supported visual assets.
+>
+> A collection is marked as:
+>
+> - **Complete** when assets are available within its folder.
+> - **Collecting** when assets are currently being gathered.
+> - **Not Started** when collection has not begun.
+>
+> **Supported formats:** `.png` · `.gif` · `.jpg` · `.jpeg` · `.webp` · `.svg` · `.avif` · `.mp4`
 
 ---
 
@@ -44,17 +88,6 @@ Try clearing the GitHub Pages cache:
 This refreshes stored website files and assets from GitHub Pages.
 
 > Note: Cache behavior depends on your browser, device, and network. Clearing cached files usually resolves outdated website content, but results may vary.
-
----
-
-## 📁 About
-
-**Visual Assets Library** is a personal collection and organized resource for visual assets used with media catalogues, collection interfaces, and related projects.
-All applicable rights remain with their respective creators, copyright holders, trademark owners, companies, studios, organizations, licensors, and other rightful owners.
-
-**Nothing in this repository transfers ownership of third-party material to me.**
-
-I am collecting and organizing these materials as a personal resource. Inclusion in this repository should not be interpreted as a claim of authorship, ownership, licensing authority, or official representation.
 
 ---
 
