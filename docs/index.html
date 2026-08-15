@@ -15,44 +15,19 @@ body {
     max-width: 1000px;
     margin: auto;
     padding: 30px;
-    background: #111;
-    color: white;
-}
-
-h1 {
-    text-align: center;
 }
 
 input {
     width: 100%;
     padding: 15px;
     font-size: 18px;
-    border-radius: 8px;
-    border: none;
-    margin-bottom: 20px;
 }
 
 .card {
-    background: #222;
-    padding: 20px;
-    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    padding: 15px;
+    margin-top: 15px;
     border-radius: 10px;
-}
-
-.complete {
-    color: #4ade80;
-}
-
-.progress {
-    color: #facc15;
-}
-
-.notstarted {
-    color: #aaa;
-}
-
-a {
-    color: #60a5fa;
 }
 
 </style>
@@ -66,19 +41,15 @@ a {
 <h1>Visual Assets Library</h1>
 
 
-<p>
-Search streaming platforms, TV collections, studios, franchises, networks and other collections.
-</p>
-
-
 <input 
 id="search"
-placeholder="Search Netflix, Marvel, Disney..."
-oninput="searchAssets()"
+placeholder="Search collections..."
 >
 
 
-<div id="results"></div>
+<div id="results">
+Loading collections...
+</div>
 
 
 
@@ -89,90 +60,38 @@ let assets = [];
 
 
 
-fetch("./search.json")
-.then(response => response.json())
-.then(data => {
-
-    assets = data;
-
-    displayResults(assets);
-
-})
-.catch(error => {
-
-    document.getElementById("results").innerHTML =
-    "<p>Unable to load collection database.</p>";
-
-});
+async function loadSearch() {
 
 
+    const response = await fetch(
+        "https://ikomosientertainmenthub.github.io/Visual-Assets-Library/search.json"
+    );
 
 
-
-function searchAssets() {
-
-
-    let query =
-    document
-    .getElementById("search")
-    .value
-    .toLowerCase()
-    .trim();
+    assets = await response.json();
 
 
-
-    let results = assets.filter(item => {
-
-
-        return (
-
-            item.name
-            .toLowerCase()
-            .includes(query)
-
-            ||
-
-            item.category
-            .toLowerCase()
-            .includes(query)
-
-            ||
-
-            item.status
-            .toLowerCase()
-            .includes(query)
-
-        );
-
-
-    });
-
-
-
-    displayResults(results);
+    showResults(assets);
 
 
 }
 
 
 
+function showResults(list) {
 
 
-function displayResults(results) {
-
-
-    const container =
+    const box =
     document.getElementById("results");
 
 
-    container.innerHTML = "";
+    box.innerHTML = "";
 
 
+    if(list.length === 0){
 
-    if(results.length === 0) {
-
-        container.innerHTML =
-        "<p>No collections found.</p>";
+        box.innerHTML =
+        "<p>No results found.</p>";
 
         return;
 
@@ -180,83 +99,36 @@ function displayResults(results) {
 
 
 
-
-    results.forEach(item => {
-
+    list.forEach(item => {
 
 
-        let statusClass = "notstarted";
-
-
-        if(item.status === "Complete") {
-
-            statusClass = "complete";
-
-        }
-
-        else if(
-            item.status === "In development" ||
-            item.status === "In Development"
-        ) {
-
-            statusClass = "progress";
-
-        }
-
-
-
-
-        let folder = "";
-
-
-
-        if(item.status === "Complete") {
-
-
-            folder = 
-
-            <br>
-
-            <a target="_blank"
-            href="https://github.com/IkoMosiEntertainmentHub/Visual-Assets-Library/tree/main/${item.path}">
-            Open Collection Folder
-            </a>
-
-            ;
-
-
-        }
-
-
-
-        container.innerHTML += 
-
+        box.innerHTML += 
 
         <div class="card">
 
-
-        <h2>
-        ${item.name}
-        </h2>
-
+        <h2>${item.name}</h2>
 
         <p>
-        Category:
-        ${item.category}
+        Category: ${item.category}
         </p>
 
-
-        <p class="${statusClass}">
-        Status:
-        ${item.status}
+        <p>
+        Status: ${item.status}
         </p>
 
-
-        ${folder}
-
+        ${
+            item.status === "Complete"
+            ?
+            
+            <a href="https://github.com/IkoMosiEntertainmentHub/Visual-Assets-Library/tree/main/${item.path}">
+            Open Folder
+            </a>
+            
+            :
+            "No assets available yet"
+        }
 
         </div>
-
 
         ;
 
@@ -266,6 +138,49 @@ function displayResults(results) {
 
 }
 
+
+
+
+document
+.getElementById("search")
+.addEventListener(
+"input",
+function(){
+
+
+    let text =
+    this.value
+    .toLowerCase();
+
+
+
+    let filtered =
+    assets.filter(item =>
+
+
+        item.name
+        .toLowerCase()
+        .includes(text)
+
+        ||
+
+        item.category
+        .toLowerCase()
+        .includes(text)
+
+
+    );
+
+
+    showResults(filtered);
+
+
+});
+
+
+
+
+loadSearch();
 
 
 </script>
