@@ -1,4 +1,294 @@
-category_status = "In Development"
+name: Update Collection Progress
+
+on:
+  push:
+    branches:
+      - main
+
+  workflow_dispatch:
+
+
+permissions:
+  contents: write
+
+
+jobs:
+
+  update-progress:
+
+    runs-on: ubuntu-latest
+
+
+    steps:
+
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+
+
+      - name: Generate progress and search database
+        shell: python
+        run: |
+
+          import json
+          import os
+          import re
+          from urllib.parse import quote
+
+
+
+          CONFIG_FILE = "collections.json"
+
+          PROGRESS_FILE = "progress.json"
+
+          README_FILE = "README.md"
+
+          SEARCH_FILE = "docs/search.json"
+
+
+
+          REPO = "IkoMosiEntertainmentHub/Visual-Assets-Library"
+
+
+
+          ASSET_EXTENSIONS = {
+
+              ".png",
+              ".gif",
+              ".jpg",
+              ".jpeg",
+              ".webp",
+              ".svg",
+              ".avif"
+
+          }
+
+
+
+          START_MARKER = "<!-- COLLECTION_PROGRESS_START -->"
+
+          END_MARKER = "<!-- COLLECTION_PROGRESS_END -->"
+
+
+
+
+
+          def find_assets(folder):
+
+              assets = []
+
+
+              if not os.path.isdir(folder):
+
+                  return assets
+
+
+
+              for root, dirs, files in os.walk(folder):
+
+                  dirs[:] = [
+
+                      d for d in dirs
+
+                      if d != ".git"
+
+                  ]
+
+
+
+                  for filename in files:
+
+
+                      extension = os.path.splitext(filename)[1].lower()
+
+
+
+                      if extension in ASSET_EXTENSIONS:
+
+
+                          full_path = os.path.join(
+
+                              root,
+
+                              filename
+
+                          )
+
+
+
+                          relative = os.path.relpath(
+
+                              full_path
+
+                          ).replace("\\","/")
+
+
+
+                          url = (
+
+                              "https://raw.githubusercontent.com/"
+
+                              + REPO
+
+                              + "/refs/heads/main/"
+
+                              + "/".join(
+
+                                  quote(part)
+
+                                  for part in relative.split("/")
+
+                              )
+
+                          )
+
+
+
+                          assets.append(url)
+
+
+
+              return assets
+
+
+
+
+
+          with open(CONFIG_FILE, "r", encoding="utf-8") as file:
+
+              collections = json.load(file)
+
+
+
+
+
+          progress = {}
+
+          search_database = []
+
+
+
+
+
+          for category, items in collections.items():
+
+
+              completed = 0
+
+              item_results = {}
+
+
+
+              for item in items:
+
+
+
+                  path = os.path.join(
+
+                      category,
+
+                      item
+
+                  )
+
+
+
+                  assets = find_assets(path)
+
+
+
+                  if len(assets) > 0:
+
+
+                      completed += 1
+
+                      status = "Complete"
+
+
+
+                  elif os.path.isdir(path):
+
+
+                      status = "In Development"
+
+
+
+                  else:
+
+
+                      status = "Not Started"
+
+
+
+
+
+                  item_results[item] = {
+
+
+                      "complete": len(assets) > 0,
+
+                      "status": status
+
+
+                  }
+
+
+
+
+
+                  search_database.append({
+
+
+                      "name": item,
+
+
+                      "category": category,
+
+
+                      "status": status,
+
+
+                      "path": path.replace("\\","/"),
+
+
+                      "assets": assets
+
+
+                  })
+
+
+
+
+
+              total = len(items)
+
+
+
+              percentage = round(
+
+                  (completed / total) * 100,
+
+                  1
+
+              ) if total else 0
+
+
+
+
+
+              if percentage == 100:
+
+
+                  category_status = "Complete"
+
+
+
+              elif percentage > 0:
+
+
+                  category_status = "In Development"
 
 
 
@@ -11,10 +301,7 @@ category_status = "In Development"
 
 
 
-
-
               progress[category] = {
-
 
 
                   "completed": completed,
@@ -38,29 +325,19 @@ category_status = "In Development"
 
 
 
-
-
           os.makedirs(
+
               "docs",
+
               exist_ok=True
+
           )
 
 
 
 
 
-
-
-          with open(
-
-              PROGRESS_FILE,
-
-              "w",
-
-              encoding="utf-8"
-
-          ) as file:
-
+          with open(PROGRESS_FILE, "w", encoding="utf-8") as file:
 
 
               json.dump(
@@ -75,24 +352,14 @@ category_status = "In Development"
 
               )
 
+
               file.write("\n")
 
 
 
 
 
-
-
-          with open(
-
-              SEARCH_FILE,
-
-              "w",
-
-              encoding="utf-8"
-
-          ) as file:
-
+          with open(SEARCH_FILE, "w", encoding="utf-8") as file:
 
 
               json.dump(
@@ -107,30 +374,16 @@ category_status = "In Development"
 
               )
 
+
               file.write("\n")
 
 
 
 
 
-
-
-
-          with open(
-
-              README_FILE,
-
-              "r",
-
-              encoding="utf-8"
-
-          ) as file:
-
+          with open(README_FILE, "r", encoding="utf-8") as file:
 
               readme = file.read()
-
-
-
 
 
 
@@ -142,6 +395,7 @@ category_status = "In Development"
           table.append(START_MARKER)
 
           table.append("")
+
 
           table.append("| Category | Completed | Total | Progress | Status |")
 
@@ -161,14 +415,13 @@ category_status = "In Development"
               )
 
 
-
               bar = (
 
                   "█" * filled
 
                   +
 
-                  "░" * (10-filled)
+                  "░" * (10 - filled)
 
               )
 
@@ -176,18 +429,17 @@ category_status = "In Development"
 
               table.append(
 
-                  f"| {category} | "
+                  f"| **{category}** | "
 
                   f"{data['completed']} | "
 
                   f"{data['total']} | "
 
-                  f"{bar} {data['percentage']}% | "
+                  f"`{bar}` **{data['percentage']}%** | "
 
                   f"{data['status']} |"
 
               )
-
 
 
 
@@ -239,18 +491,7 @@ category_status = "In Development"
 
 
 
-
-
-          with open(
-
-              README_FILE,
-
-              "w",
-
-              encoding="utf-8"
-
-          ) as file:
-
+          with open(README_FILE, "w", encoding="utf-8") as file:
 
               file.write(readme)
 
@@ -258,10 +499,7 @@ category_status = "In Development"
 
 
 
-
-
-
-      - name: Commit updates
+      - name: Commit generated files
 
         shell: bash
 
