@@ -4,7 +4,6 @@
 <head>
 
 <meta charset="UTF-8">
-
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <title>Visual Assets Library</title>
@@ -12,56 +11,233 @@
 
 <style>
 
-body {
-    font-family: Arial, sans-serif;
-    max-width: 1000px;
-    margin: auto;
-    padding: 30px;
+* {
+    box-sizing:border-box;
 }
+
+
+body {
+
+    margin:0;
+
+    min-height:100vh;
+
+    font-family:Arial, sans-serif;
+
+    color:white;
+
+    padding:40px;
+
+    overflow-x:hidden;
+
+    background:#050b18;
+
+}
+
+
+body::before {
+
+    content:"";
+
+    position:fixed;
+
+    width:700px;
+
+    height:700px;
+
+    background:#0066ff;
+
+    filter:blur(160px);
+
+    opacity:0.35;
+
+    top:-200px;
+
+    left:-200px;
+
+    animation:move 12s infinite alternate;
+
+    z-index:-1;
+
+}
+
+
+body::after {
+
+    content:"";
+
+    position:fixed;
+
+    width:600px;
+
+    height:600px;
+
+    background:#00bfff;
+
+    filter:blur(170px);
+
+    opacity:0.25;
+
+    bottom:-200px;
+
+    right:-200px;
+
+    animation:move2 15s infinite alternate;
+
+    z-index:-1;
+
+}
+
+
+@keyframes move {
+
+from {
+transform:translate(0,0);
+}
+
+to {
+transform:translate(300px,200px);
+}
+
+}
+
+
+@keyframes move2 {
+
+from {
+transform:translate(0,0);
+}
+
+to {
+transform:translate(-250px,-200px);
+}
+
+}
+
+
+.container {
+
+max-width:1100px;
+
+margin:auto;
+
+}
+
 
 h1 {
-    margin-bottom: 20px;
+
+font-size:40px;
+
 }
+
 
 input {
-    width: 100%;
-    box-sizing: border-box;
-    padding: 14px;
-    font-size: 16px;
-    border-radius: 8px;
-    border: 1px solid #ccc;
-    margin-bottom: 20px;
+
+width:100%;
+
+padding:16px;
+
+border-radius:12px;
+
+border:none;
+
+background:#111c33;
+
+color:white;
+
+font-size:18px;
+
+margin-bottom:25px;
+
 }
+
+
 
 .card {
-    border: 1px solid #ddd;
-    border-radius: 10px;
-    padding: 15px;
-    margin-bottom: 15px;
+
+background:rgba(20,30,55,0.8);
+
+backdrop-filter:blur(15px);
+
+border:1px solid rgba(255,255,255,0.1);
+
+border-radius:16px;
+
+padding:20px;
+
+margin-bottom:20px;
+
 }
 
-.card h2 {
-    margin-top: 0;
+
+
+.complete {
+
+color:#00ff88;
+
+font-weight:bold;
+
 }
 
-.status-complete {
-    color: green;
-    font-weight: bold;
+
+.dev {
+
+color:#ffaa00;
+
+font-weight:bold;
+
 }
 
-.status-development {
-    color: orange;
-    font-weight: bold;
+
+
+button {
+
+background:#0066ff;
+
+border:none;
+
+color:white;
+
+padding:10px 15px;
+
+border-radius:8px;
+
+cursor:pointer;
+
+margin-top:8px;
+
 }
 
-.status-notstarted {
-    color: gray;
-    font-weight: bold;
+
+button:hover {
+
+background:#008cff;
+
 }
 
-a {
-    text-decoration: none;
+
+
+.asset {
+
+background:#081226;
+
+padding:10px;
+
+border-radius:8px;
+
+margin-top:10px;
+
+word-break:break-all;
+
 }
+
+
+.hidden {
+
+display:none;
+
+}
+
 
 </style>
 
@@ -71,15 +247,15 @@ a {
 <body>
 
 
-<h1>Visual Assets Library</h1>
+<div class="container">
 
 
-<input
-    id="search"
-    type="text"
-    placeholder="Search collections..."
-    autocomplete="off"
->
+<h1>
+Visual Assets Library
+</h1>
+
+
+<input id="search" placeholder="Search collections...">
 
 
 <div id="results">
@@ -87,272 +263,195 @@ Loading...
 </div>
 
 
+</div>
+
+
+
 <script>
 
-document.addEventListener("DOMContentLoaded", function() {
 
+let assets=[];
 
-    let assets = [];
 
+const DATABASE="search.json";
 
-    const searchInput =
-        document.getElementById("search");
 
 
-    const resultsContainer =
-        document.getElementById("results");
+fetch(DATABASE)
 
+.then(r=>r.json())
 
-    if (!searchInput || !resultsContainer) {
+.then(data=>{
 
-        console.error(
-            "Visual Assets Library: Required page elements were not found."
-        );
+assets=data;
 
-        return;
+displayResults(data);
 
-    }
+})
 
+.catch(e=>{
 
-    function displayResults(results) {
+document.getElementById("results").innerHTML=
+"Failed loading database";
 
+});
 
-        resultsContainer.innerHTML = "";
 
 
-        if (results.length === 0) {
+document
+.getElementById("search")
+.addEventListener(
+"input",
+function(){
 
-            resultsContainer.innerHTML = `
-                <p>No collections found.</p>
-            `;
+let q=this.value.toLowerCase();
 
-            return;
 
-        }
+let filtered=assets.filter(item=>
 
+item.name.toLowerCase().includes(q)
 
-        results.forEach(function(item) {
+||
+item.category.toLowerCase().includes(q)
 
+||
+item.status.toLowerCase().includes(q)
 
-            let statusClass = "status-notstarted";
+);
 
 
-            if (item.status === "Complete") {
-
-                statusClass = "status-complete";
-
-            }
-
-            else if (item.status === "In Development") {
-
-                statusClass = "status-development";
-
-            }
-
-
-            let link = "";
-
-
-            if (item.status === "Complete") {
-
-                const encodedPath =
-                    item.path
-                    .split("/")
-                    .map(encodeURIComponent)
-                    .join("/");
-
-
-                link = `
-                    <p>
-                        <a
-                            href="https://github.com/IkoMosiEntertainmentHub/Visual-Assets-Library/tree/main/${encodedPath}"
-                            target="_blank"
-                            rel="noopener noreferrer"
-                        >
-                            Open Collection
-                        </a>
-                    </p>
-                `;
-
-            }
-
-            else {
-
-                link = `
-                    <p>
-                        No assets available yet
-                    </p>
-                `;
-
-            }
-
-
-            resultsContainer.innerHTML += `
-
-                <div class="card">
-
-                    <h2>
-                        ${escapeHTML(item.name)}
-                    </h2>
-
-                    <p>
-                        Category:
-                        ${escapeHTML(item.category)}
-                    </p>
-
-                    <p class="${statusClass}">
-                        Status:
-                        ${escapeHTML(item.status)}
-                    </p>
-
-                    ${link}
-
-                </div>
-
-            `;
-
-        });
-
-    }
-
-
-
-    function escapeHTML(value) {
-
-        return String(value)
-            .replace(/&/g, "&amp;")
-            .replace(/</g, "&lt;")
-            .replace(/>/g, "&gt;")
-            .replace(/"/g, "&quot;")
-            .replace(/'/g, "&#039;");
-
-    }
-
-
-
-    fetch("search.json")
-
-
-        .then(function(response) {
-
-
-            if (!response.ok) {
-
-                throw new Error(
-                    "Could not load search.json. HTTP status: "
-                    + response.status
-                );
-
-            }
-
-
-            return response.json();
-
-
-        })
-
-
-        .then(function(data) {
-
-
-            if (!Array.isArray(data)) {
-
-                throw new Error(
-                    "search.json does not contain a valid collection list."
-                );
-
-            }
-
-
-            assets = data;
-
-
-            displayResults(assets);
-
-
-        })
-
-
-        .catch(function(error) {
-
-
-            console.error(
-                "Visual Assets Library search error:",
-                error
-            );
-
-
-            resultsContainer.innerHTML = `
-
-                <p>
-                    Unable to load the collection database.
-                </p>
-
-                <p>
-                    Please try refreshing the page.
-                </p>
-
-            `;
-
-        });
-
-
-
-    searchInput.addEventListener(
-        "input",
-        function() {
-
-
-            const query =
-                this.value
-                    .toLowerCase()
-                    .trim();
-
-
-            if (!query) {
-
-                displayResults(assets);
-
-                return;
-
-            }
-
-
-            const filtered =
-                assets.filter(function(item) {
-
-
-                    return (
-
-                        String(item.name)
-                            .toLowerCase()
-                            .includes(query)
-
-                        ||
-
-                        String(item.category)
-                            .toLowerCase()
-                            .includes(query)
-
-                        ||
-
-                        String(item.status)
-                            .toLowerCase()
-                            .includes(query)
-
-                    );
-
-                });
-
-
-            displayResults(filtered);
-
-
-        }
-    );
+displayResults(filtered);
 
 
 });
+
+
+
+
+function copyText(text,button){
+
+
+navigator.clipboard.writeText(text);
+
+
+button.innerHTML="Copied";
+
+
+setTimeout(()=>{
+
+button.innerHTML="Copy";
+
+},1500);
+
+
+}
+
+
+
+function displayResults(data){
+
+
+let box=document.getElementById("results");
+
+
+box.innerHTML="";
+
+
+
+data.forEach(item=>{
+
+
+let status=item.status==="Complete"
+?"complete"
+:"dev";
+
+
+
+let html=`
+
+
+<div class="card">
+
+
+<h2>${item.name}</h2>
+
+
+<p>
+Category: ${item.category}
+</p>
+
+
+<p class="${status}">
+Status: ${item.status}
+</p>
+
+
+`;
+
+
+
+if(item.status==="Complete"){
+
+
+html+=`
+
+<h3>Raw Assets</h3>
+
+`;
+
+
+item.assets.forEach(url=>{
+
+
+html+=`
+
+<div class="asset">
+
+${url}
+
+<br>
+
+<button onclick="copyText('${url}',this)">
+Copy Link
+</button>
+
+
+</div>
+
+`;
+
+
+});
+
+
+}
+
+else {
+
+
+html+=`
+
+<p>
+No assets available yet.
+</p>
+
+`;
+
+}
+
+
+
+html+=`</div>`;
+
+
+box.innerHTML+=html;
+
+
+});
+
+
+}
+
 
 </script>
 
