@@ -68,7 +68,7 @@ Features include:
 - Collection progress tracking
 - Direct asset references
 
-Visit:[Visual Assets Library Website](https://ikomosientertainmenthub.github.io/Visual-Assets-Library/)
+Visit: [Visual Assets Library Website](https://ikomosientertainmenthub.github.io/Visual-Assets-Library/)
 
 ### Website Troubleshooting
 
