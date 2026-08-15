@@ -3,18 +3,54 @@
     "name": "Netflix",
     "category": "Streaming Platforms",
     "status": "Complete",
-    "path": "Streaming%20Platforms/NETFLIX"
+    "path": "Streaming Platforms/NETFLIX"
   },
   {
     "name": "Disney Plus",
     "category": "Streaming Platforms",
     "status": "Complete",
-    "path": "Streaming%20Platforms/DISNEY%20PLUS"
+    "path": "Streaming Platforms/DISNEY PLUS"
+  },
+  {
+    "name": "Prime Video",
+    "category": "Streaming Platforms",
+    "status": "Complete",
+    "path": "Streaming Platforms/PRIME VIDEO"
+  },
+  {
+    "name": "Apple TV",
+    "category": "Streaming Platforms",
+    "status": "Complete",
+    "path": "Streaming Platforms/APPLE TV"
+  },
+  {
+    "name": "HBO Max",
+    "category": "Streaming Platforms",
+    "status": "Complete",
+    "path": "Streaming Platforms/HBO MAX"
   },
   {
     "name": "Marvel",
     "category": "TV Collections",
     "status": "Not Started",
-    "path": "TV%20Collections/Marvel"
+    "path": "TV Collections/Marvel"
+  },
+  {
+    "name": "Star Wars",
+    "category": "TV Collections",
+    "status": "Not Started",
+    "path": "TV Collections/Star Wars"
+  },
+  {
+    "name": "James Bond 007",
+    "category": "Franchises",
+    "status": "Complete",
+    "path": "Franchises/James Bond 007"
+  },
+  {
+    "name": "Alien",
+    "category": "Franchises",
+    "status": "Not Started",
+    "path": "Franchises/Alien"
   }
 ]
