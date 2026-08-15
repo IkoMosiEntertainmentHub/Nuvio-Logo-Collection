@@ -1,4 +1,4 @@
-let assets=[];
+let assets = [];
 
 
 let settings = JSON.parse(
@@ -6,22 +6,22 @@ localStorage.getItem("VAL_settings")
 )
 ||
 {
-gif:true,
-png:true,
-jpg:true,
-webp:true,
-mp4:true
+    gif:true,
+    png:true,
+    jpg:true,
+    webp:true,
+    mp4:true
 };
 
 
 
 function loadSettings(){
 
-gifToggle.checked=settings.gif;
-pngToggle.checked=settings.png;
-jpgToggle.checked=settings.jpg;
-webpToggle.checked=settings.webp;
-mp4Toggle.checked=settings.mp4;
+    gifToggle.checked = settings.gif;
+    pngToggle.checked = settings.png;
+    jpgToggle.checked = settings.jpg;
+    webpToggle.checked = settings.webp;
+    mp4Toggle.checked = settings.mp4;
 
 }
 
@@ -29,78 +29,128 @@ mp4Toggle.checked=settings.mp4;
 
 function saveSettings(){
 
-settings={
+    settings = {
 
-gif:gifToggle.checked,
-png:pngToggle.checked,
-jpg:jpgToggle.checked,
-webp:webpToggle.checked,
-mp4:mp4Toggle.checked
+        gif: gifToggle.checked,
+        png: pngToggle.checked,
+        jpg: jpgToggle.checked,
+        webp: webpToggle.checked,
+        mp4: mp4Toggle.checked
 
-};
-
-
-localStorage.setItem(
-"VAL_settings",
-JSON.stringify(settings)
-);
+    };
 
 
-displayResults(assets);
+    localStorage.setItem(
+        "VAL_settings",
+        JSON.stringify(settings)
+    );
+
+
+    displayResults(assets);
 
 }
 
 
 
+
+
 document
 .querySelectorAll("#settingsPanel input")
-.forEach(x=>{
+.forEach(input=>{
 
-x.addEventListener(
-"change",
-saveSettings
-);
+    input.addEventListener(
+        "change",
+        saveSettings
+    );
 
 });
 
 
 
-settingsButton.onclick=function(){
-
-let panel=document.getElementById(
-"settingsPanel"
-);
 
 
-panel.style.display =
-panel.style.display==="block"
-?
-"none"
-:
-"block";
+// Open settings
+
+settingsButton.onclick=function(event){
+
+    event.stopPropagation();
+
+
+    let panel=document.getElementById(
+        "settingsPanel"
+    );
+
+
+    panel.style.display =
+    panel.style.display==="block"
+    ?
+    "none"
+    :
+    "block";
 
 };
+
+
+
+
+
+// Close settings when clicking outside
+
+document.addEventListener(
+"click",
+function(event){
+
+
+    let panel=document.getElementById(
+        "settingsPanel"
+    );
+
+
+    let button=document.getElementById(
+        "settingsButton"
+    );
+
+
+    if(
+        panel.style.display==="block"
+        &&
+        !panel.contains(event.target)
+        &&
+        event.target!==button
+    ){
+
+        panel.style.display="none";
+
+    }
+
+
+});
+
 
 
 
 
 fetch("search.json")
 
-.then(r=>r.json())
+.then(response=>response.json())
 
 .then(data=>{
 
-assets=data;
+    assets=data;
 
-displayResults(data);
+    displayResults(data);
 
 })
 
 .catch(()=>{
 
-results.innerHTML="Failed loading database";
+    results.innerHTML=
+    "Failed loading database";
 
 });
+
+
+
 
 
 
@@ -109,44 +159,56 @@ search.addEventListener(
 "input",
 function(){
 
-let q=this.value.toLowerCase();
+    let q=this.value.toLowerCase();
 
 
-let filtered=assets.filter(item=>
-
-item.name.toLowerCase().includes(q)
-
-||
-
-item.category.toLowerCase().includes(q)
-
-||
-
-item.status.toLowerCase().includes(q)
-
-);
+    let filtered=assets.filter(item=>
 
 
-displayResults(filtered);
+        item.name.toLowerCase().includes(q)
+
+        ||
+
+        item.category.toLowerCase().includes(q)
+
+        ||
+
+        item.status.toLowerCase().includes(q)
+
+
+    );
+
+
+    displayResults(filtered);
+
 
 });
 
 
 
 
+
+
 function copyText(text,button){
 
-navigator.clipboard.writeText(text);
 
-button.innerText="Copied";
+    navigator.clipboard.writeText(text);
 
-setTimeout(()=>{
 
-button.innerText="Copy Raw Asset Link";
+    button.innerText="Copied";
 
-},1500);
+
+    setTimeout(()=>{
+
+
+        button.innerText="Copy Raw Asset Link";
+
+
+    },1500);
+
 
 }
+
 
 
 
@@ -154,19 +216,50 @@ button.innerText="Copy Raw Asset Link";
 
 function allowedPreview(ext){
 
-if(ext==="gif") return settings.gif;
 
-if(ext==="png") return settings.png;
+    if(ext==="gif")
+    return settings.gif;
 
-if(ext==="jpg" || ext==="jpeg") return settings.jpg;
 
-if(ext==="webp") return settings.webp;
+    if(ext==="png")
+    return settings.png;
 
-if(ext==="mp4") return settings.mp4;
 
-return false;
+    if(ext==="jpg" || ext==="jpeg")
+    return settings.jpg;
+
+
+    if(ext==="webp")
+    return settings.webp;
+
+
+    if(ext==="mp4")
+    return settings.mp4;
+
+
+    return false;
+
 
 }
+
+
+
+
+
+
+
+function getExtension(url){
+
+    return url
+    .split("?")[0]
+    .split(".")
+    .pop()
+    .toLowerCase();
+
+}
+
+
+
 
 
 
@@ -176,7 +269,9 @@ function displayResults(data){
 
 let box=document.getElementById("results");
 
+
 box.innerHTML="";
+
 
 
 data.forEach(item=>{
@@ -207,21 +302,85 @@ Status: ${item.status}
 
 
 
+
+
 if(item.status==="Complete"){
 
 
-item.assets.forEach(url=>{
+
+/*
+
+Priority order:
+
+1. GIF
+2. PNG
+3. JPG/JPEG
+4. WEBP
+5. MP4
+
+*/
 
 
-let ext=url.split(".").pop().toLowerCase();
+let priority=[
+
+"gif",
+
+"png",
+
+"jpg",
+
+"jpeg",
+
+"webp",
+
+"mp4"
+
+];
+
+
+
+let sortedAssets=[...item.assets].sort(
+
+(a,b)=>{
+
+
+let extA=getExtension(a);
+
+let extB=getExtension(b);
+
+
+
+return priority.indexOf(extA)
+-
+priority.indexOf(extB);
+
+
+}
+
+);
+
+
+
+
+
+
+sortedAssets.forEach(url=>{
+
+
+let ext=getExtension(url);
+
 
 
 html+=`
 
+
 <div class="asset">
 
 
-<h3>${ext.toUpperCase()}</h3>
+<h3>
+${ext.toUpperCase()} Preview
+</h3>
+
 
 `;
 
@@ -230,30 +389,63 @@ html+=`
 if(allowedPreview(ext)){
 
 
+
 if(
-ext==="gif" ||
-ext==="png" ||
-ext==="jpg" ||
-ext==="jpeg" ||
+
+ext==="gif"
+
+||
+
+ext==="png"
+
+||
+
+ext==="jpg"
+
+||
+
+ext==="jpeg"
+
+||
+
 ext==="webp"
+
 ){
+
 
 html+=`
 
-<img class="preview" src="${url}" loading="lazy">
+<img
+
+class="preview"
+
+src="${url}"
+
+loading="lazy"
+
+>
 
 `;
 
 }
 
 
+
+
 if(ext==="mp4"){
+
 
 html+=`
 
-<video class="preview" controls>
+<video
+
+class="preview"
+
+controls>
+
 
 <source src="${url}">
+
 
 </video>
 
@@ -268,7 +460,11 @@ html+=`
 
 html+=`
 
-<button class="copy" onclick='copyText(${JSON.stringify(url)},this)'>
+<button
+
+class="copy"
+
+onclick='copyText(${JSON.stringify(url)},this)'>
 
 Copy Raw Asset Link
 
@@ -277,9 +473,13 @@ Copy Raw Asset Link
 
 </div>
 
+
 `;
 
+
+
 });
+
 
 
 }
@@ -299,6 +499,8 @@ No assets available yet.
 
 
 
+
+
 html+=`
 
 </div>
@@ -306,13 +508,17 @@ html+=`
 `;
 
 
+
 box.innerHTML+=html;
+
 
 
 });
 
 
 }
+
+
 
 
 
