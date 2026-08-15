@@ -1,184 +1,362 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Visual Assets Library</title>
+
+
+<style>
+
+body {
+    font-family: Arial, sans-serif;
+    max-width: 1000px;
+    margin: auto;
+    padding: 30px;
+}
+
+h1 {
+    margin-bottom: 20px;
+}
+
+input {
+    width: 100%;
+    box-sizing: border-box;
+    padding: 14px;
+    font-size: 16px;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+    margin-bottom: 20px;
+}
+
+.card {
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    padding: 15px;
+    margin-bottom: 15px;
+}
+
+.card h2 {
+    margin-top: 0;
+}
+
+.status-complete {
+    color: green;
+    font-weight: bold;
+}
+
+.status-development {
+    color: orange;
+    font-weight: bold;
+}
+
+.status-notstarted {
+    color: gray;
+    font-weight: bold;
+}
+
+a {
+    text-decoration: none;
+}
+
+</style>
+
+</head>
+
+
+<body>
+
+
+<h1>Visual Assets Library</h1>
+
+
+<input
+    id="search"
+    type="text"
+    placeholder="Search collections..."
+    autocomplete="off"
+>
+
+
+<div id="results">
+Loading...
+</div>
+
+
 <script>
 
-let assets = [];
+document.addEventListener("DOMContentLoaded", function() {
 
 
-fetch("search.json")
-
-.then(response => response.json())
-
-.then(data => {
-
-    assets = data;
-
-    displayResults(assets);
-
-})
+    let assets = [];
 
 
-.catch(error => {
-
-    console.error(error);
-
-    document.getElementById("results").innerHTML =
-    `
-    <p>
-    Failed to load search database.
-    </p>
-    `;
-
-});
+    const searchInput =
+        document.getElementById("search");
 
 
-
-document
-.getElementById("search")
-.addEventListener("input", function(){
+    const resultsContainer =
+        document.getElementById("results");
 
 
-    let query = this.value.toLowerCase().trim();
+    if (!searchInput || !resultsContainer) {
 
-
-    let filtered = assets.filter(item => {
-
-
-        return (
-
-            item.name.toLowerCase().includes(query)
-
-            ||
-
-            item.category.toLowerCase().includes(query)
-
-            ||
-
-            item.status.toLowerCase().includes(query)
-
+        console.error(
+            "Visual Assets Library: Required page elements were not found."
         );
-
-
-    });
-
-
-    displayResults(filtered);
-
-
-});
-
-
-
-
-function displayResults(results){
-
-
-    let container =
-    document.getElementById("results");
-
-
-    container.innerHTML = "";
-
-
-    if(results.length === 0){
-
-        container.innerHTML =
-        `
-        <p>
-        No collections found.
-        </p>
-        `;
 
         return;
 
     }
 
 
-
-    results.forEach(item => {
-
-
-        let statusClass = "";
+    function displayResults(results) {
 
 
-        if(item.status === "Complete"){
-
-            statusClass = "status-complete";
-
-        }
-
-        else if(item.status === "In Development"){
-
-            statusClass = "status-development";
-
-        }
-
-        else {
-
-            statusClass = "status-notstarted";
-
-        }
+        resultsContainer.innerHTML = "";
 
 
+        if (results.length === 0) {
 
-        let link = "";
-
-
-        if(item.status === "Complete"){
-
-
-            link =
-            `
-            <p>
-            <a href="https://github.com/IkoMosiEntertainmentHub/Visual-Assets-Library/tree/main/${item.path}">
-            Open Collection
-            </a>
-            </p>
+            resultsContainer.innerHTML = `
+                <p>No collections found.</p>
             `;
 
+            return;
 
         }
 
-        else {
+
+        results.forEach(function(item) {
 
 
-            link =
-            `
-            <p>
-            No assets available yet
-            </p>
+            let statusClass = "status-notstarted";
+
+
+            if (item.status === "Complete") {
+
+                statusClass = "status-complete";
+
+            }
+
+            else if (item.status === "In Development") {
+
+                statusClass = "status-development";
+
+            }
+
+
+            let link = "";
+
+
+            if (item.status === "Complete") {
+
+                const encodedPath =
+                    item.path
+                    .split("/")
+                    .map(encodeURIComponent)
+                    .join("/");
+
+
+                link = `
+                    <p>
+                        <a
+                            href="https://github.com/IkoMosiEntertainmentHub/Visual-Assets-Library/tree/main/${encodedPath}"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                        >
+                            Open Collection
+                        </a>
+                    </p>
+                `;
+
+            }
+
+            else {
+
+                link = `
+                    <p>
+                        No assets available yet
+                    </p>
+                `;
+
+            }
+
+
+            resultsContainer.innerHTML += `
+
+                <div class="card">
+
+                    <h2>
+                        ${escapeHTML(item.name)}
+                    </h2>
+
+                    <p>
+                        Category:
+                        ${escapeHTML(item.category)}
+                    </p>
+
+                    <p class="${statusClass}">
+                        Status:
+                        ${escapeHTML(item.status)}
+                    </p>
+
+                    ${link}
+
+                </div>
+
             `;
 
+        });
+
+    }
+
+
+
+    function escapeHTML(value) {
+
+        return String(value)
+            .replace(/&/g, "&amp;")
+            .replace(/</g, "&lt;")
+            .replace(/>/g, "&gt;")
+            .replace(/"/g, "&quot;")
+            .replace(/'/g, "&#039;");
+
+    }
+
+
+
+    fetch("search.json")
+
+
+        .then(function(response) {
+
+
+            if (!response.ok) {
+
+                throw new Error(
+                    "Could not load search.json. HTTP status: "
+                    + response.status
+                );
+
+            }
+
+
+            return response.json();
+
+
+        })
+
+
+        .then(function(data) {
+
+
+            if (!Array.isArray(data)) {
+
+                throw new Error(
+                    "search.json does not contain a valid collection list."
+                );
+
+            }
+
+
+            assets = data;
+
+
+            displayResults(assets);
+
+
+        })
+
+
+        .catch(function(error) {
+
+
+            console.error(
+                "Visual Assets Library search error:",
+                error
+            );
+
+
+            resultsContainer.innerHTML = `
+
+                <p>
+                    Unable to load the collection database.
+                </p>
+
+                <p>
+                    Please try refreshing the page.
+                </p>
+
+            `;
+
+        });
+
+
+
+    searchInput.addEventListener(
+        "input",
+        function() {
+
+
+            const query =
+                this.value
+                    .toLowerCase()
+                    .trim();
+
+
+            if (!query) {
+
+                displayResults(assets);
+
+                return;
+
+            }
+
+
+            const filtered =
+                assets.filter(function(item) {
+
+
+                    return (
+
+                        String(item.name)
+                            .toLowerCase()
+                            .includes(query)
+
+                        ||
+
+                        String(item.category)
+                            .toLowerCase()
+                            .includes(query)
+
+                        ||
+
+                        String(item.status)
+                            .toLowerCase()
+                            .includes(query)
+
+                    );
+
+                });
+
+
+            displayResults(filtered);
+
 
         }
+    );
 
 
-
-        container.innerHTML +=
-
-        `
-        <div class="card">
-
-        <h2>
-        ${item.name}
-        </h2>
-
-        <p>
-        Category: ${item.category}
-        </p>
-
-        <p class="${statusClass}">
-        Status: ${item.status}
-        </p>
-
-        ${link}
-
-        </div>
-        `;
-
-
-    });
-
-
-}
-
+});
 
 </script>
+
+
+</body>
+
+</html>
