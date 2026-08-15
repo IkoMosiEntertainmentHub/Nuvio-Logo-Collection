@@ -4,67 +4,54 @@
     "total": 12,
     "percentage": 100.0,
     "status": "Complete",
-    "progress_bar": "██████████",
     "items": {
       "AMC+": {
-        "folder_exists": true,
-        "has_asset": true,
-        "complete": true
+        "complete": true,
+        "status": "Complete"
       },
       "APPLE TV": {
-        "folder_exists": true,
-        "has_asset": true,
-        "complete": true
+        "complete": true,
+        "status": "Complete"
       },
       "CRUNCHYROLL": {
-        "folder_exists": true,
-        "has_asset": true,
-        "complete": true
+        "complete": true,
+        "status": "Complete"
       },
       "DISNEY PLUS": {
-        "folder_exists": true,
-        "has_asset": true,
-        "complete": true
+        "complete": true,
+        "status": "Complete"
       },
       "HBO MAX": {
-        "folder_exists": true,
-        "has_asset": true,
-        "complete": true
+        "complete": true,
+        "status": "Complete"
       },
       "HULU": {
-        "folder_exists": true,
-        "has_asset": true,
-        "complete": true
+        "complete": true,
+        "status": "Complete"
       },
       "MGM+": {
-        "folder_exists": true,
-        "has_asset": true,
-        "complete": true
+        "complete": true,
+        "status": "Complete"
       },
       "NETFLIX": {
-        "folder_exists": true,
-        "has_asset": true,
-        "complete": true
+        "complete": true,
+        "status": "Complete"
       },
       "PARAMOUNT": {
-        "folder_exists": true,
-        "has_asset": true,
-        "complete": true
+        "complete": true,
+        "status": "Complete"
       },
       "PEACOCK": {
-        "folder_exists": true,
-        "has_asset": true,
-        "complete": true
+        "complete": true,
+        "status": "Complete"
       },
       "PRIME VIDEO": {
-        "folder_exists": true,
-        "has_asset": true,
-        "complete": true
+        "complete": true,
+        "status": "Complete"
       },
       "STARZ": {
-        "folder_exists": true,
-        "has_asset": true,
-        "complete": true
+        "complete": true,
+        "status": "Complete"
       }
     }
   },
@@ -72,88 +59,71 @@
     "completed": 0,
     "total": 16,
     "percentage": 0.0,
-    "status": "Not started",
-    "progress_bar": "░░░░░░░░░░",
+    "status": "Not Started",
     "items": {
       "Adult Swim": {
-        "folder_exists": true,
-        "has_asset": false,
-        "complete": false
+        "complete": false,
+        "status": "In Development"
       },
       "BBC": {
-        "folder_exists": true,
-        "has_asset": false,
-        "complete": false
+        "complete": false,
+        "status": "In Development"
       },
       "Cartoon Network": {
-        "folder_exists": true,
-        "has_asset": false,
-        "complete": false
+        "complete": false,
+        "status": "In Development"
       },
       "Comedy Central": {
-        "folder_exists": true,
-        "has_asset": false,
-        "complete": false
+        "complete": false,
+        "status": "In Development"
       },
       "DC": {
-        "folder_exists": true,
-        "has_asset": false,
-        "complete": false
+        "complete": false,
+        "status": "In Development"
       },
       "Discovery": {
-        "folder_exists": true,
-        "has_asset": false,
-        "complete": false
+        "complete": false,
+        "status": "In Development"
       },
       "Disney": {
-        "folder_exists": true,
-        "has_asset": false,
-        "complete": false
+        "complete": false,
+        "status": "In Development"
       },
       "Hallmark": {
-        "folder_exists": true,
-        "has_asset": false,
-        "complete": false
+        "complete": false,
+        "status": "In Development"
       },
       "HBO": {
-        "folder_exists": true,
-        "has_asset": false,
-        "complete": false
+        "complete": false,
+        "status": "In Development"
       },
       "ITV": {
-        "folder_exists": true,
-        "has_asset": false,
-        "complete": false
+        "complete": false,
+        "status": "In Development"
       },
       "Marvel": {
-        "folder_exists": true,
-        "has_asset": false,
-        "complete": false
+        "complete": false,
+        "status": "In Development"
       },
       "MTV": {
-        "folder_exists": true,
-        "has_asset": false,
-        "complete": false
+        "complete": false,
+        "status": "In Development"
       },
       "National Geographic": {
-        "folder_exists": true,
-        "has_asset": false,
-        "complete": false
+        "complete": false,
+        "status": "In Development"
       },
       "Nickelodeon": {
-        "folder_exists": true,
-        "has_asset": false,
-        "complete": false
+        "complete": false,
+        "status": "In Development"
       },
       "Sky": {
-        "folder_exists": true,
-        "has_asset": false,
-        "complete": false
+        "complete": false,
+        "status": "In Development"
       },
       "Star Wars": {
-        "folder_exists": true,
-        "has_asset": false,
-        "complete": false
+        "complete": false,
+        "status": "In Development"
       }
     }
   },
@@ -161,108 +131,87 @@
     "completed": 0,
     "total": 20,
     "percentage": 0.0,
-    "status": "Not started",
-    "progress_bar": "░░░░░░░░░░",
+    "status": "Not Started",
     "items": {
       "20th Century Studios": {
-        "folder_exists": true,
-        "has_asset": false,
-        "complete": false
+        "complete": false,
+        "status": "In Development"
       },
       "A24": {
-        "folder_exists": true,
-        "has_asset": false,
-        "complete": false
+        "complete": false,
+        "status": "In Development"
       },
       "Columbia Pictures": {
-        "folder_exists": true,
-        "has_asset": false,
-        "complete": false
+        "complete": false,
+        "status": "In Development"
       },
       "Disney": {
-        "folder_exists": true,
-        "has_asset": false,
-        "complete": false
+        "complete": false,
+        "status": "In Development"
       },
       "DreamWorks": {
-        "folder_exists": true,
-        "has_asset": false,
-        "complete": false
+        "complete": false,
+        "status": "In Development"
       },
       "Focus Features": {
-        "folder_exists": true,
-        "has_asset": false,
-        "complete": false
+        "complete": false,
+        "status": "In Development"
       },
       "Illumination": {
-        "folder_exists": true,
-        "has_asset": false,
-        "complete": false
+        "complete": false,
+        "status": "In Development"
       },
       "Legendary": {
-        "folder_exists": true,
-        "has_asset": false,
-        "complete": false
+        "complete": false,
+        "status": "In Development"
       },
       "Lionsgate": {
-        "folder_exists": true,
-        "has_asset": false,
-        "complete": false
+        "complete": false,
+        "status": "In Development"
       },
       "MGM": {
-        "folder_exists": true,
-        "has_asset": false,
-        "complete": false
+        "complete": false,
+        "status": "In Development"
       },
       "New Line Cinema": {
-        "folder_exists": true,
-        "has_asset": false,
-        "complete": false
+        "complete": false,
+        "status": "In Development"
       },
       "Paramount Pictures": {
-        "folder_exists": true,
-        "has_asset": false,
-        "complete": false
+        "complete": false,
+        "status": "In Development"
       },
       "Pixar": {
-        "folder_exists": true,
-        "has_asset": false,
-        "complete": false
+        "complete": false,
+        "status": "In Development"
       },
       "Screen Gems": {
-        "folder_exists": true,
-        "has_asset": false,
-        "complete": false
+        "complete": false,
+        "status": "In Development"
       },
       "Searchlight Pictures": {
-        "folder_exists": true,
-        "has_asset": false,
-        "complete": false
+        "complete": false,
+        "status": "In Development"
       },
       "Sony Pictures": {
-        "folder_exists": true,
-        "has_asset": false,
-        "complete": false
+        "complete": false,
+        "status": "In Development"
       },
       "STX": {
-        "folder_exists": true,
-        "has_asset": false,
-        "complete": false
+        "complete": false,
+        "status": "In Development"
       },
       "TriStar Pictures": {
-        "folder_exists": true,
-        "has_asset": false,
-        "complete": false
+        "complete": false,
+        "status": "In Development"
       },
       "Universal Pictures": {
-        "folder_exists": true,
-        "has_asset": false,
-        "complete": false
+        "complete": false,
+        "status": "In Development"
       },
       "Warner Bros": {
-        "folder_exists": true,
-        "has_asset": false,
-        "complete": false
+        "complete": false,
+        "status": "In Development"
       }
     }
   },
@@ -270,198 +219,159 @@
     "completed": 5,
     "total": 38,
     "percentage": 13.2,
-    "status": "Started",
-    "progress_bar": "█░░░░░░░░░",
+    "status": "In Development",
     "items": {
       "Ailens": {
-        "folder_exists": true,
-        "has_asset": true,
-        "complete": true
+        "complete": true,
+        "status": "Complete"
       },
       "Alien": {
-        "folder_exists": true,
-        "has_asset": false,
-        "complete": false
+        "complete": false,
+        "status": "In Development"
       },
       "Avatar": {
-        "folder_exists": true,
-        "has_asset": false,
-        "complete": false
+        "complete": false,
+        "status": "In Development"
       },
       "Cars": {
-        "folder_exists": true,
-        "has_asset": false,
-        "complete": false
+        "complete": false,
+        "status": "In Development"
       },
       "DC": {
-        "folder_exists": true,
-        "has_asset": false,
-        "complete": false
+        "complete": false,
+        "status": "In Development"
       },
       "Despicable Me - Minions": {
-        "folder_exists": true,
-        "has_asset": false,
-        "complete": false
+        "complete": false,
+        "status": "In Development"
       },
       "Fast & Furious": {
-        "folder_exists": true,
-        "has_asset": false,
-        "complete": false
+        "complete": false,
+        "status": "In Development"
       },
       "Frozen": {
-        "folder_exists": true,
-        "has_asset": false,
-        "complete": false
+        "complete": false,
+        "status": "In Development"
       },
       "Ghostbusters": {
-        "folder_exists": true,
-        "has_asset": false,
-        "complete": false
+        "complete": false,
+        "status": "In Development"
       },
       "Godzilla": {
-        "folder_exists": true,
-        "has_asset": false,
-        "complete": false
+        "complete": false,
+        "status": "In Development"
       },
       "Harry Potter": {
-        "folder_exists": true,
-        "has_asset": true,
-        "complete": true
+        "complete": true,
+        "status": "Complete"
       },
       "Indiana Jones": {
-        "folder_exists": true,
-        "has_asset": false,
-        "complete": false
+        "complete": false,
+        "status": "In Development"
       },
       "James Bond": {
-        "folder_exists": true,
-        "has_asset": false,
-        "complete": false
+        "complete": false,
+        "status": "In Development"
       },
       "James Bond 007": {
-        "folder_exists": true,
-        "has_asset": true,
-        "complete": true
+        "complete": true,
+        "status": "Complete"
       },
       "John Wick": {
-        "folder_exists": true,
-        "has_asset": true,
-        "complete": true
+        "complete": true,
+        "status": "Complete"
       },
       "Jurassic Park - Jurassic World": {
-        "folder_exists": true,
-        "has_asset": false,
-        "complete": false
+        "complete": false,
+        "status": "In Development"
       },
       "Lord of the Rings": {
-        "folder_exists": true,
-        "has_asset": false,
-        "complete": false
+        "complete": false,
+        "status": "In Development"
       },
       "Marvel": {
-        "folder_exists": true,
-        "has_asset": false,
-        "complete": false
+        "complete": false,
+        "status": "In Development"
       },
       "Mission Impossible": {
-        "folder_exists": true,
-        "has_asset": false,
-        "complete": false
+        "complete": false,
+        "status": "In Development"
       },
       "Pirates of the Caribbean": {
-        "folder_exists": true,
-        "has_asset": false,
-        "complete": false
+        "complete": false,
+        "status": "In Development"
       },
       "Planet of the Apes": {
-        "folder_exists": true,
-        "has_asset": false,
-        "complete": false
+        "complete": false,
+        "status": "In Development"
       },
       "Predator": {
-        "folder_exists": true,
-        "has_asset": false,
-        "complete": false
+        "complete": false,
+        "status": "In Development"
       },
       "Rocky - Creed": {
-        "folder_exists": true,
-        "has_asset": false,
-        "complete": false
+        "complete": false,
+        "status": "In Development"
       },
       "Saw": {
-        "folder_exists": true,
-        "has_asset": false,
-        "complete": false
+        "complete": false,
+        "status": "In Development"
       },
       "Scream": {
-        "folder_exists": true,
-        "has_asset": false,
-        "complete": false
+        "complete": false,
+        "status": "In Development"
       },
       "Shrek": {
-        "folder_exists": true,
-        "has_asset": false,
-        "complete": false
+        "complete": false,
+        "status": "In Development"
       },
       "Sonic the Hedgehog": {
-        "folder_exists": true,
-        "has_asset": false,
-        "complete": false
+        "complete": false,
+        "status": "In Development"
       },
       "Star Trek": {
-        "folder_exists": true,
-        "has_asset": false,
-        "complete": false
+        "complete": false,
+        "status": "In Development"
       },
       "Star Wars": {
-        "folder_exists": true,
-        "has_asset": true,
-        "complete": true
+        "complete": true,
+        "status": "Complete"
       },
       "Teenage Mutant Ninja Turtles": {
-        "folder_exists": true,
-        "has_asset": false,
-        "complete": false
+        "complete": false,
+        "status": "In Development"
       },
       "Terminator": {
-        "folder_exists": true,
-        "has_asset": false,
-        "complete": false
+        "complete": false,
+        "status": "In Development"
       },
       "The Conjuring": {
-        "folder_exists": true,
-        "has_asset": false,
-        "complete": false
+        "complete": false,
+        "status": "In Development"
       },
       "The Hobbit": {
-        "folder_exists": true,
-        "has_asset": false,
-        "complete": false
+        "complete": false,
+        "status": "In Development"
       },
       "The Hunger Games": {
-        "folder_exists": true,
-        "has_asset": false,
-        "complete": false
+        "complete": false,
+        "status": "In Development"
       },
       "The Lion King": {
-        "folder_exists": true,
-        "has_asset": false,
-        "complete": false
+        "complete": false,
+        "status": "In Development"
       },
       "The Matrix": {
-        "folder_exists": true,
-        "has_asset": false,
-        "complete": false
+        "complete": false,
+        "status": "In Development"
       },
       "Toy Story": {
-        "folder_exists": true,
-        "has_asset": false,
-        "complete": false
+        "complete": false,
+        "status": "In Development"
       },
       "Transformers": {
-        "folder_exists": true,
-        "has_asset": false,
-        "complete": false
+        "complete": false,
+        "status": "In Development"
       }
     }
   },
@@ -469,173 +379,139 @@
     "completed": 1,
     "total": 33,
     "percentage": 3.0,
-    "status": "Started",
-    "progress_bar": "░░░░░░░░░░",
+    "status": "In Development",
     "items": {
       "ABC": {
-        "folder_exists": true,
-        "has_asset": false,
-        "complete": false
+        "complete": false,
+        "status": "In Development"
       },
       "Adult Swim": {
-        "folder_exists": true,
-        "has_asset": false,
-        "complete": false
+        "complete": false,
+        "status": "In Development"
       },
       "AMC": {
-        "folder_exists": true,
-        "has_asset": false,
-        "complete": false
+        "complete": false,
+        "status": "In Development"
       },
       "Animal Planet": {
-        "folder_exists": true,
-        "has_asset": false,
-        "complete": false
+        "complete": false,
+        "status": "In Development"
       },
       "BBC": {
-        "folder_exists": true,
-        "has_asset": false,
-        "complete": false
+        "complete": false,
+        "status": "In Development"
       },
       "Cartoon Network": {
-        "folder_exists": true,
-        "has_asset": false,
-        "complete": false
+        "complete": false,
+        "status": "In Development"
       },
       "CBS": {
-        "folder_exists": true,
-        "has_asset": false,
-        "complete": false
+        "complete": false,
+        "status": "In Development"
       },
       "CNN": {
-        "folder_exists": true,
-        "has_asset": false,
-        "complete": false
+        "complete": false,
+        "status": "In Development"
       },
       "Comedy Central": {
-        "folder_exists": true,
-        "has_asset": false,
-        "complete": false
+        "complete": false,
+        "status": "In Development"
       },
       "Discovery Channel": {
-        "folder_exists": true,
-        "has_asset": false,
-        "complete": false
+        "complete": false,
+        "status": "In Development"
       },
       "Disney Channel": {
-        "folder_exists": true,
-        "has_asset": false,
-        "complete": false
+        "complete": false,
+        "status": "In Development"
       },
       "ESPN": {
-        "folder_exists": true,
-        "has_asset": false,
-        "complete": false
+        "complete": false,
+        "status": "In Development"
       },
       "Food Network": {
-        "folder_exists": true,
-        "has_asset": false,
-        "complete": false
+        "complete": false,
+        "status": "In Development"
       },
       "FOX": {
-        "folder_exists": true,
-        "has_asset": false,
-        "complete": false
+        "complete": false,
+        "status": "In Development"
       },
       "FX": {
-        "folder_exists": true,
-        "has_asset": false,
-        "complete": false
+        "complete": false,
+        "status": "In Development"
       },
       "Hallmark Channel": {
-        "folder_exists": true,
-        "has_asset": false,
-        "complete": false
+        "complete": false,
+        "status": "In Development"
       },
       "HBO": {
-        "folder_exists": true,
-        "has_asset": false,
-        "complete": false
+        "complete": false,
+        "status": "In Development"
       },
       "HGTV": {
-        "folder_exists": true,
-        "has_asset": false,
-        "complete": false
+        "complete": false,
+        "status": "In Development"
       },
       "History Channel": {
-        "folder_exists": true,
-        "has_asset": false,
-        "complete": false
+        "complete": false,
+        "status": "In Development"
       },
       "ITV": {
-        "folder_exists": true,
-        "has_asset": false,
-        "complete": false
+        "complete": false,
+        "status": "In Development"
       },
       "MTV": {
-        "folder_exists": true,
-        "has_asset": false,
-        "complete": false
+        "complete": false,
+        "status": "In Development"
       },
       "National Geographic": {
-        "folder_exists": true,
-        "has_asset": false,
-        "complete": false
+        "complete": false,
+        "status": "In Development"
       },
       "NBC": {
-        "folder_exists": true,
-        "has_asset": false,
-        "complete": false
+        "complete": false,
+        "status": "In Development"
       },
       "Nickelodeon": {
-        "folder_exists": true,
-        "has_asset": false,
-        "complete": false
+        "complete": false,
+        "status": "In Development"
       },
       "Paramount Network": {
-        "folder_exists": true,
-        "has_asset": false,
-        "complete": false
+        "complete": false,
+        "status": "In Development"
       },
       "ShowTime": {
-        "folder_exists": true,
-        "has_asset": true,
-        "complete": true
+        "complete": true,
+        "status": "Complete"
       },
       "Sky": {
-        "folder_exists": true,
-        "has_asset": false,
-        "complete": false
+        "complete": false,
+        "status": "In Development"
       },
       "Syfy": {
-        "folder_exists": true,
-        "has_asset": false,
-        "complete": false
+        "complete": false,
+        "status": "In Development"
       },
       "TBS": {
-        "folder_exists": true,
-        "has_asset": false,
-        "complete": false
+        "complete": false,
+        "status": "In Development"
       },
       "The CW": {
-        "folder_exists": true,
-        "has_asset": false,
-        "complete": false
+        "complete": false,
+        "status": "In Development"
       },
       "TLC": {
-        "folder_exists": true,
-        "has_asset": false,
-        "complete": false
+        "complete": false,
+        "status": "In Development"
       },
       "TNT": {
-        "folder_exists": true,
-        "has_asset": false,
-        "complete": false
+        "complete": false,
+        "status": "In Development"
       },
       "USA Network": {
-        "folder_exists": true,
-        "has_asset": false,
-        "complete": false
+        "complete": false,
+        "status": "In Development"
       }
     }
   }

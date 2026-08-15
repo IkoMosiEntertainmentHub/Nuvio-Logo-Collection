@@ -1,0 +1,716 @@
+[
+  {
+    "name": "AMC+",
+    "category": "Streaming Platforms",
+    "status": "Complete",
+    "path": "Streaming Platforms/AMC+"
+  },
+  {
+    "name": "APPLE TV",
+    "category": "Streaming Platforms",
+    "status": "Complete",
+    "path": "Streaming Platforms/APPLE TV"
+  },
+  {
+    "name": "CRUNCHYROLL",
+    "category": "Streaming Platforms",
+    "status": "Complete",
+    "path": "Streaming Platforms/CRUNCHYROLL"
+  },
+  {
+    "name": "DISNEY PLUS",
+    "category": "Streaming Platforms",
+    "status": "Complete",
+    "path": "Streaming Platforms/DISNEY PLUS"
+  },
+  {
+    "name": "HBO MAX",
+    "category": "Streaming Platforms",
+    "status": "Complete",
+    "path": "Streaming Platforms/HBO MAX"
+  },
+  {
+    "name": "HULU",
+    "category": "Streaming Platforms",
+    "status": "Complete",
+    "path": "Streaming Platforms/HULU"
+  },
+  {
+    "name": "MGM+",
+    "category": "Streaming Platforms",
+    "status": "Complete",
+    "path": "Streaming Platforms/MGM+"
+  },
+  {
+    "name": "NETFLIX",
+    "category": "Streaming Platforms",
+    "status": "Complete",
+    "path": "Streaming Platforms/NETFLIX"
+  },
+  {
+    "name": "PARAMOUNT",
+    "category": "Streaming Platforms",
+    "status": "Complete",
+    "path": "Streaming Platforms/PARAMOUNT"
+  },
+  {
+    "name": "PEACOCK",
+    "category": "Streaming Platforms",
+    "status": "Complete",
+    "path": "Streaming Platforms/PEACOCK"
+  },
+  {
+    "name": "PRIME VIDEO",
+    "category": "Streaming Platforms",
+    "status": "Complete",
+    "path": "Streaming Platforms/PRIME VIDEO"
+  },
+  {
+    "name": "STARZ",
+    "category": "Streaming Platforms",
+    "status": "Complete",
+    "path": "Streaming Platforms/STARZ"
+  },
+  {
+    "name": "Adult Swim",
+    "category": "TV Collections",
+    "status": "In Development",
+    "path": "TV Collections/Adult Swim"
+  },
+  {
+    "name": "BBC",
+    "category": "TV Collections",
+    "status": "In Development",
+    "path": "TV Collections/BBC"
+  },
+  {
+    "name": "Cartoon Network",
+    "category": "TV Collections",
+    "status": "In Development",
+    "path": "TV Collections/Cartoon Network"
+  },
+  {
+    "name": "Comedy Central",
+    "category": "TV Collections",
+    "status": "In Development",
+    "path": "TV Collections/Comedy Central"
+  },
+  {
+    "name": "DC",
+    "category": "TV Collections",
+    "status": "In Development",
+    "path": "TV Collections/DC"
+  },
+  {
+    "name": "Discovery",
+    "category": "TV Collections",
+    "status": "In Development",
+    "path": "TV Collections/Discovery"
+  },
+  {
+    "name": "Disney",
+    "category": "TV Collections",
+    "status": "In Development",
+    "path": "TV Collections/Disney"
+  },
+  {
+    "name": "Hallmark",
+    "category": "TV Collections",
+    "status": "In Development",
+    "path": "TV Collections/Hallmark"
+  },
+  {
+    "name": "HBO",
+    "category": "TV Collections",
+    "status": "In Development",
+    "path": "TV Collections/HBO"
+  },
+  {
+    "name": "ITV",
+    "category": "TV Collections",
+    "status": "In Development",
+    "path": "TV Collections/ITV"
+  },
+  {
+    "name": "Marvel",
+    "category": "TV Collections",
+    "status": "In Development",
+    "path": "TV Collections/Marvel"
+  },
+  {
+    "name": "MTV",
+    "category": "TV Collections",
+    "status": "In Development",
+    "path": "TV Collections/MTV"
+  },
+  {
+    "name": "National Geographic",
+    "category": "TV Collections",
+    "status": "In Development",
+    "path": "TV Collections/National Geographic"
+  },
+  {
+    "name": "Nickelodeon",
+    "category": "TV Collections",
+    "status": "In Development",
+    "path": "TV Collections/Nickelodeon"
+  },
+  {
+    "name": "Sky",
+    "category": "TV Collections",
+    "status": "In Development",
+    "path": "TV Collections/Sky"
+  },
+  {
+    "name": "Star Wars",
+    "category": "TV Collections",
+    "status": "In Development",
+    "path": "TV Collections/Star Wars"
+  },
+  {
+    "name": "20th Century Studios",
+    "category": "Studios",
+    "status": "In Development",
+    "path": "Studios/20th Century Studios"
+  },
+  {
+    "name": "A24",
+    "category": "Studios",
+    "status": "In Development",
+    "path": "Studios/A24"
+  },
+  {
+    "name": "Columbia Pictures",
+    "category": "Studios",
+    "status": "In Development",
+    "path": "Studios/Columbia Pictures"
+  },
+  {
+    "name": "Disney",
+    "category": "Studios",
+    "status": "In Development",
+    "path": "Studios/Disney"
+  },
+  {
+    "name": "DreamWorks",
+    "category": "Studios",
+    "status": "In Development",
+    "path": "Studios/DreamWorks"
+  },
+  {
+    "name": "Focus Features",
+    "category": "Studios",
+    "status": "In Development",
+    "path": "Studios/Focus Features"
+  },
+  {
+    "name": "Illumination",
+    "category": "Studios",
+    "status": "In Development",
+    "path": "Studios/Illumination"
+  },
+  {
+    "name": "Legendary",
+    "category": "Studios",
+    "status": "In Development",
+    "path": "Studios/Legendary"
+  },
+  {
+    "name": "Lionsgate",
+    "category": "Studios",
+    "status": "In Development",
+    "path": "Studios/Lionsgate"
+  },
+  {
+    "name": "MGM",
+    "category": "Studios",
+    "status": "In Development",
+    "path": "Studios/MGM"
+  },
+  {
+    "name": "New Line Cinema",
+    "category": "Studios",
+    "status": "In Development",
+    "path": "Studios/New Line Cinema"
+  },
+  {
+    "name": "Paramount Pictures",
+    "category": "Studios",
+    "status": "In Development",
+    "path": "Studios/Paramount Pictures"
+  },
+  {
+    "name": "Pixar",
+    "category": "Studios",
+    "status": "In Development",
+    "path": "Studios/Pixar"
+  },
+  {
+    "name": "Screen Gems",
+    "category": "Studios",
+    "status": "In Development",
+    "path": "Studios/Screen Gems"
+  },
+  {
+    "name": "Searchlight Pictures",
+    "category": "Studios",
+    "status": "In Development",
+    "path": "Studios/Searchlight Pictures"
+  },
+  {
+    "name": "Sony Pictures",
+    "category": "Studios",
+    "status": "In Development",
+    "path": "Studios/Sony Pictures"
+  },
+  {
+    "name": "STX",
+    "category": "Studios",
+    "status": "In Development",
+    "path": "Studios/STX"
+  },
+  {
+    "name": "TriStar Pictures",
+    "category": "Studios",
+    "status": "In Development",
+    "path": "Studios/TriStar Pictures"
+  },
+  {
+    "name": "Universal Pictures",
+    "category": "Studios",
+    "status": "In Development",
+    "path": "Studios/Universal Pictures"
+  },
+  {
+    "name": "Warner Bros",
+    "category": "Studios",
+    "status": "In Development",
+    "path": "Studios/Warner Bros"
+  },
+  {
+    "name": "Ailens",
+    "category": "Franchises",
+    "status": "Complete",
+    "path": "Franchises/Ailens"
+  },
+  {
+    "name": "Alien",
+    "category": "Franchises",
+    "status": "In Development",
+    "path": "Franchises/Alien"
+  },
+  {
+    "name": "Avatar",
+    "category": "Franchises",
+    "status": "In Development",
+    "path": "Franchises/Avatar"
+  },
+  {
+    "name": "Cars",
+    "category": "Franchises",
+    "status": "In Development",
+    "path": "Franchises/Cars"
+  },
+  {
+    "name": "DC",
+    "category": "Franchises",
+    "status": "In Development",
+    "path": "Franchises/DC"
+  },
+  {
+    "name": "Despicable Me - Minions",
+    "category": "Franchises",
+    "status": "In Development",
+    "path": "Franchises/Despicable Me - Minions"
+  },
+  {
+    "name": "Fast & Furious",
+    "category": "Franchises",
+    "status": "In Development",
+    "path": "Franchises/Fast & Furious"
+  },
+  {
+    "name": "Frozen",
+    "category": "Franchises",
+    "status": "In Development",
+    "path": "Franchises/Frozen"
+  },
+  {
+    "name": "Ghostbusters",
+    "category": "Franchises",
+    "status": "In Development",
+    "path": "Franchises/Ghostbusters"
+  },
+  {
+    "name": "Godzilla",
+    "category": "Franchises",
+    "status": "In Development",
+    "path": "Franchises/Godzilla"
+  },
+  {
+    "name": "Harry Potter",
+    "category": "Franchises",
+    "status": "Complete",
+    "path": "Franchises/Harry Potter"
+  },
+  {
+    "name": "Indiana Jones",
+    "category": "Franchises",
+    "status": "In Development",
+    "path": "Franchises/Indiana Jones"
+  },
+  {
+    "name": "James Bond",
+    "category": "Franchises",
+    "status": "In Development",
+    "path": "Franchises/James Bond"
+  },
+  {
+    "name": "James Bond 007",
+    "category": "Franchises",
+    "status": "Complete",
+    "path": "Franchises/James Bond 007"
+  },
+  {
+    "name": "John Wick",
+    "category": "Franchises",
+    "status": "Complete",
+    "path": "Franchises/John Wick"
+  },
+  {
+    "name": "Jurassic Park - Jurassic World",
+    "category": "Franchises",
+    "status": "In Development",
+    "path": "Franchises/Jurassic Park - Jurassic World"
+  },
+  {
+    "name": "Lord of the Rings",
+    "category": "Franchises",
+    "status": "In Development",
+    "path": "Franchises/Lord of the Rings"
+  },
+  {
+    "name": "Marvel",
+    "category": "Franchises",
+    "status": "In Development",
+    "path": "Franchises/Marvel"
+  },
+  {
+    "name": "Mission Impossible",
+    "category": "Franchises",
+    "status": "In Development",
+    "path": "Franchises/Mission Impossible"
+  },
+  {
+    "name": "Pirates of the Caribbean",
+    "category": "Franchises",
+    "status": "In Development",
+    "path": "Franchises/Pirates of the Caribbean"
+  },
+  {
+    "name": "Planet of the Apes",
+    "category": "Franchises",
+    "status": "In Development",
+    "path": "Franchises/Planet of the Apes"
+  },
+  {
+    "name": "Predator",
+    "category": "Franchises",
+    "status": "In Development",
+    "path": "Franchises/Predator"
+  },
+  {
+    "name": "Rocky - Creed",
+    "category": "Franchises",
+    "status": "In Development",
+    "path": "Franchises/Rocky - Creed"
+  },
+  {
+    "name": "Saw",
+    "category": "Franchises",
+    "status": "In Development",
+    "path": "Franchises/Saw"
+  },
+  {
+    "name": "Scream",
+    "category": "Franchises",
+    "status": "In Development",
+    "path": "Franchises/Scream"
+  },
+  {
+    "name": "Shrek",
+    "category": "Franchises",
+    "status": "In Development",
+    "path": "Franchises/Shrek"
+  },
+  {
+    "name": "Sonic the Hedgehog",
+    "category": "Franchises",
+    "status": "In Development",
+    "path": "Franchises/Sonic the Hedgehog"
+  },
+  {
+    "name": "Star Trek",
+    "category": "Franchises",
+    "status": "In Development",
+    "path": "Franchises/Star Trek"
+  },
+  {
+    "name": "Star Wars",
+    "category": "Franchises",
+    "status": "Complete",
+    "path": "Franchises/Star Wars"
+  },
+  {
+    "name": "Teenage Mutant Ninja Turtles",
+    "category": "Franchises",
+    "status": "In Development",
+    "path": "Franchises/Teenage Mutant Ninja Turtles"
+  },
+  {
+    "name": "Terminator",
+    "category": "Franchises",
+    "status": "In Development",
+    "path": "Franchises/Terminator"
+  },
+  {
+    "name": "The Conjuring",
+    "category": "Franchises",
+    "status": "In Development",
+    "path": "Franchises/The Conjuring"
+  },
+  {
+    "name": "The Hobbit",
+    "category": "Franchises",
+    "status": "In Development",
+    "path": "Franchises/The Hobbit"
+  },
+  {
+    "name": "The Hunger Games",
+    "category": "Franchises",
+    "status": "In Development",
+    "path": "Franchises/The Hunger Games"
+  },
+  {
+    "name": "The Lion King",
+    "category": "Franchises",
+    "status": "In Development",
+    "path": "Franchises/The Lion King"
+  },
+  {
+    "name": "The Matrix",
+    "category": "Franchises",
+    "status": "In Development",
+    "path": "Franchises/The Matrix"
+  },
+  {
+    "name": "Toy Story",
+    "category": "Franchises",
+    "status": "In Development",
+    "path": "Franchises/Toy Story"
+  },
+  {
+    "name": "Transformers",
+    "category": "Franchises",
+    "status": "In Development",
+    "path": "Franchises/Transformers"
+  },
+  {
+    "name": "ABC",
+    "category": "Networks",
+    "status": "In Development",
+    "path": "Networks/ABC"
+  },
+  {
+    "name": "Adult Swim",
+    "category": "Networks",
+    "status": "In Development",
+    "path": "Networks/Adult Swim"
+  },
+  {
+    "name": "AMC",
+    "category": "Networks",
+    "status": "In Development",
+    "path": "Networks/AMC"
+  },
+  {
+    "name": "Animal Planet",
+    "category": "Networks",
+    "status": "In Development",
+    "path": "Networks/Animal Planet"
+  },
+  {
+    "name": "BBC",
+    "category": "Networks",
+    "status": "In Development",
+    "path": "Networks/BBC"
+  },
+  {
+    "name": "Cartoon Network",
+    "category": "Networks",
+    "status": "In Development",
+    "path": "Networks/Cartoon Network"
+  },
+  {
+    "name": "CBS",
+    "category": "Networks",
+    "status": "In Development",
+    "path": "Networks/CBS"
+  },
+  {
+    "name": "CNN",
+    "category": "Networks",
+    "status": "In Development",
+    "path": "Networks/CNN"
+  },
+  {
+    "name": "Comedy Central",
+    "category": "Networks",
+    "status": "In Development",
+    "path": "Networks/Comedy Central"
+  },
+  {
+    "name": "Discovery Channel",
+    "category": "Networks",
+    "status": "In Development",
+    "path": "Networks/Discovery Channel"
+  },
+  {
+    "name": "Disney Channel",
+    "category": "Networks",
+    "status": "In Development",
+    "path": "Networks/Disney Channel"
+  },
+  {
+    "name": "ESPN",
+    "category": "Networks",
+    "status": "In Development",
+    "path": "Networks/ESPN"
+  },
+  {
+    "name": "Food Network",
+    "category": "Networks",
+    "status": "In Development",
+    "path": "Networks/Food Network"
+  },
+  {
+    "name": "FOX",
+    "category": "Networks",
+    "status": "In Development",
+    "path": "Networks/FOX"
+  },
+  {
+    "name": "FX",
+    "category": "Networks",
+    "status": "In Development",
+    "path": "Networks/FX"
+  },
+  {
+    "name": "Hallmark Channel",
+    "category": "Networks",
+    "status": "In Development",
+    "path": "Networks/Hallmark Channel"
+  },
+  {
+    "name": "HBO",
+    "category": "Networks",
+    "status": "In Development",
+    "path": "Networks/HBO"
+  },
+  {
+    "name": "HGTV",
+    "category": "Networks",
+    "status": "In Development",
+    "path": "Networks/HGTV"
+  },
+  {
+    "name": "History Channel",
+    "category": "Networks",
+    "status": "In Development",
+    "path": "Networks/History Channel"
+  },
+  {
+    "name": "ITV",
+    "category": "Networks",
+    "status": "In Development",
+    "path": "Networks/ITV"
+  },
+  {
+    "name": "MTV",
+    "category": "Networks",
+    "status": "In Development",
+    "path": "Networks/MTV"
+  },
+  {
+    "name": "National Geographic",
+    "category": "Networks",
+    "status": "In Development",
+    "path": "Networks/National Geographic"
+  },
+  {
+    "name": "NBC",
+    "category": "Networks",
+    "status": "In Development",
+    "path": "Networks/NBC"
+  },
+  {
+    "name": "Nickelodeon",
+    "category": "Networks",
+    "status": "In Development",
+    "path": "Networks/Nickelodeon"
+  },
+  {
+    "name": "Paramount Network",
+    "category": "Networks",
+    "status": "In Development",
+    "path": "Networks/Paramount Network"
+  },
+  {
+    "name": "ShowTime",
+    "category": "Networks",
+    "status": "Complete",
+    "path": "Networks/ShowTime"
+  },
+  {
+    "name": "Sky",
+    "category": "Networks",
+    "status": "In Development",
+    "path": "Networks/Sky"
+  },
+  {
+    "name": "Syfy",
+    "category": "Networks",
+    "status": "In Development",
+    "path": "Networks/Syfy"
+  },
+  {
+    "name": "TBS",
+    "category": "Networks",
+    "status": "In Development",
+    "path": "Networks/TBS"
+  },
+  {
+    "name": "The CW",
+    "category": "Networks",
+    "status": "In Development",
+    "path": "Networks/The CW"
+  },
+  {
+    "name": "TLC",
+    "category": "Networks",
+    "status": "In Development",
+    "path": "Networks/TLC"
+  },
+  {
+    "name": "TNT",
+    "category": "Networks",
+    "status": "In Development",
+    "path": "Networks/TNT"
+  },
+  {
+    "name": "USA Network",
+    "category": "Networks",
+    "status": "In Development",
+    "path": "Networks/USA Network"
+  }
+]

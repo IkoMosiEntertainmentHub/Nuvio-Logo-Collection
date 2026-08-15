@@ -54,11 +54,11 @@ It is an independent collection maintained for personal organization, reference,
 
 | Category | Completed | Total | Progress | Status |
 | --- | ---: | ---: | --- | --- |
-| **Streaming Platforms** | 12 | 12 | `██████████` **100%** | Complete |
-| **TV Collections** | 0 | 16 | `░░░░░░░░░░` **0%** | Not started |
-| **Studios** | 0 | 20 | `░░░░░░░░░░` **0%** | Not started |
-| **Franchises** | 5 | 38 | `█░░░░░░░░░` **13.2%** | Started |
-| **Networks** | 1 | 33 | `░░░░░░░░░░` **3%** | Started |
+| Streaming Platforms | 12 | 12 | ██████████ 100.0% | Complete |
+| TV Collections | 0 | 16 | ░░░░░░░░░░ 0.0% | Not Started |
+| Studios | 0 | 20 | ░░░░░░░░░░ 0.0% | Not Started |
+| Franchises | 5 | 38 | █░░░░░░░░░ 13.2% | In Development |
+| Networks | 1 | 33 | ░░░░░░░░░░ 3.0% | In Development |
 
 <!-- COLLECTION_PROGRESS_END -->
 
