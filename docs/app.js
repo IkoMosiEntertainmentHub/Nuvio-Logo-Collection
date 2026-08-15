@@ -1,36 +1,42 @@
 let assets = [];
+let popularity = {};
 
 let visibleCount = 10;
-
 let currentTab = "all";
 
-
 let settings =
-JSON.parse(localStorage.getItem("VAL_settings"))
+JSON.parse(
+    localStorage.getItem("VAL_settings")
+)
 ||
 {
-    gif: true,
-    png: true,
-    jpg: true,
-    webp: true,
-    mp4: true
+    gif:true,
+    png:true,
+    jpg:true,
+    jpeg:true,
+    webp:true,
+    mp4:true
 };
-
 
 
 const search = document.getElementById("search");
 const results = document.getElementById("results");
+const loadMore = document.getElementById("loadMore");
 
 const settingsButton = document.getElementById("settingsButton");
 const settingsPanel = document.getElementById("settingsPanel");
 
-const gifToggle = document.getElementById("gifToggle");
-const pngToggle = document.getElementById("pngToggle");
-const jpgToggle = document.getElementById("jpgToggle");
-const webpToggle = document.getElementById("webpToggle");
-const mp4Toggle = document.getElementById("mp4Toggle");
 
-const loadMore = document.getElementById("loadMore");
+const toggles = {
+
+    gif: document.getElementById("gifToggle"),
+    png: document.getElementById("pngToggle"),
+    jpg: document.getElementById("jpgToggle"),
+    jpeg: document.getElementById("jpegToggle"),
+    webp: document.getElementById("webpToggle"),
+    mp4: document.getElementById("mp4Toggle")
+
+};
 
 
 
@@ -38,11 +44,12 @@ function saveSettings(){
 
     settings = {
 
-        gif: gifToggle.checked,
-        png: pngToggle.checked,
-        jpg: jpgToggle.checked,
-        webp: webpToggle.checked,
-        mp4: mp4Toggle.checked
+        gif: toggles.gif.checked,
+        png: toggles.png.checked,
+        jpg: toggles.jpg.checked,
+        jpeg: toggles.jpeg.checked,
+        webp: toggles.webp.checked,
+        mp4: toggles.mp4.checked
 
     };
 
@@ -59,55 +66,66 @@ function saveSettings(){
 
 
 
+
 function loadSettings(){
 
-    gifToggle.checked = settings.gif;
+    Object.keys(toggles)
+    .forEach(type=>{
 
-    pngToggle.checked = settings.png;
+        if(toggles[type]){
 
-    jpgToggle.checked = settings.jpg;
+            toggles[type].checked =
+            settings[type];
 
-    webpToggle.checked = settings.webp;
+        }
 
-    mp4Toggle.checked = settings.mp4;
+    });
 
 }
 
 
 
 
-document
-.querySelectorAll("#settingsPanel input")
-.forEach(input => {
 
-    input.addEventListener(
-        "change",
-        saveSettings
-    );
+Object.values(toggles)
+.forEach(toggle=>{
+
+    if(toggle){
+
+        toggle.addEventListener(
+            "change",
+            saveSettings
+        );
+
+    }
 
 });
 
 
 
 
-settingsButton.onclick = function(e){
+
+settingsButton.addEventListener(
+"click",
+function(e){
 
     e.stopPropagation();
 
 
-    if(settingsPanel.style.display === "block"){
+    settingsPanel.style.display =
 
-        settingsPanel.style.display = "none";
+    settingsPanel.style.display === "block"
 
-    }
+    ?
 
-    else {
+    "none"
 
-        settingsPanel.style.display = "block";
+    :
 
-    }
+    "block";
 
-};
+
+});
 
 
 
@@ -116,7 +134,6 @@ settingsButton.onclick = function(e){
 document.addEventListener(
 "click",
 function(e){
-
 
     if(
 
@@ -128,7 +145,7 @@ function(e){
 
     ){
 
-        settingsPanel.style.display = "none";
+        settingsPanel.style.display="none";
 
     }
 
@@ -140,16 +157,24 @@ function(e){
 
 
 
-fetch("search.json")
+Promise.all([
+
+    fetch("search.json?v=6")
+    .then(response=>response.json()),
 
 
-.then(response => response.json())
+    fetch("popularity.json?v=1")
+    .then(response=>response.json())
+    .catch(()=>({}))
+
+])
+
+.then(data=>{
 
 
-.then(data => {
+    assets = data[0];
 
-
-    assets = data;
+    popularity = data[1];
 
 
     displayResults(assets);
@@ -157,19 +182,22 @@ fetch("search.json")
 
 })
 
-
-.catch(error => {
+.catch(error=>{
 
 
     console.error(error);
 
 
     results.innerHTML =
-    "Failed loading database";
+
+    `
+    <p>
+    Failed loading database
+    </p>
+    `;
 
 
 });
-
 
 
 
@@ -177,33 +205,29 @@ fetch("search.json")
 
 search.addEventListener(
 "input",
-function(){
+()=>{
 
     visibleCount = 10;
 
     displayResults(assets);
 
-});
-
-
-
-
-
-
-
-document
+});document
 .querySelectorAll(".tab")
-.forEach(button => {
+.forEach(button=>{
 
-
-    button.onclick = function(){
+    button.addEventListener(
+    "click",
+    function(){
 
 
         document
         .querySelectorAll(".tab")
-        .forEach(x =>
-            x.classList.remove("active")
-        );
+        .forEach(tab=>{
+
+            tab.classList.remove("active");
+
+        });
+
 
 
         this.classList.add("active");
@@ -219,8 +243,7 @@ document
         displayResults(assets);
 
 
-    };
-
+    });
 
 });
 
@@ -229,16 +252,15 @@ document
 
 
 
-loadMore.onclick = function(){
-
+loadMore.addEventListener(
+"click",
+()=>{
 
     visibleCount += 10;
 
-
     displayResults(assets);
 
-
-};
+});
 
 
 
@@ -248,13 +270,11 @@ loadMore.onclick = function(){
 
 function getExt(url){
 
-
     return url
+    .split("?")[0]
     .split(".")
     .pop()
-    .split("?")[0]
     .toLowerCase();
-
 
 }
 
@@ -263,26 +283,20 @@ function getExt(url){
 
 
 
-
-function copyText(text, button){
-
+function copyText(text,button){
 
     navigator.clipboard.writeText(text);
 
 
-    button.innerText =
-    "Copied";
+    button.innerText="Copied";
 
 
-    setTimeout(
-        () => {
+    setTimeout(()=>{
 
-            button.innerText =
-            "Copy Raw Asset Link";
+        button.innerText =
+        "Copy Raw Asset Link";
 
-        },
-        1500
-    );
+    },1500);
 
 
 }
@@ -295,32 +309,58 @@ function copyText(text, button){
 
 function previewEnabled(ext){
 
+    return settings[ext] === true;
 
-    if(ext === "gif")
-        return settings.gif;
-
-
-    if(ext === "png")
-        return settings.png;
+}
 
 
-    if(ext === "jpg" || ext === "jpeg")
-        return settings.jpg;
 
 
-    if(ext === "webp")
-        return settings.webp;
 
 
-    if(ext === "mp4")
-        return settings.mp4;
+function getStatusPriority(status){
 
 
-    return false;
+    if(status === "Complete")
+        return 0;
+
+
+    if(status === "In Development")
+        return 1;
+
+
+    return 2;
 
 
 }
 
+
+
+
+
+
+function getPopularity(name,category){
+
+
+    if(
+
+        popularity[category]
+
+        &&
+
+        popularity[category][name]
+
+    ){
+
+        return popularity[category][name];
+
+    }
+
+
+    return 9999;
+
+
+}
 
 
 
@@ -340,7 +380,7 @@ function displayResults(data){
 
 
     let filtered =
-    data.filter(item => {
+    data.filter(item=>{
 
 
         return (
@@ -348,6 +388,7 @@ function displayResults(data){
             item.name
             .toLowerCase()
             .includes(query)
+
 
             ||
 
@@ -365,42 +406,116 @@ function displayResults(data){
 
 
 
+
     if(currentTab === "complete"){
 
 
         filtered =
         filtered.filter(
-            x => x.status === "Complete"
+            x=>x.status==="Complete"
         );
 
 
     }
 
 
-
-    if(currentTab === "development"){
+    else if(currentTab === "development"){
 
 
         filtered =
         filtered.filter(
-            x => x.status === "In Development"
+            x=>x.status==="In Development"
         );
 
 
     }
 
 
-
-    if(currentTab === "notstarted"){
+    else if(currentTab === "notstarted"){
 
 
         filtered =
         filtered.filter(
-            x => x.status === "Not Started"
+            x=>x.status==="Not Started"
         );
 
 
     }
+
+
+    else if(
+
+        [
+
+            "Streaming Platforms",
+            "TV Collections",
+            "Studios",
+            "Franchises",
+            "Networks"
+
+        ]
+
+        .includes(currentTab)
+
+    ){
+
+
+        filtered =
+        filtered.filter(
+            x=>x.category===currentTab
+        );
+
+
+    }
+
+
+
+
+
+
+
+    filtered.sort(
+    (a,b)=>{
+
+
+        let status =
+
+        getStatusPriority(a.status)
+
+        -
+
+        getStatusPriority(b.status);
+
+
+
+        if(status !== 0){
+
+            return status;
+
+        }
+
+
+
+
+        return (
+
+            getPopularity(
+                a.name,
+                a.category
+            )
+
+            -
+
+            getPopularity(
+                b.name,
+                b.category
+            )
+
+        );
+
+
+    });
+
 
 
 
@@ -427,15 +542,19 @@ function displayResults(data){
 
 
 
-    filtered.forEach(item => {
+    filtered.forEach(item=>{
 
 
+        let html =
 
-        let html = `
+        `
 
         <div class="card">
 
-        <h2>${item.name}</h2>
+
+        <h2>
+        ${item.name}
+        </h2>
 
 
         <p>
@@ -447,31 +566,42 @@ function displayResults(data){
         Status: ${item.status}
         </p>
 
+
         `;
 
 
 
+        if(
 
+            item.assets
 
-        if(item.assets && item.assets.length){
+            &&
 
+            item.assets.length
+
+        ){
 
 
             let sorted =
-            [...item.assets]
-            .sort((a,b)=>{
+            [...item.assets];
 
 
-                let order = [
 
-                    "gif",
-                    "png",
-                    "jpg",
-                    "jpeg",
-                    "webp",
-                    "mp4"
+            let order = [
 
-                ];
+                "gif",
+                "png",
+                "jpg",
+                "jpeg",
+                "webp",
+                "mp4"
+
+            ];
+
+
+
+            sorted.sort(
+            (a,b)=>{
 
 
                 return (
@@ -488,20 +618,16 @@ function displayResults(data){
             });
 
 
-
-
-
-            sorted.forEach(url => {
+            sorted.forEach(url=>{
 
 
                 let ext =
                 getExt(url);
 
 
+                html +=
 
-
-
-                html += `
+                `
 
                 <div class="asset">
 
@@ -514,22 +640,20 @@ function displayResults(data){
 
 
 
-
-
-
                 if(previewEnabled(ext)){
 
 
+                    if(ext === "mp4"){
 
-                    if(
-                    ext === "mp4"
-                    ){
 
-                        html += `
+                        html +=
+
+                        `
 
                         <video
                         class="preview"
-                        controls>
+                        controls
+                        loading="lazy">
 
                         <source src="${url}">
 
@@ -540,13 +664,16 @@ function displayResults(data){
 
                     }
 
-                    else {
+                    else{
 
 
-                        html += `
+                        html +=
+
+                        `
 
                         <img
                         class="preview"
+                        loading="lazy"
                         src="${url}">
 
                         `;
@@ -555,13 +682,9 @@ function displayResults(data){
                     }
 
 
-                }
+                }                html +=
 
-
-
-
-                html += `
-
+                `
 
                 <button
                 class="copy"
@@ -574,22 +697,20 @@ function displayResults(data){
 
                 </div>
 
-
                 `;
-
 
 
             });
 
 
-
         }
 
+        else{
 
-        else {
 
+            html +=
 
-            html += `
+            `
 
             <p>
             No assets available yet.
@@ -604,7 +725,9 @@ function displayResults(data){
 
 
 
-        html += `
+        html +=
+
+        `
 
         </div>
 
@@ -622,18 +745,19 @@ function displayResults(data){
 
 
 
+
     if(total > visibleCount){
 
 
-        loadMore.style.display = "block";
+        loadMore.style.display="block";
 
 
     }
 
-    else {
+    else{
 
 
-        loadMore.style.display = "none";
+        loadMore.style.display="none";
 
 
     }
@@ -641,7 +765,6 @@ function displayResults(data){
 
 
 }
-
 
 
 
