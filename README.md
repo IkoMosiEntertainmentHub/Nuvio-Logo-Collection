@@ -1,14 +1,12 @@
-# Visual Assets Library
+# [Visual Assets Library](https://github.com/IkoMosiEntertainmentHub/Visual-Assets-Library)
 
 > A personal, unofficial collection of logos, artwork, GIFs, animations, icons, and other visual assets — organized for use with media catalogues, collection interfaces, and projects that support custom visual assets.
 
-**Repository:** [IkoMosiEntertainmentHub/Visual-Assets-Library](https://github.com/IkoMosiEntertainmentHub/Visual-Assets-Library)
-
 ---
 
-## 🌐 Website
+## 🌐 [Website](https://ikomosientertainmenthub.github.io/Visual-Assets-Library/)
 
-Explore the collection through the online **[Visual Assets Library](https://ikomosientertainmenthub.github.io/Visual-Assets-Library/)**.
+Explore the collection through the online Visual Assets Library.
 
 ### Features
 
@@ -19,8 +17,6 @@ Explore the collection through the online **[Visual Assets Library](https://ikom
 - 🔗 **Raw asset link copying**
 - 📊 **Live collection progress**
 - 🎯 **Direct asset references**
-
-**🔗 Live site:** **[ikomosientertainmenthub.github.io/Visual-Assets-Library](https://ikomosientertainmenthub.github.io/Visual-Assets-Library/)**
 
 ---
 
@@ -82,10 +78,10 @@ The progress below reflects the current availability of supported visual assets 
 | Category | Completed | Total | Progress | Status |
 | --- | ---: | ---: | --- | --- |
 | **Streaming Platforms** | 12 | 12 | `██████████` **100.0%** | Complete |
-| **TV Collections** | 0 | 16 | `░░░░░░░░░░` **0.0%** | Not Started |
 | **Studios** | 1 | 20 | `░░░░░░░░░░` **5.0%** | Collecting |
 | **Franchises** | 5 | 38 | `█░░░░░░░░░` **13.2%** | Collecting |
 | **Networks** | 1 | 33 | `░░░░░░░░░░` **3.0%** | Collecting |
+| **TV Collections** | 0 | 16 | `░░░░░░░░░░` **0.0%** | Not Started |
 
 <!-- COLLECTION_PROGRESS_END -->
 
@@ -93,9 +89,9 @@ The progress below reflects the current availability of supported visual assets 
 
 ### Status Meanings
 
-- ✅ **Complete** — Supported assets are available within the collection.
-- 🔄 **Collecting** — The collection is currently being gathered and expanded.
-- ⬜ **Not Started** — No supported assets have been added yet.
+- **Complete** — Supported assets are available within the collection.
+- **Collecting** — The collection is currently being gathered and expanded.
+- **Not Started** — No supported assets have been added yet.
 
 **Supported formats:** `.png` · `.gif` · `.jpg` · `.jpeg` · `.webp` · `.svg` · `.avif` · `.mp4`
 
