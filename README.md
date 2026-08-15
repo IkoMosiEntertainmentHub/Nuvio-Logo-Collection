@@ -1,4 +1,4 @@
-# [Visual Assets Library](https://github.com/IkoMosiEntertainmentHub/Visual-Assets-Library]
+# [Visual Assets Library](https://github.com/IkoMosiEntertainmentHub/Visual-Assets-Library)
 
 A personal, unofficial collection of logos, artwork, GIFs, animations, icons, and other visual assets organized for use with media catalogues, collection interfaces, and projects that support custom visual assets.
 
