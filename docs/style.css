@@ -664,7 +664,7 @@ height:90%;
 
 background:#050b18;
 
-z-index:200;
+z-index:9999;
 
 transition:.5s ease;
 
@@ -713,35 +713,10 @@ border:none;
 
 color:white;
 
-font-size:20px;
+padding:10px 15px;
 
-width:45px;
-
-height:45px;
-
-border-radius:50%;
+border-radius:10px;
 
 cursor:pointer;
-
-}
-
-
-#closeGuide:hover{
-
-background:#0050cc;
-
-}
-
-
-.guide-box p{
-
-opacity:.9;
-
-}
-
-
-.guide-box li{
-
-margin:10px 0;
 
 }

@@ -776,21 +776,14 @@ loadSettings();
 
 // GUIDE PANEL
 
-const guideButton =
-document.getElementById("guideButton");
-
-const guidePanel =
-document.getElementById("guidePanel");
-
-const closeGuide =
-document.getElementById("closeGuide");
+const guideButton = document.getElementById("guideButton");
+const guidePanel = document.getElementById("guidePanel");
+const closeGuide = document.getElementById("closeGuide");
 
 
 if(guideButton && guidePanel){
 
-    guideButton.addEventListener(
-    "click",
-    (e)=>{
+    guideButton.addEventListener("click", (e)=>{
 
         e.preventDefault();
 
@@ -801,14 +794,28 @@ if(guideButton && guidePanel){
 }
 
 
-
 if(closeGuide && guidePanel){
 
-    closeGuide.addEventListener(
-    "click",
-    ()=>{
+    closeGuide.addEventListener("click", ()=>{
 
         guidePanel.classList.remove("active");
+
+    });
+
+}
+
+
+// Click outside to close
+
+if(guidePanel){
+
+    guidePanel.addEventListener("click",(e)=>{
+
+        if(e.target === guidePanel){
+
+            guidePanel.classList.remove("active");
+
+        }
 
     });
 
