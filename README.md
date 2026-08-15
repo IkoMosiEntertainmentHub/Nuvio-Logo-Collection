@@ -4,7 +4,7 @@ A personal, unofficial collection of logos, artwork, GIFs, animations, icons, an
 
 ---
 
-## 🌐 [Visual Assets Library Website](https://github.com/IkoMosiEntertainmentHub/Visual-Assets-Library)
+## 🌐 [Visual Assets Library Website](https://ikomosientertainmenthub.github.io/Visual-Assets-Library/)
 
 Explore the collection through the online Visual Assets Library.
 
@@ -18,7 +18,7 @@ Explore the collection through the online Visual Assets Library.
 - Live collection progress
 - Direct asset references
 
-**Website:** https://ikomosientertainmenthub.github.io/Visual-Assets-Library/
+**Website:**[Visual Assets Library](https://ikomosientertainmenthub.github.io/Visual-Assets-Library/)
 
 ---
 
