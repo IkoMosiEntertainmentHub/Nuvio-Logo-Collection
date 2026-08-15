@@ -3,714 +3,883 @@
     "name": "AMC+",
     "category": "Streaming Platforms",
     "status": "Complete",
-    "path": "Streaming Platforms/AMC+"
+    "path": "Streaming Platforms/AMC+",
+    "assets": [
+      "https://raw.githubusercontent.com/IkoMosiEntertainmentHub/Visual-Assets-Library/refs/heads/main/Streaming%20Platforms/AMC%2B/Amc%2B%20Intro.gif",
+      "https://raw.githubusercontent.com/IkoMosiEntertainmentHub/Visual-Assets-Library/refs/heads/main/Streaming%20Platforms/AMC%2B/Amc%20Logo.png"
+    ]
   },
   {
     "name": "APPLE TV",
     "category": "Streaming Platforms",
     "status": "Complete",
-    "path": "Streaming Platforms/APPLE TV"
+    "path": "Streaming Platforms/APPLE TV",
+    "assets": [
+      "https://raw.githubusercontent.com/IkoMosiEntertainmentHub/Visual-Assets-Library/refs/heads/main/Streaming%20Platforms/APPLE%20TV/Apple%20Tv%20Intro.gif",
+      "https://raw.githubusercontent.com/IkoMosiEntertainmentHub/Visual-Assets-Library/refs/heads/main/Streaming%20Platforms/APPLE%20TV/Apple%20Tv%20Logo.png"
+    ]
   },
   {
     "name": "CRUNCHYROLL",
     "category": "Streaming Platforms",
     "status": "Complete",
-    "path": "Streaming Platforms/CRUNCHYROLL"
+    "path": "Streaming Platforms/CRUNCHYROLL",
+    "assets": [
+      "https://raw.githubusercontent.com/IkoMosiEntertainmentHub/Visual-Assets-Library/refs/heads/main/Streaming%20Platforms/CRUNCHYROLL/Crunchyroll%20Logo.png",
+      "https://raw.githubusercontent.com/IkoMosiEntertainmentHub/Visual-Assets-Library/refs/heads/main/Streaming%20Platforms/CRUNCHYROLL/Crunchyroll%20Intro.gif"
+    ]
   },
   {
     "name": "DISNEY PLUS",
     "category": "Streaming Platforms",
     "status": "Complete",
-    "path": "Streaming Platforms/DISNEY PLUS"
+    "path": "Streaming Platforms/DISNEY PLUS",
+    "assets": [
+      "https://raw.githubusercontent.com/IkoMosiEntertainmentHub/Visual-Assets-Library/refs/heads/main/Streaming%20Platforms/DISNEY%20PLUS/Disney%20Plus%20Logo.png",
+      "https://raw.githubusercontent.com/IkoMosiEntertainmentHub/Visual-Assets-Library/refs/heads/main/Streaming%20Platforms/DISNEY%20PLUS/Disney%20Plus%20Intro.gif.gif"
+    ]
   },
   {
     "name": "HBO MAX",
     "category": "Streaming Platforms",
     "status": "Complete",
-    "path": "Streaming Platforms/HBO MAX"
+    "path": "Streaming Platforms/HBO MAX",
+    "assets": [
+      "https://raw.githubusercontent.com/IkoMosiEntertainmentHub/Visual-Assets-Library/refs/heads/main/Streaming%20Platforms/HBO%20MAX/Hbo%20Max%20Intro.gif",
+      "https://raw.githubusercontent.com/IkoMosiEntertainmentHub/Visual-Assets-Library/refs/heads/main/Streaming%20Platforms/HBO%20MAX/Hbo%20Max.png"
+    ]
   },
   {
     "name": "HULU",
     "category": "Streaming Platforms",
     "status": "Complete",
-    "path": "Streaming Platforms/HULU"
+    "path": "Streaming Platforms/HULU",
+    "assets": [
+      "https://raw.githubusercontent.com/IkoMosiEntertainmentHub/Visual-Assets-Library/refs/heads/main/Streaming%20Platforms/HULU/Hulu%20Originals%20Intro.gif",
+      "https://raw.githubusercontent.com/IkoMosiEntertainmentHub/Visual-Assets-Library/refs/heads/main/Streaming%20Platforms/HULU/Hulu%20Logo.png"
+    ]
   },
   {
     "name": "MGM+",
     "category": "Streaming Platforms",
     "status": "Complete",
-    "path": "Streaming Platforms/MGM+"
+    "path": "Streaming Platforms/MGM+",
+    "assets": [
+      "https://raw.githubusercontent.com/IkoMosiEntertainmentHub/Visual-Assets-Library/refs/heads/main/Streaming%20Platforms/MGM%2B/Mgm%2B%20Logo.png",
+      "https://raw.githubusercontent.com/IkoMosiEntertainmentHub/Visual-Assets-Library/refs/heads/main/Streaming%20Platforms/MGM%2B/Mgm%2B%20Intro.gif",
+      "https://raw.githubusercontent.com/IkoMosiEntertainmentHub/Visual-Assets-Library/refs/heads/main/Streaming%20Platforms/MGM%2B/Mgm%2B%20Originals%20Intro.gif"
+    ]
   },
   {
     "name": "NETFLIX",
     "category": "Streaming Platforms",
     "status": "Complete",
-    "path": "Streaming Platforms/NETFLIX"
+    "path": "Streaming Platforms/NETFLIX",
+    "assets": [
+      "https://raw.githubusercontent.com/IkoMosiEntertainmentHub/Visual-Assets-Library/refs/heads/main/Streaming%20Platforms/NETFLIX/Netflix%20Intro.gif",
+      "https://raw.githubusercontent.com/IkoMosiEntertainmentHub/Visual-Assets-Library/refs/heads/main/Streaming%20Platforms/NETFLIX/Netflix%20Logo.png"
+    ]
   },
   {
     "name": "PARAMOUNT",
     "category": "Streaming Platforms",
     "status": "Complete",
-    "path": "Streaming Platforms/PARAMOUNT"
+    "path": "Streaming Platforms/PARAMOUNT",
+    "assets": [
+      "https://raw.githubusercontent.com/IkoMosiEntertainmentHub/Visual-Assets-Library/refs/heads/main/Streaming%20Platforms/PARAMOUNT/Paramount%20Plus%20Logo.png",
+      "https://raw.githubusercontent.com/IkoMosiEntertainmentHub/Visual-Assets-Library/refs/heads/main/Streaming%20Platforms/PARAMOUNT/Paramount%20Plus%20Intro.gif"
+    ]
   },
   {
     "name": "PEACOCK",
     "category": "Streaming Platforms",
     "status": "Complete",
-    "path": "Streaming Platforms/PEACOCK"
+    "path": "Streaming Platforms/PEACOCK",
+    "assets": [
+      "https://raw.githubusercontent.com/IkoMosiEntertainmentHub/Visual-Assets-Library/refs/heads/main/Streaming%20Platforms/PEACOCK/Peacock%20Logo.png",
+      "https://raw.githubusercontent.com/IkoMosiEntertainmentHub/Visual-Assets-Library/refs/heads/main/Streaming%20Platforms/PEACOCK/Peacock%20Intro.gif"
+    ]
   },
   {
     "name": "PRIME VIDEO",
     "category": "Streaming Platforms",
     "status": "Complete",
-    "path": "Streaming Platforms/PRIME VIDEO"
+    "path": "Streaming Platforms/PRIME VIDEO",
+    "assets": [
+      "https://raw.githubusercontent.com/IkoMosiEntertainmentHub/Visual-Assets-Library/refs/heads/main/Streaming%20Platforms/PRIME%20VIDEO/Amazon%20Prime%20Video%20Intro.gif",
+      "https://raw.githubusercontent.com/IkoMosiEntertainmentHub/Visual-Assets-Library/refs/heads/main/Streaming%20Platforms/PRIME%20VIDEO/Amazon%20Prime%20Video%20Logo.png"
+    ]
   },
   {
     "name": "STARZ",
     "category": "Streaming Platforms",
     "status": "Complete",
-    "path": "Streaming Platforms/STARZ"
+    "path": "Streaming Platforms/STARZ",
+    "assets": [
+      "https://raw.githubusercontent.com/IkoMosiEntertainmentHub/Visual-Assets-Library/refs/heads/main/Streaming%20Platforms/STARZ/Starz%20Intro.gif",
+      "https://raw.githubusercontent.com/IkoMosiEntertainmentHub/Visual-Assets-Library/refs/heads/main/Streaming%20Platforms/STARZ/Starz%20Logo.png"
+    ]
   },
   {
     "name": "Adult Swim",
     "category": "TV Collections",
     "status": "In Development",
-    "path": "TV Collections/Adult Swim"
+    "path": "TV Collections/Adult Swim",
+    "assets": []
   },
   {
     "name": "BBC",
     "category": "TV Collections",
     "status": "In Development",
-    "path": "TV Collections/BBC"
+    "path": "TV Collections/BBC",
+    "assets": []
   },
   {
     "name": "Cartoon Network",
     "category": "TV Collections",
     "status": "In Development",
-    "path": "TV Collections/Cartoon Network"
+    "path": "TV Collections/Cartoon Network",
+    "assets": []
   },
   {
     "name": "Comedy Central",
     "category": "TV Collections",
     "status": "In Development",
-    "path": "TV Collections/Comedy Central"
+    "path": "TV Collections/Comedy Central",
+    "assets": []
   },
   {
     "name": "DC",
     "category": "TV Collections",
     "status": "In Development",
-    "path": "TV Collections/DC"
+    "path": "TV Collections/DC",
+    "assets": []
   },
   {
     "name": "Discovery",
     "category": "TV Collections",
     "status": "In Development",
-    "path": "TV Collections/Discovery"
+    "path": "TV Collections/Discovery",
+    "assets": []
   },
   {
     "name": "Disney",
     "category": "TV Collections",
     "status": "In Development",
-    "path": "TV Collections/Disney"
+    "path": "TV Collections/Disney",
+    "assets": []
   },
   {
     "name": "Hallmark",
     "category": "TV Collections",
     "status": "In Development",
-    "path": "TV Collections/Hallmark"
+    "path": "TV Collections/Hallmark",
+    "assets": []
   },
   {
     "name": "HBO",
     "category": "TV Collections",
     "status": "In Development",
-    "path": "TV Collections/HBO"
+    "path": "TV Collections/HBO",
+    "assets": []
   },
   {
     "name": "ITV",
     "category": "TV Collections",
     "status": "In Development",
-    "path": "TV Collections/ITV"
+    "path": "TV Collections/ITV",
+    "assets": []
   },
   {
     "name": "Marvel",
     "category": "TV Collections",
     "status": "In Development",
-    "path": "TV Collections/Marvel"
+    "path": "TV Collections/Marvel",
+    "assets": []
   },
   {
     "name": "MTV",
     "category": "TV Collections",
     "status": "In Development",
-    "path": "TV Collections/MTV"
+    "path": "TV Collections/MTV",
+    "assets": []
   },
   {
     "name": "National Geographic",
     "category": "TV Collections",
     "status": "In Development",
-    "path": "TV Collections/National Geographic"
+    "path": "TV Collections/National Geographic",
+    "assets": []
   },
   {
     "name": "Nickelodeon",
     "category": "TV Collections",
     "status": "In Development",
-    "path": "TV Collections/Nickelodeon"
+    "path": "TV Collections/Nickelodeon",
+    "assets": []
   },
   {
     "name": "Sky",
     "category": "TV Collections",
     "status": "In Development",
-    "path": "TV Collections/Sky"
+    "path": "TV Collections/Sky",
+    "assets": []
   },
   {
     "name": "Star Wars",
     "category": "TV Collections",
     "status": "In Development",
-    "path": "TV Collections/Star Wars"
+    "path": "TV Collections/Star Wars",
+    "assets": []
   },
   {
     "name": "20th Century Studios",
     "category": "Studios",
     "status": "In Development",
-    "path": "Studios/20th Century Studios"
+    "path": "Studios/20th Century Studios",
+    "assets": []
   },
   {
     "name": "A24",
     "category": "Studios",
     "status": "In Development",
-    "path": "Studios/A24"
+    "path": "Studios/A24",
+    "assets": []
   },
   {
     "name": "Columbia Pictures",
     "category": "Studios",
     "status": "In Development",
-    "path": "Studios/Columbia Pictures"
+    "path": "Studios/Columbia Pictures",
+    "assets": []
   },
   {
     "name": "Disney",
     "category": "Studios",
     "status": "In Development",
-    "path": "Studios/Disney"
+    "path": "Studios/Disney",
+    "assets": []
   },
   {
     "name": "DreamWorks",
     "category": "Studios",
     "status": "In Development",
-    "path": "Studios/DreamWorks"
+    "path": "Studios/DreamWorks",
+    "assets": []
   },
   {
     "name": "Focus Features",
     "category": "Studios",
     "status": "In Development",
-    "path": "Studios/Focus Features"
+    "path": "Studios/Focus Features",
+    "assets": []
   },
   {
     "name": "Illumination",
     "category": "Studios",
     "status": "In Development",
-    "path": "Studios/Illumination"
+    "path": "Studios/Illumination",
+    "assets": []
   },
   {
     "name": "Legendary",
     "category": "Studios",
     "status": "In Development",
-    "path": "Studios/Legendary"
+    "path": "Studios/Legendary",
+    "assets": []
   },
   {
     "name": "Lionsgate",
     "category": "Studios",
     "status": "In Development",
-    "path": "Studios/Lionsgate"
+    "path": "Studios/Lionsgate",
+    "assets": []
   },
   {
     "name": "MGM",
     "category": "Studios",
     "status": "In Development",
-    "path": "Studios/MGM"
+    "path": "Studios/MGM",
+    "assets": []
   },
   {
     "name": "New Line Cinema",
     "category": "Studios",
     "status": "In Development",
-    "path": "Studios/New Line Cinema"
+    "path": "Studios/New Line Cinema",
+    "assets": []
   },
   {
     "name": "Paramount Pictures",
     "category": "Studios",
     "status": "In Development",
-    "path": "Studios/Paramount Pictures"
+    "path": "Studios/Paramount Pictures",
+    "assets": []
   },
   {
     "name": "Pixar",
     "category": "Studios",
     "status": "In Development",
-    "path": "Studios/Pixar"
+    "path": "Studios/Pixar",
+    "assets": []
   },
   {
     "name": "Screen Gems",
     "category": "Studios",
     "status": "In Development",
-    "path": "Studios/Screen Gems"
+    "path": "Studios/Screen Gems",
+    "assets": []
   },
   {
     "name": "Searchlight Pictures",
     "category": "Studios",
     "status": "In Development",
-    "path": "Studios/Searchlight Pictures"
+    "path": "Studios/Searchlight Pictures",
+    "assets": []
   },
   {
     "name": "Sony Pictures",
     "category": "Studios",
     "status": "In Development",
-    "path": "Studios/Sony Pictures"
+    "path": "Studios/Sony Pictures",
+    "assets": []
   },
   {
     "name": "STX",
     "category": "Studios",
     "status": "In Development",
-    "path": "Studios/STX"
+    "path": "Studios/STX",
+    "assets": []
   },
   {
     "name": "TriStar Pictures",
     "category": "Studios",
     "status": "In Development",
-    "path": "Studios/TriStar Pictures"
+    "path": "Studios/TriStar Pictures",
+    "assets": []
   },
   {
     "name": "Universal Pictures",
     "category": "Studios",
     "status": "In Development",
-    "path": "Studios/Universal Pictures"
+    "path": "Studios/Universal Pictures",
+    "assets": []
   },
   {
     "name": "Warner Bros",
     "category": "Studios",
     "status": "In Development",
-    "path": "Studios/Warner Bros"
+    "path": "Studios/Warner Bros",
+    "assets": []
   },
   {
     "name": "Ailens",
     "category": "Franchises",
     "status": "Complete",
-    "path": "Franchises/Ailens"
+    "path": "Franchises/Ailens",
+    "assets": [
+      "https://raw.githubusercontent.com/IkoMosiEntertainmentHub/Visual-Assets-Library/refs/heads/main/Franchises/Ailens/Aliens%20Franchise%20Intro.gif"
+    ]
   },
   {
     "name": "Alien",
     "category": "Franchises",
     "status": "In Development",
-    "path": "Franchises/Alien"
+    "path": "Franchises/Alien",
+    "assets": []
   },
   {
     "name": "Avatar",
     "category": "Franchises",
     "status": "In Development",
-    "path": "Franchises/Avatar"
+    "path": "Franchises/Avatar",
+    "assets": []
   },
   {
     "name": "Cars",
     "category": "Franchises",
     "status": "In Development",
-    "path": "Franchises/Cars"
+    "path": "Franchises/Cars",
+    "assets": []
   },
   {
     "name": "DC",
     "category": "Franchises",
     "status": "In Development",
-    "path": "Franchises/DC"
+    "path": "Franchises/DC",
+    "assets": []
   },
   {
     "name": "Despicable Me - Minions",
     "category": "Franchises",
     "status": "In Development",
-    "path": "Franchises/Despicable Me - Minions"
+    "path": "Franchises/Despicable Me - Minions",
+    "assets": []
   },
   {
     "name": "Fast & Furious",
     "category": "Franchises",
     "status": "In Development",
-    "path": "Franchises/Fast & Furious"
+    "path": "Franchises/Fast & Furious",
+    "assets": []
   },
   {
     "name": "Frozen",
     "category": "Franchises",
     "status": "In Development",
-    "path": "Franchises/Frozen"
+    "path": "Franchises/Frozen",
+    "assets": []
   },
   {
     "name": "Ghostbusters",
     "category": "Franchises",
     "status": "In Development",
-    "path": "Franchises/Ghostbusters"
+    "path": "Franchises/Ghostbusters",
+    "assets": []
   },
   {
     "name": "Godzilla",
     "category": "Franchises",
     "status": "In Development",
-    "path": "Franchises/Godzilla"
+    "path": "Franchises/Godzilla",
+    "assets": []
   },
   {
     "name": "Harry Potter",
     "category": "Franchises",
     "status": "Complete",
-    "path": "Franchises/Harry Potter"
+    "path": "Franchises/Harry Potter",
+    "assets": [
+      "https://raw.githubusercontent.com/IkoMosiEntertainmentHub/Visual-Assets-Library/refs/heads/main/Franchises/Harry%20Potter/Harry%20Potter%20Franchise%20Intro.gif"
+    ]
   },
   {
     "name": "Indiana Jones",
     "category": "Franchises",
     "status": "In Development",
-    "path": "Franchises/Indiana Jones"
+    "path": "Franchises/Indiana Jones",
+    "assets": []
   },
   {
     "name": "James Bond",
     "category": "Franchises",
     "status": "In Development",
-    "path": "Franchises/James Bond"
+    "path": "Franchises/James Bond",
+    "assets": []
   },
   {
     "name": "James Bond 007",
     "category": "Franchises",
     "status": "Complete",
-    "path": "Franchises/James Bond 007"
+    "path": "Franchises/James Bond 007",
+    "assets": [
+      "https://raw.githubusercontent.com/IkoMosiEntertainmentHub/Visual-Assets-Library/refs/heads/main/Franchises/James%20Bond%20007/James%20Bond%20007%20Franchise%20Intro.gif"
+    ]
   },
   {
     "name": "John Wick",
     "category": "Franchises",
     "status": "Complete",
-    "path": "Franchises/John Wick"
+    "path": "Franchises/John Wick",
+    "assets": [
+      "https://raw.githubusercontent.com/IkoMosiEntertainmentHub/Visual-Assets-Library/refs/heads/main/Franchises/John%20Wick/John%20Wick%20Franchise%20Intro.gif"
+    ]
   },
   {
     "name": "Jurassic Park - Jurassic World",
     "category": "Franchises",
     "status": "In Development",
-    "path": "Franchises/Jurassic Park - Jurassic World"
+    "path": "Franchises/Jurassic Park - Jurassic World",
+    "assets": []
   },
   {
     "name": "Lord of the Rings",
     "category": "Franchises",
     "status": "In Development",
-    "path": "Franchises/Lord of the Rings"
+    "path": "Franchises/Lord of the Rings",
+    "assets": []
   },
   {
     "name": "Marvel",
     "category": "Franchises",
     "status": "In Development",
-    "path": "Franchises/Marvel"
+    "path": "Franchises/Marvel",
+    "assets": []
   },
   {
     "name": "Mission Impossible",
     "category": "Franchises",
     "status": "In Development",
-    "path": "Franchises/Mission Impossible"
+    "path": "Franchises/Mission Impossible",
+    "assets": []
   },
   {
     "name": "Pirates of the Caribbean",
     "category": "Franchises",
     "status": "In Development",
-    "path": "Franchises/Pirates of the Caribbean"
+    "path": "Franchises/Pirates of the Caribbean",
+    "assets": []
   },
   {
     "name": "Planet of the Apes",
     "category": "Franchises",
     "status": "In Development",
-    "path": "Franchises/Planet of the Apes"
+    "path": "Franchises/Planet of the Apes",
+    "assets": []
   },
   {
     "name": "Predator",
     "category": "Franchises",
     "status": "In Development",
-    "path": "Franchises/Predator"
+    "path": "Franchises/Predator",
+    "assets": []
   },
   {
     "name": "Rocky - Creed",
     "category": "Franchises",
     "status": "In Development",
-    "path": "Franchises/Rocky - Creed"
+    "path": "Franchises/Rocky - Creed",
+    "assets": []
   },
   {
     "name": "Saw",
     "category": "Franchises",
     "status": "In Development",
-    "path": "Franchises/Saw"
+    "path": "Franchises/Saw",
+    "assets": []
   },
   {
     "name": "Scream",
     "category": "Franchises",
     "status": "In Development",
-    "path": "Franchises/Scream"
+    "path": "Franchises/Scream",
+    "assets": []
   },
   {
     "name": "Shrek",
     "category": "Franchises",
     "status": "In Development",
-    "path": "Franchises/Shrek"
+    "path": "Franchises/Shrek",
+    "assets": []
   },
   {
     "name": "Sonic the Hedgehog",
     "category": "Franchises",
     "status": "In Development",
-    "path": "Franchises/Sonic the Hedgehog"
+    "path": "Franchises/Sonic the Hedgehog",
+    "assets": []
   },
   {
     "name": "Star Trek",
     "category": "Franchises",
     "status": "In Development",
-    "path": "Franchises/Star Trek"
+    "path": "Franchises/Star Trek",
+    "assets": []
   },
   {
     "name": "Star Wars",
     "category": "Franchises",
     "status": "Complete",
-    "path": "Franchises/Star Wars"
+    "path": "Franchises/Star Wars",
+    "assets": [
+      "https://raw.githubusercontent.com/IkoMosiEntertainmentHub/Visual-Assets-Library/refs/heads/main/Franchises/Star%20Wars/Star%20Wars%20Franchise%20Intro.gif"
+    ]
   },
   {
     "name": "Teenage Mutant Ninja Turtles",
     "category": "Franchises",
     "status": "In Development",
-    "path": "Franchises/Teenage Mutant Ninja Turtles"
+    "path": "Franchises/Teenage Mutant Ninja Turtles",
+    "assets": []
   },
   {
     "name": "Terminator",
     "category": "Franchises",
     "status": "In Development",
-    "path": "Franchises/Terminator"
+    "path": "Franchises/Terminator",
+    "assets": []
   },
   {
     "name": "The Conjuring",
     "category": "Franchises",
     "status": "In Development",
-    "path": "Franchises/The Conjuring"
+    "path": "Franchises/The Conjuring",
+    "assets": []
   },
   {
     "name": "The Hobbit",
     "category": "Franchises",
     "status": "In Development",
-    "path": "Franchises/The Hobbit"
+    "path": "Franchises/The Hobbit",
+    "assets": []
   },
   {
     "name": "The Hunger Games",
     "category": "Franchises",
     "status": "In Development",
-    "path": "Franchises/The Hunger Games"
+    "path": "Franchises/The Hunger Games",
+    "assets": []
   },
   {
     "name": "The Lion King",
     "category": "Franchises",
     "status": "In Development",
-    "path": "Franchises/The Lion King"
+    "path": "Franchises/The Lion King",
+    "assets": []
   },
   {
     "name": "The Matrix",
     "category": "Franchises",
     "status": "In Development",
-    "path": "Franchises/The Matrix"
+    "path": "Franchises/The Matrix",
+    "assets": []
   },
   {
     "name": "Toy Story",
     "category": "Franchises",
     "status": "In Development",
-    "path": "Franchises/Toy Story"
+    "path": "Franchises/Toy Story",
+    "assets": []
   },
   {
     "name": "Transformers",
     "category": "Franchises",
     "status": "In Development",
-    "path": "Franchises/Transformers"
+    "path": "Franchises/Transformers",
+    "assets": []
   },
   {
     "name": "ABC",
     "category": "Networks",
     "status": "In Development",
-    "path": "Networks/ABC"
+    "path": "Networks/ABC",
+    "assets": []
   },
   {
     "name": "Adult Swim",
     "category": "Networks",
     "status": "In Development",
-    "path": "Networks/Adult Swim"
+    "path": "Networks/Adult Swim",
+    "assets": []
   },
   {
     "name": "AMC",
     "category": "Networks",
     "status": "In Development",
-    "path": "Networks/AMC"
+    "path": "Networks/AMC",
+    "assets": []
   },
   {
     "name": "Animal Planet",
     "category": "Networks",
     "status": "In Development",
-    "path": "Networks/Animal Planet"
+    "path": "Networks/Animal Planet",
+    "assets": []
   },
   {
     "name": "BBC",
     "category": "Networks",
     "status": "In Development",
-    "path": "Networks/BBC"
+    "path": "Networks/BBC",
+    "assets": []
   },
   {
     "name": "Cartoon Network",
     "category": "Networks",
     "status": "In Development",
-    "path": "Networks/Cartoon Network"
+    "path": "Networks/Cartoon Network",
+    "assets": []
   },
   {
     "name": "CBS",
     "category": "Networks",
     "status": "In Development",
-    "path": "Networks/CBS"
+    "path": "Networks/CBS",
+    "assets": []
   },
   {
     "name": "CNN",
     "category": "Networks",
     "status": "In Development",
-    "path": "Networks/CNN"
+    "path": "Networks/CNN",
+    "assets": []
   },
   {
     "name": "Comedy Central",
     "category": "Networks",
     "status": "In Development",
-    "path": "Networks/Comedy Central"
+    "path": "Networks/Comedy Central",
+    "assets": []
   },
   {
     "name": "Discovery Channel",
     "category": "Networks",
     "status": "In Development",
-    "path": "Networks/Discovery Channel"
+    "path": "Networks/Discovery Channel",
+    "assets": []
   },
   {
     "name": "Disney Channel",
     "category": "Networks",
     "status": "In Development",
-    "path": "Networks/Disney Channel"
+    "path": "Networks/Disney Channel",
+    "assets": []
   },
   {
     "name": "ESPN",
     "category": "Networks",
     "status": "In Development",
-    "path": "Networks/ESPN"
+    "path": "Networks/ESPN",
+    "assets": []
   },
   {
     "name": "Food Network",
     "category": "Networks",
     "status": "In Development",
-    "path": "Networks/Food Network"
+    "path": "Networks/Food Network",
+    "assets": []
   },
   {
     "name": "FOX",
     "category": "Networks",
     "status": "In Development",
-    "path": "Networks/FOX"
+    "path": "Networks/FOX",
+    "assets": []
   },
   {
     "name": "FX",
     "category": "Networks",
     "status": "In Development",
-    "path": "Networks/FX"
+    "path": "Networks/FX",
+    "assets": []
   },
   {
     "name": "Hallmark Channel",
     "category": "Networks",
     "status": "In Development",
-    "path": "Networks/Hallmark Channel"
+    "path": "Networks/Hallmark Channel",
+    "assets": []
   },
   {
     "name": "HBO",
     "category": "Networks",
     "status": "In Development",
-    "path": "Networks/HBO"
+    "path": "Networks/HBO",
+    "assets": []
   },
   {
     "name": "HGTV",
     "category": "Networks",
     "status": "In Development",
-    "path": "Networks/HGTV"
+    "path": "Networks/HGTV",
+    "assets": []
   },
   {
     "name": "History Channel",
     "category": "Networks",
     "status": "In Development",
-    "path": "Networks/History Channel"
+    "path": "Networks/History Channel",
+    "assets": []
   },
   {
     "name": "ITV",
     "category": "Networks",
     "status": "In Development",
-    "path": "Networks/ITV"
+    "path": "Networks/ITV",
+    "assets": []
   },
   {
     "name": "MTV",
     "category": "Networks",
     "status": "In Development",
-    "path": "Networks/MTV"
+    "path": "Networks/MTV",
+    "assets": []
   },
   {
     "name": "National Geographic",
     "category": "Networks",
     "status": "In Development",
-    "path": "Networks/National Geographic"
+    "path": "Networks/National Geographic",
+    "assets": []
   },
   {
     "name": "NBC",
     "category": "Networks",
     "status": "In Development",
-    "path": "Networks/NBC"
+    "path": "Networks/NBC",
+    "assets": []
   },
   {
     "name": "Nickelodeon",
     "category": "Networks",
     "status": "In Development",
-    "path": "Networks/Nickelodeon"
+    "path": "Networks/Nickelodeon",
+    "assets": []
   },
   {
     "name": "Paramount Network",
     "category": "Networks",
     "status": "In Development",
-    "path": "Networks/Paramount Network"
+    "path": "Networks/Paramount Network",
+    "assets": []
   },
   {
     "name": "ShowTime",
     "category": "Networks",
     "status": "Complete",
-    "path": "Networks/ShowTime"
+    "path": "Networks/ShowTime",
+    "assets": [
+      "https://raw.githubusercontent.com/IkoMosiEntertainmentHub/Visual-Assets-Library/refs/heads/main/Networks/ShowTime/ShowTime%20%231%20Intro.gif",
+      "https://raw.githubusercontent.com/IkoMosiEntertainmentHub/Visual-Assets-Library/refs/heads/main/Networks/ShowTime/ShowTime%20%232%20Intro.gif"
+    ]
   },
   {
     "name": "Sky",
     "category": "Networks",
     "status": "In Development",
-    "path": "Networks/Sky"
+    "path": "Networks/Sky",
+    "assets": []
   },
   {
     "name": "Syfy",
     "category": "Networks",
     "status": "In Development",
-    "path": "Networks/Syfy"
+    "path": "Networks/Syfy",
+    "assets": []
   },
   {
     "name": "TBS",
     "category": "Networks",
     "status": "In Development",
-    "path": "Networks/TBS"
+    "path": "Networks/TBS",
+    "assets": []
   },
   {
     "name": "The CW",
     "category": "Networks",
     "status": "In Development",
-    "path": "Networks/The CW"
+    "path": "Networks/The CW",
+    "assets": []
   },
   {
     "name": "TLC",
     "category": "Networks",
     "status": "In Development",
-    "path": "Networks/TLC"
+    "path": "Networks/TLC",
+    "assets": []
   },
   {
     "name": "TNT",
     "category": "Networks",
     "status": "In Development",
-    "path": "Networks/TNT"
+    "path": "Networks/TNT",
+    "assets": []
   },
   {
     "name": "USA Network",
     "category": "Networks",
     "status": "In Development",
-    "path": "Networks/USA Network"
+    "path": "Networks/USA Network",
+    "assets": []
   }
 ]
