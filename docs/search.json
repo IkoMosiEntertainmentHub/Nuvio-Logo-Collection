@@ -123,238 +123,238 @@
   {
     "name": "Adult Swim",
     "category": "TV Collections",
-    "status": "In Development",
+    "status": "Collecting",
     "path": "TV Collections/Adult Swim",
     "assets": []
   },
   {
     "name": "BBC",
     "category": "TV Collections",
-    "status": "In Development",
+    "status": "Collecting",
     "path": "TV Collections/BBC",
     "assets": []
   },
   {
     "name": "Cartoon Network",
     "category": "TV Collections",
-    "status": "In Development",
+    "status": "Collecting",
     "path": "TV Collections/Cartoon Network",
     "assets": []
   },
   {
     "name": "Comedy Central",
     "category": "TV Collections",
-    "status": "In Development",
+    "status": "Collecting",
     "path": "TV Collections/Comedy Central",
     "assets": []
   },
   {
     "name": "DC",
     "category": "TV Collections",
-    "status": "In Development",
+    "status": "Collecting",
     "path": "TV Collections/DC",
     "assets": []
   },
   {
     "name": "Discovery",
     "category": "TV Collections",
-    "status": "In Development",
+    "status": "Collecting",
     "path": "TV Collections/Discovery",
     "assets": []
   },
   {
     "name": "Disney",
     "category": "TV Collections",
-    "status": "In Development",
+    "status": "Collecting",
     "path": "TV Collections/Disney",
     "assets": []
   },
   {
     "name": "Hallmark",
     "category": "TV Collections",
-    "status": "In Development",
+    "status": "Collecting",
     "path": "TV Collections/Hallmark",
     "assets": []
   },
   {
     "name": "HBO",
     "category": "TV Collections",
-    "status": "In Development",
+    "status": "Collecting",
     "path": "TV Collections/HBO",
     "assets": []
   },
   {
     "name": "ITV",
     "category": "TV Collections",
-    "status": "In Development",
+    "status": "Collecting",
     "path": "TV Collections/ITV",
     "assets": []
   },
   {
     "name": "Marvel",
     "category": "TV Collections",
-    "status": "In Development",
+    "status": "Collecting",
     "path": "TV Collections/Marvel",
     "assets": []
   },
   {
     "name": "MTV",
     "category": "TV Collections",
-    "status": "In Development",
+    "status": "Collecting",
     "path": "TV Collections/MTV",
     "assets": []
   },
   {
     "name": "National Geographic",
     "category": "TV Collections",
-    "status": "In Development",
+    "status": "Collecting",
     "path": "TV Collections/National Geographic",
     "assets": []
   },
   {
     "name": "Nickelodeon",
     "category": "TV Collections",
-    "status": "In Development",
+    "status": "Collecting",
     "path": "TV Collections/Nickelodeon",
     "assets": []
   },
   {
     "name": "Sky",
     "category": "TV Collections",
-    "status": "In Development",
+    "status": "Collecting",
     "path": "TV Collections/Sky",
     "assets": []
   },
   {
     "name": "Star Wars",
     "category": "TV Collections",
-    "status": "In Development",
+    "status": "Collecting",
     "path": "TV Collections/Star Wars",
     "assets": []
   },
   {
     "name": "20th Century Studios",
     "category": "Studios",
-    "status": "In Development",
+    "status": "Collecting",
     "path": "Studios/20th Century Studios",
     "assets": []
   },
   {
     "name": "A24",
     "category": "Studios",
-    "status": "In Development",
+    "status": "Collecting",
     "path": "Studios/A24",
     "assets": []
   },
   {
     "name": "Columbia Pictures",
     "category": "Studios",
-    "status": "In Development",
+    "status": "Collecting",
     "path": "Studios/Columbia Pictures",
     "assets": []
   },
   {
     "name": "Disney",
     "category": "Studios",
-    "status": "In Development",
+    "status": "Collecting",
     "path": "Studios/Disney",
     "assets": []
   },
   {
     "name": "DreamWorks",
     "category": "Studios",
-    "status": "In Development",
+    "status": "Collecting",
     "path": "Studios/DreamWorks",
     "assets": []
   },
   {
     "name": "Focus Features",
     "category": "Studios",
-    "status": "In Development",
+    "status": "Collecting",
     "path": "Studios/Focus Features",
     "assets": []
   },
   {
     "name": "Illumination",
     "category": "Studios",
-    "status": "In Development",
+    "status": "Collecting",
     "path": "Studios/Illumination",
     "assets": []
   },
   {
     "name": "Legendary",
     "category": "Studios",
-    "status": "In Development",
+    "status": "Collecting",
     "path": "Studios/Legendary",
     "assets": []
   },
   {
     "name": "Lionsgate",
     "category": "Studios",
-    "status": "In Development",
+    "status": "Collecting",
     "path": "Studios/Lionsgate",
     "assets": []
   },
   {
     "name": "MGM",
     "category": "Studios",
-    "status": "In Development",
+    "status": "Collecting",
     "path": "Studios/MGM",
     "assets": []
   },
   {
     "name": "New Line Cinema",
     "category": "Studios",
-    "status": "In Development",
+    "status": "Collecting",
     "path": "Studios/New Line Cinema",
     "assets": []
   },
   {
     "name": "Paramount Pictures",
     "category": "Studios",
-    "status": "In Development",
+    "status": "Collecting",
     "path": "Studios/Paramount Pictures",
     "assets": []
   },
   {
     "name": "Pixar",
     "category": "Studios",
-    "status": "In Development",
+    "status": "Collecting",
     "path": "Studios/Pixar",
     "assets": []
   },
   {
     "name": "Screen Gems",
     "category": "Studios",
-    "status": "In Development",
+    "status": "Collecting",
     "path": "Studios/Screen Gems",
     "assets": []
   },
   {
     "name": "Searchlight Pictures",
     "category": "Studios",
-    "status": "In Development",
+    "status": "Collecting",
     "path": "Studios/Searchlight Pictures",
     "assets": []
   },
   {
     "name": "Sony Pictures",
     "category": "Studios",
-    "status": "In Development",
+    "status": "Collecting",
     "path": "Studios/Sony Pictures",
     "assets": []
   },
   {
     "name": "STX",
     "category": "Studios",
-    "status": "In Development",
+    "status": "Collecting",
     "path": "Studios/STX",
     "assets": []
   },
   {
     "name": "TriStar Pictures",
     "category": "Studios",
-    "status": "In Development",
+    "status": "Collecting",
     "path": "Studios/TriStar Pictures",
     "assets": []
   },
@@ -370,7 +370,7 @@
   {
     "name": "Warner Bros",
     "category": "Studios",
-    "status": "In Development",
+    "status": "Collecting",
     "path": "Studios/Warner Bros",
     "assets": []
   },
@@ -386,63 +386,63 @@
   {
     "name": "Alien",
     "category": "Franchises",
-    "status": "In Development",
+    "status": "Collecting",
     "path": "Franchises/Alien",
     "assets": []
   },
   {
     "name": "Avatar",
     "category": "Franchises",
-    "status": "In Development",
+    "status": "Collecting",
     "path": "Franchises/Avatar",
     "assets": []
   },
   {
     "name": "Cars",
     "category": "Franchises",
-    "status": "In Development",
+    "status": "Collecting",
     "path": "Franchises/Cars",
     "assets": []
   },
   {
     "name": "DC",
     "category": "Franchises",
-    "status": "In Development",
+    "status": "Collecting",
     "path": "Franchises/DC",
     "assets": []
   },
   {
     "name": "Despicable Me - Minions",
     "category": "Franchises",
-    "status": "In Development",
+    "status": "Collecting",
     "path": "Franchises/Despicable Me - Minions",
     "assets": []
   },
   {
     "name": "Fast & Furious",
     "category": "Franchises",
-    "status": "In Development",
+    "status": "Collecting",
     "path": "Franchises/Fast & Furious",
     "assets": []
   },
   {
     "name": "Frozen",
     "category": "Franchises",
-    "status": "In Development",
+    "status": "Collecting",
     "path": "Franchises/Frozen",
     "assets": []
   },
   {
     "name": "Ghostbusters",
     "category": "Franchises",
-    "status": "In Development",
+    "status": "Collecting",
     "path": "Franchises/Ghostbusters",
     "assets": []
   },
   {
     "name": "Godzilla",
     "category": "Franchises",
-    "status": "In Development",
+    "status": "Collecting",
     "path": "Franchises/Godzilla",
     "assets": []
   },
@@ -458,14 +458,14 @@
   {
     "name": "Indiana Jones",
     "category": "Franchises",
-    "status": "In Development",
+    "status": "Collecting",
     "path": "Franchises/Indiana Jones",
     "assets": []
   },
   {
     "name": "James Bond",
     "category": "Franchises",
-    "status": "In Development",
+    "status": "Collecting",
     "path": "Franchises/James Bond",
     "assets": []
   },
@@ -490,91 +490,91 @@
   {
     "name": "Jurassic Park - Jurassic World",
     "category": "Franchises",
-    "status": "In Development",
+    "status": "Collecting",
     "path": "Franchises/Jurassic Park - Jurassic World",
     "assets": []
   },
   {
     "name": "Lord of the Rings",
     "category": "Franchises",
-    "status": "In Development",
+    "status": "Collecting",
     "path": "Franchises/Lord of the Rings",
     "assets": []
   },
   {
     "name": "Marvel",
     "category": "Franchises",
-    "status": "In Development",
+    "status": "Collecting",
     "path": "Franchises/Marvel",
     "assets": []
   },
   {
     "name": "Mission Impossible",
     "category": "Franchises",
-    "status": "In Development",
+    "status": "Collecting",
     "path": "Franchises/Mission Impossible",
     "assets": []
   },
   {
     "name": "Pirates of the Caribbean",
     "category": "Franchises",
-    "status": "In Development",
+    "status": "Collecting",
     "path": "Franchises/Pirates of the Caribbean",
     "assets": []
   },
   {
     "name": "Planet of the Apes",
     "category": "Franchises",
-    "status": "In Development",
+    "status": "Collecting",
     "path": "Franchises/Planet of the Apes",
     "assets": []
   },
   {
     "name": "Predator",
     "category": "Franchises",
-    "status": "In Development",
+    "status": "Collecting",
     "path": "Franchises/Predator",
     "assets": []
   },
   {
     "name": "Rocky - Creed",
     "category": "Franchises",
-    "status": "In Development",
+    "status": "Collecting",
     "path": "Franchises/Rocky - Creed",
     "assets": []
   },
   {
     "name": "Saw",
     "category": "Franchises",
-    "status": "In Development",
+    "status": "Collecting",
     "path": "Franchises/Saw",
     "assets": []
   },
   {
     "name": "Scream",
     "category": "Franchises",
-    "status": "In Development",
+    "status": "Collecting",
     "path": "Franchises/Scream",
     "assets": []
   },
   {
     "name": "Shrek",
     "category": "Franchises",
-    "status": "In Development",
+    "status": "Collecting",
     "path": "Franchises/Shrek",
     "assets": []
   },
   {
     "name": "Sonic the Hedgehog",
     "category": "Franchises",
-    "status": "In Development",
+    "status": "Collecting",
     "path": "Franchises/Sonic the Hedgehog",
     "assets": []
   },
   {
     "name": "Star Trek",
     "category": "Franchises",
-    "status": "In Development",
+    "status": "Collecting",
     "path": "Franchises/Star Trek",
     "assets": []
   },
@@ -590,238 +590,238 @@
   {
     "name": "Teenage Mutant Ninja Turtles",
     "category": "Franchises",
-    "status": "In Development",
+    "status": "Collecting",
     "path": "Franchises/Teenage Mutant Ninja Turtles",
     "assets": []
   },
   {
     "name": "Terminator",
     "category": "Franchises",
-    "status": "In Development",
+    "status": "Collecting",
     "path": "Franchises/Terminator",
     "assets": []
   },
   {
     "name": "The Conjuring",
     "category": "Franchises",
-    "status": "In Development",
+    "status": "Collecting",
     "path": "Franchises/The Conjuring",
     "assets": []
   },
   {
     "name": "The Hobbit",
     "category": "Franchises",
-    "status": "In Development",
+    "status": "Collecting",
     "path": "Franchises/The Hobbit",
     "assets": []
   },
   {
     "name": "The Hunger Games",
     "category": "Franchises",
-    "status": "In Development",
+    "status": "Collecting",
     "path": "Franchises/The Hunger Games",
     "assets": []
   },
   {
     "name": "The Lion King",
     "category": "Franchises",
-    "status": "In Development",
+    "status": "Collecting",
     "path": "Franchises/The Lion King",
     "assets": []
   },
   {
     "name": "The Matrix",
     "category": "Franchises",
-    "status": "In Development",
+    "status": "Collecting",
     "path": "Franchises/The Matrix",
     "assets": []
   },
   {
     "name": "Toy Story",
     "category": "Franchises",
-    "status": "In Development",
+    "status": "Collecting",
     "path": "Franchises/Toy Story",
     "assets": []
   },
   {
     "name": "Transformers",
     "category": "Franchises",
-    "status": "In Development",
+    "status": "Collecting",
     "path": "Franchises/Transformers",
     "assets": []
   },
   {
     "name": "ABC",
     "category": "Networks",
-    "status": "In Development",
+    "status": "Collecting",
     "path": "Networks/ABC",
     "assets": []
   },
   {
     "name": "Adult Swim",
     "category": "Networks",
-    "status": "In Development",
+    "status": "Collecting",
     "path": "Networks/Adult Swim",
     "assets": []
   },
   {
     "name": "AMC",
     "category": "Networks",
-    "status": "In Development",
+    "status": "Collecting",
     "path": "Networks/AMC",
     "assets": []
   },
   {
     "name": "Animal Planet",
     "category": "Networks",
-    "status": "In Development",
+    "status": "Collecting",
     "path": "Networks/Animal Planet",
     "assets": []
   },
   {
     "name": "BBC",
     "category": "Networks",
-    "status": "In Development",
+    "status": "Collecting",
     "path": "Networks/BBC",
     "assets": []
   },
   {
     "name": "Cartoon Network",
     "category": "Networks",
-    "status": "In Development",
+    "status": "Collecting",
     "path": "Networks/Cartoon Network",
     "assets": []
   },
   {
     "name": "CBS",
     "category": "Networks",
-    "status": "In Development",
+    "status": "Collecting",
     "path": "Networks/CBS",
     "assets": []
   },
   {
     "name": "CNN",
     "category": "Networks",
-    "status": "In Development",
+    "status": "Collecting",
     "path": "Networks/CNN",
     "assets": []
   },
   {
     "name": "Comedy Central",
     "category": "Networks",
-    "status": "In Development",
+    "status": "Collecting",
     "path": "Networks/Comedy Central",
     "assets": []
   },
   {
     "name": "Discovery Channel",
     "category": "Networks",
-    "status": "In Development",
+    "status": "Collecting",
     "path": "Networks/Discovery Channel",
     "assets": []
   },
   {
     "name": "Disney Channel",
     "category": "Networks",
-    "status": "In Development",
+    "status": "Collecting",
     "path": "Networks/Disney Channel",
     "assets": []
   },
   {
     "name": "ESPN",
     "category": "Networks",
-    "status": "In Development",
+    "status": "Collecting",
     "path": "Networks/ESPN",
     "assets": []
   },
   {
     "name": "Food Network",
     "category": "Networks",
-    "status": "In Development",
+    "status": "Collecting",
     "path": "Networks/Food Network",
     "assets": []
   },
   {
     "name": "FOX",
     "category": "Networks",
-    "status": "In Development",
+    "status": "Collecting",
     "path": "Networks/FOX",
     "assets": []
   },
   {
     "name": "FX",
     "category": "Networks",
-    "status": "In Development",
+    "status": "Collecting",
     "path": "Networks/FX",
     "assets": []
   },
   {
     "name": "Hallmark Channel",
     "category": "Networks",
-    "status": "In Development",
+    "status": "Collecting",
     "path": "Networks/Hallmark Channel",
     "assets": []
   },
   {
     "name": "HBO",
     "category": "Networks",
-    "status": "In Development",
+    "status": "Collecting",
     "path": "Networks/HBO",
     "assets": []
   },
   {
     "name": "HGTV",
     "category": "Networks",
-    "status": "In Development",
+    "status": "Collecting",
     "path": "Networks/HGTV",
     "assets": []
   },
   {
     "name": "History Channel",
     "category": "Networks",
-    "status": "In Development",
+    "status": "Collecting",
     "path": "Networks/History Channel",
     "assets": []
   },
   {
     "name": "ITV",
     "category": "Networks",
-    "status": "In Development",
+    "status": "Collecting",
     "path": "Networks/ITV",
     "assets": []
   },
   {
     "name": "MTV",
     "category": "Networks",
-    "status": "In Development",
+    "status": "Collecting",
     "path": "Networks/MTV",
     "assets": []
   },
   {
     "name": "National Geographic",
     "category": "Networks",
-    "status": "In Development",
+    "status": "Collecting",
     "path": "Networks/National Geographic",
     "assets": []
   },
   {
     "name": "NBC",
     "category": "Networks",
-    "status": "In Development",
+    "status": "Collecting",
     "path": "Networks/NBC",
     "assets": []
   },
   {
     "name": "Nickelodeon",
     "category": "Networks",
-    "status": "In Development",
+    "status": "Collecting",
     "path": "Networks/Nickelodeon",
     "assets": []
   },
   {
     "name": "Paramount Network",
     "category": "Networks",
-    "status": "In Development",
+    "status": "Collecting",
     "path": "Networks/Paramount Network",
     "assets": []
   },
@@ -838,49 +838,49 @@
   {
     "name": "Sky",
     "category": "Networks",
-    "status": "In Development",
+    "status": "Collecting",
     "path": "Networks/Sky",
     "assets": []
   },
   {
     "name": "Syfy",
     "category": "Networks",
-    "status": "In Development",
+    "status": "Collecting",
     "path": "Networks/Syfy",
     "assets": []
   },
   {
     "name": "TBS",
     "category": "Networks",
-    "status": "In Development",
+    "status": "Collecting",
     "path": "Networks/TBS",
     "assets": []
   },
   {
     "name": "The CW",
     "category": "Networks",
-    "status": "In Development",
+    "status": "Collecting",
     "path": "Networks/The CW",
     "assets": []
   },
   {
     "name": "TLC",
     "category": "Networks",
-    "status": "In Development",
+    "status": "Collecting",
     "path": "Networks/TLC",
     "assets": []
   },
   {
     "name": "TNT",
     "category": "Networks",
-    "status": "In Development",
+    "status": "Collecting",
     "path": "Networks/TNT",
     "assets": []
   },
   {
     "name": "USA Network",
     "category": "Networks",
-    "status": "In Development",
+    "status": "Collecting",
     "path": "Networks/USA Network",
     "assets": []
   }

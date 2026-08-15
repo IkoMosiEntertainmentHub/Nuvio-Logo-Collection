@@ -90,9 +90,9 @@ The progress below reflects the current availability of supported visual assets 
 | --- | ---: | ---: | --- | --- |
 | **Streaming Platforms** | 12 | 12 | `██████████` **100.0%** | Complete |
 | **TV Collections** | 0 | 16 | `░░░░░░░░░░` **0.0%** | Not Started |
-| **Studios** | 1 | 20 | `░░░░░░░░░░` **5.0%** | In Development |
-| **Franchises** | 5 | 38 | `█░░░░░░░░░` **13.2%** | In Development |
-| **Networks** | 1 | 33 | `░░░░░░░░░░` **3.0%** | In Development |
+| **Studios** | 1 | 20 | `░░░░░░░░░░` **5.0%** | Collecting |
+| **Franchises** | 5 | 38 | `█░░░░░░░░░` **13.2%** | Collecting |
+| **Networks** | 1 | 33 | `░░░░░░░░░░` **3.0%** | Collecting |
 
 <!-- COLLECTION_PROGRESS_END -->
 
@@ -384,9 +384,9 @@ The progress below reflects the current availability of supported visual assets 
 | --- | ---: | ---: | --- | --- |
 | **Streaming Platforms** | 12 | 12 | `██████████` **100.0%** | Complete |
 | **TV Collections** | 0 | 16 | `░░░░░░░░░░` **0.0%** | Not Started |
-| **Studios** | 1 | 20 | `░░░░░░░░░░` **5.0%** | In Development |
-| **Franchises** | 5 | 38 | `█░░░░░░░░░` **13.2%** | In Development |
-| **Networks** | 1 | 33 | `░░░░░░░░░░` **3.0%** | In Development |
+| **Studios** | 1 | 20 | `░░░░░░░░░░` **5.0%** | Collecting |
+| **Franchises** | 5 | 38 | `█░░░░░░░░░` **13.2%** | Collecting |
+| **Networks** | 1 | 33 | `░░░░░░░░░░` **3.0%** | Collecting |
 
 <!-- COLLECTION_PROGRESS_END -->«Automated tracking: Progress is calculated by scanning collection folders for supported visual assets.
 

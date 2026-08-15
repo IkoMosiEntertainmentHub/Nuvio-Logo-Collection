@@ -63,67 +63,67 @@
     "items": {
       "Adult Swim": {
         "complete": false,
-        "status": "In Development"
+        "status": "Collecting"
       },
       "BBC": {
         "complete": false,
-        "status": "In Development"
+        "status": "Collecting"
       },
       "Cartoon Network": {
         "complete": false,
-        "status": "In Development"
+        "status": "Collecting"
       },
       "Comedy Central": {
         "complete": false,
-        "status": "In Development"
+        "status": "Collecting"
       },
       "DC": {
         "complete": false,
-        "status": "In Development"
+        "status": "Collecting"
       },
       "Discovery": {
         "complete": false,
-        "status": "In Development"
+        "status": "Collecting"
       },
       "Disney": {
         "complete": false,
-        "status": "In Development"
+        "status": "Collecting"
       },
       "Hallmark": {
         "complete": false,
-        "status": "In Development"
+        "status": "Collecting"
       },
       "HBO": {
         "complete": false,
-        "status": "In Development"
+        "status": "Collecting"
       },
       "ITV": {
         "complete": false,
-        "status": "In Development"
+        "status": "Collecting"
       },
       "Marvel": {
         "complete": false,
-        "status": "In Development"
+        "status": "Collecting"
       },
       "MTV": {
         "complete": false,
-        "status": "In Development"
+        "status": "Collecting"
       },
       "National Geographic": {
         "complete": false,
-        "status": "In Development"
+        "status": "Collecting"
       },
       "Nickelodeon": {
         "complete": false,
-        "status": "In Development"
+        "status": "Collecting"
       },
       "Sky": {
         "complete": false,
-        "status": "In Development"
+        "status": "Collecting"
       },
       "Star Wars": {
         "complete": false,
-        "status": "In Development"
+        "status": "Collecting"
       }
     }
   },
@@ -131,79 +131,79 @@
     "completed": 1,
     "total": 20,
     "percentage": 5.0,
-    "status": "In Development",
+    "status": "Collecting",
     "items": {
       "20th Century Studios": {
         "complete": false,
-        "status": "In Development"
+        "status": "Collecting"
       },
       "A24": {
         "complete": false,
-        "status": "In Development"
+        "status": "Collecting"
       },
       "Columbia Pictures": {
         "complete": false,
-        "status": "In Development"
+        "status": "Collecting"
       },
       "Disney": {
         "complete": false,
-        "status": "In Development"
+        "status": "Collecting"
       },
       "DreamWorks": {
         "complete": false,
-        "status": "In Development"
+        "status": "Collecting"
       },
       "Focus Features": {
         "complete": false,
-        "status": "In Development"
+        "status": "Collecting"
       },
       "Illumination": {
         "complete": false,
-        "status": "In Development"
+        "status": "Collecting"
       },
       "Legendary": {
         "complete": false,
-        "status": "In Development"
+        "status": "Collecting"
       },
       "Lionsgate": {
         "complete": false,
-        "status": "In Development"
+        "status": "Collecting"
       },
       "MGM": {
         "complete": false,
-        "status": "In Development"
+        "status": "Collecting"
       },
       "New Line Cinema": {
         "complete": false,
-        "status": "In Development"
+        "status": "Collecting"
       },
       "Paramount Pictures": {
         "complete": false,
-        "status": "In Development"
+        "status": "Collecting"
       },
       "Pixar": {
         "complete": false,
-        "status": "In Development"
+        "status": "Collecting"
       },
       "Screen Gems": {
         "complete": false,
-        "status": "In Development"
+        "status": "Collecting"
       },
       "Searchlight Pictures": {
         "complete": false,
-        "status": "In Development"
+        "status": "Collecting"
       },
       "Sony Pictures": {
         "complete": false,
-        "status": "In Development"
+        "status": "Collecting"
       },
       "STX": {
         "complete": false,
-        "status": "In Development"
+        "status": "Collecting"
       },
       "TriStar Pictures": {
         "complete": false,
-        "status": "In Development"
+        "status": "Collecting"
       },
       "Universal Pictures": {
         "complete": true,
@@ -211,7 +211,7 @@
       },
       "Warner Bros": {
         "complete": false,
-        "status": "In Development"
+        "status": "Collecting"
       }
     }
   },
@@ -219,7 +219,7 @@
     "completed": 5,
     "total": 38,
     "percentage": 13.2,
-    "status": "In Development",
+    "status": "Collecting",
     "items": {
       "Ailens": {
         "complete": true,
@@ -227,39 +227,39 @@
       },
       "Alien": {
         "complete": false,
-        "status": "In Development"
+        "status": "Collecting"
       },
       "Avatar": {
         "complete": false,
-        "status": "In Development"
+        "status": "Collecting"
       },
       "Cars": {
         "complete": false,
-        "status": "In Development"
+        "status": "Collecting"
       },
       "DC": {
         "complete": false,
-        "status": "In Development"
+        "status": "Collecting"
       },
       "Despicable Me - Minions": {
         "complete": false,
-        "status": "In Development"
+        "status": "Collecting"
       },
       "Fast & Furious": {
         "complete": false,
-        "status": "In Development"
+        "status": "Collecting"
       },
       "Frozen": {
         "complete": false,
-        "status": "In Development"
+        "status": "Collecting"
       },
       "Ghostbusters": {
         "complete": false,
-        "status": "In Development"
+        "status": "Collecting"
       },
       "Godzilla": {
         "complete": false,
-        "status": "In Development"
+        "status": "Collecting"
       },
       "Harry Potter": {
         "complete": true,
@@ -267,11 +267,11 @@
       },
       "Indiana Jones": {
         "complete": false,
-        "status": "In Development"
+        "status": "Collecting"
       },
       "James Bond": {
         "complete": false,
-        "status": "In Development"
+        "status": "Collecting"
       },
       "James Bond 007": {
         "complete": true,
@@ -283,55 +283,55 @@
       },
       "Jurassic Park - Jurassic World": {
         "complete": false,
-        "status": "In Development"
+        "status": "Collecting"
       },
       "Lord of the Rings": {
         "complete": false,
-        "status": "In Development"
+        "status": "Collecting"
       },
       "Marvel": {
         "complete": false,
-        "status": "In Development"
+        "status": "Collecting"
       },
       "Mission Impossible": {
         "complete": false,
-        "status": "In Development"
+        "status": "Collecting"
       },
       "Pirates of the Caribbean": {
         "complete": false,
-        "status": "In Development"
+        "status": "Collecting"
       },
       "Planet of the Apes": {
         "complete": false,
-        "status": "In Development"
+        "status": "Collecting"
       },
       "Predator": {
         "complete": false,
-        "status": "In Development"
+        "status": "Collecting"
       },
       "Rocky - Creed": {
         "complete": false,
-        "status": "In Development"
+        "status": "Collecting"
       },
       "Saw": {
         "complete": false,
-        "status": "In Development"
+        "status": "Collecting"
       },
       "Scream": {
         "complete": false,
-        "status": "In Development"
+        "status": "Collecting"
       },
       "Shrek": {
         "complete": false,
-        "status": "In Development"
+        "status": "Collecting"
       },
       "Sonic the Hedgehog": {
         "complete": false,
-        "status": "In Development"
+        "status": "Collecting"
       },
       "Star Trek": {
         "complete": false,
-        "status": "In Development"
+        "status": "Collecting"
       },
       "Star Wars": {
         "complete": true,
@@ -339,39 +339,39 @@
       },
       "Teenage Mutant Ninja Turtles": {
         "complete": false,
-        "status": "In Development"
+        "status": "Collecting"
       },
       "Terminator": {
         "complete": false,
-        "status": "In Development"
+        "status": "Collecting"
       },
       "The Conjuring": {
         "complete": false,
-        "status": "In Development"
+        "status": "Collecting"
       },
       "The Hobbit": {
         "complete": false,
-        "status": "In Development"
+        "status": "Collecting"
       },
       "The Hunger Games": {
         "complete": false,
-        "status": "In Development"
+        "status": "Collecting"
       },
       "The Lion King": {
         "complete": false,
-        "status": "In Development"
+        "status": "Collecting"
       },
       "The Matrix": {
         "complete": false,
-        "status": "In Development"
+        "status": "Collecting"
       },
       "Toy Story": {
         "complete": false,
-        "status": "In Development"
+        "status": "Collecting"
       },
       "Transformers": {
         "complete": false,
-        "status": "In Development"
+        "status": "Collecting"
       }
     }
   },
@@ -379,107 +379,107 @@
     "completed": 1,
     "total": 33,
     "percentage": 3.0,
-    "status": "In Development",
+    "status": "Collecting",
     "items": {
       "ABC": {
         "complete": false,
-        "status": "In Development"
+        "status": "Collecting"
       },
       "Adult Swim": {
         "complete": false,
-        "status": "In Development"
+        "status": "Collecting"
       },
       "AMC": {
         "complete": false,
-        "status": "In Development"
+        "status": "Collecting"
       },
       "Animal Planet": {
         "complete": false,
-        "status": "In Development"
+        "status": "Collecting"
       },
       "BBC": {
         "complete": false,
-        "status": "In Development"
+        "status": "Collecting"
       },
       "Cartoon Network": {
         "complete": false,
-        "status": "In Development"
+        "status": "Collecting"
       },
       "CBS": {
         "complete": false,
-        "status": "In Development"
+        "status": "Collecting"
       },
       "CNN": {
         "complete": false,
-        "status": "In Development"
+        "status": "Collecting"
       },
       "Comedy Central": {
         "complete": false,
-        "status": "In Development"
+        "status": "Collecting"
       },
       "Discovery Channel": {
         "complete": false,
-        "status": "In Development"
+        "status": "Collecting"
       },
       "Disney Channel": {
         "complete": false,
-        "status": "In Development"
+        "status": "Collecting"
       },
       "ESPN": {
         "complete": false,
-        "status": "In Development"
+        "status": "Collecting"
       },
       "Food Network": {
         "complete": false,
-        "status": "In Development"
+        "status": "Collecting"
       },
       "FOX": {
         "complete": false,
-        "status": "In Development"
+        "status": "Collecting"
       },
       "FX": {
         "complete": false,
-        "status": "In Development"
+        "status": "Collecting"
       },
       "Hallmark Channel": {
         "complete": false,
-        "status": "In Development"
+        "status": "Collecting"
       },
       "HBO": {
         "complete": false,
-        "status": "In Development"
+        "status": "Collecting"
       },
       "HGTV": {
         "complete": false,
-        "status": "In Development"
+        "status": "Collecting"
       },
       "History Channel": {
         "complete": false,
-        "status": "In Development"
+        "status": "Collecting"
       },
       "ITV": {
         "complete": false,
-        "status": "In Development"
+        "status": "Collecting"
       },
       "MTV": {
         "complete": false,
-        "status": "In Development"
+        "status": "Collecting"
       },
       "National Geographic": {
         "complete": false,
-        "status": "In Development"
+        "status": "Collecting"
       },
       "NBC": {
         "complete": false,
-        "status": "In Development"
+        "status": "Collecting"
       },
       "Nickelodeon": {
         "complete": false,
-        "status": "In Development"
+        "status": "Collecting"
       },
       "Paramount Network": {
         "complete": false,
-        "status": "In Development"
+        "status": "Collecting"
       },
       "ShowTime": {
         "complete": true,
@@ -487,31 +487,31 @@
       },
       "Sky": {
         "complete": false,
-        "status": "In Development"
+        "status": "Collecting"
       },
       "Syfy": {
         "complete": false,
-        "status": "In Development"
+        "status": "Collecting"
       },
       "TBS": {
         "complete": false,
-        "status": "In Development"
+        "status": "Collecting"
       },
       "The CW": {
         "complete": false,
-        "status": "In Development"
+        "status": "Collecting"
       },
       "TLC": {
         "complete": false,
-        "status": "In Development"
+        "status": "Collecting"
       },
       "TNT": {
         "complete": false,
-        "status": "In Development"
+        "status": "Collecting"
       },
       "USA Network": {
         "complete": false,
-        "status": "In Development"
+        "status": "Collecting"
       }
     }
   }
