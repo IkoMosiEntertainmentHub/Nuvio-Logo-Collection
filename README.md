@@ -67,9 +67,9 @@ The progress table reflects the current availability of assets inside each colle
 | --- | ---: | ---: | --- | --- |
 | **Streaming Platforms** | 12 | 12 | `██████████` **100.0%** | Complete |
 | **TV Collections** | 0 | 16 | `░░░░░░░░░░` **0.0%** | Not Started |
-| **Studios** | 1 | 20 | `░░░░░░░░░░` **5.0%** | Collecting |
-| **Franchises** | 5 | 38 | `█░░░░░░░░░` **13.2%** | Collecting |
-| **Networks** | 1 | 33 | `░░░░░░░░░░` **3.0%** | Collecting |
+| **Studios** | 1 | 20 | `░░░░░░░░░░` **5.0%** | In Development |
+| **Franchises** | 5 | 38 | `█░░░░░░░░░` **13.2%** | In Development |
+| **Networks** | 1 | 33 | `░░░░░░░░░░` **3.0%** | In Development |
 
 <!-- COLLECTION_PROGRESS_END -->
 
