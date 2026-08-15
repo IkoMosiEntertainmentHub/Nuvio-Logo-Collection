@@ -2,248 +2,108 @@
 <html lang="en">
 
 <head>
-
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-
 <title>Visual Assets Library</title>
-
-<style>
-
-body {
-    font-family: Arial, sans-serif;
-    max-width: 900px;
-    margin: auto;
-    padding: 30px;
-    background: #111;
-    color: white;
-}
-
-h1 {
-    text-align: center;
-}
-
-input {
-
-    width:100%;
-    padding:15px;
-    font-size:18px;
-    border-radius:8px;
-    border:none;
-    margin-bottom:20px;
-
-}
-
-
-.card {
-
-    background:#222;
-    padding:20px;
-    border-radius:10px;
-    margin-bottom:15px;
-
-}
-
-
-.complete {
-
-    color:#4ade80;
-
-}
-
-
-.progress {
-
-    color:#facc15;
-
-}
-
-
-.notstarted {
-
-    color:#aaa;
-
-}
-
-
-a {
-
-    color:#60a5fa;
-
-}
-
-
-</style>
-
 </head>
-
 
 <body>
 
-
 <h1>Visual Assets Library</h1>
 
-
-<p>
-Search collections, platforms, studios, franchises and networks.
-</p>
-
-
-<input id="search" placeholder="Search Netflix, Marvel, Disney..." onkeyup="search()">
-
-
+<input id="search" placeholder="Search..." onkeyup="searchAssets()">
 
 <div id="results"></div>
 
 
-
 <script>
 
-
-let collections = [];
+let assets = [];
 
 
 fetch("search.json")
-
 .then(response => response.json())
-
 .then(data => {
-
-    collections = data;
-
+    assets = data;
 });
 
 
+function searchAssets() {
 
-function search(){
-
-
-let value =
-document
-.getElementById("search")
-.value
-.toLowerCase();
+    const query = document
+        .getElementById("search")
+        .value
+        .toLowerCase();
 
 
-
-let results =
-collections.filter(item =>
-
-item.name
-.toLowerCase()
-.includes(value)
-
-||
-item.category
-.toLowerCase()
-.includes(value)
-
-);
+    const results = assets.filter(item =>
+        item.name
+        .toLowerCase()
+        .includes(query)
+    );
 
 
-
-display(results);
-
-
+    displayResults(results);
 
 }
 
 
 
-function display(results){
+function displayResults(results) {
+
+    const container =
+        document.getElementById("results");
 
 
-let box =
-document.getElementById("results");
+    container.innerHTML = "";
 
 
-box.innerHTML="";
+    results.forEach(item => {
 
 
+        container.innerHTML += 
 
-if(results.length === 0){
+        <div>
 
-box.innerHTML =
-"<p>No collections found.</p>";
+        <h2>${item.name}</h2>
 
-return;
+        <p>
+        Category:
+        ${item.category}
+        </p>
 
-}
-
-
-
-results.forEach(item => {
-
-
-
-let statusClass =
-item.status === "Complete"
-?
-"complete"
-:
-item.status === "Not Started"
-?
-"notstarted"
-:
-"progress";
+        <p>
+        Status:
+        ${item.status}
+        </p>
 
 
+        ${
+            item.status === "Complete"
 
-let link = "";
+            ?
 
+            <a href="https://github.com/IkoMosiEntertainmentHub/Visual-Assets-Library/tree/main/${item.path}">
+            Open Folder
+            </a>
 
+            :
 
-if(item.status === "Complete"){
+            No assets available yet
 
-
-link =
-
-<br>
-<a target="_blank"
-href="https://github.com/IkoMosiEntertainmentHub/Visual-Assets-Library/tree/main/${encodeURIComponent(item.path).replace(/%2F/g,'/')}">
-Open Collection Folder
-</a>
-;
-
-}
+        }
 
 
+        </div>
 
-box.innerHTML +=
+        <hr>
 
-
-
-<div class="card">
-
-<h2>${item.name}</h2>
-
-<p>
-Category:
-${item.category}
-</p>
+        ;
 
 
-<p class="${statusClass}">
-Status:
-${item.status}
-</p>
-
-
-${link}
-
-
-</div>
-
-;
-
-
-
-});
-
+    });
 
 
 }
-
 
 
 </script>
