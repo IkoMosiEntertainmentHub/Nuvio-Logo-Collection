@@ -1,61 +1,3 @@
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<title>Visual Assets Library</title>
-
-<style>
-body {
-    font-family: Arial, sans-serif;
-    max-width: 900px;
-    margin: auto;
-    padding: 30px;
-}
-
-input {
-    width: 100%;
-    padding: 12px;
-    font-size: 16px;
-    margin-bottom: 20px;
-}
-
-.result {
-    border: 1px solid #ddd;
-    padding: 15px;
-    margin-bottom: 10px;
-    border-radius: 8px;
-}
-
-.complete {
-    color: green;
-}
-
-.development {
-    color: orange;
-}
-
-.notstarted {
-    color: gray;
-}
-</style>
-
-</head>
-
-
-<body>
-
-<h1>Visual Assets Library</h1>
-
-<input id="search" placeholder="Search collections...">
-
-<div id="results">
-Loading...
-</div>
-
-
 <script>
 
 let assets = [];
@@ -69,7 +11,7 @@ fetch("search.json")
 
     assets = data;
 
-    showResults(assets);
+    displayResults(assets);
 
 })
 
@@ -79,7 +21,11 @@ fetch("search.json")
     console.error(error);
 
     document.getElementById("results").innerHTML =
-    "Failed to load collection database.";
+    `
+    <p>
+    Failed to load search database.
+    </p>
+    `;
 
 });
 
@@ -90,26 +36,39 @@ document
 .addEventListener("input", function(){
 
 
-    let query = this.value.toLowerCase();
+    let query = this.value.toLowerCase().trim();
 
 
-    let filtered = assets.filter(item =>
-
-        item.name.toLowerCase().includes(query) ||
-
-        item.category.toLowerCase().includes(query)
-
-    );
+    let filtered = assets.filter(item => {
 
 
-    showResults(filtered);
+        return (
+
+            item.name.toLowerCase().includes(query)
+
+            ||
+
+            item.category.toLowerCase().includes(query)
+
+            ||
+
+            item.status.toLowerCase().includes(query)
+
+        );
+
+
+    });
+
+
+    displayResults(filtered);
 
 
 });
 
 
 
-function showResults(items){
+
+function displayResults(results){
 
 
     let container =
@@ -119,31 +78,88 @@ function showResults(items){
     container.innerHTML = "";
 
 
-    if(items.length === 0){
+    if(results.length === 0){
 
         container.innerHTML =
-        "No collections found.";
+        `
+        <p>
+        No collections found.
+        </p>
+        `;
 
         return;
 
     }
 
 
-    items.forEach(item => {
+
+    results.forEach(item => {
 
 
-        let statusClass =
-        item.status
-        .toLowerCase()
-        .replace(" ","");
+        let statusClass = "";
+
+
+        if(item.status === "Complete"){
+
+            statusClass = "status-complete";
+
+        }
+
+        else if(item.status === "In Development"){
+
+            statusClass = "status-development";
+
+        }
+
+        else {
+
+            statusClass = "status-notstarted";
+
+        }
 
 
 
-        container.innerHTML += `
+        let link = "";
 
-        <div class="result">
 
-        <h3>${item.name}</h3>
+        if(item.status === "Complete"){
+
+
+            link =
+            `
+            <p>
+            <a href="https://github.com/IkoMosiEntertainmentHub/Visual-Assets-Library/tree/main/${item.path}">
+            Open Collection
+            </a>
+            </p>
+            `;
+
+
+        }
+
+        else {
+
+
+            link =
+            `
+            <p>
+            No assets available yet
+            </p>
+            `;
+
+
+        }
+
+
+
+        container.innerHTML +=
+
+        `
+        <div class="card">
+
+        <h2>
+        ${item.name}
+        </h2>
 
         <p>
         Category: ${item.category}
@@ -153,25 +169,9 @@ function showResults(items){
         Status: ${item.status}
         </p>
 
-
-        ${
-            item.status === "Complete"
-
-            ?
-
-            `<a href="https://github.com/IkoMosiEntertainmentHub/Visual-Assets-Library/tree/main/${item.path}">
-            Open Collection
-            </a>`
-
-            :
-
-            `No assets available yet`
-
-        }
-
+        ${link}
 
         </div>
-
         `;
 
 
@@ -182,8 +182,3 @@ function showResults(items){
 
 
 </script>
-
-
-</body>
-
-</html>
