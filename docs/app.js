@@ -320,17 +320,10 @@ function previewEnabled(ext){
 
 function getStatusPriority(status){
 
-
     if(status === "Complete")
         return 0;
 
-
-    if(status === "In Development")
-        return 1;
-
-
-    return 2;
-
+    return 1;
 
 }
 
@@ -413,18 +406,6 @@ function displayResults(data){
         filtered =
         filtered.filter(
             x=>x.status==="Complete"
-        );
-
-
-    }
-
-
-    else if(currentTab === "development"){
-
-
-        filtered =
-        filtered.filter(
-            x=>x.status==="In Development"
         );
 
 
