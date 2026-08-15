@@ -2,13 +2,235 @@
 
 A personal, unofficial collection of logos, artwork, GIFs, animations, icons, and other visual assets organized for use with media catalogues, collection interfaces, and projects that support custom visual assets.
 
-> [!IMPORTANT]
-> **This is an independent project and is not affiliated with, endorsed by, sponsored by, or officially connected to Nuvio, Xperience, or any other platform, application, company, studio, network, franchise, creator, or rights holder referenced in this repository.**
->
-> **I do not claim ownership of third-party materials contained within this repository.**
->
-> Assets have been collected from various sources. Ownership, credit, and rights remain with their respective creators, copyright holders, trademark owners, companies, studios, organizations, licensors, and other rightful owners.
+---
 
+## 📁 About
+
+**Visual Assets Library** is a personal collection and organizational resource for visual assets used across media catalogue systems, collection interfaces, and compatible projects.
+
+The purpose of this repository is to make visual assets easier to find, organize, preview, and reference.
+
+The library contains collections including:
+
+- Streaming Platforms
+- TV Collections
+- Studios
+- Franchises
+- Networks
+- Genres
+- Other Collections
+
+Supported visual formats include:
+
+- `.png`
+- `.gif`
+- `.jpg`
+- `.jpeg`
+- `.webp`
+- `.svg`
+- `.avif`
+- `.mp4`
+
+---
+
+## 🌐 Visual Assets Library Website
+
+Explore the collection through the online website:
+
+[Open Visual Assets Library](https://ikomosientertainmenthub.github.io/Visual-Assets-Library/)
+
+Website features:
+
+- Collection search
+- Asset previews
+- Format filtering
+- Raw asset link copying
+- Collection browsing
+- Progress tracking
+- Direct asset references
+
+---
+
+## 📊 Collection Overview
+
+> **Live collection tracking**
+>
+> Collection statistics are automatically generated and updated through GitHub Actions whenever changes are pushed to `main`.
+
+The progress table reflects the current availability of assets inside each collection folder.
+
+**Tracking:** `118 collections organized across 5 categories`
+
+<!-- COLLECTION_PROGRESS_START -->
+
+| Category | Completed | Total | Progress | Status |
+| --- | ---: | ---: | --- | --- |
+| **Streaming Platforms** | 12 | 12 | `██████████` **100.0%** | Complete |
+| **TV Collections** | 0 | 16 | `░░░░░░░░░░` **0.0%** | Not Started |
+| **Studios** | 1 | 20 | `░░░░░░░░░░` **5.0%** | Collecting |
+| **Franchises** | 5 | 38 | `█░░░░░░░░░` **13.2%** | Collecting |
+| **Networks** | 1 | 33 | `░░░░░░░░░░` **3.0%** | Collecting |
+
+<!-- COLLECTION_PROGRESS_END -->
+
+---
+
+## 📌 Asset Usage
+
+The website allows users to:
+
+1. Search for a collection or asset.
+2. Preview available artwork.
+3. Copy the raw asset link.
+4. Use the link in compatible applications that support external image or media URLs.
+
+Examples of compatible uses:
+
+- Media catalogue applications
+- Collection managers
+- Streaming interfaces
+- Personal media libraries
+- Custom artwork systems
+
+Compatibility depends on the application, device, configuration, and supported formats.
+
+---
+
+## ⚠️ Important Notice
+
+This is an independent personal project.
+
+It is not affiliated with, endorsed by, sponsored by, or officially connected to:
+
+- Nuvio
+- Xperience
+- Any streaming platform
+- Any application
+- Any company
+- Any studio
+- Any network
+- Any franchise
+- Any creator
+- Any rights holder referenced in this repository
+
+I do not claim ownership of third-party materials contained within this repository.
+
+Assets have been collected from various sources. Ownership, credit, and rights remain with their respective creators, copyright holders, trademark owners, companies, studios, organizations, licensors, and other rightful owners.
+
+---
+
+## 🧾 Credits & Attribution
+
+The assets contained in this collection originate from different sources and creators.
+
+Where reliable information is available, attribution and source details are preserved.
+
+Credits may be located in:
+
+- Asset folders
+- Documentation files
+- Source files
+- Filenames
+- Repository notes
+
+If you identify missing or incorrect attribution, please contact me with the relevant information.
+
+---
+
+## 🏷️ Trademarks & Ownership
+
+All logos, names, artwork, branding, service marks, trademarks, and franchise names remain the property of their respective owners.
+
+Their inclusion in this repository is for organization, identification, and reference purposes only.
+
+No ownership, licensing authority, or official relationship is claimed.
+
+---
+
+## 📜 Licensing & Usage
+
+I do not grant licenses or permissions for third-party materials that I do not own.
+
+The presence of an asset in this repository does not mean it is:
+
+- Public domain
+- Copyright-free
+- Free for commercial use
+- Free for redistribution
+- Free for modification
+
+Users are responsible for determining the required permissions, licenses, and usage rights for individual assets.
+
+---
+
+## 🛡️ Disclaimer
+
+This repository is provided as a personal, unofficial visual asset collection.
+
+Reasonable efforts are made to organize assets and preserve available attribution, but I cannot guarantee that every source, ownership record, or licensing detail is complete.
+
+Nothing in this repository is legal advice.
+
+---
+
+## 🔒 Repository Control
+
+This repository is publicly visible for viewing and reference.
+
+Public visibility does not mean public editing access.
+
+The original repository is maintained by:
+
+[IkoMosiEntertainmentHub](https://github.com/IkoMosiEntertainmentHub)
+
+Users may:
+
+- View the repository
+- Clone the repository
+- Fork the repository
+- Create their own modified version
+
+A fork or copy is separate from the original repository.
+
+---
+
+## 📌 Forks & Modified Versions
+
+Modified copies or forks should not be represented as:
+
+- The original repository
+- An official version
+- A project maintained by IkoMosiEntertainmentHub
+- An endorsed project
+
+Changes made to other copies do not affect this repository.
+
+---
+
+## 🧑‍💻 Maintenance
+
+Visual Assets Library is maintained as a personal project.
+
+Collections may be:
+
+- Added
+- Updated
+- Reorganized
+- Renamed
+- Removed
+- Re-attributed
+
+The goal is to maintain an organized and accessible visual asset reference library.
+
+---
+
+## 👤 Maintainer
+
+**[IkoMosiEntertainmentHub](https://github.com/IkoMosiEntertainmentHub)**
+
+Solo-maintained personal project.
+
+No company, organization, partnership, or official representation is claimed.
 ---
 
 ## 📁 About
