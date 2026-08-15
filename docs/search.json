@@ -18,18 +18,6 @@
     "path": "Streaming Platforms/PRIME VIDEO"
   },
   {
-    "name": "Apple TV",
-    "category": "Streaming Platforms",
-    "status": "Complete",
-    "path": "Streaming Platforms/APPLE TV"
-  },
-  {
-    "name": "HBO Max",
-    "category": "Streaming Platforms",
-    "status": "Complete",
-    "path": "Streaming Platforms/HBO MAX"
-  },
-  {
     "name": "Marvel",
     "category": "TV Collections",
     "status": "Not Started",
@@ -46,11 +34,5 @@
     "category": "Franchises",
     "status": "Complete",
     "path": "Franchises/James Bond 007"
-  },
-  {
-    "name": "Alien",
-    "category": "Franchises",
-    "status": "Not Started",
-    "path": "Franchises/Alien"
   }
 ]
