@@ -57,21 +57,29 @@ Website features:
 >
 > Collection statistics are automatically generated and updated through GitHub Actions whenever changes are pushed to `main`.
 
-The progress table reflects the current availability of assets inside each collection folder.
-
-**Tracking:** `118 collections organized across 5 categories`
+The progress below reflects the current availability of assets inside each collection folder.
 
 <!-- COLLECTION_PROGRESS_START -->
 
 | Category | Completed | Total | Progress | Status |
-| --- | ---: | ---: | --- | --- |
-| **Streaming Platforms** | 12 | 12 | `██████████` **100.0%** | Complete |
-| **TV Collections** | 0 | 16 | `░░░░░░░░░░` **0.0%** | Not Started |
-| **Studios** | 1 | 20 | `░░░░░░░░░░` **5.0%** | In Development |
-| **Franchises** | 5 | 38 | `█░░░░░░░░░` **13.2%** | In Development |
-| **Networks** | 1 | 33 | `░░░░░░░░░░` **3.0%** | In Development |
+| :- | -: | -: | :-: | :- |
+| Streaming Platforms | 12 | 12 | 100% | Complete |
+| Studios | 1 | 20 | 5% | Collecting |
+| Franchises | 5 | 38 | 13% | Collecting |
+| TV Collections | 0 | 16 | 0% | Not Started |
+| Networks | 1 | 33 | 3% | Collecting |
 
 <!-- COLLECTION_PROGRESS_END -->
+
+> **Automated tracking:** Progress is calculated by checking collection folders for supported visual assets.
+>
+> **Status meanings:**
+>
+> - **Complete**: Collection assets are available.
+> - **Collecting**: Assets are currently being gathered.
+> - **Not Started**: Collection has not begun.
+>
+> **Supported formats:** `.png` · `.gif` · `.jpg` · `.jpeg` · `.webp` · `.svg` · `.avif` · `.mp4`
 
 ---
 
