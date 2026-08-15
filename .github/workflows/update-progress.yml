@@ -1,51 +1,88 @@
 name: Update Collection Progress
 
+
 on:
+
   push:
+
     branches:
+
       - main
+
 
   workflow_dispatch:
 
 
+
+
 permissions:
+
   contents: write
+
+
+
+
 
 
 jobs:
 
+
   update-progress:
+
+
 
     runs-on: ubuntu-latest
 
 
+
+
+
     steps:
 
+
+
+
       - name: Checkout repository
+
         uses: actions/checkout@v4
+
         with:
+
           fetch-depth: 0
 
 
 
+
+
+
       - name: Generate progress and search database
+
         shell: python
+
         run: |
 
+
           import json
+
           import os
+
           import re
+
           from urllib.parse import quote
+
+
 
 
 
           CONFIG_FILE = "collections.json"
 
-          PROGRESS_FILE = "progress.json"
-
           README_FILE = "README.md"
 
+          PROGRESS_FILE = "progress.json"
+
           SEARCH_FILE = "docs/search.json"
+
+
 
 
 
@@ -53,23 +90,32 @@ jobs:
 
 
 
+
+
+
           ASSET_EXTENSIONS = {
 
+
               ".png",
+
               ".gif",
+
               ".jpg",
+
               ".jpeg",
+
               ".webp",
+
               ".svg",
-              ".avif"
+
+              ".avif",
+
+              ".mp4"
+
 
           }
 
 
-
-          START_MARKER = "<!-- COLLECTION_PROGRESS_START -->"
-
-          END_MARKER = "<!-- COLLECTION_PROGRESS_END -->"
 
 
 
@@ -77,7 +123,9 @@ jobs:
 
           def find_assets(folder):
 
-              assets = []
+
+              assets=[]
+
 
 
               if not os.path.isdir(folder):
@@ -86,9 +134,13 @@ jobs:
 
 
 
-              for root, dirs, files in os.walk(folder):
 
-                  dirs[:] = [
+
+
+              for root,dirs,files in os.walk(folder):
+
+
+                  dirs[:]=[
 
                       d for d in dirs
 
@@ -98,17 +150,18 @@ jobs:
 
 
 
+
                   for filename in files:
 
 
-                      extension = os.path.splitext(filename)[1].lower()
+                      ext=os.path.splitext(filename)[1].lower()
 
 
 
-                      if extension in ASSET_EXTENSIONS:
+                      if ext in ASSET_EXTENSIONS:
 
 
-                          full_path = os.path.join(
+                          full=os.path.join(
 
                               root,
 
@@ -118,15 +171,17 @@ jobs:
 
 
 
-                          relative = os.path.relpath(
+                          relative=os.path.relpath(
 
-                              full_path
+                              full
 
                           ).replace("\\","/")
 
 
 
-                          url = (
+
+
+                          url=(
 
                               "https://raw.githubusercontent.com/"
 
@@ -150,34 +205,60 @@ jobs:
 
 
 
-              return assets
+
+
+              return sorted(assets)
 
 
 
 
 
-          with open(CONFIG_FILE, "r", encoding="utf-8") as file:
-
-              collections = json.load(file)
 
 
 
 
 
-          progress = {}
+          with open(
 
-          search_database = []
+              CONFIG_FILE,
+
+              "r",
+
+              encoding="utf-8"
+
+          ) as file:
+
+
+              collections=json.load(file)
 
 
 
 
 
-          for category, items in collections.items():
 
 
-              completed = 0
 
-              item_results = {}
+
+          progress={}
+
+          search=[]
+
+
+
+
+
+
+
+          for category,items in collections.items():
+
+
+
+              completed=0
+
+
+              item_data={}
+
+
 
 
 
@@ -185,7 +266,7 @@ jobs:
 
 
 
-                  path = os.path.join(
+                  path=os.path.join(
 
                       category,
 
@@ -195,41 +276,59 @@ jobs:
 
 
 
-                  assets = find_assets(path)
+
+                  assets=find_assets(path)
 
 
 
-                  if len(assets) > 0:
 
 
-                      completed += 1
 
-                      status = "Complete"
+                  if len(assets)>0:
+
+
+                      status="Complete"
+
+                      completed+=1
+
+
 
 
 
                   elif os.path.isdir(path):
 
 
-                      status = "In Development"
+                      status="In Development"
+
+
+
 
 
 
                   else:
 
 
-                      status = "Not Started"
+                      status="Not Started"
 
 
 
 
 
-                  item_results[item] = {
 
 
-                      "complete": len(assets) > 0,
 
-                      "status": status
+                  item_data[item]={
+
+
+                      "complete":
+
+                      status=="Complete",
+
+
+                      "status":
+
+                      status
+
 
 
                   }
@@ -238,22 +337,27 @@ jobs:
 
 
 
-                  search_database.append({
 
 
-                      "name": item,
+                  search.append({
 
 
-                      "category": category,
+                      "name":item,
 
 
-                      "status": status,
+                      "category":category,
 
 
-                      "path": path.replace("\\","/"),
+                      "status":status,
 
 
-                      "assets": assets
+                      "path":
+
+                      path.replace("\\","/"),
+
+
+                      "assets":assets
+
 
 
                   })
@@ -262,64 +366,88 @@ jobs:
 
 
 
-              total = len(items)
-
-
-
-              percentage = round(
-
-                  (completed / total) * 100,
-
-                  1
-
-              ) if total else 0
 
 
 
 
-
-              if percentage == 100:
-
-
-                  category_status = "Complete"
+              total=len(items)
 
 
 
-              elif percentage > 0:
+              percentage=(
+
+                  round(
+
+                      (completed/total)*100,
+
+                      1
+
+                  )
+
+                  if total
+
+                  else 0
+
+              )
 
 
-                  category_status = "In Development"
+
+
+
+
+
+
+              if percentage==100:
+
+
+                  category_status="Complete"
+
+
+
+              elif percentage>0:
+
+
+                  category_status="In Development"
 
 
 
               else:
 
 
-                  category_status = "Not Started"
+                  category_status="Not Started"
 
 
 
 
 
-              progress[category] = {
 
 
-                  "completed": completed,
 
 
-                  "total": total,
+              progress[category]={
 
 
-                  "percentage": percentage,
+                  "completed":completed,
 
 
-                  "status": category_status,
+                  "total":total,
 
 
-                  "items": item_results
+                  "percentage":percentage,
+
+
+                  "status":category_status,
+
+
+                  "items":item_data
+
 
 
               }
+
+
+
+
 
 
 
@@ -337,7 +465,19 @@ jobs:
 
 
 
-          with open(PROGRESS_FILE, "w", encoding="utf-8") as file:
+
+
+
+
+          with open(
+
+              PROGRESS_FILE,
+
+              "w",
+
+              encoding="utf-8"
+
+          ) as file:
 
 
               json.dump(
@@ -353,18 +493,32 @@ jobs:
               )
 
 
+
               file.write("\n")
 
 
 
 
 
-          with open(SEARCH_FILE, "w", encoding="utf-8") as file:
+
+
+
+
+
+          with open(
+
+              SEARCH_FILE,
+
+              "w",
+
+              encoding="utf-8"
+
+          ) as file:
 
 
               json.dump(
 
-                  search_database,
+                  search,
 
                   file,
 
@@ -375,69 +529,63 @@ jobs:
               )
 
 
+
               file.write("\n")
 
 
 
 
 
-          with open(README_FILE, "r", encoding="utf-8") as file:
-
-              readme = file.read()
 
 
 
 
 
-          table = []
+          START="<!-- COLLECTION_PROGRESS_START -->"
 
-
-          table.append(START_MARKER)
-
-          table.append("")
-
-
-          table.append("| Category | Completed | Total | Progress | Status |")
-
-          table.append("| --- | ---: | ---: | --- | --- |")
+          END="<!-- COLLECTION_PROGRESS_END -->"
 
 
 
 
 
-          for category, data in progress.items():
 
 
-              filled = round(
 
-                  data["percentage"] / 10
-
-              )
+          if os.path.exists(README_FILE):
 
 
-              bar = (
 
-                  "█" * filled
+              with open(
 
-                  +
+                  README_FILE,
 
-                  "░" * (10 - filled)
+                  "r",
 
-              )
+                  encoding="utf-8"
 
+              ) as file:
+
+
+                  readme=file.read()
+
+
+
+
+
+              table=[START,""]
 
 
               table.append(
 
-                  f"| **{category}** | "
+                  "| Category | Completed | Total | Progress | Status |"
 
-                  f"{data['completed']} | "
+              )
 
-                  f"{data['total']} | "
 
-                  f"`{bar}` **{data['percentage']}%** | "
+              table.append(
 
-                  f"{data['status']} |"
+                  "| --- | ---: | ---: | --- | --- |"
 
               )
 
@@ -445,55 +593,111 @@ jobs:
 
 
 
-          table.append("")
 
-          table.append(END_MARKER)
-
+              for category,data in progress.items():
 
 
 
+                  filled=round(
 
-          new_section = "\n".join(table)
+                      data["percentage"]/10
 
-
-
-
-
-          pattern = re.compile(
-
-              re.escape(START_MARKER)
-
-              +
-
-              r".*?"
-
-              +
-
-              re.escape(END_MARKER),
-
-              re.DOTALL
-
-          )
+                  )
 
 
 
+                  bar=(
+
+                      "█"*filled
+
+                      +
+
+                      "░"*(10-filled)
+
+                  )
 
 
-          readme = pattern.sub(
 
-              new_section,
+                  table.append(
 
-              readme
+                      f"| **{category}** | "
 
-          )
+                      f"{data['completed']} | "
+
+                      f"{data['total']} | "
+
+                      f"`{bar}` **{data['percentage']}%** | "
+
+                      f"{data['status']} |"
+
+                  )
 
 
 
 
 
-          with open(README_FILE, "w", encoding="utf-8") as file:
+              table.append("")
 
-              file.write(readme)
+              table.append(END)
+
+
+
+
+
+
+
+              section="\n".join(table)
+
+
+
+
+
+              pattern=re.compile(
+
+                  re.escape(START)
+
+                  +
+
+                  r".*?"
+
+                  +
+
+                  re.escape(END),
+
+                  re.DOTALL
+
+              )
+
+
+
+
+
+
+              readme=pattern.sub(
+
+                  section,
+
+                  readme
+
+              )
+
+
+
+
+
+              with open(
+
+                  README_FILE,
+
+                  "w",
+
+                  encoding="utf-8"
+
+              ) as file:
+
+
+                  file.write(readme)
+
 
 
 
@@ -501,14 +705,18 @@ jobs:
 
       - name: Commit generated files
 
+
         shell: bash
+
 
         run: |
 
 
           git config user.name "github-actions[bot]"
 
+
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+
 
 
 
@@ -516,17 +724,26 @@ jobs:
 
 
 
+
+
           if git diff --cached --quiet; then
+
 
               echo "No changes"
 
+
               exit 0
+
 
           fi
 
 
 
+
+
           git commit -m "Update collection progress and search database"
+
+
 
 
 

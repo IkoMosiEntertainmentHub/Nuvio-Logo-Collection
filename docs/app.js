@@ -5,109 +5,164 @@ let visibleCount = 10;
 let currentTab = "all";
 
 
+
 let settings =
-JSON.parse(localStorage.getItem("VAL_settings"))
+JSON.parse(
+localStorage.getItem("VAL_settings")
+)
 ||
 {
-    gif: true,
-    png: true,
-    jpg: true,
-    webp: true,
-    mp4: true
+gif:true,
+png:true,
+jpg:true,
+jpeg:true,
+webp:true,
+mp4:true
 };
 
 
 
+
 const search = document.getElementById("search");
+
 const results = document.getElementById("results");
 
+const loadMore = document.getElementById("loadMore");
+
 const settingsButton = document.getElementById("settingsButton");
+
 const settingsPanel = document.getElementById("settingsPanel");
 
-const gifToggle = document.getElementById("gifToggle");
-const pngToggle = document.getElementById("pngToggle");
-const jpgToggle = document.getElementById("jpgToggle");
-const webpToggle = document.getElementById("webpToggle");
-const mp4Toggle = document.getElementById("mp4Toggle");
 
-const loadMore = document.getElementById("loadMore");
+
+const toggles = {
+
+gif:document.getElementById("gifToggle"),
+
+png:document.getElementById("pngToggle"),
+
+jpg:document.getElementById("jpgToggle"),
+
+jpeg:document.getElementById("jpegToggle"),
+
+webp:document.getElementById("webpToggle"),
+
+mp4:document.getElementById("mp4Toggle")
+
+};
+
+
+
 
 
 
 function saveSettings(){
 
-    settings = {
 
-        gif: gifToggle.checked,
-        png: pngToggle.checked,
-        jpg: jpgToggle.checked,
-        webp: webpToggle.checked,
-        mp4: mp4Toggle.checked
+settings={
 
-    };
+gif:toggles.gif.checked,
+
+png:toggles.png.checked,
+
+jpg:toggles.jpg.checked,
+
+jpeg:toggles.jpeg.checked,
+
+webp:toggles.webp.checked,
+
+mp4:toggles.mp4.checked
+
+};
 
 
-    localStorage.setItem(
-        "VAL_settings",
-        JSON.stringify(settings)
-    );
+
+localStorage.setItem(
+
+"VAL_settings",
+
+JSON.stringify(settings)
+
+);
 
 
-    displayResults(assets);
+
+displayResults(assets);
+
 
 }
+
+
+
+
 
 
 
 function loadSettings(){
 
-    gifToggle.checked = settings.gif;
 
-    pngToggle.checked = settings.png;
+Object.keys(toggles)
+.forEach(type=>{
 
-    jpgToggle.checked = settings.jpg;
+toggles[type].checked =
+settings[type];
 
-    webpToggle.checked = settings.webp;
+});
 
-    mp4Toggle.checked = settings.mp4;
 
 }
 
 
 
 
-document
-.querySelectorAll("#settingsPanel input")
-.forEach(input => {
 
-    input.addEventListener(
-        "change",
-        saveSettings
-    );
+
+Object.values(toggles)
+.forEach(toggle=>{
+
+
+toggle.addEventListener(
+
+"change",
+
+saveSettings
+
+);
+
 
 });
 
 
 
 
-settingsButton.onclick = function(e){
-
-    e.stopPropagation();
 
 
-    if(settingsPanel.style.display === "block"){
 
-        settingsPanel.style.display = "none";
 
-    }
+settingsButton.addEventListener(
+"click",
+function(e){
 
-    else {
 
-        settingsPanel.style.display = "block";
+e.stopPropagation();
 
-    }
 
-};
+settingsPanel.style.display =
+
+settingsPanel.style.display === "block"
+
+?
+
+"none"
+
+:
+
+"block";
+
+
+});
+
+
 
 
 
@@ -118,19 +173,22 @@ document.addEventListener(
 function(e){
 
 
-    if(
+if(
 
-        !settingsPanel.contains(e.target)
+!settingsPanel.contains(e.target)
 
-        &&
+&&
 
-        e.target !== settingsButton
+e.target !== settingsButton
 
-    ){
+){
 
-        settingsPanel.style.display = "none";
 
-    }
+settingsPanel.style.display="none";
+
+
+}
+
 
 
 });
@@ -140,35 +198,62 @@ function(e){
 
 
 
-fetch("search.json?v=3")
 
 
-.then(response => response.json())
 
 
-.then(data => {
+fetch("search.json?v=5")
 
 
-    assets = data;
+.then(response=>{
 
 
-    displayResults(assets);
+if(!response.ok){
+
+throw new Error(
+"Search database failed"
+);
+
+}
+
+
+return response.json();
 
 
 })
 
 
-.catch(error => {
+.then(data=>{
 
 
-    console.error(error);
+assets=data;
 
 
-    results.innerHTML =
-    "Failed loading database";
+displayResults(data);
+
+
+})
+
+
+.catch(error=>{
+
+
+console.error(error);
+
+
+results.innerHTML=
+
+`
+<p>
+Failed loading database
+</p>
+`;
 
 
 });
+
+
+
 
 
 
@@ -177,13 +262,18 @@ fetch("search.json?v=3")
 
 search.addEventListener(
 "input",
-function(){
+()=>{
 
-    visibleCount = 10;
 
-    displayResults(assets);
+visibleCount=10;
+
+
+displayResults(assets);
+
 
 });
+
+
 
 
 
@@ -193,33 +283,49 @@ function(){
 
 document
 .querySelectorAll(".tab")
-.forEach(button => {
+.forEach(button=>{
 
 
-    button.onclick = function(){
+button.addEventListener(
+"click",
+function(){
 
 
-        document
-        .querySelectorAll(".tab")
-        .forEach(x =>
-            x.classList.remove("active")
-        );
+
+document
+.querySelectorAll(".tab")
+.forEach(tab=>{
 
 
-        this.classList.add("active");
+tab.classList.remove(
+"active"
+);
 
 
-        currentTab =
-        this.dataset.tab;
+});
 
 
-        visibleCount = 10;
 
 
-        displayResults(assets);
+this.classList.add(
+"active"
+);
 
 
-    };
+
+currentTab=this.dataset.tab;
+
+
+
+visibleCount=10;
+
+
+
+displayResults(assets);
+
+
+
+});
 
 
 });
@@ -229,16 +335,24 @@ document
 
 
 
-loadMore.onclick = function(){
 
 
-    visibleCount += 10;
 
 
-    displayResults(assets);
+loadMore.addEventListener(
+"click",
+()=>{
 
 
-};
+visibleCount+=10;
+
+
+displayResults(assets);
+
+
+});
+
+
 
 
 
@@ -249,11 +363,11 @@ loadMore.onclick = function(){
 function getExt(url){
 
 
-    return url
-    .split(".")
-    .pop()
-    .split("?")[0]
-    .toLowerCase();
+return url
+.split("?")[0]
+.split(".")
+.pop()
+.toLowerCase();
 
 
 }
@@ -264,28 +378,32 @@ function getExt(url){
 
 
 
-function copyText(text, button){
 
 
-    navigator.clipboard.writeText(text);
+function copyText(text,button){
 
 
-    button.innerText =
-    "Copied";
+navigator.clipboard.writeText(text);
 
 
-    setTimeout(
-        () => {
 
-            button.innerText =
-            "Copy Raw Asset Link";
+button.innerText="Copied";
 
-        },
-        1500
-    );
+
+
+setTimeout(()=>{
+
+
+button.innerText=
+"Copy Raw Asset Link";
+
+
+},1500);
 
 
 }
+
+
 
 
 
@@ -296,30 +414,99 @@ function copyText(text, button){
 function previewEnabled(ext){
 
 
-    if(ext === "gif")
-        return settings.gif;
-
-
-    if(ext === "png")
-        return settings.png;
-
-
-    if(ext === "jpg" || ext === "jpeg")
-        return settings.jpg;
-
-
-    if(ext === "webp")
-        return settings.webp;
-
-
-    if(ext === "mp4")
-        return settings.mp4;
-
-
-    return false;
+return settings[ext] === true;
 
 
 }
+
+
+
+
+
+
+
+
+
+function getStatusPriority(status){
+
+
+if(status==="Complete")
+
+return 0;
+
+
+if(status==="In Development")
+
+return 1;
+
+
+return 2;
+
+
+}
+
+
+
+
+
+
+
+
+function getPopularity(name){
+
+
+
+let popular=[
+
+
+"NETFLIX",
+
+"DISNEY PLUS",
+
+"PRIME VIDEO",
+
+"APPLE TV",
+
+"HBO MAX",
+
+"PARAMOUNT",
+
+"PEACOCK",
+
+"CRUNCHYROLL",
+
+"HULU",
+
+"STARZ",
+
+"MGM+",
+
+"AMC+"
+
+
+
+];
+
+
+
+let index =
+popular.indexOf(name.toUpperCase());
+
+
+
+if(index===-1)
+
+return 999;
+
+
+
+return index;
+
+
+
+}
+
+
 
 
 
@@ -331,193 +518,419 @@ function previewEnabled(ext){
 function displayResults(data){
 
 
-    let query =
-    search.value
-    .toLowerCase()
-    .trim();
 
+let query =
+search.value
+.toLowerCase()
+.trim();
 
 
 
-    let filtered =
-    data.filter(item => {
 
 
-        return (
+let filtered=data.filter(item=>{
 
-            item.name
-            .toLowerCase()
-            .includes(query)
 
-            ||
+return(
 
-            item.category
-            .toLowerCase()
-            .includes(query)
+item.name
+.toLowerCase()
+.includes(query)
 
-        );
+||
 
+item.category
+.toLowerCase()
+.includes(query)
 
-    });
+);
 
 
+});
 
 
 
 
-    if(currentTab === "complete"){
 
 
-        filtered =
-        filtered.filter(
-            x => x.status === "Complete"
-        );
 
+if(
+currentTab==="complete"
+){
 
-    }
+filtered =
+filtered.filter(
+x=>x.status==="Complete"
+);
 
+}
 
 
-    if(currentTab === "development"){
 
+else if(
+currentTab==="development"
+){
 
-        filtered =
-        filtered.filter(
-            x => x.status === "In Development"
-        );
+filtered =
+filtered.filter(
+x=>x.status==="In Development"
+);
 
+}
 
-    }
 
 
+else if(
+currentTab==="notstarted"
+){
 
-    if(currentTab === "notstarted"){
+filtered =
+filtered.filter(
+x=>x.status==="Not Started"
+);
 
+}
 
-        filtered =
-        filtered.filter(
-            x => x.status === "Not Started"
-        );
 
 
-    }
+else if(
+[
+"Streaming Platforms",
+"TV Collections",
+"Studios",
+"Franchises",
+"Networks"
 
+].includes(currentTab)
+){
 
 
+filtered =
+filtered.filter(
+x=>x.category===currentTab
+);
 
 
-    let total =
-    filtered.length;
+}
 
 
 
-    filtered =
-    filtered.slice(
-        0,
-        visibleCount
-    );
 
 
 
 
 
-    results.innerHTML = "";
 
+filtered.sort(
+(a,b)=>{
 
 
+let status =
+getStatusPriority(a.status)
+-
+getStatusPriority(b.status);
 
 
-    filtered.forEach(item => {
 
+if(status!==0)
 
+return status;
 
-        let html = `
 
-        <div class="card">
 
-        <h2>${item.name}</h2>
+return(
 
+getPopularity(a.name)
 
-        <p>
-        Category: ${item.category}
-        </p>
+-
 
+getPopularity(b.name)
 
-        <p>
-        Status: ${item.status}
-        </p>
+);
 
-        `;
 
 
+});
 
 
 
-        if(item.assets && item.assets.length){
 
 
 
-            let sorted =
-            [...item.assets]
-            .sort((a,b)=>{
 
 
-                let order = [
 
-                    "gif",
-                    "png",
-                    "jpg",
-                    "jpeg",
-                    "webp",
-                    "mp4"
+let total=filtered.length;
 
-                ];
 
 
-                return (
+filtered =
+filtered.slice(
+0,
+visibleCount
+);
 
-                    order.indexOf(getExt(a))
 
-                    -
 
-                    order.indexOf(getExt(b))
 
-                );
 
 
-            });
 
+results.innerHTML="";
 
 
 
 
-            sorted.forEach(url => {
 
 
-                let ext =
-                getExt(url);
 
+filtered.forEach(item=>{
 
 
 
+let html=`
 
-                html += `
+<div class="card">
 
-                <div class="asset">
 
+<h2>
 
-                <h3>
-                ${ext.toUpperCase()} Preview
-                </h3>
+${item.name}
 
-                `;
+</h2>
 
 
 
+<p>
 
+Category: ${item.category}
 
+</p>
 
-                if(previewEnabled(ext)){
+
+
+<p>
+
+Status: ${item.status}
+
+</p>
+
+
+
+`;
+
+
+
+
+
+
+
+
+if(
+item.assets &&
+item.assets.length
+){
+
+
+
+let sorted=[...item.assets];
+
+
+
+let order=[
+
+"gif",
+
+"png",
+
+"jpg",
+
+"jpeg",
+
+"webp",
+
+"mp4"
+
+];
+
+
+
+sorted.sort(
+(a,b)=>
+
+order.indexOf(getExt(a))
+
+-
+
+order.indexOf(getExt(b))
+
+);
+
+
+
+
+
+
+
+
+sorted.forEach(url=>{
+
+
+let ext=getExt(url);
+
+
+
+
+html+=`
+
+<div class="asset">
+
+
+<h3>
+
+${ext.toUpperCase()} Preview
+
+</h3>
+
+`;
+
+
+
+
+
+
+if(
+previewEnabled(ext)
+){
+
+
+if(ext==="mp4"){
+
+
+html+=`
+
+<video
+class="preview"
+controls
+loading="lazy">
+
+<source src="${url}">
+
+</video>
+
+`;
+
+}
+
+else{
+
+
+html+=`
+
+<img
+class="preview"
+loading="lazy"
+src="${url}">
+
+`;
+
+}
+
+
+
+}
+
+
+
+
+
+html+=`
+
+<button
+class="copy"
+onclick='copyText(${JSON.stringify(url)},this)'>
+
+Copy Raw Asset Link
+
+</button>
+
+
+</div>
+
+`;
+
+
+});
+
+
+
+}
+
+else{
+
+
+html+=`
+
+<p>
+
+No assets available yet.
+
+</p>
+
+`;
+
+
+}
+
+
+
+
+
+
+html+="</div>";
+
+
+
+results.innerHTML+=html;
+
+
+
+});
+
+
+
+
+
+
+
+
+if(total>visibleCount){
+
+
+loadMore.style.display="block";
+
+
+}
+
+else{
+
+
+loadMore.style.display="none";
+
+
+}
+
+
+
+}
+
+
+
+
+
+
+
+loadSettings();ewEnabled(ext)){
 
 
 
