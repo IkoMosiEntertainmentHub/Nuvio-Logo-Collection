@@ -2,7 +2,6 @@
 <html lang="en">
 
 <head>
-
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
@@ -19,28 +18,16 @@ body {
 
 input {
     width: 100%;
-    padding: 15px;
+    padding: 12px;
     font-size: 18px;
     margin-bottom: 20px;
 }
 
 .card {
-    border: 1px solid #ccc;
-    border-radius: 10px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
     padding: 15px;
-    margin-bottom: 15px;
-}
-
-.complete {
-    color: green;
-}
-
-.development {
-    color: orange;
-}
-
-.notstarted {
-    color: gray;
+    margin-bottom: 10px;
 }
 
 </style>
@@ -50,54 +37,68 @@ input {
 
 <body>
 
-
 <h1>Visual Assets Library</h1>
 
-
-<input 
-id="search"
-placeholder="Search collections..."
->
-
+<input id="search" placeholder="Search collections...">
 
 <div id="results">
 Loading...
 </div>
 
 
-
 <script>
 
-
-let collections = [];
-
+let assets = [];
 
 
-fetch("./search.json")
+const database =
+"https://ikomosientertainmenthub.github.io/Visual-Assets-Library/search.json";
+
+
+
+fetch(database)
+
 .then(response => {
 
+    console.log("Response:", response);
+
     if (!response.ok) {
-        throw new Error("search.json failed: " + response.status);
+
+        throw new Error(
+            "Failed loading database: " + response.status
+        );
+
     }
 
     return response.json();
 
 })
+
+
 .then(data => {
 
-    collections = data;
 
-    console.log("Loaded:", collections);
+    console.log("Database loaded:", data);
 
-    displayResults(collections);
+
+    assets = data;
+
+
+    displayResults(assets);
+
 
 })
+
+
 .catch(error => {
+
 
     console.error(error);
 
+
     document.getElementById("results").innerHTML =
-    "Search database failed to load.";
+    "Failed to load search database.";
+
 
 });
 
@@ -113,42 +114,20 @@ function(){
 
 
     let query =
-    this.value
-    .toLowerCase()
-    .trim();
+    this.value.toLowerCase();
 
 
+    let results =
+    assets.filter(item =>
 
-    let filtered =
-    collections.filter(item => {
+        item.name.toLowerCase().includes(query)
+        ||
+        item.category.toLowerCase().includes(query)
 
-
-        return (
-
-            item.name
-            .toLowerCase()
-            .includes(query)
-
-            ||
-
-            item.category
-            .toLowerCase()
-            .includes(query)
-
-            ||
-
-            item.status
-            .toLowerCase()
-            .includes(query)
-
-        );
+    );
 
 
-    });
-
-
-
-    displayResults(filtered);
+    displayResults(results);
 
 
 });
@@ -157,21 +136,21 @@ function(){
 
 
 
-function displayResults(items){
+function displayResults(results){
 
 
-    let output =
+    let container =
     document.getElementById("results");
 
 
-    output.innerHTML = "";
+    container.innerHTML = "";
 
 
 
-    if(items.length === 0){
+    if(results.length === 0){
 
-        output.innerHTML =
-        "<p>No collections found.</p>";
+        container.innerHTML =
+        "No collections found.";
 
         return;
 
@@ -179,35 +158,10 @@ function displayResults(items){
 
 
 
-
-    items.forEach(item => {
-
-
-        let statusClass = "";
+    results.forEach(item => {
 
 
-        if(item.status === "Complete"){
-
-            statusClass = "complete";
-
-        }
-
-        else if(item.status === "In Development"){
-
-            statusClass = "development";
-
-        }
-
-        else {
-
-            statusClass = "notstarted";
-
-        }
-
-
-
-
-        output.innerHTML += 
+        container.innerHTML += 
 
         <div class="card">
 
@@ -217,26 +171,9 @@ function displayResults(items){
         Category: ${item.category}
         </p>
 
-        <p class="${statusClass}">
+        <p>
         Status: ${item.status}
         </p>
-
-
-        ${
-        item.status === "Complete"
-
-        ?
-
-        <a href="https://github.com/IkoMosiEntertainmentHub/Visual-Assets-Library/tree/main/${item.path}">
-        Open Collection
-        </a>
-
-        :
-
-        "No assets available yet"
-
-        }
-
 
         </div>
 
