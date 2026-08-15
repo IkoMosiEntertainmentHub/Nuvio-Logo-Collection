@@ -599,7 +599,7 @@ The goal is to maintain an organized and accessible visual asset reference libra
 
 👤 Maintainer
 
-"IkoMosiEntertainmentHub" (https://github.com/IkoMosiEntertainmentHub)
+["IkoMosiEntertainmentHub"](https://github.com/IkoMosiEntertainmentHub)
 
 Solo-maintained personal project.
 
