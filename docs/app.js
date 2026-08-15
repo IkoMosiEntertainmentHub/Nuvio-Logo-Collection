@@ -140,7 +140,7 @@ function(e){
 
 
 
-fetch("search.json")
+fetch("search.json?v=3")
 
 
 .then(response => response.json())
