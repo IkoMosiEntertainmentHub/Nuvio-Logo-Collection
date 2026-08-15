@@ -18,7 +18,7 @@ Explore the collection through the online Visual Assets Library.
 - Live collection progress
 - Direct asset references
 
-**Website:**[Visual Assets Library](https://ikomosientertainmenthub.github.io/Visual-Assets-Library/)
+**Website:** [Visual Assets Library](https://ikomosientertainmenthub.github.io/Visual-Assets-Library/)
 
 ---
 
