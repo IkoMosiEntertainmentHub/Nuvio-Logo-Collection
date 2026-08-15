@@ -1,184 +1,9 @@
-name: Update Collection Progress
+category_status = "In Development"
 
-on:
-  push:
-    branches:
-      - main
 
-  workflow_dispatch:
-
-
-permissions:
-  contents: write
-
-
-jobs:
-
-  update-progress:
-
-    runs-on: ubuntu-latest
-
-
-    steps:
-
-      - name: Checkout repository
-        uses: actions/checkout@v4
-        with:
-          fetch-depth: 0
-
-
-      - name: Generate progress and search database
-        shell: python
-        run: |
-
-          import json
-          import os
-          import re
-
-
-          CONFIG_FILE = "collections.json"
-          PROGRESS_FILE = "progress.json"
-          README_FILE = "README.md"
-          SEARCH_FILE = "docs/search.json"
-
-
-          ASSET_EXTENSIONS = {
-              ".png",
-              ".gif",
-              ".jpg",
-              ".jpeg",
-              ".webp",
-              ".svg",
-              ".avif"
-          }
-
-
-          START_MARKER = "<!-- COLLECTION_PROGRESS_START -->"
-          END_MARKER = "<!-- COLLECTION_PROGRESS_END -->"
-
-
-
-          def folder_has_asset(folder):
-
-              if not os.path.isdir(folder):
-                  return False
-
-
-              for root, dirs, files in os.walk(folder):
-
-                  dirs[:] = [
-                      d for d in dirs
-                      if d != ".git"
-                  ]
-
-
-                  for filename in files:
-
-                      extension = os.path.splitext(filename)[1].lower()
-
-                      if extension in ASSET_EXTENSIONS:
-                          return True
-
-
-              return False
-
-
-
-
-          with open(CONFIG_FILE, "r", encoding="utf-8") as file:
-              collections = json.load(file)
-
-
-
-
-          progress = {}
-          search_database = []
-
-
-
-          for category, items in collections.items():
-
-              completed = 0
-              item_results = {}
-
-
-              for item in items:
-
-
-                  path = os.path.join(
-                      category,
-                      item
-                  )
-
-
-                  has_asset = folder_has_asset(path)
-
-
-
-                  if has_asset:
-
-                      completed += 1
-                      status = "Complete"
-
-                  elif os.path.isdir(path):
-
-                      status = "In Development"
-
-                  else:
-
-                      status = "Not Started"
-
-
-
-
-                  item_results[item] = {
-
-                      "complete": has_asset,
-
-                      "status": status
-
-                  }
-
-
-
-
-                  search_database.append({
-
-                      "name": item,
-
-                      "category": category,
-
-                      "status": status,
-
-                      "path": path
-
-                  })
-
-
-
-
-
-              total = len(items)
-
-
-
-              percentage = round(
-                  (completed / total) * 100,
-                  1
-              ) if total else 0
-
-
-
-
-              if percentage == 100:
-
-                  category_status = "Complete"
-
-              elif percentage > 0:
-
-                  category_status = "In Development"
 
               else:
+
 
                   category_status = "Not Started"
 
@@ -186,19 +11,30 @@ jobs:
 
 
 
+
+
               progress[category] = {
+
+
 
                   "completed": completed,
 
+
                   "total": total,
+
 
                   "percentage": percentage,
 
+
                   "status": category_status,
+
 
                   "items": item_results
 
+
               }
+
+
 
 
 
@@ -212,13 +48,31 @@ jobs:
 
 
 
-          with open(PROGRESS_FILE, "w", encoding="utf-8") as file:
+
+
+
+          with open(
+
+              PROGRESS_FILE,
+
+              "w",
+
+              encoding="utf-8"
+
+          ) as file:
+
+
 
               json.dump(
+
                   progress,
+
                   file,
+
                   indent=2,
+
                   ensure_ascii=False
+
               )
 
               file.write("\n")
@@ -227,13 +81,30 @@ jobs:
 
 
 
-          with open(SEARCH_FILE, "w", encoding="utf-8") as file:
+
+
+          with open(
+
+              SEARCH_FILE,
+
+              "w",
+
+              encoding="utf-8"
+
+          ) as file:
+
+
 
               json.dump(
+
                   search_database,
+
                   file,
+
                   indent=2,
+
                   ensure_ascii=False
+
               )
 
               file.write("\n")
@@ -242,7 +113,19 @@ jobs:
 
 
 
-          with open(README_FILE, "r", encoding="utf-8") as file:
+
+
+
+          with open(
+
+              README_FILE,
+
+              "r",
+
+              encoding="utf-8"
+
+          ) as file:
+
 
               readme = file.read()
 
@@ -250,16 +133,19 @@ jobs:
 
 
 
-          table = [
-              START_MARKER,
 
-              "",
 
-              "| Category | Completed | Total | Progress | Status |",
 
-              "| --- | ---: | ---: | --- | --- |"
+          table = []
 
-          ]
+
+          table.append(START_MARKER)
+
+          table.append("")
+
+          table.append("| Category | Completed | Total | Progress | Status |")
+
+          table.append("| --- | ---: | ---: | --- | --- |")
 
 
 
@@ -269,17 +155,20 @@ jobs:
 
 
               filled = round(
+
                   data["percentage"] / 10
+
               )
 
 
-              progress_bar = (
+
+              bar = (
 
                   "█" * filled
 
                   +
 
-                  "░" * (10 - filled)
+                  "░" * (10-filled)
 
               )
 
@@ -288,9 +177,13 @@ jobs:
               table.append(
 
                   f"| {category} | "
+
                   f"{data['completed']} | "
+
                   f"{data['total']} | "
-                  f"{progress_bar} {data['percentage']}% | "
+
+                  f"{bar} {data['percentage']}% | "
+
                   f"{data['status']} |"
 
               )
@@ -299,12 +192,17 @@ jobs:
 
 
 
+
           table.append("")
+
           table.append(END_MARKER)
 
 
 
-          new_table = "\n".join(table)
+
+
+          new_section = "\n".join(table)
+
 
 
 
@@ -328,22 +226,42 @@ jobs:
 
 
 
+
           readme = pattern.sub(
-              new_table,
+
+              new_section,
+
               readme
+
           )
 
 
 
 
 
-          with open(README_FILE, "w", encoding="utf-8") as file:
+
+
+          with open(
+
+              README_FILE,
+
+              "w",
+
+              encoding="utf-8"
+
+          ) as file:
+
 
               file.write(readme)
 
 
 
-      - name: Commit generated files
+
+
+
+
+
+      - name: Commit updates
 
         shell: bash
 
@@ -362,14 +280,16 @@ jobs:
 
           if git diff --cached --quiet; then
 
-            echo "No changes"
+              echo "No changes"
 
-            exit 0
+              exit 0
 
           fi
 
 
 
           git commit -m "Update collection progress and search database"
+
+
 
           git push
