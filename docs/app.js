@@ -1,151 +1,120 @@
-let assets = [];
+let assets=[];
+
+let visibleCount=10;
+
+let currentTab="all";
 
 
-let settings = JSON.parse(
-localStorage.getItem("VAL_settings")
-)
+let settings=
+JSON.parse(localStorage.getItem("VAL_settings"))
 ||
 {
-    gif:true,
-    png:true,
-    jpg:true,
-    webp:true,
-    mp4:true
+gif:true,
+png:true,
+jpg:true,
+webp:true,
+mp4:true
 };
-
-
-
-function loadSettings(){
-
-    gifToggle.checked = settings.gif;
-    pngToggle.checked = settings.png;
-    jpgToggle.checked = settings.jpg;
-    webpToggle.checked = settings.webp;
-    mp4Toggle.checked = settings.mp4;
-
-}
 
 
 
 function saveSettings(){
 
-    settings = {
+settings={
 
-        gif: gifToggle.checked,
-        png: pngToggle.checked,
-        jpg: jpgToggle.checked,
-        webp: webpToggle.checked,
-        mp4: mp4Toggle.checked
+gif:gifToggle.checked,
+png:pngToggle.checked,
+jpg:jpgToggle.checked,
+webp:webpToggle.checked,
+mp4:mp4Toggle.checked
 
-    };
-
-
-    localStorage.setItem(
-        "VAL_settings",
-        JSON.stringify(settings)
-    );
+};
 
 
-    displayResults(assets);
+localStorage.setItem(
+"VAL_settings",
+JSON.stringify(settings)
+);
+
+
+displayResults(assets);
 
 }
 
 
 
+function loadSettings(){
+
+gifToggle.checked=settings.gif;
+
+pngToggle.checked=settings.png;
+
+jpgToggle.checked=settings.jpg;
+
+webpToggle.checked=settings.webp;
+
+mp4Toggle.checked=settings.mp4;
+
+}
+
 
 
 document
 .querySelectorAll("#settingsPanel input")
-.forEach(input=>{
-
-    input.addEventListener(
-        "change",
-        saveSettings
-    );
-
-});
+.forEach(x=>x.addEventListener("change",saveSettings));
 
 
 
+settingsButton.onclick=function(e){
 
+e.stopPropagation();
 
-// Open settings
-
-settingsButton.onclick=function(event){
-
-    event.stopPropagation();
-
-
-    let panel=document.getElementById(
-        "settingsPanel"
-    );
-
-
-    panel.style.display =
-    panel.style.display==="block"
-    ?
-    "none"
-    :
-    "block";
+settingsPanel.style.display=
+settingsPanel.style.display==="block"
+?
+"none"
+:
+"block";
 
 };
 
 
 
+document.addEventListener("click",function(e){
 
+if(
+!settingsPanel.contains(e.target)
+&&
+e.target!==settingsButton
+){
 
-// Close settings when clicking outside
+settingsPanel.style.display="none";
 
-document.addEventListener(
-"click",
-function(event){
-
-
-    let panel=document.getElementById(
-        "settingsPanel"
-    );
-
-
-    let button=document.getElementById(
-        "settingsButton"
-    );
-
-
-    if(
-        panel.style.display==="block"
-        &&
-        !panel.contains(event.target)
-        &&
-        event.target!==button
-    ){
-
-        panel.style.display="none";
-
-    }
-
+}
 
 });
-
 
 
 
 
 fetch("search.json")
 
-.then(response=>response.json())
+.then(r=>r.json())
 
 .then(data=>{
 
-    assets=data;
+assets=data;
 
-    displayResults(data);
+displayResults(data);
 
-})
+});
 
-.catch(()=>{
 
-    results.innerHTML=
-    "Failed loading database";
+
+
+search.addEventListener("input",function(){
+
+displayResults(assets);
 
 });
 
@@ -153,33 +122,30 @@ fetch("search.json")
 
 
 
+document.querySelectorAll(".tab")
+.forEach(button=>{
 
 
-search.addEventListener(
-"input",
-function(){
-
-    let q=this.value.toLowerCase();
+button.onclick=function(){
 
 
-    let filtered=assets.filter(item=>
+document.querySelectorAll(".tab")
+.forEach(x=>x.classList.remove("active"));
 
 
-        item.name.toLowerCase().includes(q)
-
-        ||
-
-        item.category.toLowerCase().includes(q)
-
-        ||
-
-        item.status.toLowerCase().includes(q)
+this.classList.add("active");
 
 
-    );
+currentTab=this.dataset.tab;
 
 
-    displayResults(filtered);
+visibleCount=10;
+
+
+displayResults(assets);
+
+
+};
 
 
 });
@@ -188,77 +154,36 @@ function(){
 
 
 
+loadMore.onclick=function(){
 
-function copyText(text,button){
+visibleCount+=10;
 
+displayResults(assets);
 
-    navigator.clipboard.writeText(text);
-
-
-    button.innerText="Copied";
-
-
-    setTimeout(()=>{
+};
 
 
-        button.innerText="Copy Raw Asset Link";
 
 
-    },1500);
 
+function getExt(url){
+
+return url.split(".").pop().toLowerCase();
 
 }
 
 
 
 
+function copyText(text,btn){
 
+navigator.clipboard.writeText(text);
 
-function allowedPreview(ext){
+btn.innerText="Copied";
 
-
-    if(ext==="gif")
-    return settings.gif;
-
-
-    if(ext==="png")
-    return settings.png;
-
-
-    if(ext==="jpg" || ext==="jpeg")
-    return settings.jpg;
-
-
-    if(ext==="webp")
-    return settings.webp;
-
-
-    if(ext==="mp4")
-    return settings.mp4;
-
-
-    return false;
-
+setTimeout(()=>btn.innerText="Copy Raw Asset Link",1500);
 
 }
-
-
-
-
-
-
-
-function getExtension(url){
-
-    return url
-    .split("?")[0]
-    .split(".")
-    .pop()
-    .toLowerCase();
-
-}
-
-
 
 
 
@@ -267,79 +192,151 @@ function getExtension(url){
 function displayResults(data){
 
 
-let box=document.getElementById("results");
-
-
-box.innerHTML="";
+let query=search.value.toLowerCase();
 
 
 
-data.forEach(item=>{
+let filtered=data.filter(item=>
+
+item.name.toLowerCase().includes(query)
+
+||
+item.category.toLowerCase().includes(query)
+
+);
+
+
+
+if(currentTab==="complete")
+
+filtered=filtered.filter(x=>x.status==="Complete");
+
+
+if(currentTab==="development")
+
+filtered=filtered.filter(x=>x.status==="In Development");
+
+
+if(currentTab==="notstarted")
+
+filtered=filtered.filter(x=>x.status==="Not Started");
+
+
+
+filtered=filtered.slice(0,visibleCount);
+
+
+
+results.innerHTML="";
+
+
+
+filtered.forEach(item=>{
 
 
 let html=`
 
-
 <div class="card">
-
 
 <h2>${item.name}</h2>
 
+<p>${item.category}</p>
 
-<p>
-Category: ${item.category}
-</p>
-
-
-<p class="${item.status==="Complete"?"complete":"dev"}">
-
+<p class="${item.status.toLowerCase().replaceAll(" ","")}">
 Status: ${item.status}
-
 </p>
-
 
 `;
 
 
 
+if(item.assets){
 
 
-if(item.status==="Complete"){
+let sorted=[...item.assets].sort((a,b)=>{
 
 
+let order=["gif","png","jpg","jpeg","webp","mp4"];
 
-/*
-
-Priority order:
-
-1. GIF
-2. PNG
-3. JPG/JPEG
-4. WEBP
-5. MP4
-
-*/
+return order.indexOf(getExt(a))
+-
+order.indexOf(getExt(b));
 
 
-let priority=[
-
-"gif",
-
-"png",
-
-"jpg",
-
-"jpeg",
-
-"webp",
-
-"mp4"
-
-];
+});
 
 
 
-let sortedAssets=[...item.assets].sort(
+sorted.forEach(url=>{
+
+
+let ext=getExt(url);
+
+
+html+=`
+
+<div class="asset">
+
+<h3>${ext.toUpperCase()} Preview</h3>
+
+`;
+
+
+
+if(
+(ext==="gif"&&settings.gif)
+||
+(ext==="png"&&settings.png)
+||
+((ext==="jpg"||ext==="jpeg")&&settings.jpg)
+||
+(ext==="webp"&&settings.webp)
+){
+
+
+html+=`
+
+<img class="preview" src="${url}">
+
+`;
+
+}
+
+
+
+html+=`
+
+<button class="copy"
+onclick='copyText(${JSON.stringify(url)},this)'>
+
+Copy Raw Asset Link
+
+</button>
+
+</div>
+
+`;
+
+});
+
+
+}
+
+
+html+="</div>";
+
+
+results.innerHTML+=html;
+
+
+});
+
+
+}
+
+
+
+loadSettings();(
 
 (a,b)=>{
 
