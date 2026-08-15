@@ -129,19 +129,15 @@ Assets have been collected from various sources. Ownership, credit, and rights r
 
 ## 🧾 Credits & Attribution
 
-The assets contained in this collection originate from different sources and creators.
+The Visual Assets Library contains materials collected from various sources.
 
-Where reliable information is available, attribution and source details are preserved.
+Where reliable creator, owner, source, or attribution information was available, efforts were made to preserve and include those details.
 
-Credits may be located in:
+Credit and ownership remain with their respective creators, artists, designers, companies, studios, organizations, copyright holders, trademark owners, licensors, and other rightful owners.
 
-- Asset folders
-- Documentation files
-- Source files
-- Filenames
-- Repository notes
+This repository does not claim authorship, ownership, or licensing rights over third-party materials included within the collection.
 
-If you identify missing or incorrect attribution, please contact me with the relevant information.
+If you are a creator, copyright holder, or authorized representative and believe an asset has incorrect attribution or should be reviewed, please contact me with the relevant information.
 
 ---
 
