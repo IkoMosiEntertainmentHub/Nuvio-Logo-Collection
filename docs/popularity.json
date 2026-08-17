@@ -11,8 +11,19 @@
     "CRUNCHYROLL": 9,
     "STARZ": 10,
     "MGM+": 11,
-    "AMC+": 12
-  },
+    "AMC+": 12,
+    "CRAVE": 13,
+    "CURIOSITY STREAM": 14,
+    "DISCOVERY PLUS": 15,
+    "HAYU": 16,
+    "MAGELLAN": 17,
+    "MUBI": 18,
+    "PLUTO TV": 19,
+    "THE CRITERION CHANNEL": 20,
+    "TUBI": 21,
+    "SHUDDER": 22
+  }
+},
 
   "TV Collections": {
     "MARVEL": 1,
