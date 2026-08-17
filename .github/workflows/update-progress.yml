@@ -1,40 +1,526 @@
 name: Update Collection Progress
 
-
 on:
-
   push:
-
     branches:
-
       - main
-
 
   workflow_dispatch:
 
-
-
-
 permissions:
-
   contents: write
-
-
-
-
-
 
 jobs:
 
-
   update-progress:
-
-
 
     runs-on: ubuntu-latest
 
+    steps:
+
+      - name: Checkout repository
+
+        uses: actions/checkout@v4
+
+        with:
+          fetch-depth: 0
 
 
+      - name: Generate progress and search database
+
+        shell: python
+
+        run: |
+
+          import json
+          import os
+          import re
+          from pathlib import Path
+          from urllib.parse import quote
+
+
+          # ============================================================
+          # CONFIGURATION
+          # ============================================================
+
+          README_FILE = "README.md"
+
+          PROGRESS_FILE = "progress.json"
+
+          SEARCH_FILE = "docs/search.json"
+
+          REPOSITORY =
+              "IkoMosiEntertainmentHub/Visual-Assets-Library"
+
+
+          ASSET_EXTENSIONS = {
+              ".png",
+              ".gif",
+              ".jpg",
+              ".jpeg",
+              ".webp",
+              ".svg",
+              ".avif",
+              ".mp4"
+          }
+
+
+          # These folders/files are not collection categories.
+          IGNORED_ROOT_FOLDERS = {
+              ".git",
+              ".github",
+              "docs",
+              "node_modules"
+          }
+
+
+          # ============================================================
+          # FIND ASSETS
+          # ============================================================
+
+          def find_assets(folder):
+
+              assets = []
+
+              folder = Path(folder)
+
+              if not folder.is_dir():
+
+                  return assets
+
+
+              for root, dirs, files in os.walk(folder):
+
+                  dirs[:] = [
+                      d
+                      for d in dirs
+                      if d not in IGNORED_ROOT_FOLDERS
+                  ]
+
+
+                  for filename in files:
+
+                      extension = Path(filename).suffix.lower()
+
+                      if extension not in ASSET_EXTENSIONS:
+
+                          continue
+
+
+                      full_path = Path(root) / filename
+
+                      relative = full_path.relative_to(
+                          Path(".")
+                      ).as_posix()
+
+
+                      encoded_path = "/".join(
+                          quote(part)
+                          for part in relative.split("/")
+                      )
+
+
+                      url = (
+                          "https://raw.githubusercontent.com/"
+                          + REPOSITORY
+                          + "/refs/heads/main/"
+                          + encoded_path
+                      )
+
+
+                      assets.append(url)
+
+
+              return sorted(assets)
+
+
+          # ============================================================
+          # DISCOVER CATEGORIES
+          # ============================================================
+
+          def discover_categories():
+
+              categories = []
+
+              for entry in sorted(
+                  Path(".").iterdir(),
+                  key=lambda p: p.name.lower()
+              ):
+
+                  if not entry.is_dir():
+
+                      continue
+
+
+                  if entry.name in IGNORED_ROOT_FOLDERS:
+
+                      continue
+
+
+                  if entry.name.startswith("."):
+
+                      continue
+
+
+                  categories.append(entry.name)
+
+
+              return categories
+
+
+          # ============================================================
+          # DISCOVER COLLECTIONS
+          # ============================================================
+
+          def discover_collections(category):
+
+              category_path = Path(category)
+
+              collections = []
+
+              for entry in sorted(
+                  category_path.iterdir(),
+                  key=lambda p: p.name.lower()
+              ):
+
+                  if not entry.is_dir():
+
+                      continue
+
+
+                  if entry.name.startswith("."):
+
+                      continue
+
+
+                  collections.append(entry.name)
+
+
+              return collections
+
+
+          # ============================================================
+          # MAIN SCAN
+          # ============================================================
+
+          categories = discover_categories()
+
+
+          progress = {}
+
+          search = []
+
+
+          total_collections = 0
+
+          total_completed = 0
+
+
+          for category in categories:
+
+              collections = discover_collections(category)
+
+              completed = 0
+
+              item_data = {}
+
+
+              for collection in collections:
+
+                  collection_path = (
+                      Path(category)
+                      / collection
+                  )
+
+
+                  assets = find_assets(
+                      collection_path
+                  )
+
+
+                  if len(assets) > 0:
+
+                      status = "Complete"
+
+                      completed += 1
+
+                  else:
+
+                      status = "In Development"
+
+
+                  item_data[collection] = {
+                      "complete": status == "Complete",
+                      "status": status
+                  }
+
+
+                  search.append({
+
+                      "name": collection,
+
+                      "category": category,
+
+                      "status": status,
+
+                      "path": collection_path.as_posix(),
+
+                      "assets": assets
+
+                  })
+
+
+              total = len(collections)
+
+              total_collections += total
+
+              total_completed += completed
+
+
+              percentage = (
+                  round(
+                      (completed / total) * 100,
+                      1
+                  )
+                  if total
+                  else 0
+              )
+
+
+              if percentage == 100:
+
+                  category_status = "Complete"
+
+              elif percentage > 0:
+
+                  category_status = "In Development"
+
+              else:
+
+                  category_status = "Not Started"
+
+
+              progress[category] = {
+
+                  "completed": completed,
+
+                  "total": total,
+
+                  "percentage": percentage,
+
+                  "status": category_status,
+
+                  "items": item_data
+
+              }
+
+
+          # ============================================================
+          # CREATE DOCS
+          # ============================================================
+
+          Path("docs").mkdir(
+              parents=True,
+              exist_ok=True
+          )
+
+
+          # ============================================================
+          # WRITE progress.json
+          # ============================================================
+
+          with open(
+              PROGRESS_FILE,
+              "w",
+              encoding="utf-8"
+          ) as file:
+
+              json.dump(
+                  progress,
+                  file,
+                  indent=2,
+                  ensure_ascii=False
+              )
+
+              file.write("\n")
+
+
+          # ============================================================
+          # WRITE search.json
+          # ============================================================
+
+          with open(
+              SEARCH_FILE,
+              "w",
+              encoding="utf-8"
+          ) as file:
+
+              json.dump(
+                  search,
+                  file,
+                  indent=2,
+                  ensure_ascii=False
+              )
+
+              file.write("\n")
+
+
+          # ============================================================
+          # UPDATE README
+          # ============================================================
+
+          START = "<!-- COLLECTION_PROGRESS_START -->"
+
+          END = "<!-- COLLECTION_PROGRESS_END -->"
+
+
+          if os.path.exists(README_FILE):
+
+              with open(
+                  README_FILE,
+                  "r",
+                  encoding="utf-8",
+                  errors="replace"
+              ) as file:
+
+                  readme = file.read()
+
+
+              table = []
+
+              table.append(START)
+
+              table.append("")
+
+              table.append(
+                  "| Category | Completed | Total | Progress | Status |"
+              )
+
+              table.append(
+                  "| --- | ---: | ---: | --- | --- |"
+              )
+
+
+              for category, data in progress.items():
+
+                  filled = round(
+                      data["percentage"] / 10
+                  )
+
+
+                  bar = (
+                      "█" * filled
+                      +
+                      "░" * (10 - filled)
+                  )
+
+
+                  table.append(
+                      f"| **{category}** | "
+                      f"{data['completed']} | "
+                      f"{data['total']} | "
+                      f"`{bar}` **{data['percentage']}%** | "
+                      f"{data['status']} |"
+                  )
+
+
+              table.append("")
+
+              table.append(END)
+
+
+              section = "\n".join(table)
+
+
+              pattern = re.compile(
+                  re.escape(START)
+                  +
+                  r".*?"
+                  +
+                  re.escape(END),
+                  re.DOTALL
+              )
+
+
+              if pattern.search(readme):
+
+                  readme = pattern.sub(
+                      section,
+                      readme,
+                      count=1
+                  )
+
+              else:
+
+                  readme += (
+                      "\n\n"
+                      + section
+                      + "\n"
+                  )
+
+
+              with open(
+                  README_FILE,
+                  "w",
+                  encoding="utf-8"
+              ) as file:
+
+                  file.write(readme)
+
+
+          # ============================================================
+          # SUMMARY
+          # ============================================================
+
+          print()
+          print("==============================================")
+          print(" COLLECTION SCAN COMPLETE")
+          print("==============================================")
+          print()
+
+          print(
+              f"Categories:       {len(categories)}"
+          )
+
+          print(
+              f"Collections:      {total_collections}"
+          )
+
+          print(
+              f"Completed:        {total_completed}"
+          )
+
+          print()
+
+
+      - name: Commit generated files
+
+        shell: bash
+
+        run: |
+
+          git config user.name "github-actions[bot]"
+
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+
+
+          git add README.md progress.json docs/search.json
+
+
+          if git diff --cached --quiet; then
+
+              echo "No generated changes"
+
+              exit 0
+
+          fi
+
+
+          git commit \
+            -m "Update collection progress and search database"
+
+
+          git push
 
 
     steps:
