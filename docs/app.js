@@ -157,17 +157,26 @@ function(e){
 
 
 
-Promise.all([
+fetch("search.json?v=7")
+.then(response => response.json())
+.then(data => {
 
-    fetch("search.json?v=6")
-    .then(response=>response.json()),
+    assets = data;
 
+    displayResults(assets);
 
-    fetch("popularity.json?v=1")
-    .then(response=>response.json())
-    .catch(()=>({}))
+})
+.catch(error => {
 
-])
+    console.error(error);
+
+    results.innerHTML = `
+        <p>
+        Failed loading database
+        </p>
+    `;
+
+});
 
 .then(data=>{
 
