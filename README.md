@@ -77,7 +77,7 @@ The progress below reflects the current availability of supported visual assets 
 
 | Category | Completed | Total | Progress | Status |
 | --- | ---: | ---: | --- | --- |
-| **Streaming Platforms** | 12 | 12 | `██████████` **100.0%** | Complete |
+| **Streaming Platforms** | 22 | 22 | `██████████` **100.0%** | Complete |
 | **TV Collections** | 0 | 16 | `░░░░░░░░░░` **0.0%** | Not Started |
 | **Studios** | 1 | 20 | `░░░░░░░░░░` **5.0%** | Collecting |
 | **Franchises** | 5 | 38 | `█░░░░░░░░░` **13.2%** | Collecting |

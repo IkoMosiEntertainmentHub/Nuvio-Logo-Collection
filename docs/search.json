@@ -20,6 +20,15 @@
     ]
   },
   {
+    "name": "CRAVE",
+    "category": "Streaming Platforms",
+    "status": "Complete",
+    "path": "Streaming Platforms/CRAVE",
+    "assets": [
+      "https://raw.githubusercontent.com/IkoMosiEntertainmentHub/Visual-Assets-Library/refs/heads/main/Streaming%20Platforms/CRAVE/CRAVE%20INTRO.gif"
+    ]
+  },
+  {
     "name": "CRUNCHYROLL",
     "category": "Streaming Platforms",
     "status": "Complete",
@@ -31,6 +40,24 @@
     ]
   },
   {
+    "name": "CURIOSITY STREAM",
+    "category": "Streaming Platforms",
+    "status": "Complete",
+    "path": "Streaming Platforms/CURIOSITY STREAM",
+    "assets": [
+      "https://raw.githubusercontent.com/IkoMosiEntertainmentHub/Visual-Assets-Library/refs/heads/main/Streaming%20Platforms/CURIOSITY%20STREAM/CURIOSITY%20STREAM%20INTRO.gif"
+    ]
+  },
+  {
+    "name": "DISCOVERY PLUS",
+    "category": "Streaming Platforms",
+    "status": "Complete",
+    "path": "Streaming Platforms/DISCOVERY PLUS",
+    "assets": [
+      "https://raw.githubusercontent.com/IkoMosiEntertainmentHub/Visual-Assets-Library/refs/heads/main/Streaming%20Platforms/DISCOVERY%20PLUS/DISNEY%20PLUS%20INTRO.gif"
+    ]
+  },
+  {
     "name": "DISNEY PLUS",
     "category": "Streaming Platforms",
     "status": "Complete",
@@ -38,6 +65,15 @@
     "assets": [
       "https://raw.githubusercontent.com/IkoMosiEntertainmentHub/Visual-Assets-Library/refs/heads/main/Streaming%20Platforms/DISNEY%20PLUS/Disney%20Plus%20Intro.gif.gif",
       "https://raw.githubusercontent.com/IkoMosiEntertainmentHub/Visual-Assets-Library/refs/heads/main/Streaming%20Platforms/DISNEY%20PLUS/Disney%20Plus%20Logo.png"
+    ]
+  },
+  {
+    "name": "HAYU",
+    "category": "Streaming Platforms",
+    "status": "Complete",
+    "path": "Streaming Platforms/HAYU",
+    "assets": [
+      "https://raw.githubusercontent.com/IkoMosiEntertainmentHub/Visual-Assets-Library/refs/heads/main/Streaming%20Platforms/HAYU/HAYU%20INTRO.gif"
     ]
   },
   {
@@ -61,6 +97,15 @@
     ]
   },
   {
+    "name": "MAGELLAN",
+    "category": "Streaming Platforms",
+    "status": "Complete",
+    "path": "Streaming Platforms/MAGELLAN",
+    "assets": [
+      "https://raw.githubusercontent.com/IkoMosiEntertainmentHub/Visual-Assets-Library/refs/heads/main/Streaming%20Platforms/MAGELLAN/MAGELLAN%20INTRO.gif"
+    ]
+  },
+  {
     "name": "MGM+",
     "category": "Streaming Platforms",
     "status": "Complete",
@@ -69,6 +114,15 @@
       "https://raw.githubusercontent.com/IkoMosiEntertainmentHub/Visual-Assets-Library/refs/heads/main/Streaming%20Platforms/MGM%2B/Mgm%2B%20Intro.gif",
       "https://raw.githubusercontent.com/IkoMosiEntertainmentHub/Visual-Assets-Library/refs/heads/main/Streaming%20Platforms/MGM%2B/Mgm%2B%20Logo.png",
       "https://raw.githubusercontent.com/IkoMosiEntertainmentHub/Visual-Assets-Library/refs/heads/main/Streaming%20Platforms/MGM%2B/Mgm%2B%20Originals%20Intro.gif"
+    ]
+  },
+  {
+    "name": "MUBI",
+    "category": "Streaming Platforms",
+    "status": "Complete",
+    "path": "Streaming Platforms/MUBI",
+    "assets": [
+      "https://raw.githubusercontent.com/IkoMosiEntertainmentHub/Visual-Assets-Library/refs/heads/main/Streaming%20Platforms/MUBI/MUBI%20INTRO.gif"
     ]
   },
   {
@@ -103,6 +157,15 @@
     ]
   },
   {
+    "name": "PLUTO TV",
+    "category": "Streaming Platforms",
+    "status": "Complete",
+    "path": "Streaming Platforms/PLUTO TV",
+    "assets": [
+      "https://raw.githubusercontent.com/IkoMosiEntertainmentHub/Visual-Assets-Library/refs/heads/main/Streaming%20Platforms/PLUTO%20TV/PLUTO%20TV%20INTRO.gif"
+    ]
+  },
+  {
     "name": "PRIME VIDEO",
     "category": "Streaming Platforms",
     "status": "Complete",
@@ -120,6 +183,33 @@
     "assets": [
       "https://raw.githubusercontent.com/IkoMosiEntertainmentHub/Visual-Assets-Library/refs/heads/main/Streaming%20Platforms/STARZ/Starz%20Intro.gif",
       "https://raw.githubusercontent.com/IkoMosiEntertainmentHub/Visual-Assets-Library/refs/heads/main/Streaming%20Platforms/STARZ/Starz%20Logo.png"
+    ]
+  },
+  {
+    "name": "THE CRITERION CHANNEL",
+    "category": "Streaming Platforms",
+    "status": "Complete",
+    "path": "Streaming Platforms/THE CRITERION CHANNEL",
+    "assets": [
+      "https://raw.githubusercontent.com/IkoMosiEntertainmentHub/Visual-Assets-Library/refs/heads/main/Streaming%20Platforms/THE%20CRITERION%20CHANNEL/THE%20CRITERION%20CHANNEL%20INTRO.gif"
+    ]
+  },
+  {
+    "name": "TUBI",
+    "category": "Streaming Platforms",
+    "status": "Complete",
+    "path": "Streaming Platforms/TUBI",
+    "assets": [
+      "https://raw.githubusercontent.com/IkoMosiEntertainmentHub/Visual-Assets-Library/refs/heads/main/Streaming%20Platforms/TUBI/TUBI%20INTRO.gif"
+    ]
+  },
+  {
+    "name": "shudder",
+    "category": "Streaming Platforms",
+    "status": "Complete",
+    "path": "Streaming Platforms/shudder",
+    "assets": [
+      "https://raw.githubusercontent.com/IkoMosiEntertainmentHub/Visual-Assets-Library/refs/heads/main/Streaming%20Platforms/shudder/shudder%20INTRO.gif"
     ]
   },
   {

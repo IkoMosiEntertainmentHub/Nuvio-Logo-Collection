@@ -1,7 +1,7 @@
 {
   "Streaming Platforms": {
-    "completed": 12,
-    "total": 12,
+    "completed": 22,
+    "total": 22,
     "percentage": 100.0,
     "status": "Complete",
     "items": {
@@ -13,11 +13,27 @@
         "complete": true,
         "status": "Complete"
       },
+      "CRAVE": {
+        "complete": true,
+        "status": "Complete"
+      },
       "CRUNCHYROLL": {
         "complete": true,
         "status": "Complete"
       },
+      "CURIOSITY STREAM": {
+        "complete": true,
+        "status": "Complete"
+      },
+      "DISCOVERY PLUS": {
+        "complete": true,
+        "status": "Complete"
+      },
       "DISNEY PLUS": {
+        "complete": true,
+        "status": "Complete"
+      },
+      "HAYU": {
         "complete": true,
         "status": "Complete"
       },
@@ -29,7 +45,15 @@
         "complete": true,
         "status": "Complete"
       },
+      "MAGELLAN": {
+        "complete": true,
+        "status": "Complete"
+      },
       "MGM+": {
+        "complete": true,
+        "status": "Complete"
+      },
+      "MUBI": {
         "complete": true,
         "status": "Complete"
       },
@@ -45,11 +69,27 @@
         "complete": true,
         "status": "Complete"
       },
+      "PLUTO TV": {
+        "complete": true,
+        "status": "Complete"
+      },
       "PRIME VIDEO": {
         "complete": true,
         "status": "Complete"
       },
       "STARZ": {
+        "complete": true,
+        "status": "Complete"
+      },
+      "THE CRITERION CHANNEL": {
+        "complete": true,
+        "status": "Complete"
+      },
+      "TUBI": {
+        "complete": true,
+        "status": "Complete"
+      },
+      "shudder": {
         "complete": true,
         "status": "Complete"
       }
