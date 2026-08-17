@@ -430,47 +430,29 @@ function displayResults(data){
 
 
 
-    filtered.sort(
-    (a,b)=>{
+    filtered.sort((a, b) => {
 
-
-        let status =
-
+    const status =
         getStatusPriority(a.status)
-
         -
-
         getStatusPriority(b.status);
 
+    if(status !== 0){
 
+        return status;
 
-        if(status !== 0){
+    }
 
-            return status;
-
+    return a.name.localeCompare(
+        b.name,
+        undefined,
+        {
+            numeric: true,
+            sensitivity: "base"
         }
+    );
 
-
-
-
-        return (
-
-            getPopularity(
-                a.name,
-                a.category
-            )
-
-            -
-
-            getPopularity(
-                b.name,
-                b.category
-            )
-
-        );
-
-
-    });
+});
 
 
 
