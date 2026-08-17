@@ -1,5 +1,4 @@
 let assets = [];
-let popularity = {};
 
 let visibleCount = 10;
 let currentTab = "all";
