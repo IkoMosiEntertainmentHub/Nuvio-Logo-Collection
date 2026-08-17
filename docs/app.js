@@ -336,39 +336,6 @@ function getStatusPriority(status){
 }
 
 
-
-
-
-
-function getPopularity(name,category){
-
-
-    if(
-
-        popularity[category]
-
-        &&
-
-        popularity[category][name]
-
-    ){
-
-        return popularity[category][name];
-
-    }
-
-
-    return 9999;
-
-
-}
-
-
-
-
-
-
-
 function displayResults(data){
 
 
